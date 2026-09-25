@@ -84,6 +84,7 @@ section{display:flex;flex-direction:column;gap:18px}
 .col ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:.95rem}
 .clips{grid-column:1/-1;font-size:.9rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
 .clips b{color:var(--ink);font-weight:600}
+.clips a{color:var(--accent);font-weight:600}
 
 /* storyboard */
 .board-scroll{overflow-x:auto}
@@ -94,11 +95,28 @@ td:first-child{font-family:var(--mono);color:var(--muted);white-space:nowrap}
 td.cap{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:1rem}
 tr:last-child td{border-bottom:0}
 
+.vid{width:100%;max-width:100%;aspect-ratio:1366/768;background:#101816;border-radius:6px;border:1px solid var(--line)}
+.vid-note{color:var(--muted);font-size:.93rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.card-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px}
+.card-head .mono{color:var(--muted)}
+.card-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.quiz{display:flex;flex-direction:column;gap:14px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.q p{font-weight:600}
+.q .opts{display:flex;flex-direction:column;gap:6px}
+.q button{font:1rem var(--body);text-align:left;padding:10px 12px;border-radius:5px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.q button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.q button.right{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:600}
+.q button.wrong{border-color:var(--red);background:var(--red-soft);color:var(--red)}
+.q .why{font-size:.93rem;color:var(--muted)}
+.score{font-family:var(--mono);font-size:.9rem;color:var(--muted)}
 .next ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;max-width:70ch}
 @media (max-width:640px){
   .mod summary{grid-template-columns:2.4rem 1fr}
   .who{grid-column:2;justify-content:flex-start}
   .body{grid-template-columns:1fr;padding-left:16px}
+  .card-cols{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:no-preference){.mod{transition:opacity .2s}}
 </style>
@@ -107,8 +125,8 @@ tr:last-child td{border-bottom:0}
 <header>
   <div class="eyebrow">Onboarding programme · draft for review</div>
   <h1>Thulir repair software: training map</h1>
-  <p class="lede">Twelve short modules, in the order a board moves through the shop. Each person watches only the modules for their role. Pick a role below to see their path.</p>
-  <p class="notice"><b>How this was built:</b> I read the rules straight from the live system's data model: the pipeline, the 9 roles, and the checks the database refuses to break. The <b>role-to-module mapping is my proposal, so please confirm it</b>. I couldn't reach the source code, the spec-kit documents or the web app yet, so the screen-level details (field labels, button names, screenshots) are still to come.</p>
+  <p class="lede">Thirteen short modules, in the order a board moves through the shop. Each person watches only the modules for their role. Pick a role below to see their path.</p>
+  <p class="notice"><b>Sources:</b> the use cases (UC-001 to UC-021), the permissions each role is actually granted in the database, and the screens' own code. <b>Module 02 is finished</b>: the video, the Do / Don't card and the quiz are below. It was recorded on a local copy of the app with made-up customers, signed in as a test Front Office user. No live data was used.</p>
 </header>
 
 <section>
@@ -116,7 +134,7 @@ tr:last-child td{border-bottom:0}
   <div class="format">
     <div class="fmt"><b>60–90 s clip</b><span>A screen recording of the real form with a moving pointer and 3–5 word captions. No narration needed, so it works on a noisy shop floor.</span></div>
     <div class="fmt"><b>Do / Don't card</b><span>One page: the form with numbered callouts, the rules, and the common mistakes. Print it and pin it at the desk.</span></div>
-    <div class="fmt"><b>3-question check</b><span>Scenario questions such as “6 identical power supplies arrive. How many inward lines?”</span></div>
+    <div class="fmt"><b>4-question check</b><span>Scenario questions such as “6 identical power supplies arrive. How do you enter them?”</span></div>
   </div>
 </section>
 
@@ -138,33 +156,52 @@ tr:last-child td{border-bottom:0}
   <div class="mods" id="mods"></div>
 </section>
 
-<section>
-  <h2>Pilot storyboard: 02 · Receiving a delivery (Inward)</h2>
-  <p>This is what one clip looks like on paper. It runs about 75 seconds. I record it from the real screen once I can reach the app.</p>
-  <div class="board-scroll">
-  <table>
-    <thead><tr><th>Time</th><th>On screen</th><th>Caption</th></tr></thead>
-    <tbody>
-      <tr><td>0:00</td><td>A courier box on the counter; cut to the Inward screen.</td><td class="cap">A delivery arrives. One Inward.</td></tr>
-      <tr><td>0:08</td><td>Pick the customer, then the contact. The customer code fills in by itself.</td><td class="cap">Pick customer. Never type a code.</td></tr>
-      <tr><td>0:18</td><td>The “Brought in by” field is highlighted.</td><td class="cap">Who brought it? Always fill.</td></tr>
-      <tr><td>0:26</td><td>Six identical PSUs are entered as <b>one line, qty 6</b>. A red ✕ shows over six separate lines.</td><td class="cap">Same item = one line.</td></tr>
-      <tr><td>0:38</td><td>Save. Six job numbers appear, one per unit.</td><td class="cap">Each unit gets its own job.</td></tr>
-      <tr><td>0:48</td><td>Serial number, accessories received, condition on receipt and storage bin are filled for one job.</td><td class="cap">Serial. Accessories. Condition. Bin.</td></tr>
-      <tr><td>1:02</td><td>The status chip reads <span class="mono">Pre-Repair › Inward</span>.</td><td class="cap">Next stop: assessment.</td></tr>
-      <tr><td>1:10</td><td>End card showing the 3 rules.</td><td class="cap">Scan the QR for the Do / Don't card.</td></tr>
-    </tbody>
-  </table>
+<section id="m02">
+  <div class="eyebrow">Module 02 · Front Office · finished pilot</div>
+  <h2>Receiving a delivery</h2>
+  <video class="vid" controls preload="metadata" playsinline poster="media/02-poster.jpg">
+    <source src="media/02-receiving-a-delivery.mp4" type="video/mp4">
+  </video>
+  <p class="vid-note">95 seconds, captions on screen and no sound, so it works on a noisy shop floor.</p>
+
+  <div class="card">
+    <div class="card-head">
+      <div><div class="eyebrow">Do / Don't card · pin at the counter</div><h3>Front Office → Inward</h3></div>
+      <span class="mono">Front office › Inward › New delivery</span>
+    </div>
+    <div class="card-cols">
+      <div class="col do"><h4>Do</h4><ul>
+        <li><b>Search</b> for the customer. Not listed? Use <b>They are not on the list</b>. They are created as Potential, and Sales completes the record.</li>
+        <li><b>Brought by</b> = the customer's person who sent it. <b>Sales engineer</b> = who gets the credit. It is always filled.</li>
+        <li>One <b>item</b> per distinct model. Press <b>Add a unit</b> for every physical unit.</li>
+        <li>Type a <b>serial for every unit</b>. The form won't register without it.</li>
+        <li>Type a short <b>bin</b> code and wait for the green <b>free</b> badge. “holds …” means that shelf is taken.</li>
+        <li>Write <b>Came with</b> (accessories) and <b>Condition on receipt</b> for each unit.</li>
+        <li>Business-critical? Set <b>Priority</b> and enter the <b>Needed by</b> date.</li>
+        <li>Warranty return? Set Job type <b>Rework</b> and enter the <b>previous job number</b>.</li>
+      </ul></div>
+      <div class="col dont"><h4>Don't</h4><ul>
+        <li>Don't enter identical units as separate items. There is no quantity box, because the rows are the quantity.</li>
+        <li>Don't put two boards in one bin.</li>
+        <li>Don't press <b>Register anyway</b> on a “serial is on an open work order” warning before you open that job and check.</li>
+        <li>Don't leave Condition blank if you saw damage. Blank means “nobody checked”.</li>
+        <li>Don't quote job numbers to the customer before you register. Until then they are only expected.</li>
+        <li>An <b>out-of-warranty</b> rework warning means the repair is chargeable. Register it as New if the customer is paying.</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="quiz" id="quiz">
+    <h3>Quick check</h3>
   </div>
 </section>
 
 <section class="next">
-  <h2>What I need to finish this</h2>
+  <h2>What's next</h2>
   <ol>
-    <li><b>Source code and spec-kit docs.</b> The GitHub repo <span class="mono">srbasha1974/repair-service</span> isn't visible to my GitHub connection. It is probably private, or the Claude GitHub App isn't installed on it.</li>
-    <li><b>The web app.</b> This session's network policy blocks <span class="mono">repair.thulirtech.com</span>. Add it to the environment's allowed domains. I'll also need a <b>training login</b> for each role, ideally on a copy with sample data rather than live customers.</li>
-    <li><b>Confirm the role map</b> above, especially who builds invoice batches and who raises purchase requests.</li>
-    <li><b>Captions:</b> English only, or also Tamil?</li>
+    <li><b>Review module 02</b> with one or two Front Office staff. Is the pace right, and are the captions clear?</li>
+    <li><b>Captions:</b> English only, or should I add a Tamil version of each clip?</li>
+    <li>Once the format is approved, I'll record the remaining 12 modules in the same way: 00 for everyone, then 01–12.</li>
   </ol>
 </section>
 </div>
@@ -179,56 +216,56 @@ const PIPE=[
 document.getElementById("pipe").innerHTML=PIPE.map((s,i)=>`<div class="stage"><h3>${s.n}<small>${s.end?"end":"stage "+(i+1)}</small></h3>${s.subs.map(([t,c])=>`<div class="sub ${c||""}">${t}</div>`).join("")}</div>`).join("");
 
 const P={
- "Front Office":"Receives deliveries, sends challans, handles paperwork with purchasing and billing.",
- "Sales Engineer":"Owns customers and contacts, brings in work, and follows quotes through.",
- "Liaison":"Talks to the customer while a job is in the shop: inputs, quotes and confirmations.",
- "Engineer":"Assesses, repairs, books parts and time, and verifies other engineers' boards.",
- "Service Head":"Leads repair: allots jobs, watches queues and stuck jobs, decides on closure.",
- "Operations Manager":"Runs stock, rates and settings, including sub-statuses, without a software release.",
- "Sales Head":"Leads sales: customer lifecycle, ownership moves and quote performance.",
+ "Front Office":"Receives deliveries, issues challans, and places orders in Zoho from the Liaison's purchase requests.",
+ "Sales Engineer":"Registers prospects, logs interactions, and is credited on the deliveries they bring in.",
+ "Liaison":"The customer's contact while a job is in the shop: assessment pick-up, quotes, spares, purchase requests, stock and invoice batches.",
+ "Engineer":"Repairs boards, books parts and hours, and verifies other engineers' boards.",
+ "Service Head":"Runs the repair floor: diagnosis, allotment, SLA dates, write-off decisions and engineer targets.",
+ "Operations Manager":"Configuration, the status list, reason lists, roles, rates and invoice batches.",
+ "Sales Head":"Trial accounts, conversion to Regular, customer owner changes and sales analytics.",
  "Executive / Admin":"Needs the big picture and the dashboards, not the data entry."
 };
-// p = primary (must do), a = awareness
+// p = does the work, a = awareness. Source: use cases UC-001..021 and the role grants in supabase/migrations.
 const M=[
  {id:"00",t:"How a board moves through the shop",s:"The 4 stages, 14 sub-statuses, and where your role fits",who:{p:Object.keys(P)},
   do:["Read the job's sub-status before you act. It tells you whose turn it is.","Add a short note when you change status. Leads use it to spot stuck jobs."],
-  dont:["Don't treat “Closed” as final. A lead can send a closed job back to an engineer.","Don't keep work outside the system. Time spent in each sub-status is measured."],clips:"Clip: The pipeline in 90 seconds"},
- {id:"01",t:"Customers, contacts and follow-ups",s:"Creating customers, the primary contact, lifecycle stages, interactions",who:{p:["Sales Engineer","Sales Head"],a:["Front Office","Liaison"]},
-  do:["Let the system give the customer code. It never changes.","Mark one primary contact per company. Setting a new one clears the old one.","Log an interaction on the same day it happens."],
-  dont:["Don't move a customer to Trial or Regular “to test”. Lifecycle moves can't be undone.","Don't edit a contact's name when they change employer. Record it as a job move.","Don't backdate interactions. Late entries are flagged."],clips:"Clips: New customer · Primary contact · Logging a call"},
- {id:"02",t:"Receiving a delivery (Inward)",s:"One delivery = one inward. Lines, quantities, and units becoming jobs",who:{p:["Front Office"],a:["Sales Engineer"]},
-  do:["Identical items go on one line with a quantity (6 PSUs = 1 line, qty 6).","Always fill “Brought in by” with the sales person.","Record serial, accessories, condition on receipt and storage bin for every job."],
-  dont:["Don't split identical items into separate lines.","Don't leave “Brought in by” wrong. It can only be fixed while every board on the delivery is still open."],clips:"Clips: Inward a delivery · Filling a job tag"},
- {id:"03",t:"Assessment",s:"The only way out of Inward, and when to wait for the customer",who:{p:["Engineer","Service Head"],a:["Liaison"]},
+  dont:["Don't treat “Closed” as final. A lead can send any job back to an engineer.","Don't keep work outside the system. Time spent in each sub-status is measured."],clips:"Clip: The pipeline in 90 seconds"},
+ {id:"01",t:"Customers, contacts and follow-ups",s:"Prospects, the primary contact, interactions, lifecycle and ownership",who:{p:["Sales Engineer","Sales Head"],a:["Front Office","Liaison","Operations Manager"]},
+  do:["Let the system give the customer code (TTS-00042). It never changes.","Mark one primary contact per company. Setting a new one clears the old one.","Log an interaction on the same day it happens."],
+  dont:["Don't move a customer to Trial or Regular “to test”. Lifecycle moves can't be undone. Converting is the Sales Head's job.","Don't edit a contact's name when they change employer. Record it as a job move.","Don't backdate interactions. Late entries are flagged."],clips:"Clips: New prospect · Primary contact · Logging a call · Trial to Regular (Sales Head)"},
+ {id:"02",t:"Receiving a delivery (Inward)",s:"One delivery, items and units, serials, bins, condition. ▶ Finished: see below",who:{p:["Front Office"],a:["Sales Engineer","Liaison","Service Head"]},
+  do:["One item per distinct model. Press Add a unit for every physical unit.","Serial on every unit. Wait for the green “free” badge on the bin.","Brought by = the customer's person. Sales engineer = who is credited, always filled."],
+  dont:["Don't enter identical units as separate items.","Don't press Register anyway on a duplicate-serial warning without opening that job.","Don't leave Condition blank if you saw damage."],clips:"▶ <a href=\"#m02\">Watch the clip, read the card, take the quiz</a>"},
+ {id:"03",t:"Assessment",s:"The only way out of Inward, and when to wait for the customer",who:{p:["Liaison","Service Head"],a:["Engineer"]},
   do:["Assess every board before anything else. A board can only leave Inward through assessment.","Use Awaiting Customer Input when you need an answer from the customer."],
-  dont:["Don't expect to allot a job at Awaiting Customer Input. The system refuses, because the Liaison is still waiting."],clips:"Clip: Assessing a board"},
- {id:"04",t:"Quotations",s:"One quote for many units, revisions, approvals and rejections",who:{p:["Liaison","Sales Engineer"],a:["Sales Head","Service Head"]},
+  dont:["Don't expect to allot a job at Awaiting Customer Input. The system refuses, because the Liaison is still waiting."],clips:"Clip: Picking up and assessing a board"},
+ {id:"04",t:"Quotations",s:"One quote for many units, revisions, approvals and rejections",who:{p:["Liaison","Service Head","Operations Manager"],a:["Sales Head","Sales Engineer"]},
   do:["Put all units of a delivery on one quotation, one line per item.","Revise an existing quote. Earlier versions stay readable.","Approve only the units the customer accepted (e.g. 4 of 6)."],
   dont:["Don't try to quote a job nobody has assessed. Only Under Assessment jobs can be quoted.","Don't create a second live quote for the same job.","Rejecting a quote closes those jobs as Customer Rejected, so check before you click."],clips:"Clips: Build a quote · Revise · Partial approval"},
- {id:"05",t:"Allotting and repairing",s:"Alloted → In Progress, and when to pause",who:{p:["Service Head","Engineer"]},
-  do:["Move a job to In Progress when you start work on it.","Use Pending Spare when waiting for parts and On Hold for anything else."],
+ {id:"05",t:"Allotting and repairing",s:"Alloted → In Progress, and when to pause",who:{p:["Service Head","Liaison","Engineer"],a:["Operations Manager"]},
+  do:["Service Head or Liaison: allot the job and set the SLA target date.","Engineer: move a job to In Progress when you start. Use Pending Spare for parts and On Hold for anything else."],
   dont:["Don't leave a paused job in In Progress. It will show up as stuck.","Warranty rework is a new job linked to the old one. Don't reopen the old job."],clips:"Clips: Allot a job · Start / pause / resume"},
- {id:"06",t:"Parts and purchase requests",s:"Booking components, Other Spares, PRs and goods receipts",who:{p:["Engineer","Front Office","Operations Manager"]},
-  do:["Book catalogued parts from the list. This reduces stock automatically.","Use Other Spares, with a description, only for uncatalogued items.","Enter the email date when a PR is sent to front office."],
-  dont:["Don't book parts on a closed job.","Don't edit a goods receipt. Fix the count with a stock adjustment.","Don't expect a job to resume on a partial delivery unless its whole requirement arrived."],clips:"Clips: Book a part · Raise a PR · Receive goods"},
- {id:"07",t:"Timesheets",s:"Daily time on your own jobs, weekly submission",who:{p:["Engineer"],a:["Service Head"]},
+ {id:"06",t:"Parts, purchase requests and stock",s:"Booking components, PRs, goods receipts and stock adjustments",who:{p:["Engineer","Liaison","Front Office"],a:["Service Head","Operations Manager"]},
+  do:["Engineer: book catalogued parts from the list. This reduces stock automatically. Use Other Spares, with a description, only for uncatalogued items.","Liaison: raise the purchase request and email it to Front Office. Front Office places the order in Zoho Books.","Record goods receipts as they arrive."],
+  dont:["Don't book parts on a closed job.","Don't edit a goods receipt. The Liaison fixes counts with a stock adjustment.","Don't expect a job to resume on a partial delivery unless its whole requirement arrived."],clips:"Clips: Book a part · Raise a PR (Liaison) · Receive goods (Front Office)"},
+ {id:"07",t:"Timesheets",s:"Daily time on your own jobs, weekly submission",who:{p:["Engineer"],a:["Service Head","Liaison","Operations Manager"]},
   do:["Book time daily, only on jobs allotted to you.","Submit your week (Mon–Sun). Submitting locks it."],
   dont:["Don't book time on a paused or closed job. The system refuses.","Don't exceed the daily hour limit. Entries past it are refused.","Don't type a cost rate. The system applies the rate for you."],clips:"Clips: Log a day · Submit the week"},
- {id:"08",t:"Verification",s:"Checking a repaired board, pass or fail",who:{p:["Engineer","Service Head"]},
-  do:["Record the failure symptom when a board fails. It goes back to the bench.","Book verification hours while you hold the board."],
-  dont:["Avoid verifying your own repair. It is allowed but recorded as self-verification."],clips:"Clip: Pass / fail a board"},
- {id:"09",t:"Closing a job",s:"Ready for Invoice, Non-Repairable, premiums",who:{p:["Service Head","Liaison"],a:["Engineer"]},
-  do:["Pick a Non-Repairable reason from the list.","Pick a premium reason whenever a premium is charged."],
-  dont:["Don't close a board as Non-Repairable without a reason."],clips:"Clip: Three ways to close"},
- {id:"10",t:"Dispatch (Delivery challan)",s:"Gate pass for boards leaving the building",who:{p:["Front Office"],a:["Liaison"]},
+ {id:"08",t:"Verification and customer testing",s:"Peer check, pass or fail, and testing at the customer",who:{p:["Engineer","Service Head","Liaison"],a:["Front Office"]},
+  do:["Service Head or Liaison: assign a verifier other than the engineer who did the repair.","Verifier: record the failure symptom when a board fails. It goes back to the bench.","Book verification hours while you hold the board."],
+  dont:["Avoid verifying your own repair. It is allowed but recorded as self-verification."],clips:"Clips: Assign a verifier · Pass / fail · Customer testing"},
+ {id:"09",t:"Closing a job",s:"Ready for Invoice, Non-Repairable, Customer Rejected",who:{p:["Engineer","Service Head","Liaison"],a:["Operations Manager"]},
+  do:["Pick a Non-Repairable reason from the list.","Liaison: record the customer testing result. A pass moves the job to Ready for Invoice."],
+  dont:["Don't close a board as Non-Repairable without a reason. The reason list is kept by the Operations Manager."],clips:"Clip: Three ways a job closes"},
+ {id:"10",t:"Dispatch (Delivery challan)",s:"Gate pass for boards leaving the building",who:{p:["Front Office","Liaison"],a:["Service Head"]},
   do:["Make a challan for every consignment leaving the facility.","Add accessories as their own line when they travel without a board."],
   dont:["Don't hand the challan to the customer as an invoice. It is an internal gate pass."],clips:"Clip: Create a challan"},
- {id:"11",t:"Invoice batches and Zoho",s:"Grouping finished jobs into one sales order",who:{p:["Front Office","Operations Manager"],a:["Sales Head"]},
+ {id:"11",t:"Invoice batches and Zoho",s:"Grouping finished jobs into one sales order",who:{p:["Liaison","Operations Manager"]},
   do:["Build one batch per customer.","Check the batch before you send. A sent batch is frozen.","To take a job off a draft batch, remove its line. The job returns to the worklist."],
   dont:["Don't try to put a job on two batches. The system refuses.","Don't expect to edit a batch after sending. Fix it in Zoho."],clips:"Clips: Build a batch · Push to Zoho · Push failed"},
- {id:"12",t:"For leads: queues, rates and dashboards",s:"Stuck jobs, service rates, sub-statuses, targets",who:{p:["Service Head","Sales Head","Operations Manager","Executive / Admin"]},
-  do:["Enter a new service rate with a start date. Don't edit the old one.","Retire a sub-status rather than deleting it. Jobs in it stay counted.","Reassign a customer's owner through the reassign action so the move is recorded."],
-  dont:["Don't create two overlapping rates for the same customer, board and service level.","Don't judge a stuck job by its age. Use the time spent in its current sub-status."],clips:"Clips: Stuck-job queue · New rate · MIS dashboard"}
+ {id:"12",t:"For leads: queues, rates and dashboards",s:"Stuck jobs, rates, sub-statuses, roles, targets and owners",who:{p:["Operations Manager","Service Head","Sales Head","Executive / Admin"],a:["Liaison"]},
+  do:["Operations Manager: enter a new rate with a start date instead of editing the old one. Retire a sub-status rather than deleting it.","Sales Head: reassign a customer's owner with the reassign action so the move is recorded.","Service Head: set monthly engineer targets."],
+  dont:["Don't create two overlapping rates for the same customer, board and service level.","Don't judge a stuck job by its age. Use the time spent in its current sub-status."],clips:"Clips: Stuck-job queue · New rate · Roles · MIS dashboard"}
 ];
 
 const pb=document.getElementById("personas"),mods=document.getElementById("mods"),note=document.getElementById("pnote");
@@ -244,8 +281,24 @@ function render(){
     return `<details class="mod ${on?"":"dim"}"><summary><span class="num">${m.id}</span><span class="t"><h3>${m.t}</h3><span>${m.s}</span></span><span class="who">${tags}</span></summary>
     <div class="body"><div class="col do"><h4>Do</h4><ul>${m.do.map(x=>`<li>${x}</li>`).join("")}</ul></div>
     <div class="col dont"><h4>Don't</h4><ul>${m.dont.map(x=>`<li>${x}</li>`).join("")}</ul></div>
-    <div class="clips"><b>Planned:</b> ${m.clips}</div></div></details>`}).join("");
+    <div class="clips"><b>${m.id==="02"?"Ready:":"Planned:"}</b> ${m.clips}</div></div></details>`}).join("");
 }
 pb.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;cur=b.textContent;try{localStorage.setItem("persona",cur)}catch(e){}render()});
 render();
+
+const QUIZ=[
+ {q:"Six identical Delta power supplies arrive in one box. How do you enter them?",o:["Six separate items, one unit each","One item, with six unit rows (Add a unit)","One item, then type 6 in a quantity box"],a:1,why:"One item per distinct model, and one row per physical unit. The form has no quantity box; the rows are the quantity."},
+ {q:"The second unit came without its power cord. Where does that go?",o:["In “What they say is wrong”","Tell the engineer later","In Condition on receipt, on unit 2's row"],a:2,why:"Condition is recorded per unit, at the counter. Blank means nobody checked."},
+ {q:"You register and see: “Serial … is on an open work order.” What do you do?",o:["Open that job and check before anything else","Press Register anyway, since the customer is waiting","Change a digit of the serial so it goes through"],a:0,why:"It may be a board that is already in the shop. Use Register anyway only for a genuine resubmission. Never change a serial."},
+ {q:"Who goes in “Brought by”?",o:["Our sales engineer for this customer","The customer's contact person who sent it","Whoever is at the counter"],a:1,why:"“Brought by” is the customer's person. Our sales engineer is the separate Sales engineer field, which is always filled."}
+];
+const qz=document.getElementById("quiz");let got=0,done=0;
+QUIZ.forEach((x,i)=>{const d=document.createElement("div");d.className="q";
+ d.innerHTML=`<p>${i+1}. ${x.q}</p><div class="opts">${x.o.map((o,j)=>`<button type="button" data-j="${j}">${o}</button>`).join("")}</div><div class="why" hidden></div>`;
+ d.querySelector(".opts").addEventListener("click",e=>{const b=e.target.closest("button");if(!b||d.dataset.done)return;d.dataset.done=1;const j=+b.dataset.j;
+  d.querySelectorAll("button").forEach((bb,k)=>{if(k===x.a)bb.classList.add("right");else if(bb===b)bb.classList.add("wrong");bb.disabled=true});
+  const w=d.querySelector(".why");w.textContent=(j===x.a?"Right. ":"Not quite. ")+x.why;w.hidden=false;
+  done++;if(j===x.a)got++;sc.textContent=`${got} of ${done} right so far`+(done===QUIZ.length?(got===QUIZ.length?". All correct, you're ready for the counter.":". Rewatch the clip and try again tomorrow."):"");});
+ qz.appendChild(d)});
+const sc=document.createElement("p");sc.className="score";sc.setAttribute("aria-live","polite");sc.textContent="Pick an answer for each question.";qz.appendChild(sc);
 </script>
