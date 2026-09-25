@@ -1,0 +1,150 @@
+{
+  "id": "02",
+  "title": {
+    "en": "Receiving a delivery",
+    "ta": "டெலிவரியைப் பதிவு செய்தல்"
+  },
+  "role": "Front Office",
+  "path": "Front office › Inward › New delivery",
+  "video": {
+    "en": "media/02-receiving-a-delivery.mp4",
+    "ta": "media/02-receiving-a-delivery-ta.mp4"
+  },
+  "poster": {
+    "en": "media/02-poster.jpg",
+    "ta": "media/02-poster-ta.jpg"
+  },
+  "seconds": {
+    "en": 95,
+    "ta": 106
+  },
+  "do": {
+    "en": [
+      "<b>Search</b> for the customer. Not listed? Use <b>They are not on the list</b>. They are created as Potential, and Sales completes the record.",
+      "<b>Brought by</b> = the customer's person who sent it. <b>Sales engineer</b> = who gets the credit. It is always filled.",
+      "One <b>item</b> per distinct model. Press <b>Add a unit</b> for every physical unit.",
+      "Type a <b>serial for every unit</b>. The form won't register without it.",
+      "Type a short <b>bin</b> code and wait for the green <b>free</b> badge. “holds …” means that shelf is taken.",
+      "Write <b>Came with</b> (accessories) for the item, and <b>Condition on receipt</b> for each unit.",
+      "Business-critical? Set <b>Priority</b> and enter the <b>Needed by</b> date.",
+      "Warranty return? Set Job type <b>Rework</b> and enter the <b>previous job number</b>."
+    ],
+    "ta": [
+      "வாடிக்கையாளரைத் <b>தேடவும்</b>. பட்டியலில் இல்லையா? <b>They are not on the list</b> அழுத்தவும். அவர்கள் Potential ஆகப் பதிவாவார்கள். மீதி விவரங்களை Sales நிரப்பும்.",
+      "<b>Brought by</b> = பொருளை அனுப்பிய வாடிக்கையாளர் தரப்பு நபர். <b>Sales engineer</b> = கிரெடிட் பெறுபவர். இதை எப்போதும் நிரப்பவும்.",
+      "ஒவ்வொரு தனி மாடலுக்கும் ஒரு <b>item</b>. ஒவ்வொரு யூனிட்டுக்கும் <b>Add a unit</b> அழுத்தவும்.",
+      "<b>ஒவ்வொரு யூனிட்டுக்கும் serial</b> எழுதவும். அது இல்லாமல் form பதிவு செய்யாது.",
+      "சிறிய <b>bin</b> குறியீட்டை எழுதி, பச்சை <b>free</b> குறி வரும் வரை காத்திருக்கவும். “holds …” என்றால் அந்த இடம் ஏற்கனவே நிரம்பியுள்ளது.",
+      "Item-க்கு <b>Came with</b> (கூட வந்த உபகரணங்கள்), ஒவ்வொரு யூனிட்டுக்கும் <b>Condition on receipt</b> எழுதவும்.",
+      "அவசர வேலையா? <b>Priority</b>-ஐ Business-critical ஆக்கி, <b>Needed by</b> தேதியை எழுதவும்.",
+      "வாரண்டியில் திரும்பி வந்ததா? Job type-ஐ <b>Rework</b> ஆக்கி, <b>previous job number</b> எழுதவும்."
+    ]
+  },
+  "dont": {
+    "en": [
+      "Don't enter identical units as separate items. There is no quantity box, because the rows are the quantity.",
+      "Don't put two boards in one bin.",
+      "Don't press <b>Register anyway</b> on a “serial is on an open work order” warning before you open that job and check.",
+      "Don't leave Condition blank if you saw damage. Blank means “nobody checked”.",
+      "Don't quote job numbers to the customer before you register. Until then they are only expected.",
+      "An <b>out-of-warranty</b> rework warning means the repair is chargeable. Register it as New if the customer is paying."
+    ],
+    "ta": [
+      "ஒரே மாதிரியான யூனிட்டுகளைத் தனித்தனி item-ஆகச் சேர்க்க வேண்டாம். Quantity பெட்டி கிடையாது. வரிகளே எண்ணிக்கை.",
+      "ஒரு bin-இல் இரண்டு போர்டுகளை வைக்க வேண்டாம்.",
+      "“serial is on an open work order” எச்சரிக்கை வந்தால், அந்த job-ஐத் திறந்து சரிபார்க்கும் முன் <b>Register anyway</b> அழுத்த வேண்டாம்.",
+      "சேதத்தைப் பார்த்திருந்தால் Condition-ஐக் காலியாக விட வேண்டாம். காலி என்றால் “யாரும் பார்க்கவில்லை” என்று பொருள்.",
+      "Register செய்யும் முன் job number-களை வாடிக்கையாளரிடம் சொல்ல வேண்டாம். அதுவரை அவை expected எண்கள் மட்டுமே.",
+      "<b>Out-of-warranty</b> rework எச்சரிக்கை வந்தால் அந்தப் பழுதுபார்ப்புக்குக் கட்டணம் உண்டு. வாடிக்கையாளர் பணம் செலுத்தினால் New ஆகப் பதிவு செய்யவும்."
+    ]
+  },
+  "quiz": {
+    "en": [
+      {
+        "q": "Six identical Delta power supplies arrive in one box. How do you enter them?",
+        "o": [
+          "Six separate items, one unit each",
+          "One item, with six unit rows (Add a unit)",
+          "One item, then type 6 in a quantity box"
+        ],
+        "a": 1,
+        "why": "One item per distinct model, and one row per physical unit. The form has no quantity box; the rows are the quantity."
+      },
+      {
+        "q": "The second unit came without its power cord. Where does that go?",
+        "o": [
+          "In “What they say is wrong”",
+          "Tell the engineer later",
+          "In Condition on receipt, on unit 2's row"
+        ],
+        "a": 2,
+        "why": "Condition is recorded per unit, at the counter. Blank means nobody checked."
+      },
+      {
+        "q": "You register and see: “Serial … is on an open work order.” What do you do?",
+        "o": [
+          "Open that job and check before anything else",
+          "Press Register anyway, since the customer is waiting",
+          "Change a digit of the serial so it goes through"
+        ],
+        "a": 0,
+        "why": "It may be a board that is already in the shop. Use Register anyway only for a genuine resubmission. Never change a serial."
+      },
+      {
+        "q": "Who goes in “Brought by”?",
+        "o": [
+          "Our sales engineer for this customer",
+          "The customer's contact person who sent it",
+          "Whoever is at the counter"
+        ],
+        "a": 1,
+        "why": "“Brought by” is the customer's person. Our sales engineer is the separate Sales engineer field, which is always filled."
+      }
+    ],
+    "ta": [
+      {
+        "q": "ஒரே பெட்டியில் ஒரே மாதிரியான 6 Delta power supply-கள் வருகின்றன. எப்படிப் பதிவு செய்வீர்கள்?",
+        "o": [
+          "6 தனி item-கள், ஒவ்வொன்றிலும் ஒரு யூனிட்",
+          "ஒரே item, 6 யூனிட் வரிகள் (Add a unit)",
+          "ஒரே item, quantity பெட்டியில் 6"
+        ],
+        "a": 1,
+        "why": "தனி மாடலுக்கு ஒரு item, ஒவ்வொரு யூனிட்டுக்கும் ஒரு வரி. Quantity பெட்டி கிடையாது. வரிகளே எண்ணிக்கை."
+      },
+      {
+        "q": "இரண்டாவது யூனிட் power cord இல்லாமல் வந்தது. அதை எங்கே எழுதுவீர்கள்?",
+        "o": [
+          "“What they say is wrong”-இல்",
+          "பின்னர் engineer-இடம் சொல்வேன்",
+          "யூனிட் 2 வரியின் Condition on receipt-இல்"
+        ],
+        "a": 2,
+        "why": "Condition ஒவ்வொரு யூனிட்டுக்கும் கவுண்டரிலேயே பதிவாகிறது. காலி என்றால் யாரும் பார்க்கவில்லை என்று பொருள்."
+      },
+      {
+        "q": "Register அழுத்தியதும் “Serial … is on an open work order” என்று வருகிறது. என்ன செய்வீர்கள்?",
+        "o": [
+          "முதலில் அந்த job-ஐத் திறந்து சரிபார்ப்பேன்",
+          "வாடிக்கையாளர் காத்திருப்பதால் Register anyway அழுத்துவேன்",
+          "பதிவாகும்படி serial-இல் ஒரு எண்ணை மாற்றுவேன்"
+        ],
+        "a": 0,
+        "why": "அந்தப் போர்டு ஏற்கனவே கடையில் இருக்கலாம். உண்மையான மறு சமர்ப்பிப்புக்கு மட்டுமே Register anyway. Serial-ஐ ஒருபோதும் மாற்ற வேண்டாம்."
+      },
+      {
+        "q": "“Brought by”-இல் யார் வருவார்?",
+        "o": [
+          "இந்த வாடிக்கையாளருக்கான நம் sales engineer",
+          "பொருளை அனுப்பிய வாடிக்கையாளர் தரப்பு நபர்",
+          "கவுண்டரில் இருப்பவர்"
+        ],
+        "a": 1,
+        "why": "“Brought by” என்பது வாடிக்கையாளர் தரப்பு நபர். நம் sales engineer தனியான Sales engineer புலத்தில் வருவார். அது எப்போதும் நிரப்பப்பட வேண்டும்."
+      }
+    ]
+  },
+  "notes": [
+    "The Bin column fits only short codes (like the placeholder 68B) while typing; longer names such as “Rack A, shelf 4” are cut off."
+  ]
+}

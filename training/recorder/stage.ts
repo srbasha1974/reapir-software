@@ -95,7 +95,13 @@ export class Stage {
   /** Where the pointer last went, so captions can keep out of its way. */
   private focusY = H / 2
 
-  static async open(email: string, path: string, videoDir: string): Promise<Stage> {
+  /**
+   * Signs in as a seeded person (e.g. 'liaison@thulirtech.com') and opens `path`.
+   * `record: false` gives an unrecorded browser, for setting up the records a clip needs
+   * (moving a job to the right stage first) through the app itself rather than by hand-written SQL.
+   */
+  static async open(email: string, path: string, videoDir: string, opts: { record?: boolean } = {}): Promise<Stage> {
+    const record = opts.record ?? true
     const { mintSessionCookies } = await import(join(APP, 'tests/e2e/session.ts'))
     const cookies = await mintSessionCookies(email)
     mkdirSync(videoDir, { recursive: true })
@@ -103,7 +109,7 @@ export class Stage {
     const context = await browser.newContext({
       viewport: { width: W, height: H },
       deviceScaleFactor: 1,
-      recordVideo: { dir: videoDir, size: { width: W, height: H } },
+      ...(record ? { recordVideo: { dir: videoDir, size: { width: W, height: H } } } : {}),
     })
     await context.addCookies(cookies.map((c: object) => ({ ...c, url: undefined, domain: '127.0.0.1' })))
     await context.addInitScript(OVERLAY)
@@ -112,6 +118,12 @@ export class Stage {
     await page.waitForLoadState('networkidle')
     await page.waitForFunction(() => (window as unknown as { __stage?: unknown }).__stage)
     return new Stage(browser, context, page, videoDir)
+  }
+
+  /** Navigate within the same signed-in session. */
+  async goto(path: string) {
+    await this.page.goto(`${SITE}${path}`)
+    await this.page.waitForLoadState('networkidle')
   }
 
   wait(ms: number) {
@@ -170,13 +182,13 @@ export class Stage {
     await this.wait(250)
   }
 
-  /** Closes the recording and moves the video to `out` (webm). */
-  async close(out: string) {
+  /** Closes the browser; for a recorded stage, moves the video to `out` (webm). */
+  async close(out?: string) {
     const video = this.page.video()
     await this.context.close()
     await this.browser.close()
-    const raw = await video!.path()
-    renameSync(raw, out)
+    if (!video || !out) return null
+    renameSync(await video.path(), out)
     return out
   }
 }
