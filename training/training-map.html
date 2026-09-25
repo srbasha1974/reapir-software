@@ -1,14 +1,14 @@
 <title>Thulir Training Map</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Tamil:wght@400;600;700&display=swap">
 <style>
 :root{
   --bg:#f3f5f4; --surface:#ffffff; --ink:#15201d; --muted:#5a6a65; --line:#d6dedb;
   --accent:#0e7a5f; --accent-soft:#dcefe8; --amber:#b86e00; --amber-soft:#fbecd3;
   --red:#b3372b; --red-soft:#f8e1de; --tag:#eef2f0;
-  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
-  --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --display:"Archivo","Noto Sans Tamil","Arial Narrow",system-ui,sans-serif;
+  --body:"Source Sans 3","Noto Sans Tamil",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme: dark){
@@ -95,6 +95,12 @@ td:first-child{font-family:var(--mono);color:var(--muted);white-space:nowrap}
 td.cap{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:1rem}
 tr:last-child td{border-bottom:0}
 
+.m02-top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+.lang button{font:600 .95rem var(--body);border:0;background:none;color:var(--ink);padding:8px 16px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.lang button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+[lang="ta"] .col ul,[lang="ta"] .q{line-height:1.6}
 .vid{width:100%;max-width:100%;aspect-ratio:1366/768;background:#101816;border-radius:6px;border:1px solid var(--line)}
 .vid-note{color:var(--muted);font-size:.93rem}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px;display:flex;flex-direction:column;gap:14px}
@@ -157,51 +163,38 @@ tr:last-child td{border-bottom:0}
 </section>
 
 <section id="m02">
-  <div class="eyebrow">Module 02 · Front Office · finished pilot</div>
-  <h2>Receiving a delivery</h2>
-  <video class="vid" controls preload="metadata" playsinline poster="media/02-poster.jpg">
+  <div class="m02-top">
+    <div><div class="eyebrow">Module 02 · Front Office · finished pilot</div>
+    <h2 id="m02-title">Receiving a delivery</h2></div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">English</button>
+      <button type="button" data-lang="ta" aria-pressed="false" lang="ta">தமிழ்</button>
+    </div>
+  </div>
+  <video id="m02-video" class="vid" controls preload="metadata" playsinline poster="media/02-poster.jpg">
     <source src="media/02-receiving-a-delivery.mp4" type="video/mp4">
   </video>
-  <p class="vid-note">95 seconds, captions on screen and no sound, so it works on a noisy shop floor.</p>
+  <p class="vid-note" id="m02-note"></p>
 
   <div class="card">
     <div class="card-head">
-      <div><div class="eyebrow">Do / Don't card · pin at the counter</div><h3>Front Office → Inward</h3></div>
+      <div><div class="eyebrow" id="card-k"></div><h3>Front Office → Inward</h3></div>
       <span class="mono">Front office › Inward › New delivery</span>
     </div>
     <div class="card-cols">
-      <div class="col do"><h4>Do</h4><ul>
-        <li><b>Search</b> for the customer. Not listed? Use <b>They are not on the list</b>. They are created as Potential, and Sales completes the record.</li>
-        <li><b>Brought by</b> = the customer's person who sent it. <b>Sales engineer</b> = who gets the credit. It is always filled.</li>
-        <li>One <b>item</b> per distinct model. Press <b>Add a unit</b> for every physical unit.</li>
-        <li>Type a <b>serial for every unit</b>. The form won't register without it.</li>
-        <li>Type a short <b>bin</b> code and wait for the green <b>free</b> badge. “holds …” means that shelf is taken.</li>
-        <li>Write <b>Came with</b> (accessories) and <b>Condition on receipt</b> for each unit.</li>
-        <li>Business-critical? Set <b>Priority</b> and enter the <b>Needed by</b> date.</li>
-        <li>Warranty return? Set Job type <b>Rework</b> and enter the <b>previous job number</b>.</li>
-      </ul></div>
-      <div class="col dont"><h4>Don't</h4><ul>
-        <li>Don't enter identical units as separate items. There is no quantity box, because the rows are the quantity.</li>
-        <li>Don't put two boards in one bin.</li>
-        <li>Don't press <b>Register anyway</b> on a “serial is on an open work order” warning before you open that job and check.</li>
-        <li>Don't leave Condition blank if you saw damage. Blank means “nobody checked”.</li>
-        <li>Don't quote job numbers to the customer before you register. Until then they are only expected.</li>
-        <li>An <b>out-of-warranty</b> rework warning means the repair is chargeable. Register it as New if the customer is paying.</li>
-      </ul></div>
+      <div class="col do"><h4 id="do-h"></h4><ul id="do-l"></ul></div>
+      <div class="col dont"><h4 id="dont-h"></h4><ul id="dont-l"></ul></div>
     </div>
   </div>
 
-  <div class="quiz" id="quiz">
-    <h3>Quick check</h3>
-  </div>
+  <div class="quiz" id="quiz"></div>
 </section>
 
 <section class="next">
   <h2>What's next</h2>
   <ol>
-    <li><b>Review module 02</b> with one or two Front Office staff. Is the pace right, and are the captions clear?</li>
-    <li><b>Captions:</b> English only, or should I add a Tamil version of each clip?</li>
-    <li>Once the format is approved, I'll record the remaining 12 modules in the same way: 00 for everyone, then 01–12.</li>
+    <li><b>Check the Tamil</b> with a native speaker on staff. Button and field names stay in English on purpose, so they match the screen.</li>
+    <li>Then I'll record the remaining 12 modules the same way, each in English and Tamil: 00 for everyone, then 01–12.</li>
   </ol>
 </section>
 </div>
@@ -286,19 +279,77 @@ function render(){
 pb.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;cur=b.textContent;try{localStorage.setItem("persona",cur)}catch(e){}render()});
 render();
 
-const QUIZ=[
- {q:"Six identical Delta power supplies arrive in one box. How do you enter them?",o:["Six separate items, one unit each","One item, with six unit rows (Add a unit)","One item, then type 6 in a quantity box"],a:1,why:"One item per distinct model, and one row per physical unit. The form has no quantity box; the rows are the quantity."},
- {q:"The second unit came without its power cord. Where does that go?",o:["In “What they say is wrong”","Tell the engineer later","In Condition on receipt, on unit 2's row"],a:2,why:"Condition is recorded per unit, at the counter. Blank means nobody checked."},
- {q:"You register and see: “Serial … is on an open work order.” What do you do?",o:["Open that job and check before anything else","Press Register anyway, since the customer is waiting","Change a digit of the serial so it goes through"],a:0,why:"It may be a board that is already in the shop. Use Register anyway only for a genuine resubmission. Never change a serial."},
- {q:"Who goes in “Brought by”?",o:["Our sales engineer for this customer","The customer's contact person who sent it","Whoever is at the counter"],a:1,why:"“Brought by” is the customer's person. Our sales engineer is the separate Sales engineer field, which is always filled."}
-];
-const qz=document.getElementById("quiz");let got=0,done=0;
-QUIZ.forEach((x,i)=>{const d=document.createElement("div");d.className="q";
- d.innerHTML=`<p>${i+1}. ${x.q}</p><div class="opts">${x.o.map((o,j)=>`<button type="button" data-j="${j}">${o}</button>`).join("")}</div><div class="why" hidden></div>`;
- d.querySelector(".opts").addEventListener("click",e=>{const b=e.target.closest("button");if(!b||d.dataset.done)return;d.dataset.done=1;const j=+b.dataset.j;
-  d.querySelectorAll("button").forEach((bb,k)=>{if(k===x.a)bb.classList.add("right");else if(bb===b)bb.classList.add("wrong");bb.disabled=true});
-  const w=d.querySelector(".why");w.textContent=(j===x.a?"Right. ":"Not quite. ")+x.why;w.hidden=false;
-  done++;if(j===x.a)got++;sc.textContent=`${got} of ${done} right so far`+(done===QUIZ.length?(got===QUIZ.length?". All correct, you're ready for the counter.":". Rewatch the clip and try again tomorrow."):"");});
- qz.appendChild(d)});
-const sc=document.createElement("p");sc.className="score";sc.setAttribute("aria-live","polite");sc.textContent="Pick an answer for each question.";qz.appendChild(sc);
+const L={
+ en:{title:"Receiving a delivery",note:"95 seconds, captions on screen and no sound, so it works on a noisy shop floor.",
+  video:"media/02-receiving-a-delivery.mp4",poster:"media/02-poster.jpg",
+  cardK:"Do / Don't card · pin at the counter",doH:"Do",dontH:"Don't",
+  do:["<b>Search</b> for the customer. Not listed? Use <b>They are not on the list</b>. They are created as Potential, and Sales completes the record.",
+   "<b>Brought by</b> = the customer's person who sent it. <b>Sales engineer</b> = who gets the credit. It is always filled.",
+   "One <b>item</b> per distinct model. Press <b>Add a unit</b> for every physical unit.",
+   "Type a <b>serial for every unit</b>. The form won't register without it.",
+   "Type a short <b>bin</b> code and wait for the green <b>free</b> badge. “holds …” means that shelf is taken.",
+   "Write <b>Came with</b> (accessories) for the item, and <b>Condition on receipt</b> for each unit.",
+   "Business-critical? Set <b>Priority</b> and enter the <b>Needed by</b> date.",
+   "Warranty return? Set Job type <b>Rework</b> and enter the <b>previous job number</b>."],
+  dont:["Don't enter identical units as separate items. There is no quantity box, because the rows are the quantity.",
+   "Don't put two boards in one bin.",
+   "Don't press <b>Register anyway</b> on a “serial is on an open work order” warning before you open that job and check.",
+   "Don't leave Condition blank if you saw damage. Blank means “nobody checked”.",
+   "Don't quote job numbers to the customer before you register. Until then they are only expected.",
+   "An <b>out-of-warranty</b> rework warning means the repair is chargeable. Register it as New if the customer is paying."],
+  quizH:"Quick check",right:"Right. ",wrong:"Not quite. ",start:"Pick an answer for each question.",
+  score:(g,d)=>`${g} of ${d} right so far`,all:". All correct, you're ready for the counter.",retry:". Rewatch the clip and try again tomorrow.",
+  quiz:[
+   {q:"Six identical Delta power supplies arrive in one box. How do you enter them?",o:["Six separate items, one unit each","One item, with six unit rows (Add a unit)","One item, then type 6 in a quantity box"],a:1,why:"One item per distinct model, and one row per physical unit. The form has no quantity box; the rows are the quantity."},
+   {q:"The second unit came without its power cord. Where does that go?",o:["In “What they say is wrong”","Tell the engineer later","In Condition on receipt, on unit 2's row"],a:2,why:"Condition is recorded per unit, at the counter. Blank means nobody checked."},
+   {q:"You register and see: “Serial … is on an open work order.” What do you do?",o:["Open that job and check before anything else","Press Register anyway, since the customer is waiting","Change a digit of the serial so it goes through"],a:0,why:"It may be a board that is already in the shop. Use Register anyway only for a genuine resubmission. Never change a serial."},
+   {q:"Who goes in “Brought by”?",o:["Our sales engineer for this customer","The customer's contact person who sent it","Whoever is at the counter"],a:1,why:"“Brought by” is the customer's person. Our sales engineer is the separate Sales engineer field, which is always filled."}]},
+ ta:{title:"டெலிவரியைப் பதிவு செய்தல்",note:"106 வினாடிகள். திரையில் தமிழ் வசனங்கள், ஒலி இல்லை. சத்தமான பணியிடத்திலும் பார்க்கலாம்.",
+  video:"media/02-receiving-a-delivery-ta.mp4",poster:"media/02-poster-ta.jpg",
+  cardK:"செய்யவும் / செய்ய வேண்டாம் · கவுண்டரில் ஒட்டவும்",doH:"செய்யவும்",dontH:"செய்ய வேண்டாம்",
+  do:["வாடிக்கையாளரைத் <b>தேடவும்</b>. பட்டியலில் இல்லையா? <b>They are not on the list</b> அழுத்தவும். அவர்கள் Potential ஆகப் பதிவாவார்கள். மீதி விவரங்களை Sales நிரப்பும்.",
+   "<b>Brought by</b> = பொருளை அனுப்பிய வாடிக்கையாளர் தரப்பு நபர். <b>Sales engineer</b> = கிரெடிட் பெறுபவர். இதை எப்போதும் நிரப்பவும்.",
+   "ஒவ்வொரு தனி மாடலுக்கும் ஒரு <b>item</b>. ஒவ்வொரு யூனிட்டுக்கும் <b>Add a unit</b> அழுத்தவும்.",
+   "<b>ஒவ்வொரு யூனிட்டுக்கும் serial</b> எழுதவும். அது இல்லாமல் form பதிவு செய்யாது.",
+   "சிறிய <b>bin</b> குறியீட்டை எழுதி, பச்சை <b>free</b> குறி வரும் வரை காத்திருக்கவும். “holds …” என்றால் அந்த இடம் ஏற்கனவே நிரம்பியுள்ளது.",
+   "Item-க்கு <b>Came with</b> (கூட வந்த உபகரணங்கள்), ஒவ்வொரு யூனிட்டுக்கும் <b>Condition on receipt</b> எழுதவும்.",
+   "அவசர வேலையா? <b>Priority</b>-ஐ Business-critical ஆக்கி, <b>Needed by</b> தேதியை எழுதவும்.",
+   "வாரண்டியில் திரும்பி வந்ததா? Job type-ஐ <b>Rework</b> ஆக்கி, <b>previous job number</b> எழுதவும்."],
+  dont:["ஒரே மாதிரியான யூனிட்டுகளைத் தனித்தனி item-ஆகச் சேர்க்க வேண்டாம். Quantity பெட்டி கிடையாது. வரிகளே எண்ணிக்கை.",
+   "ஒரு bin-இல் இரண்டு போர்டுகளை வைக்க வேண்டாம்.",
+   "“serial is on an open work order” எச்சரிக்கை வந்தால், அந்த job-ஐத் திறந்து சரிபார்க்கும் முன் <b>Register anyway</b> அழுத்த வேண்டாம்.",
+   "சேதத்தைப் பார்த்திருந்தால் Condition-ஐக் காலியாக விட வேண்டாம். காலி என்றால் “யாரும் பார்க்கவில்லை” என்று பொருள்.",
+   "Register செய்யும் முன் job number-களை வாடிக்கையாளரிடம் சொல்ல வேண்டாம். அதுவரை அவை expected எண்கள் மட்டுமே.",
+   "<b>Out-of-warranty</b> rework எச்சரிக்கை வந்தால் அந்தப் பழுதுபார்ப்புக்குக் கட்டணம் உண்டு. வாடிக்கையாளர் பணம் செலுத்தினால் New ஆகப் பதிவு செய்யவும்."],
+  quizH:"விரைவுச் சோதனை",right:"சரி. ",wrong:"இல்லை. ",start:"ஒவ்வொரு கேள்விக்கும் ஒரு பதிலைத் தேர்ந்தெடுக்கவும்.",
+  score:(g,d)=>`${d}-இல் ${g} சரி`,all:". எல்லாம் சரி. நீங்கள் கவுண்டருக்குத் தயார்!",retry:". கிளிப்பை மீண்டும் பார்த்து, நாளை மீண்டும் முயற்சிக்கவும்.",
+  quiz:[
+   {q:"ஒரே பெட்டியில் ஒரே மாதிரியான 6 Delta power supply-கள் வருகின்றன. எப்படிப் பதிவு செய்வீர்கள்?",o:["6 தனி item-கள், ஒவ்வொன்றிலும் ஒரு யூனிட்","ஒரே item, 6 யூனிட் வரிகள் (Add a unit)","ஒரே item, quantity பெட்டியில் 6"],a:1,why:"தனி மாடலுக்கு ஒரு item, ஒவ்வொரு யூனிட்டுக்கும் ஒரு வரி. Quantity பெட்டி கிடையாது. வரிகளே எண்ணிக்கை."},
+   {q:"இரண்டாவது யூனிட் power cord இல்லாமல் வந்தது. அதை எங்கே எழுதுவீர்கள்?",o:["“What they say is wrong”-இல்","பின்னர் engineer-இடம் சொல்வேன்","யூனிட் 2 வரியின் Condition on receipt-இல்"],a:2,why:"Condition ஒவ்வொரு யூனிட்டுக்கும் கவுண்டரிலேயே பதிவாகிறது. காலி என்றால் யாரும் பார்க்கவில்லை என்று பொருள்."},
+   {q:"Register அழுத்தியதும் “Serial … is on an open work order” என்று வருகிறது. என்ன செய்வீர்கள்?",o:["முதலில் அந்த job-ஐத் திறந்து சரிபார்ப்பேன்","வாடிக்கையாளர் காத்திருப்பதால் Register anyway அழுத்துவேன்","பதிவாகும்படி serial-இல் ஒரு எண்ணை மாற்றுவேன்"],a:0,why:"அந்தப் போர்டு ஏற்கனவே கடையில் இருக்கலாம். உண்மையான மறு சமர்ப்பிப்புக்கு மட்டுமே Register anyway. Serial-ஐ ஒருபோதும் மாற்ற வேண்டாம்."},
+   {q:"“Brought by”-இல் யார் வருவார்?",o:["இந்த வாடிக்கையாளருக்கான நம் sales engineer","பொருளை அனுப்பிய வாடிக்கையாளர் தரப்பு நபர்","கவுண்டரில் இருப்பவர்"],a:1,why:"“Brought by” என்பது வாடிக்கையாளர் தரப்பு நபர். நம் sales engineer தனியான Sales engineer புலத்தில் வருவார். அது எப்போதும் நிரப்பப்பட வேண்டும்."}]}
+};
+const $=id=>document.getElementById(id);
+function showLang(lang){
+ const t=L[lang];const sec=$("m02");sec.lang=lang;
+ document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)));
+ $("m02-title").textContent=t.title;$("m02-note").textContent=t.note;
+ const v=$("m02-video");if(!v.src.endsWith(t.video)){v.pause();v.poster=t.poster;v.querySelector("source").src=t.video;v.load();}
+ $("card-k").textContent=t.cardK;$("do-h").textContent=t.doH;$("dont-h").textContent=t.dontH;
+ $("do-l").innerHTML=t.do.map(x=>`<li>${x}</li>`).join("");$("dont-l").innerHTML=t.dont.map(x=>`<li>${x}</li>`).join("");
+ const qz=$("quiz");qz.innerHTML=`<h3>${t.quizH}</h3>`;let got=0,done=0;
+ const sc=document.createElement("p");sc.className="score";sc.setAttribute("aria-live","polite");sc.textContent=t.start;
+ t.quiz.forEach((x,i)=>{const d=document.createElement("div");d.className="q";
+  d.innerHTML=`<p>${i+1}. ${x.q}</p><div class="opts">${x.o.map((o,j)=>`<button type="button" data-j="${j}">${o}</button>`).join("")}</div><div class="why" hidden></div>`;
+  d.querySelector(".opts").addEventListener("click",e=>{const b=e.target.closest("button");if(!b||d.dataset.done)return;d.dataset.done=1;const j=+b.dataset.j;
+   d.querySelectorAll("button").forEach((bb,k)=>{if(k===x.a)bb.classList.add("right");else if(bb===b)bb.classList.add("wrong");bb.disabled=true});
+   const w=d.querySelector(".why");w.textContent=(j===x.a?t.right:t.wrong)+x.why;w.hidden=false;
+   done++;if(j===x.a)got++;sc.textContent=t.score(got,done)+(done===t.quiz.length?(got===t.quiz.length?t.all:t.retry):"");});
+  qz.appendChild(d)});
+ qz.appendChild(sc);
+ try{localStorage.setItem("lang",lang)}catch(e){}
+}
+document.querySelector(".lang").addEventListener("click",e=>{const b=e.target.closest("button");if(b)showLang(b.dataset.lang)});
+let startLang="en";try{const l=localStorage.getItem("lang");if(L[l])startLang=l}catch(e){}
+showLang(startLang);
 </script>

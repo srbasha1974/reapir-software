@@ -11,7 +11,7 @@
  * Google.
  */
 import { chromium, type Browser, type BrowserContext, type Locator, type Page } from '@playwright/test'
-import { mkdirSync, renameSync } from 'node:fs'
+import { mkdirSync, readFileSync, renameSync } from 'node:fs'
 import { join } from 'node:path'
 import { config } from 'dotenv'
 
@@ -26,13 +26,17 @@ if (!process.env.NEXT_PUBLIC_SUPABASE_URL?.startsWith('http://127.0.0.1')) {
 export const W = 1366
 export const H = 768
 
+const TAMIL = readFileSync(join(import.meta.dirname, 'fonts', 'noto-sans-tamil.woff2')).toString('base64')
+const FACE = `@font-face{font-family:"Noto Sans Tamil";src:url(data:font/woff2;base64,${TAMIL}) format("woff2");font-weight:100 900;unicode-range:U+0B80-0BFF,U+200C-200D,U+25CC}`
+
 const OVERLAY = `
 (() => {
   if (window.__stage) return;
   const css = \`
+    ${FACE}
     nextjs-portal{display:none!important}
     #stg-cap{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(12px);opacity:0;
-      background:#101816;color:#fff;font:600 26px/1.25 system-ui,Segoe UI,sans-serif;padding:14px 26px;
+      background:#101816;color:#fff;font:600 26px/1.35 "Noto Sans Tamil",system-ui,Segoe UI,sans-serif;padding:14px 26px;
       border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.35);z-index:2147483645;max-width:1100px;
       text-align:center;transition:opacity .25s,transform .25s;pointer-events:none}
     #stg-cap.on{opacity:1;transform:translateX(-50%) translateY(0)}
@@ -50,7 +54,7 @@ const OVERLAY = `
       box-shadow:0 0 0 9999px rgba(10,20,18,.28);opacity:0;transition:all .35s}
     #stg-ring.on{opacity:1}
     #stg-card{position:fixed;inset:0;z-index:2147483647;background:#101816;color:#fff;display:none;
-      flex-direction:column;justify-content:center;padding:0 120px;gap:18px;font-family:system-ui,Segoe UI,sans-serif}
+      flex-direction:column;justify-content:center;padding:0 120px;gap:18px;font-family:"Noto Sans Tamil",system-ui,Segoe UI,sans-serif}
     #stg-card.on{display:flex}
     #stg-card .k{font:600 18px ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:#f5a524}
     #stg-card h1{font-size:64px;line-height:1.05;margin:0;font-weight:800}
