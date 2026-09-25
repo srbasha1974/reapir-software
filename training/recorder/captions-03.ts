@@ -5,7 +5,7 @@ export const CAPTIONS = {
   en: {
     kicker: 'Thulir training · Module 03 · Liaison · Service Head',
     title: 'Assessment',
-    sub: 'Picking up a board and deciding what comes next. About 100 seconds.',
+    sub: 'Picking up a board and deciding what comes next. About 110 seconds.',
     reservoir: 'Service › Reservoir: every board before the bench.<small>Search by job, serial or company.</small>',
     inward: 'New boards say “Not yet assessed”.<small>Their tick is locked: they can’t be alloted.</small>',
     pickup: 'Pick up = you start the assessment.<small>The job moves to Under Assessment.</small>',

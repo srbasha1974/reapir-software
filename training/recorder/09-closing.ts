@@ -25,7 +25,8 @@ const OUT = join(import.meta.dirname, 'out')
 const lang = (process.argv[2] ?? 'en') as Lang
 const c = CAPTIONS[lang]
 if (!c) throw new Error('Language must be en or ta')
-const pace = lang === 'ta' ? 1.25 : 1
+// Tamil captions are longer and read slower; the whole clip runs a little tight to stay near 110 s.
+const pace = (lang === 'ta' ? 1.15 : 1) * 0.88
 
 // ---- Unrecorded set-up: one fresh delivery of four units, moved to the states the clip needs. ----
 const CUSTOMER = 'Ayyan Industrial Systems'
@@ -84,7 +85,7 @@ const back = p.getByRole('button', { name: 'Send it back to the engineer' })
 await s.point(back)
 await s.say(c.sendBack, 3400 * pace)
 await s.click(back)
-await s.type(p.getByLabel('Why it is going back'), 'Customer reports it trips again under load', 40)
+await s.type(p.getByLabel('Why it is going back'), 'Trips again under load', 45)
 await s.say(c.sendWhy, 2200 * pace)
 await s.click(p.getByRole('button', { name: 'Send back to the engineer' }))
 await p.waitForURL(/returned=1/)
@@ -104,8 +105,7 @@ await S.become(s, 'liaison@thulirtech.com', `/service-centre/verification?view=c
 await S.roleCard(s, c.now, 'Liaison', 1600 * pace)
 await s.point(p.locator('a.item', { hasText: B }))
 await s.say(c.custList, 3000 * pace)
-await s.type(p.getByLabel('What they said'), 'Their line runs fine, 2 hours', 45)
-await s.say(c.whatSaid, 1800 * pace)
+await s.type(p.getByLabel('What they said'), 'Runs fine on their line', 45)
 const works = p.getByRole('button', { name: 'It works — close it' })
 await s.point(works)
 await s.say(c.pass, 3600 * pace, 'do')

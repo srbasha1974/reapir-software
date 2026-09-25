@@ -40,10 +40,23 @@ const { A, B, C } = setup.jobs
 const lot = `lot ${setup.stamp}`
 const jobUrl = (j: string) => `/service-centre/jobs/${j}`
 const roleCard = (k: string, h: string) => `<div class="k">${k}</div><h1>${h}</h1>`
-const segments: string[] = []
+const segments = [1, 2, 3, 4].map((n) => join(OUT, `06-parts.${lang}.${n}.webm`))
+/** SEG=4 re-records only that segment and re-joins with the takes already on disk. */
+const only = process.env.SEG ? process.env.SEG.split(',').map(Number) : [1, 2, 3, 4]
+const runs = (n: number) => only.includes(n)
 
 // ── 1 · Engineer: book parts, pause for a spare ─────────────────────────────────────────────
-{
+if (runs(1)) {
+  {
+    const u = await Stage.open('engineer@thulirtech.com', jobUrl(B), RAW, { record: false })
+    if (await u.page.getByRole('button', { name: 'Pending spare' }).isVisible().catch(() => false)) {
+      await u.page.getByRole('button', { name: 'Pending spare' }).click()
+      await u.page.getByPlaceholder('The component it is waiting for…').fill('Gate driver IC IR2110')
+      await u.page.getByRole('button', { name: 'Pause for spare' }).click()
+      await u.wait(2000)
+    }
+    await u.close()
+  }
   const s = await Stage.open('engineer@thulirtech.com', jobUrl(A), RAW)
   const p = s.page
   await s.card(`<div class="k">${c.kicker}</div><h1>${c.title}</h1><p>${c.sub}</p>`, 3500 * pace)
@@ -65,7 +78,7 @@ const segments: string[] = []
   await s.wait(300)
   await s.click(p.getByRole('button', { name: 'Book it' }))
   await p.waitForLoadState('networkidle')
-  await s.wait(900)
+  await s.wait(2000)
   await s.point(p.getByRole('row', { name: /IRFP460/ }))
   await s.say(c.booked, 2600 * pace, 'do')
   await s.unring()
@@ -80,34 +93,21 @@ const segments: string[] = []
   await s.say(c.otherHow, 1600 * pace)
   await s.click(p.getByRole('button', { name: 'Book it' }))
   await p.waitForLoadState('networkidle')
-  await s.wait(900)
+  await s.wait(2000)
   await s.point(p.getByRole('row', { name: /Other spares/ }))
-  await s.say(c.oneOrOther, 2800 * pace, 'dont')
+  await s.wait(800)
+  await s.say(c.oneOrOther, 3200 * pace, 'dont')
   await s.unring()
   await s.quiet()
 
-  // Board B: nothing on the shelf, so it pauses
-  await s.goto(jobUrl(B))
   await s.wait(600)
-  const pending = p.getByRole('button', { name: 'Pending spare' })
-  await s.point(pending)
-  await s.say(c.pause, 1600 * pace, 'do')
-  await s.click(pending)
-  await s.unring()
-  await s.type(p.getByLabel('Waiting for'), 'Gate driver IC IR2110', 28)
-  await s.say(c.pauseHow, 2600 * pace)
-  await s.click(p.getByRole('button', { name: 'Pause for spare' }))
-  await p.waitForLoadState('networkidle')
-  await s.wait(800)
-  await s.quiet()
   const out = join(OUT, `06-parts.${lang}.1.webm`)
   await s.close(out)
-  segments.push(out)
 }
 
 // ── 2 · Liaison: raise the request and send it ──────────────────────────────────────────────
-let pr = ''
-{
+let pr = process.env.PR ?? ''
+if (runs(2)) {
   const s = await Stage.open('liaison@thulirtech.com', '/service-centre/spares?tab=raise', RAW)
   const p = s.page
   await s.card(roleCard(c.liaK, c.liaH), 1500 * pace)
@@ -154,11 +154,10 @@ let pr = ''
   await s.quiet()
   const out = join(OUT, `06-parts.${lang}.2.webm`)
   await s.close(out)
-  segments.push(out)
 }
 
 // ── 3 · Front Office: order in Zoho, record a part delivery ─────────────────────────────────
-{
+if (runs(3)) {
   const s = await Stage.open('frontoffice@thulirtech.com', '/service-centre/spares?tab=orders', RAW)
   const p = s.page
   await s.card(roleCard(c.foK, c.foH), 1500 * pace)
@@ -194,13 +193,15 @@ let pr = ''
   await s.quiet()
   const out = join(OUT, `06-parts.${lang}.3.webm`)
   await s.close(out)
-  segments.push(out)
 }
 
 // ── 4 · Liaison: correct a count ────────────────────────────────────────────────────────────
-{
+if (runs(4)) {
   const s = await Stage.open('liaison@thulirtech.com', '/service-centre/spares?tab=stock', RAW)
   const p = s.page
+  await s.wait(2500) // this screen paints late; a card drawn before it is never recorded
+  const count = String(Number(execFileSync('docker', ['exec', 'supabase_db_Repair_Service', 'psql', '-U', 'postgres', '-At', '-c',
+    `select current_quantity from part where part_name = '${setup.parts.P1}'`]).toString().trim()) - 1)
   await s.card(roleCard(c.adjK, c.adjH), 1500 * pace)
   await s.point(p.getByText('Correct a count', { exact: true }).first())
   await s.say(c.noEdit, 2600 * pace, 'dont')
@@ -209,7 +210,7 @@ let pr = ''
   await s.wait(900)
   await s.click(p.getByRole('option', { name: new RegExp(lot) }))
   await s.wait(500)
-  await s.type(p.locator('#quantityAfter'), '17', 90)
+  await s.type(p.locator('#quantityAfter'), count, 90)
   await s.click(p.locator('#reason'))
   await p.locator('#reason').selectOption('DAMAGED')
   await s.type(p.locator('#notes'), 'One cracked on the shelf', 25)
@@ -217,7 +218,10 @@ let pr = ''
   await s.click(p.getByRole('button', { name: 'Correct the count' }))
   await p.waitForURL(/adjusted=/)
   await p.waitForLoadState('networkidle')
-  await s.wait(600)
+  // After this redirect the recording stops showing overlay changes until the next full load, so
+  // load the same address again (a GET: nothing is repeated).
+  await s.goto('/service-centre/spares?adjusted=1')
+  await s.wait(500)
   await s.point(p.locator('.warn.good').first())
   await s.say(c.adjusted, 2800 * pace, 'do')
   await s.unring()
@@ -225,7 +229,6 @@ let pr = ''
   await s.card(`<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`, 6000 * pace)
   const out = join(OUT, `06-parts.${lang}.4.webm`)
   await s.close(out)
-  segments.push(out)
 }
 
 // ── Join: each segment starts where its (dark) card is first fully drawn ─────────────────────
@@ -233,7 +236,7 @@ const FF = execFileSync('python3', ['-c', 'import imageio_ffmpeg;print(imageio_f
 const detect = (f: string): number => {
   const r = spawnSync(FF, ['-i', f, '-vf', 'blackdetect=d=0.3:pic_th=0.80:pix_th=0.12', '-an', '-f', 'null', '-'])
   const m = /black_start:([\d.]+)/.exec(String(r.stderr))
-  if (!m) throw new Error(`No title card found in ${f}`)
+  if (!m || Number(m[1]) > 12) throw new Error(`No title card found early in ${f}`)
   return Number(m[1]) + 0.25
 }
 const trims = segments.map(detect)

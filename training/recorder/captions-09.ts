@@ -38,7 +38,7 @@ export const CAPTIONS = {
   ta: {
     kicker: 'துளிர் பயிற்சி · பாடம் 09 · Service Head · Liaison',
     title: 'Job-ஐ மூடுதல்',
-    sub: 'ஒரு job மூடப்படும் மூன்று வழிகள். சுமார் 2½ நிமிடங்கள்.',
+    sub: 'ஒரு job மூடப்படும் மூன்று வழிகள். சுமார் 2 நிமிடங்கள்.',
     now: 'இப்போது உள்நுழைந்திருப்பவர்',
     three: 'ஒரு job மூன்றில் ஒரு வழியில் மூடப்படும்.<small>Ready for Invoice, Non-Repairable அல்லது Customer Rejected.</small>',
     cannot: 'Service Head: போர்டைச் சரிசெய்ய முடியவில்லையா?<small>Job-ஐத் திறந்து “It cannot be saved…” அழுத்தவும்.</small>',

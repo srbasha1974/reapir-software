@@ -1,0 +1,151 @@
+{
+  "id": "05",
+  "title": {
+    "en": "Allotting and repairing",
+    "ta": "Allot செய்தல், பழுதுபார்த்தல்"
+  },
+  "role": "Service Head · Liaison · Engineer",
+  "path": "Service › Reservoir · Service › My jobs · Service › Spares",
+  "video": {
+    "en": "media/05-repair.mp4",
+    "ta": "media/05-repair-ta.mp4"
+  },
+  "poster": {
+    "en": "media/05-poster.jpg",
+    "ta": "media/05-poster-ta.jpg"
+  },
+  "seconds": {
+    "en": 117,
+    "ta": 128
+  },
+  "do": {
+    "en": [
+      "Service Head or Liaison: in <b>Service › Reservoir</b>, tick the assessed (or quotation-approved) jobs, choose the engineer under <b>Give it to</b>, press <b>Allot</b>. Several at once is an Allot batch.",
+      "Read the load beside each engineer’s name before you choose. Nothing is pre-chosen.",
+      "The SLA date is <b>Needed by</b>, set at the counter for business-critical boards. It shows on the engineer’s board.",
+      "Engineer: in <b>Service › My jobs</b>, choose the board and press <b>Start work</b> when you pick it up. It moves to <b>In Progress</b>.",
+      "Waiting for a part? Press <b>Pending spare…</b> and name the component. The Liaison sees it on the Spares screen.",
+      "Liaison: a paused board resumes when its goods receipt is recorded, or with <b>Back on the bench</b> on the Spares screen (say what happened).",
+      "Board back under warranty? Register a <b>new Rework job</b> at Inward with the previous job number."
+    ],
+    "ta": [
+      "Service Head அல்லது Liaison: <b>Service › Reservoir</b>-இல் assess ஆன (அல்லது quotation approve ஆன) job-களை tick செய்து, <b>Give it to</b>-இல் engineer-ஐத் தேர்ந்தெடுத்து, <b>Allot</b> அழுத்தவும். பலவற்றை ஒன்றாக: Allot batch.",
+      "தேர்ந்தெடுக்கும் முன் ஒவ்வொரு engineer பெயருக்கும் அருகிலுள்ள வேலைச்சுமையைப் பார்க்கவும். எதுவும் முன்பே தேர்வாகாது.",
+      "SLA தேதி = <b>Needed by</b>, business-critical போர்டுகளுக்குக் கவுண்டரிலேயே அமைக்கப்படும். அது engineer-இன் போர்டில் தெரியும்.",
+      "Engineer: <b>Service › My jobs</b>-இல் போர்டைத் தேர்ந்தெடுத்து, எடுக்கும்போது <b>Start work</b> அழுத்தவும். அது <b>In Progress</b>-க்கு மாறும்.",
+      "Part-க்காகக் காத்திருக்கிறீர்களா? <b>Pending spare…</b> அழுத்தி component பெயரை எழுதவும். Liaison அதை Spares திரையில் பார்ப்பார்.",
+      "Liaison: goods receipt பதிவானதும் நிறுத்திய போர்டு தொடரும்; அல்லது Spares திரையில் <b>Back on the bench</b> (என்ன நடந்தது என்று எழுதவும்).",
+      "வாரண்டியில் போர்டு திரும்பி வந்ததா? Inward-இல் முந்தைய job number-உடன் <b>புதிய Rework job</b> பதிவு செய்யவும்."
+    ]
+  },
+  "dont": {
+    "en": [
+      "Don’t expect to allot a job at Inward or <b>Awaiting Customer Input</b>. Its tick is locked and the system refuses.",
+      "Don’t book hours on a paused job (Pending Spare or On Hold). The system refuses them.",
+      "Don’t keep working a board without pressing Start work. Ready for verification is only offered from In Progress.",
+      "Don’t reopen the old job for a warranty return. Rework is a new job linked to it."
+    ],
+    "ta": [
+      "Inward அல்லது <b>Awaiting Customer Input</b>-இல் உள்ள job-ஐ allot செய்ய முடியும் என்று எதிர்பார்க்க வேண்டாம். Tick பூட்டப்பட்டுள்ளது, சிஸ்டம் மறுக்கும்.",
+      "நிறுத்திய job-இல் (Pending Spare அல்லது On Hold) நேரம் பதிவு செய்ய வேண்டாம். சிஸ்டம் மறுக்கும்.",
+      "Start work அழுத்தாமல் போர்டில் வேலை செய்ய வேண்டாம். Ready for verification, In Progress-இலிருந்து மட்டுமே கிடைக்கும்.",
+      "வாரண்டியில் திரும்பியதற்குப் பழைய job-ஐத் திறக்க வேண்டாம். Rework என்பது அதனுடன் இணைந்த புதிய job."
+    ]
+  },
+  "quiz": {
+    "en": [
+      {
+        "q": "In the reservoir, one job’s tick is locked and it says “Waiting on the customer”. What does that mean?",
+        "o": [
+          "It is Awaiting Customer Input and can’t be alloted yet",
+          "Another engineer already has it",
+          "The page needs a refresh"
+        ],
+        "a": 0,
+        "why": "Allotment is refused at Inward and Awaiting Customer Input. The Liaison records Input received first."
+      },
+      {
+        "q": "You pick up a newly alloted board at the bench. What do you press?",
+        "o": [
+          "Ready for verification",
+          "Start work",
+          "Nothing, just book hours"
+        ],
+        "a": 1,
+        "why": "Start work moves it from Alloted to In Progress. Ready for verification is only offered from In Progress."
+      },
+      {
+        "q": "The board needs an IGBT module that is not in stock. What do you do?",
+        "o": [
+          "Leave it In Progress and move to another board",
+          "Pending spare…, naming the part",
+          "Cannot repair…"
+        ],
+        "a": 1,
+        "why": "Pending spare pauses it and tells the Liaison exactly what it is waiting for."
+      },
+      {
+        "q": "A board you repaired last month is back under warranty. How is it booked?",
+        "o": [
+          "Reopen the old job",
+          "A new Rework job at Inward, with the previous job number",
+          "Add hours to the old job"
+        ],
+        "a": 1,
+        "why": "Warranty rework is a new job linked to the old one, registered at Inward as Rework."
+      }
+    ],
+    "ta": [
+      {
+        "q": "Reservoir-இல் ஒரு job-இன் tick பூட்டப்பட்டு “Waiting on the customer” என்று உள்ளது. அதன் பொருள் என்ன?",
+        "o": [
+          "அது Awaiting Customer Input; இன்னும் allot செய்ய முடியாது",
+          "வேறு engineer ஏற்கனவே வைத்துள்ளார்",
+          "பக்கத்தை refresh செய்ய வேண்டும்"
+        ],
+        "a": 0,
+        "why": "Inward, Awaiting Customer Input-இல் allot மறுக்கப்படும். முதலில் Liaison, Input received பதிவு செய்ய வேண்டும்."
+      },
+      {
+        "q": "புதிதாக allot ஆன போர்டை bench-இல் எடுக்கிறீர்கள். எதை அழுத்துவீர்கள்?",
+        "o": [
+          "Ready for verification",
+          "Start work",
+          "எதுவும் இல்லை, நேரம் மட்டும் பதிவு"
+        ],
+        "a": 1,
+        "why": "Start work அதை Alloted-இலிருந்து In Progress-க்கு மாற்றும். Ready for verification, In Progress-இலிருந்து மட்டுமே."
+      },
+      {
+        "q": "போர்டுக்கு stock-இல் இல்லாத IGBT module தேவை. என்ன செய்வீர்கள்?",
+        "o": [
+          "In Progress-இலேயே விட்டு வேறு போர்டுக்குச் செல்லவும்",
+          "Pending spare…, part பெயருடன்",
+          "Cannot repair…"
+        ],
+        "a": 1,
+        "why": "Pending spare அதை நிறுத்தி, என்ன தேவை என்று Liaison-க்குச் சொல்லும்."
+      },
+      {
+        "q": "கடந்த மாதம் நீங்கள் சரிசெய்த போர்டு வாரண்டியில் திரும்பி வந்தது. எப்படிப் பதிவாகும்?",
+        "o": [
+          "பழைய job-ஐத் திறக்கவும்",
+          "Inward-இல் முந்தைய job number-உடன் புதிய Rework job",
+          "பழைய job-இல் நேரம் சேர்க்கவும்"
+        ],
+        "a": 1,
+        "why": "வாரண்டி rework என்பது பழையதுடன் இணைந்த புதிய job, Inward-இல் Rework ஆகப் பதிவாகும்."
+      }
+    ]
+  },
+  "notes": [
+    "There is no SLA date at allotment. The allot panel has only the jobs, Give it to (engineer) and Allot. The SLA target date is the inward form's “Needed by”, asked only for Business-critical deliveries; it shows as Needed by on the bench and the job card. The clip teaches that.",
+    "On Hold cannot be set by anybody on screen: the engineer's acts omit it by design (“a hold is the Service Head's or the Liaison's judgement”) but no screen or RPC for the Service Head sets it either (only pause_for_spare / resume_after_spare exist). The work-orders console offers “Hand it back” for On Hold jobs. Taught only as “On Hold is not on your bench”.",
+    "The engineer cannot resume a paused job. Pending Spare ends by goods receipt (Liaison/Front Office, module 06) or the Liaison's Back on the bench on Service › Spares (reason required). The clip's third part shows that as liaison@. The old draft line “engineer resumes” was wrong.",
+    "Old draft lines corrected: “Service Head or Liaison … set the SLA target date” (not at allotment), “use On Hold for anything else” (not the engineer's).",
+    "Paused-time refusal shown live: pressing + on the hours stepper of a Pending Spare job shows “Not booked. Repair on … is paused waiting for a part, so no time can be logged against it” (timesheet_entry_is_permitted).",
+    "Three recordings concatenated with ffmpeg: servicehead@ (allot), engineer@ (start, pause), liaison@ (Back on the bench). The engineer's bench is shared with other agents' demo jobs, so it is busy.",
+    "Rework was taught as a caption only (the inward Job type Rework + previous job number was already shown in module 02's card).",
+    "Set-up per take: frontoffice@ registered 2 business-critical ABB MS132 units for Rajapalayam Spinners, Needed by 9 Oct 2026 (serials RP<stamp>01-02); liaison@ picked both up and put unit 2 at Awaiting Customer Input."
+  ]
+}

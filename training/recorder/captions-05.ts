@@ -38,7 +38,7 @@ export const CAPTIONS = {
   ta: {
     kicker: 'துளிர் பயிற்சி · பாடம் 05 · Service Head · Liaison · Engineer',
     title: 'Allot செய்தல், பழுதுபார்த்தல்',
-    sub: 'Engineer-க்கு போர்டைக் கொடுப்பது, தொடங்குவது, நிறுத்துவது, மீண்டும் தொடர்வது. சுமார் 2½ நிமிடம்.',
+    sub: 'Engineer-க்கு போர்டைக் கொடுப்பது, தொடங்குவது, நிறுத்துவது, மீண்டும் தொடர்வது. சுமார் 2 நிமிடம்.',
     part1: 'Service Head (அல்லது Liaison): Service › Reservoir.',
     locked: 'வாடிக்கையாளருக்காகக் காத்திருக்கிறதா? Tick பூட்டப்பட்டுள்ளது.<small>Awaiting Customer Input-ஐ allot செய்ய முடியாது.</small>',
     tick: 'Assess ஆகி தெளிவாக உள்ளதா? Tick செய்யவும்.<small>பலவற்றை ஒரே நேரத்தில் செய்யலாம்: Allot batch.</small>',

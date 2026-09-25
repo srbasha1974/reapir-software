@@ -186,10 +186,13 @@ export async function customerPass(jobs: string[]) {
   })
 }
 
-/** Engineer closes a held job as non-repairable, with the first reason on the list. */
+/**
+ * Service Head closes an open job as non-repairable. (The engineer's own "Cannot repair…" offers an
+ * empty reason list to the Engineer role, so the Service Head's act is the one that works.)
+ */
 export async function closeNonRepairable(job: string, reason = 'Component unavailable') {
-  await as('engineer@thulirtech.com', jobPath(job), async (s, p) => {
-    await p.getByRole('button', { name: 'Cannot repair…' }).click()
+  await as('servicehead@thulirtech.com', jobPath(job), async (s, p) => {
+    await p.getByRole('button', { name: 'It cannot be saved…' }).click()
     await p.locator(`select[name="reasonId"]`).selectOption({ label: reason })
     await click(p, p.getByRole('button', { name: 'Close as non-repairable' }))
   })

@@ -20,7 +20,7 @@ import { execFileSync } from 'node:child_process'
 
 const OUT = join(import.meta.dirname, 'out')
 const RAW = join(OUT, 'raw')
-const stamp = Date.now().toString().slice(-5)
+const stamp = process.env.STAMP ?? Date.now().toString().slice(-5)
 const MODEL = 'ACS355'
 const N = 8
 const serial = (u: number) => `ACS${stamp}${u}`
@@ -30,8 +30,8 @@ const sql = (q: string) =>
 
 const jobUrl = (j: string) => `/service-centre/jobs/${j}`
 
-// 1 · Front Office registers the delivery
-{
+// 1 · Front Office registers the delivery (skipped when resuming with STAMP=…)
+if (!process.env.STAMP) {
   const s = await Stage.open('frontoffice@thulirtech.com', '/front-office/inward', RAW, { record: false })
   const p = s.page
   await p.getByLabel('Customer', { exact: true }).pressSequentially('Kovai', { delay: 40 })
@@ -83,7 +83,12 @@ console.log(J)
     await p.waitForTimeout(1500)
     await p.waitForLoadState('networkidle')
   }
+  await p.waitForTimeout(2000)
   await s.goto(`/service-centre/reservoir?q=ACS${stamp}`)
+  if (await p.getByLabel(`Choose ${job(N)}`).isDisabled()) {
+    await p.waitForTimeout(3000)
+    await s.goto(`/service-centre/reservoir?q=ACS${stamp}`)
+  }
   for (let u = 1; u <= N; u++) await p.getByLabel(`Choose ${job(u)}`).check()
   await p.getByRole('radio', { name: /Test Engineer/ }).check()
   await p.getByRole('button', { name: /Allot/ }).click()

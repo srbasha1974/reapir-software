@@ -1,0 +1,149 @@
+{
+  "id": "03",
+  "title": {
+    "en": "Assessment",
+    "ta": "Assessment (மதிப்பீடு)"
+  },
+  "role": "Liaison · Service Head",
+  "path": "Service › Reservoir",
+  "video": {
+    "en": "media/03-assessment.mp4",
+    "ta": "media/03-assessment-ta.mp4"
+  },
+  "poster": {
+    "en": "media/03-poster.jpg",
+    "ta": "media/03-poster-ta.jpg"
+  },
+  "seconds": {
+    "en": 121,
+    "ta": 126
+  },
+  "do": {
+    "en": [
+      "Open <b>Service › Reservoir</b>. New boards show <b>Not yet assessed</b>. Press <b>Pick up</b> to start the assessment. The job moves to <b>Under Assessment</b>.",
+      "Use the search box (job, serial or company) to find the boards of one delivery.",
+      "Choose the board in <b>Before the bench</b> to see what can be done with it.",
+      "Need something from the customer? <b>Wait for the customer</b>, and write what you asked. The note is required.",
+      "When the answer comes, press <b>Input received</b> and write what came back. The job returns to Under Assessment.",
+      "Then decide: clear what to do → <b>allot</b> it. A price must be agreed → raise a <b>quotation</b>. This is the assessment’s call for any customer, whatever the billing segment.",
+      "Customer withdrew before any price? <b>Customer withdrew</b>, with a note. The job closes as Customer Rejected and waits for a challan."
+    ],
+    "ta": [
+      "<b>Service › Reservoir</b> திறக்கவும். புதிய போர்டுகளில் <b>Not yet assessed</b> இருக்கும். Assessment-ஐத் தொடங்க <b>Pick up</b> அழுத்தவும். Job, <b>Under Assessment</b>-க்கு மாறும்.",
+      "ஒரு டெலிவரியின் போர்டுகளைக் கண்டுபிடிக்க தேடல் பெட்டியைப் (job, serial அல்லது company) பயன்படுத்தவும்.",
+      "என்ன செய்யலாம் என்று பார்க்க <b>Before the bench</b>-இல் போர்டைத் தேர்ந்தெடுக்கவும்.",
+      "வாடிக்கையாளரிடம் ஏதாவது தேவையா? <b>Wait for the customer</b>, என்ன கேட்டீர்கள் என்று எழுதவும். குறிப்பு கட்டாயம்.",
+      "பதில் வந்ததும் <b>Input received</b> அழுத்தி, என்ன வந்தது என்று எழுதவும். Job மீண்டும் Under Assessment-க்கு வரும்.",
+      "பிறகு முடிவு: செய்ய வேண்டியது தெளிவு → <b>allot</b>. விலையை ஒப்புக்கொள்ள வேண்டும் → <b>quotation</b>. எந்த வாடிக்கையாளரானாலும், billing segment எதுவானாலும், இது assessment எடுக்கும் முடிவு.",
+      "விலை சொல்லும் முன்பே வாடிக்கையாளர் விலகினாரா? குறிப்புடன் <b>Customer withdrew</b>. Job, Customer Rejected ஆக மூடப்பட்டு challan-க்குக் காத்திருக்கும்."
+    ]
+  },
+  "dont": {
+    "en": [
+      "Don’t try to allot a board at Inward. The tick is locked; it leaves Inward only by Pick up.",
+      "Don’t expect to allot a job at <b>Awaiting Customer Input</b>. The system refuses until you record Input received.",
+      "Don’t leave a board sitting at Under Assessment while you wait for the customer. Use Wait for the customer so the wait is visible.",
+      "Don’t expect the system to message the customer. Nothing is sent; you phone or email them yourself."
+    ],
+    "ta": [
+      "Inward-இல் உள்ள போர்டை allot செய்ய முயல வேண்டாம். Tick பூட்டப்பட்டுள்ளது; Pick up மூலம் மட்டுமே Inward-இலிருந்து வெளியேறும்.",
+      "<b>Awaiting Customer Input</b>-இல் உள்ள job-ஐ allot செய்ய முடியும் என்று எதிர்பார்க்க வேண்டாம். Input received பதிவு செய்யும் வரை சிஸ்டம் மறுக்கும்.",
+      "வாடிக்கையாளருக்காகக் காத்திருக்கும்போது போர்டை Under Assessment-இலேயே விட வேண்டாம். காத்திருப்பு தெரிய Wait for the customer பயன்படுத்தவும்.",
+      "சிஸ்டம் வாடிக்கையாளருக்குச் செய்தி அனுப்பும் என்று எதிர்பார்க்க வேண்டாம். எதுவும் அனுப்பப்படாது; நீங்களே phone அல்லது email செய்யவும்."
+    ]
+  },
+  "quiz": {
+    "en": [
+      {
+        "q": "A new board shows “Not yet assessed”. The Service Head wants it on an engineer’s bench now. What first?",
+        "o": [
+          "Tick it and press Allot",
+          "Press Pick up, assess it, then allot",
+          "Ask the Front Office to change its status"
+        ],
+        "a": 1,
+        "why": "A board leaves Inward only by Pick up. The system refuses to allot a job at Inward."
+      },
+      {
+        "q": "The ribbon cable did not come with the board and you have asked the customer to send it. What do you record?",
+        "o": [
+          "Wait for the customer, with a note saying what you asked",
+          "Nothing, leave it Under Assessment",
+          "Customer withdrew"
+        ],
+        "a": 0,
+        "why": "Awaiting Customer Input makes the wait visible, and the note is required."
+      },
+      {
+        "q": "The job is at Awaiting Customer Input and the cable has just arrived. Can you allot it straight away?",
+        "o": [
+          "Yes, tick it and allot",
+          "No. Record Input received first; it goes back to Under Assessment",
+          "No. It needs a quotation first"
+        ],
+        "a": 1,
+        "why": "Awaiting Customer Input returns only to Under Assessment. From there it can be alloted or quoted."
+      },
+      {
+        "q": "Who decides whether a job needs a quotation?",
+        "o": [
+          "The customer’s billing segment",
+          "The Front Office at the counter",
+          "The assessment, for any customer"
+        ],
+        "a": 2,
+        "why": "Since feature 010 the segment only says how the job is priced. The assessment decides: allot, or quote."
+      }
+    ],
+    "ta": [
+      {
+        "q": "புதிய போர்டில் “Not yet assessed” உள்ளது. Service Head அதை இப்போதே engineer-இடம் கொடுக்க விரும்புகிறார். முதலில் என்ன?",
+        "o": [
+          "Tick செய்து Allot அழுத்தவும்",
+          "Pick up அழுத்தி, assess செய்து, பிறகு allot",
+          "Front Office-இடம் status மாற்றச் சொல்லவும்"
+        ],
+        "a": 1,
+        "why": "Pick up மூலம் மட்டுமே போர்டு Inward-இலிருந்து வெளியேறும். Inward-இல் உள்ள job-ஐ allot செய்ய சிஸ்டம் மறுக்கும்."
+      },
+      {
+        "q": "போர்டுடன் ribbon cable வரவில்லை; அனுப்பச் சொல்லி வாடிக்கையாளரிடம் கேட்டுள்ளீர்கள். என்ன பதிவு செய்வீர்கள்?",
+        "o": [
+          "Wait for the customer, என்ன கேட்டீர்கள் என்ற குறிப்புடன்",
+          "எதுவும் வேண்டாம், Under Assessment-இலேயே விடவும்",
+          "Customer withdrew"
+        ],
+        "a": 0,
+        "why": "Awaiting Customer Input காத்திருப்பைத் தெரியச் செய்யும்; குறிப்பு கட்டாயம்."
+      },
+      {
+        "q": "Job, Awaiting Customer Input-இல் உள்ளது; cable இப்போதுதான் வந்தது. உடனே allot செய்யலாமா?",
+        "o": [
+          "ஆம், tick செய்து allot",
+          "இல்லை. முதலில் Input received; அது Under Assessment-க்குத் திரும்பும்",
+          "இல்லை. முதலில் quotation தேவை"
+        ],
+        "a": 1,
+        "why": "Awaiting Customer Input, Under Assessment-க்கு மட்டுமே திரும்பும். அங்கிருந்து allot அல்லது quote செய்யலாம்."
+      },
+      {
+        "q": "ஒரு job-க்கு quotation தேவையா என்று யார் முடிவு செய்வது?",
+        "o": [
+          "வாடிக்கையாளரின் billing segment",
+          "கவுண்டரில் Front Office",
+          "Assessment, எந்த வாடிக்கையாளருக்கும்"
+        ],
+        "a": 2,
+        "why": "Segment, job-க்கு எப்படி விலை என்பதை மட்டுமே சொல்லும். Assessment முடிவு செய்யும்: allot அல்லது quote."
+      }
+    ]
+  },
+  "notes": [
+    "There is no field to record the diagnosis or findings on the job during assessment (UC-007 steps 1-3). The only text recorded is the note on Wait for the customer / Input received / Customer withdrew. Not taught.",
+    "Rate-card reference: the reservoir shows the pill “Assessed — rate card” for every job Under Assessment, because lib/domain/allotment.ts sets quote='rate-card' whenever quotation_gate_required is false (which is true of every job until a quotation is sent). It shows even for customers with no rate card (no service_rate rows exist in the demo). Misleading UX; not taught.",
+    "UC-010/UC-007 name the Service Head for diagnosis; the screens give the Liaison and the Service Head the same moves (work_order.allot). Recorded as liaison@.",
+    "Pick up has no confirmation and no undo: nothing moves a job back to Inward.",
+    "The title card says “About 110 seconds”; the final English take is 121 s because the shared reservoir had grown to 50+ jobs and loaded slower. The Tamil card says about 2 minutes (126 s).",
+    "Set-up: frontoffice@ registered a fresh 3-unit Siemens 6SE70-CU delivery for Rajapalayam Spinners (serials AS<stamp>01-03) per take."
+  ]
+}

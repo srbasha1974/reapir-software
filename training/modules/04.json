@@ -1,0 +1,151 @@
+{
+  "id": "04",
+  "title": {
+    "en": "Quotations",
+    "ta": "Quotations (விலைப்புள்ளி)"
+  },
+  "role": "Liaison · Service Head · Operations Manager",
+  "path": "Service › Quotations",
+  "video": {
+    "en": "media/04-quotations.mp4",
+    "ta": "media/04-quotations-ta.mp4"
+  },
+  "poster": {
+    "en": "media/04-poster.jpg",
+    "ta": "media/04-poster-ta.jpg"
+  },
+  "seconds": {
+    "en": 110,
+    "ta": 126
+  },
+  "do": {
+    "en": [
+      "Open <b>Service › Quotations</b> and choose the customer. <b>Waiting on a price</b> lists only their jobs Under Assessment.",
+      "One quotation can cover several jobs: <b>tick every unit</b> it covers. Nothing is pre-ticked. Approval releases exactly the ticked units.",
+      "Fill <b>What is quoted</b>, <b>Estimated hours</b>, <b>Parts expected</b> and <b>Price per unit</b>. The total is worked out for you.",
+      "Once it has gone to the customer by email or on paper, press <b>Record as sent</b>. Every job on it moves to <b>Awaiting Quotation Approval</b>.",
+      "Customer wants a new price? Use <b>Revise it</b> on the quotation. The new version replaces it; earlier versions stay readable as Superseded.",
+      "Record the answer with <b>Who decided</b> (a named person) and attach their email if you have it. <b>Record approval</b> releases the jobs for allotment.",
+      "A price agreed on the phone goes in <b>A price agreed on the phone</b>. It is recorded as approved, How agreed: <b>Negotiated</b>. A written one is <b>Formal</b>."
+    ],
+    "ta": [
+      "<b>Service › Quotations</b> திறந்து வாடிக்கையாளரைத் தேர்ந்தெடுக்கவும். <b>Waiting on a price</b>-இல் அவர்களின் Under Assessment job-கள் மட்டும் இருக்கும்.",
+      "ஒரு quotation பல job-களை உள்ளடக்கலாம்: அது உள்ளடக்கும் <b>ஒவ்வொரு யூனிட்டையும் tick</b> செய்யவும். எதுவும் முன்பே tick ஆகாது. Approval, tick செய்தவற்றை மட்டுமே விடுவிக்கும்.",
+      "<b>What is quoted</b>, <b>Estimated hours</b>, <b>Parts expected</b>, <b>Price per unit</b> நிரப்பவும். மொத்தத்தைச் சிஸ்டமே கணக்கிடும்.",
+      "Email அல்லது காகிதத்தில் வாடிக்கையாளருக்குச் சென்றதும் <b>Record as sent</b> அழுத்தவும். அதிலுள்ள எல்லா job-களும் <b>Awaiting Quotation Approval</b>-க்கு மாறும்.",
+      "வாடிக்கையாளர் புதிய விலை கேட்கிறாரா? Quotation-இல் <b>Revise it</b> பயன்படுத்தவும். புதிய version அதை மாற்றும்; பழையவை Superseded ஆகப் படிக்கக் கிடைக்கும்.",
+      "பதிலை <b>Who decided</b> (பெயருடன்) பதிவு செய்து, அவர்களின் email இருந்தால் இணைக்கவும். <b>Record approval</b> job-களை allot செய்ய விடுவிக்கும்.",
+      "Phone-இல் ஒப்புக்கொண்ட விலையை <b>A price agreed on the phone</b>-இல் பதிவு செய்யவும். அது approved ஆக, How agreed: <b>Negotiated</b> எனப் பதிவாகும். எழுத்து மூலமானது <b>Formal</b>."
+    ]
+  },
+  "dont": {
+    "en": [
+      "Don’t try to quote a job nobody has assessed. Only jobs <b>Under Assessment</b> can go on a new quotation.",
+      "Don’t raise a second quotation for the same job. A job can be on only one live quotation. Revise the one you have.",
+      "Don’t expect to edit a quotation already raised. A new price is always a new version.",
+      "<b>Record rejection</b> closes every job on the quotation as Customer Rejected, ready to go back. Check before you click.",
+      "Don’t leave a unit out of a revision to get a partial approval. The unit you drop stays at Awaiting Quotation Approval with no way forward on screen."
+    ],
+    "ta": [
+      "யாரும் assess செய்யாத job-ஐ quote செய்ய முயல வேண்டாம். <b>Under Assessment</b> job-கள் மட்டுமே புதிய quotation-இல் வர முடியும்.",
+      "அதே job-க்கு இரண்டாவது quotation போட வேண்டாம். ஒரு job ஒரே live quotation-இல் மட்டுமே இருக்கலாம். இருப்பதை revise செய்யவும்.",
+      "ஏற்கனவே raise செய்த quotation-ஐத் திருத்த முடியும் என்று எதிர்பார்க்க வேண்டாம். புதிய விலை எப்போதும் புதிய version.",
+      "<b>Record rejection</b> அதிலுள்ள எல்லா job-களையும் Customer Rejected ஆக மூடி, திருப்பி அனுப்பத் தயார் செய்யும். அழுத்தும் முன் சரிபார்க்கவும்.",
+      "பகுதி approval-க்காக revision-இல் ஒரு யூனிட்டை விட வேண்டாம். விடப்பட்ட யூனிட் Awaiting Quotation Approval-இலேயே நின்றுவிடும்; திரையில் அடுத்த வழி இல்லை."
+    ]
+  },
+  "quiz": {
+    "en": [
+      {
+        "q": "Three identical drives from one delivery need a price. How do you quote them?",
+        "o": [
+          "Three quotations, one per job",
+          "One quotation, tick all three units",
+          "One quotation for the first unit only"
+        ],
+        "a": 1,
+        "why": "One quotation can cover several jobs. Tick each unit it covers; approval releases exactly those."
+      },
+      {
+        "q": "A job is still at Inward. Why is it not in Waiting on a price?",
+        "o": [
+          "Only jobs Under Assessment can be quoted",
+          "The customer is on a rate card",
+          "It is already on another quotation"
+        ],
+        "a": 0,
+        "why": "A new quotation names jobs Under Assessment only. Pick it up and assess it first (Module 03)."
+      },
+      {
+        "q": "The customer asks for a lower price on a quotation you already sent. What do you do?",
+        "o": [
+          "Raise a new quotation for the same jobs",
+          "Revise it: raise version 2 on the same quotation",
+          "Edit the price on version 1"
+        ],
+        "a": 1,
+        "why": "A revision is a new version; version 1 stays readable as Superseded. A second live quotation for the same jobs is refused."
+      },
+      {
+        "q": "You press Record rejection. What happens to the jobs on it?",
+        "o": [
+          "They go back to Under Assessment",
+          "Nothing until you move them",
+          "They close as Customer Rejected, ready for a challan"
+        ],
+        "a": 2,
+        "why": "Rejection closes every job on the quotation. Check before you click."
+      }
+    ],
+    "ta": [
+      {
+        "q": "ஒரே டெலிவரியில் வந்த மூன்று ஒரே மாதிரி drive-களுக்கு விலை வேண்டும். எப்படி quote செய்வீர்கள்?",
+        "o": [
+          "மூன்று quotation, ஒவ்வொரு job-க்கும் ஒன்று",
+          "ஒரே quotation, மூன்று யூனிட்டையும் tick செய்து",
+          "முதல் யூனிட்டுக்கு மட்டும் ஒரு quotation"
+        ],
+        "a": 1,
+        "why": "ஒரு quotation பல job-களை உள்ளடக்கலாம். ஒவ்வொரு யூனிட்டையும் tick செய்யவும்; approval அவற்றை மட்டுமே விடுவிக்கும்."
+      },
+      {
+        "q": "ஒரு job இன்னும் Inward-இல் உள்ளது. அது ஏன் Waiting on a price-இல் இல்லை?",
+        "o": [
+          "Under Assessment job-களை மட்டுமே quote செய்யலாம்",
+          "வாடிக்கையாளருக்கு rate card உள்ளது",
+          "அது ஏற்கனவே வேறு quotation-இல் உள்ளது"
+        ],
+        "a": 0,
+        "why": "புதிய quotation, Under Assessment job-களை மட்டுமே சேர்க்கும். முதலில் pick up செய்து assess செய்யவும் (பாடம் 03)."
+      },
+      {
+        "q": "ஏற்கனவே அனுப்பிய quotation-இல் வாடிக்கையாளர் குறைந்த விலை கேட்கிறார். என்ன செய்வீர்கள்?",
+        "o": [
+          "அதே job-களுக்குப் புதிய quotation",
+          "Revise: அதே quotation-இல் version 2",
+          "Version 1-இல் விலையை மாற்றவும்"
+        ],
+        "a": 1,
+        "why": "Revision என்பது புதிய version; version 1, Superseded ஆகப் படிக்கக் கிடைக்கும். அதே job-களுக்கு இரண்டாவது live quotation மறுக்கப்படும்."
+      },
+      {
+        "q": "Record rejection அழுத்துகிறீர்கள். அதிலுள்ள job-களுக்கு என்ன ஆகும்?",
+        "o": [
+          "Under Assessment-க்குத் திரும்பும்",
+          "நீங்கள் நகர்த்தும் வரை எதுவும் ஆகாது",
+          "Customer Rejected ஆக மூடப்பட்டு, challan-க்குத் தயாராகும்"
+        ],
+        "a": 2,
+        "why": "Rejection, quotation-இல் உள்ள எல்லா job-களையும் மூடும். அழுத்தும் முன் சரிபார்க்கவும்."
+      }
+    ]
+  },
+  "notes": [
+    "Partial approval (approve 2 of 3) is not possible at decision time: Record approval / Record rejection act on the whole version, with no per-unit choice. The only way is a revision that ticks fewer units. The unit left out then stays at Awaiting Quotation Approval on no live quotation: the revise form only offers the standing version's jobs, Waiting on a price only lists Under Assessment jobs, and the pre-repair guard lets a job leave Awaiting Quotation Approval only through a quotation decision. So it is stuck. Not taught; listed as a don't. Likely app gap (quotation_line_job_requires_assessment / work_order_pre_repair_moves, quote-forms.tsx).",
+    "The raise form produces exactly one line per quotation (one description, one price per unit for all ticked jobs). A quotation with several different items / lines cannot be built on screen, though the data model allows it.",
+    "Revision of a sent quotation starts as Draft and shows Record as sent again; sending a revision moves no jobs.",
+    "The Raised list in the Tamil clip shows the English take's approved quotation for the same customer (Nilgiri Cold Storage).",
+    "Rejection was pointed at, not clicked (it would close the demo jobs). The NEGOTIATED route (A price agreed on the phone) is shown on screen and in the card, not performed.",
+    "Set-up per take: frontoffice@ registered 3 Danfoss CDS-303 units for Nilgiri Cold Storage (serials QT<stamp>01-03); liaison@ picked all 3 up."
+  ]
+}
