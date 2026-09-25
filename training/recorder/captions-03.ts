@@ -1,0 +1,63 @@
+/**
+ * Module 03 captions, English and Tamil. App words (buttons, labels, states) stay in English.
+ */
+export const CAPTIONS = {
+  en: {
+    kicker: 'Thulir training · Module 03 · Liaison · Service Head',
+    title: 'Assessment',
+    sub: 'Picking up a board and deciding what comes next. About 100 seconds.',
+    reservoir: 'Service › Reservoir: every board before the bench.<small>Search by job, serial or company.</small>',
+    inward: 'New boards say “Not yet assessed”.<small>Their tick is locked: they can’t be alloted.</small>',
+    pickup: 'Pick up = you start the assessment.<small>The job moves to Under Assessment.</small>',
+    only: 'Pick up is the only way out of Inward.',
+    queue: 'Before the bench: your queue, by state.<small>Age = days in that state.</small>',
+    choose: 'Choose a board to see what you can do.',
+    ask: 'Need something from the customer first?<small>Use Wait for the customer.</small>',
+    note: 'Say what you asked them. It is required.<small>The button waits until you type it.</small>',
+    waiting: 'Now it is “Waiting on the customer”.<small>Awaiting Customer Input: it cannot be alloted.</small>',
+    nothingSent: 'The system sends the customer nothing.<small>You phone or email them yourself.</small>',
+    back: 'Answer came? Input received, with what came back.<small>It returns to Under Assessment.</small>',
+    decide: 'Now the assessment decides the next step.',
+    allot: 'Clear what to do? Tick it and allot it.<small>No quotation needed. Module 05.</small>',
+    quote: 'A price must be agreed first? Raise a quotation.<small>Service › Quotations. Module 04.</small>',
+    segment: 'Any customer, any billing segment.<small>The assessment decides, not the segment.</small>',
+    withdrew: 'Customer no longer wants it? Customer withdrew.<small>Closes it as Customer Rejected, with a note.</small>',
+    remember: 'Remember',
+    rules: [
+      'A board leaves Inward <b>only by Pick up</b>',
+      'Waiting on the customer? <b>Wait for the customer</b>, with a note',
+      '<b>Awaiting Customer Input</b> can’t be alloted',
+      'Then decide: <b>allot</b> it, or <b>quote</b> it',
+    ],
+  },
+  ta: {
+    kicker: 'துளிர் பயிற்சி · பாடம் 03 · Liaison · Service Head',
+    title: 'Assessment (மதிப்பீடு)',
+    sub: 'போர்டை எடுத்து, அடுத்து என்ன என்று முடிவு செய்வது. சுமார் 2 நிமிடம்.',
+    reservoir: 'Service › Reservoir: bench-க்கு முன் உள்ள எல்லா போர்டுகளும்.<small>Job, serial அல்லது company மூலம் தேடலாம்.</small>',
+    inward: 'புதிய போர்டுகளில் “Not yet assessed” என்று இருக்கும்.<small>அவற்றின் tick பூட்டப்பட்டுள்ளது: allot செய்ய முடியாது.</small>',
+    pickup: 'Pick up = நீங்கள் assessment-ஐத் தொடங்குகிறீர்கள்.<small>Job, Under Assessment-க்கு மாறும்.</small>',
+    only: 'Inward-இலிருந்து வெளியேற ஒரே வழி Pick up.',
+    queue: 'Before the bench: உங்கள் வரிசை, நிலை வாரியாக.<small>Age = அந்த நிலையில் இருந்த நாட்கள்.</small>',
+    choose: 'என்ன செய்யலாம் என்று பார்க்க ஒரு போர்டைத் தேர்ந்தெடுக்கவும்.',
+    ask: 'முதலில் வாடிக்கையாளரிடம் ஏதாவது கேட்க வேண்டுமா?<small>Wait for the customer பயன்படுத்தவும்.</small>',
+    note: 'அவர்களிடம் என்ன கேட்டீர்கள் என்று எழுதவும். இது கட்டாயம்.<small>நீங்கள் எழுதும் வரை பட்டன் காத்திருக்கும்.</small>',
+    waiting: 'இப்போது “Waiting on the customer”.<small>Awaiting Customer Input: allot செய்ய முடியாது.</small>',
+    nothingSent: 'சிஸ்டம் வாடிக்கையாளருக்கு எதையும் அனுப்பாது.<small>நீங்களே phone அல்லது email செய்யவும்.</small>',
+    back: 'பதில் வந்ததா? Input received, என்ன வந்தது என்று எழுதவும்.<small>Job மீண்டும் Under Assessment-க்கு வரும்.</small>',
+    decide: 'இப்போது assessment அடுத்த படியை முடிவு செய்யும்.',
+    allot: 'என்ன செய்ய வேண்டும் என்று தெளிவா? Tick செய்து allot செய்யவும்.<small>Quotation தேவையில்லை. பாடம் 05.</small>',
+    quote: 'முதலில் விலையை ஒப்புக்கொள்ள வேண்டுமா? Quotation போடவும்.<small>Service › Quotations. பாடம் 04.</small>',
+    segment: 'எந்த வாடிக்கையாளரும், எந்த billing segment-உம்.<small>Segment அல்ல, assessment தான் முடிவு செய்கிறது.</small>',
+    withdrew: 'வாடிக்கையாளருக்கு இனி வேண்டாமா? Customer withdrew.<small>குறிப்புடன் Customer Rejected ஆக மூடப்படும்.</small>',
+    remember: 'நினைவில் கொள்ளுங்கள்',
+    rules: [
+      'Inward-இலிருந்து போர்டு வெளியேறுவது <b>Pick up மூலம் மட்டுமே</b>',
+      'வாடிக்கையாளருக்காகக் காத்திருக்கிறீர்களா? குறிப்புடன் <b>Wait for the customer</b>',
+      '<b>Awaiting Customer Input</b>-இல் உள்ள job-ஐ allot செய்ய முடியாது',
+      'பிறகு முடிவு: <b>allot</b> செய்யவும், அல்லது <b>quote</b> செய்யவும்',
+    ],
+  },
+} as const
+
+export type Lang = keyof typeof CAPTIONS

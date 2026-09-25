@@ -1,0 +1,61 @@
+/**
+ * Module 04 captions, English and Tamil. App words (buttons, labels, states) stay in English.
+ */
+export const CAPTIONS = {
+  en: {
+    kicker: 'Thulir training · Module 04 · Liaison · Service Head · Ops Manager',
+    title: 'Quotations',
+    sub: 'One quote for many units, revising it, and recording the answer. About 110 seconds.',
+    screen: 'Service › Quotations, for one customer.',
+    waiting: 'Waiting on a price: only jobs Under Assessment.<small>A job nobody assessed can’t be quoted.</small>',
+    tick: 'One quotation can cover several jobs.<small>Tick every unit it covers. Nothing is pre-ticked.</small>',
+    releases: 'Approval releases exactly the ticked units.<small>A unit you don’t tick stays where it is.</small>',
+    fill: 'What is quoted, hours, parts, price per unit.',
+    total: 'The total is worked out for you.<small>3 × price. Never typed.</small>',
+    raised: 'Raised: one line, quantity 3, a new QT number.<small>Status: Draft.</small>',
+    formal: 'How agreed: Formal = sent in writing.<small>A price agreed on the phone is recorded as Negotiated.</small>',
+    sent: 'Sent it by email or on paper? Record as sent.<small>The system itself sends nothing.</small>',
+    moved: 'All 3 jobs are now Awaiting Quotation Approval.<small>Each job can be on only one live quotation.</small>',
+    revise: 'Customer wants a better price? Revise it.<small>Never raise a second quotation for the same jobs.</small>',
+    v2: 'Version 2 is the live one.<small>Version 1 stays readable as Superseded.</small>',
+    reject: 'Record rejection closes every job on it.<small>Customer Rejected, back to the customer. Check first.</small>',
+    who: 'Approved? Name the person who decided.<small>Attach their email if you have it.</small>',
+    approved: 'Approved. The 3 jobs can now be alloted.<small>Next: Module 05.</small>',
+    remember: 'Remember',
+    rules: [
+      'Quote only jobs <b>Under Assessment</b>',
+      '<b>One quotation</b> for all the units, ticked one by one',
+      'New price? <b>Revise</b>. Earlier versions stay readable',
+      '<b>Record as sent</b>, then the answer. Rejection closes the jobs',
+    ],
+  },
+  ta: {
+    kicker: 'துளிர் பயிற்சி · பாடம் 04 · Liaison · Service Head · Ops Manager',
+    title: 'Quotations (விலைப்புள்ளி)',
+    sub: 'பல யூனிட்டுக்கு ஒரே quote, திருத்துவது, பதிலைப் பதிவு செய்வது. சுமார் 2 நிமிடம்.',
+    screen: 'Service › Quotations, ஒரு வாடிக்கையாளருக்கு.',
+    waiting: 'Waiting on a price: Under Assessment job-கள் மட்டும்.<small>யாரும் assess செய்யாத job-ஐ quote செய்ய முடியாது.</small>',
+    tick: 'ஒரு quotation பல job-களை உள்ளடக்கலாம்.<small>ஒவ்வொரு யூனிட்டையும் tick செய்யவும். எதுவும் முன்பே tick ஆகாது.</small>',
+    releases: 'Approval, tick செய்த யூனிட்டுகளை மட்டுமே விடுவிக்கும்.<small>Tick செய்யாத யூனிட் அப்படியே இருக்கும்.</small>',
+    fill: 'What is quoted, hours, parts, price per unit.',
+    total: 'மொத்தத் தொகையை சிஸ்டமே கணக்கிடும்.<small>3 × விலை. தட்டச்சு செய்ய வேண்டாம்.</small>',
+    raised: 'Raise ஆனது: ஒரு வரி, quantity 3, புதிய QT எண்.<small>Status: Draft.</small>',
+    formal: 'How agreed: Formal = எழுத்து மூலம் அனுப்பப்பட்டது.<small>Phone-இல் ஒப்புக்கொண்ட விலை Negotiated ஆகப் பதிவாகும்.</small>',
+    sent: 'Email அல்லது காகிதத்தில் அனுப்பினீர்களா? Record as sent.<small>சிஸ்டம் தானாக எதையும் அனுப்பாது.</small>',
+    moved: 'இப்போது 3 job-களும் Awaiting Quotation Approval.<small>ஒரு job ஒரே ஒரு live quotation-இல் மட்டுமே இருக்கலாம்.</small>',
+    revise: 'வாடிக்கையாளர் குறைந்த விலை கேட்கிறாரா? Revise செய்யவும்.<small>அதே job-களுக்கு இரண்டாவது quotation போட வேண்டாம்.</small>',
+    v2: 'இப்போது Version 2 தான் live.<small>Version 1, Superseded ஆகப் படிக்கக் கிடைக்கும்.</small>',
+    reject: 'Record rejection அதிலுள்ள எல்லா job-களையும் மூடிவிடும்.<small>Customer Rejected, வாடிக்கையாளரிடம் திரும்பும். முதலில் சரிபார்க்கவும்.</small>',
+    who: 'Approve ஆனதா? முடிவு செய்த நபரின் பெயரை எழுதவும்.<small>அவர்களின் email இருந்தால் இணைக்கவும்.</small>',
+    approved: 'Approved. இப்போது 3 job-களையும் allot செய்யலாம்.<small>அடுத்தது: பாடம் 05.</small>',
+    remember: 'நினைவில் கொள்ளுங்கள்',
+    rules: [
+      '<b>Under Assessment</b> job-களை மட்டும் quote செய்யவும்',
+      'எல்லா யூனிட்டுக்கும் <b>ஒரே quotation</b>, ஒவ்வொன்றாக tick செய்து',
+      'புதிய விலையா? <b>Revise</b>. பழைய version-கள் படிக்கக் கிடைக்கும்',
+      'முதலில் <b>Record as sent</b>, பிறகு பதில். Rejection job-களை மூடும்',
+    ],
+  },
+} as const
+
+export type Lang = keyof typeof CAPTIONS
