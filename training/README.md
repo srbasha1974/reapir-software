@@ -1,6 +1,8 @@
 # Training material for the Thulir repair software
 
-- `training-map.html`: the curriculum by workflow stage and role, plus the finished module 02 (video, Do / Don't card, quiz).
+- `training-map.html`: all 13 modules by workflow stage and role, each with a video, Do / Don't card and quiz in English and Tamil. Built from `training-map.src.html` + `modules/NN.json` by `python3 build.py` (`--hosted` builds the published copy, whose videos live in the artifact's asset store; links in `media/hosted.json`).
+- `APP-FINDINGS.md`: bugs and spec-vs-app differences found while recording.
+- `recorder/BRIEF.md`: the rules every clip was recorded to.
 - `media/`: the rendered clips (MP4, captions burned in, no audio).
 - `recorder/`: the scripts that record each clip from a **local** copy of `srbasha1974/repair-service`.
 

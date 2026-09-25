@@ -1,0 +1,153 @@
+{
+  "id": "10",
+  "title": {
+    "en": "Dispatch (Delivery challan)",
+    "ta": "அனுப்புதல் (டெலிவரி சலான்)"
+  },
+  "role": "Front Office · Liaison",
+  "path": "Front office › Challans · Issued challans",
+  "video": {
+    "en": "media/10-challan.mp4",
+    "ta": "media/10-challan-ta.mp4"
+  },
+  "poster": {
+    "en": "media/10-poster.jpg",
+    "ta": "media/10-poster-ta.jpg"
+  },
+  "seconds": {
+    "en": 86,
+    "ta": 92
+  },
+  "do": {
+    "en": [
+      "Issue a challan for <b>everything</b> that leaves the building: repaired, non-repairable, rejected, or going out for testing.",
+      "Start from <b>Front office › Challans</b>: tick one customer's boards and press <b>Raise a challan for …</b>.",
+      "Let <b>Leaves as</b> set the reason. It comes from each job's state; nobody picks it.",
+      "In <b>Came in with these boards</b>, tick every accessory going back. If one stays or was used up, press <b>They stay with us</b>.",
+      "Fill <b>Received by</b> (who carries it) and <b>Goes by</b> (van, courier…). Add the docket number if there is one.",
+      "After <b>Issue the challan</b>, press <b>Print</b> and send the printout with the consignment.",
+      "Going for customer testing? It leaves as <b>Site testing — expected back</b>: set <b>Expected back</b>, and press <b>Record the return</b> when it comes back."
+    ],
+    "ta": [
+      "கட்டடத்தை விட்டு வெளியே செல்லும் <b>அனைத்துக்கும்</b> சலான் வழங்கவும்: பழுது நீக்கியது, non-repairable, நிராகரிக்கப்பட்டது, அல்லது சோதனைக்குச் செல்வது.",
+      "<b>Front office › Challans</b>-இல் தொடங்கவும்: ஒரு வாடிக்கையாளரின் போர்டுகளை டிக் செய்து <b>Raise a challan for …</b> அழுத்தவும்.",
+      "காரணத்தை <b>Leaves as</b> தீர்மானிக்கட்டும். அது ஒவ்வொரு job-இன் நிலையிலிருந்து வருகிறது; யாரும் தேர்வு செய்வதில்லை.",
+      "<b>Came in with these boards</b>-இல் திரும்பச் செல்லும் ஒவ்வொரு உபகரணத்தையும் டிக் செய்யவும். நம்மிடம் இருந்தால் அல்லது பயன்படுத்தியிருந்தால் <b>They stay with us</b> அழுத்தவும்.",
+      "<b>Received by</b> (யார் கொண்டு செல்கிறார்), <b>Goes by</b> (van, courier…) நிரப்பவும். Docket எண் இருந்தால் சேர்க்கவும்.",
+      "<b>Issue the challan</b> அழுத்திய பின், <b>Print</b> செய்து பிரதியைப் பொருளுடன் அனுப்பவும்.",
+      "வாடிக்கையாளர் சோதனைக்குச் செல்கிறதா? <b>Site testing — expected back</b> ஆகச் செல்லும்: <b>Expected back</b> தேதியை இடவும்; திரும்பி வந்ததும் <b>Record the return</b> அழுத்தவும்."
+    ]
+  },
+  "dont": {
+    "en": [
+      "Don't give the challan to the customer as an invoice. It is a gate pass and custody record, printed “Not a tax invoice”; billing is done separately.",
+      "Don't put boards leaving for different reasons on one challan. The form refuses: issue them separately.",
+      "Don't put two customers on one challan. One challan covers one customer's consignment.",
+      "Don't expect to edit an issued challan. It is immutable; a correction is a new challan.",
+      "Don't ignore the accessories warning. Tick what goes back, or confirm it stays with us."
+    ],
+    "ta": [
+      "சலானை invoice ஆக வாடிக்கையாளரிடம் கொடுக்க வேண்டாம். அது gate pass, பொறுப்புப் பதிவு; “Not a tax invoice” என்று அச்சிடப்பட்டிருக்கும். பில் தனியாகப் போகும்.",
+      "வெவ்வேறு காரணங்களுக்காகச் செல்லும் போர்டுகளை ஒரே சலானில் போட வேண்டாம். Form மறுக்கும்: தனித்தனியாக வழங்கவும்.",
+      "இரண்டு வாடிக்கையாளர்களை ஒரே சலானில் போட வேண்டாம். ஒரு சலான் = ஒரு வாடிக்கையாளரின் சரக்கு.",
+      "Issue செய்த சலானைத் திருத்த முடியும் என்று நினைக்க வேண்டாம். அது மாறாது; திருத்தம் = புதிய சலான்.",
+      "உபகரண எச்சரிக்கையைப் புறக்கணிக்க வேண்டாம். திரும்புவதை டிக் செய்யவும், அல்லது நம்மிடம் இருப்பதை உறுதிப்படுத்தவும்."
+    ]
+  },
+  "quiz": {
+    "en": [
+      {
+        "q": "You tick a repaired board and a non-repairable board of the same customer. The Issue button is greyed. Why?",
+        "o": [
+          "The customer has no GSTIN",
+          "They are leaving for different reasons; issue them on separate challans",
+          "Non-repairable boards never leave the building"
+        ],
+        "a": 1,
+        "why": "Every job on one challan must leave for the same reason, and the reason follows from each job's state."
+      },
+      {
+        "q": "The customer asks for “the bill” as the van leaves. Is the challan it?",
+        "o": [
+          "Yes, it lists the price of each board",
+          "Yes, once it is printed",
+          "No. The challan is a gate pass, printed “Not a tax invoice”; billing is done separately"
+        ],
+        "a": 2,
+        "why": "The challan records what left the building and who carried it. The invoice is raised separately (Module 11)."
+      },
+      {
+        "q": "A repaired board goes to the customer's site for testing and should come back if it fails. How does it leave?",
+        "o": [
+          "Site testing — expected back, with an Expected back date; record the return when it comes back",
+          "A normal delivery; register a new inward when it returns",
+          "It needs no challan because it is coming back"
+        ],
+        "a": 0,
+        "why": "A board at Awaiting Customer Confirmation leaves on a returnable challan. Its shelf stays held until the return is recorded."
+      },
+      {
+        "q": "Two boards came in with ribbon cables. You keep one cable for testing. What do you do on the challan?",
+        "o": [
+          "Nothing; accessories are not on challans",
+          "Tick the cable that goes back; for the one that stays, press They stay with us",
+          "Type the cable into Received by"
+        ],
+        "a": 1,
+        "why": "Accessories recorded at the counter must be ticked as going back, or explicitly confirmed as kept or used up."
+      }
+    ],
+    "ta": [
+      {
+        "q": "ஒரே வாடிக்கையாளரின் பழுது நீக்கிய போர்டையும் non-repairable போர்டையும் டிக் செய்கிறீர்கள். Issue பட்டன் செயலிழந்துள்ளது. ஏன்?",
+        "o": [
+          "வாடிக்கையாளருக்கு GSTIN இல்லை",
+          "இவை வெவ்வேறு காரணங்களுக்காகச் செல்கின்றன; தனித்தனி சலானில் வழங்கவும்",
+          "Non-repairable போர்டுகள் ஒருபோதும் வெளியே போகாது"
+        ],
+        "a": 1,
+        "why": "ஒரு சலானில் உள்ள எல்லா job-களும் ஒரே காரணத்துக்காகச் செல்ல வேண்டும்; காரணம் job-இன் நிலையிலிருந்து வருகிறது."
+      },
+      {
+        "q": "Van கிளம்பும்போது வாடிக்கையாளர் “பில்” கேட்கிறார். சலான் தான் அதுவா?",
+        "o": [
+          "ஆம், ஒவ்வொரு போர்டின் விலையும் அதில் உள்ளது",
+          "ஆம், அச்சிட்ட பிறகு",
+          "இல்லை. சலான் gate pass, “Not a tax invoice” என்று அச்சிடப்பட்டது; பில் தனியாகப் போகும்"
+        ],
+        "a": 2,
+        "why": "சலான் எது வெளியே சென்றது, யார் கொண்டு சென்றார் என்பதைப் பதிவு செய்கிறது. Invoice தனியாக உருவாகும் (பாடம் 11)."
+      },
+      {
+        "q": "பழுது நீக்கிய போர்டு சோதனைக்காக வாடிக்கையாளர் இடத்துக்குச் செல்கிறது; தோல்வியடைந்தால் திரும்பும். எப்படி அனுப்புவீர்கள்?",
+        "o": [
+          "Site testing — expected back, Expected back தேதியுடன்; திரும்பியதும் return பதிவு செய்வேன்",
+          "சாதாரண டெலிவரி; திரும்பியதும் புதிய inward பதிவு செய்வேன்",
+          "திரும்பி வருவதால் சலான் தேவையில்லை"
+        ],
+        "a": 0,
+        "why": "Awaiting Customer Confirmation-இல் உள்ள போர்டு திரும்பும் சலானில் செல்லும். Return பதிவு செய்யும் வரை shelf காலியாகாது."
+      },
+      {
+        "q": "இரண்டு போர்டுகள் ribbon cable-உடன் வந்தன. சோதனைக்காக ஒரு cable-ஐ வைத்துக்கொள்கிறீர்கள். சலானில் என்ன செய்வீர்கள்?",
+        "o": [
+          "ஒன்றுமில்லை; உபகரணங்கள் சலானில் வராது",
+          "திரும்பும் cable-ஐ டிக் செய்வேன்; நம்மிடம் இருப்பதற்கு They stay with us அழுத்துவேன்",
+          "Cable-ஐ Received by-இல் எழுதுவேன்"
+        ],
+        "a": 1,
+        "why": "கவுண்டரில் பதிவான உபகரணங்கள் திரும்புவதாக டிக் செய்யப்பட வேண்டும், அல்லது நம்மிடம் இருப்பதாக/பயன்படுத்தியதாக உறுதிப்படுத்தப்பட வேண்டும்."
+      }
+    ]
+  },
+  "notes": [
+    "Accessories as “their own line”: NOT possible from the screen. The form sends every ticked board as one line and joins the ticked accessories into that line's Accessories text. The reason ACCESSORY_ONLY (“Accessory only”) exists in the data model and the record screen can show “accessory only — no job”, but no screen raises one (UC-009 AF-004 has no UI). Not taught.",
+    "Returnable challans for customer testing ARE present: a job at Awaiting Customer Confirmation leaves as “Site testing — expected back”, with “Expected back” and later “Record the return”. Shown.",
+    "The Liaison holds challan.issue too (stated in a caption; the clip is recorded as Front Office). Service Head, Operations Manager, Sales Head and Engineer can only read challans.",
+    "Print is a link to /print/challan/DC/…, which opens in a new tab; the clip navigates to it in the same tab. The printout is headed “Delivery Challan · Goods outward — not a tax invoice”.",
+    "Dispatching the repaired boards (Repaired — going back) also starts their warranty window (UC-009 0.0.4); not taught.",
+    "UX: the accessories warning appears in yellow as soon as a board with accessories is ticked, before anyone has had a chance to tick them.",
+    "An earlier English take lost one caption to dropped video frames; the published take was checked frame by frame.",
+    "Set-up (unrecorded): a fresh 4-unit delivery for Kovai Textile Mills taken through the app to Ready for Invoice ×2, Non-Repairable (closed by the Service Head) and Awaiting Customer Confirmation. Each take made its own jobs and issued real challans (DC/26-09/000004 onwards) in the shared database."
+  ]
+}
