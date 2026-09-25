@@ -1,0 +1,251 @@
+<title>Thulir Training Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f3f5f4; --surface:#ffffff; --ink:#15201d; --muted:#5a6a65; --line:#d6dedb;
+  --accent:#0e7a5f; --accent-soft:#dcefe8; --amber:#b86e00; --amber-soft:#fbecd3;
+  --red:#b3372b; --red-soft:#f8e1de; --tag:#eef2f0;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#101614; --surface:#18201d; --ink:#e4ece9; --muted:#9aaba5; --line:#2c3833;
+    --accent:#4cc5a0; --accent-soft:#17362c; --amber:#f0a73c; --amber-soft:#3a2a12;
+    --red:#ef7d70; --red-soft:#3d1f1b; --tag:#1f2925;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#101614; --surface:#18201d; --ink:#e4ece9; --muted:#9aaba5; --line:#2c3833;
+  --accent:#4cc5a0; --accent-soft:#17362c; --amber:#f0a73c; --amber-soft:#3a2a12;
+  --red:#ef7d70; --red-soft:#3d1f1b; --tag:#1f2925;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:48px}
+h1,h2,h3{font-family:var(--display);font-stretch:85%;text-wrap:balance;margin:0;line-height:1.1}
+h1{font-size:clamp(2rem,5vw,3rem);font-weight:800}
+h2{font-size:1.6rem;font-weight:700}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0;max-width:66ch}
+.mono{font-family:var(--mono);font-size:.85em}
+.eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header{padding-top:40px;display:flex;flex-direction:column;gap:14px}
+.lede{font-size:1.1rem;color:var(--muted)}
+.notice{border:1px solid var(--amber);background:var(--amber-soft);border-radius:6px;padding:12px 16px;font-size:.95rem;max-width:none}
+section{display:flex;flex-direction:column;gap:18px}
+
+/* format strip */
+.format{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.fmt{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.fmt b{font-family:var(--display);font-stretch:85%;font-size:1.1rem}
+.fmt span{color:var(--muted);font-size:.93rem}
+
+/* pipeline */
+.pipe-scroll{overflow-x:auto;padding-bottom:4px}
+.pipe{display:grid;grid-template-columns:repeat(4,minmax(200px,1fr));gap:10px;min-width:820px}
+.stage{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.stage h3{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.stage h3 small{font-family:var(--mono);font-size:.7rem;color:var(--muted);font-weight:400}
+.sub{font-family:var(--mono);font-size:.8rem;padding:6px 8px;border-radius:4px;background:var(--tag);display:flex;justify-content:space-between;gap:6px}
+.sub.block{background:var(--amber-soft);color:var(--amber)}
+.sub.win{background:var(--accent-soft);color:var(--accent)}
+.sub.waste{background:var(--red-soft);color:var(--red)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.85rem;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:middle}
+
+/* persona picker */
+.personas{display:flex;flex-wrap:wrap;gap:8px}
+.personas button{font:600 .9rem var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 14px;border-radius:999px;cursor:pointer}
+.personas button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.personas button:focus-visible,.mod summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.persona-note{color:var(--muted);font-size:.95rem;min-height:1.5em}
+
+/* modules */
+.mods{display:flex;flex-direction:column;gap:10px}
+.mod{background:var(--surface);border:1px solid var(--line);border-radius:6px}
+.mod.dim{opacity:.38}
+.mod summary{list-style:none;cursor:pointer;padding:14px 16px;display:grid;grid-template-columns:3.2rem 1fr auto;gap:12px;align-items:center}
+.mod summary::-webkit-details-marker{display:none}
+.num{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.mod .t{display:flex;flex-direction:column;gap:2px}
+.mod .t span{color:var(--muted);font-size:.9rem}
+.who{display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end;max-width:260px}
+.who em{font-style:normal;font-family:var(--mono);font-size:.7rem;padding:2px 6px;border-radius:3px;background:var(--tag);color:var(--muted)}
+.who em.p{background:var(--accent-soft);color:var(--accent)}
+.body{padding:0 16px 18px calc(3.2rem + 28px);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.col h4{margin:0 0 6px;font:600 .75rem var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.do h4{color:var(--accent)} .dont h4{color:var(--red)}
+.col ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:.95rem}
+.clips{grid-column:1/-1;font-size:.9rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.clips b{color:var(--ink);font-weight:600}
+
+/* storyboard */
+.board-scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:680px;background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;font-size:.93rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--tag)}
+td:first-child{font-family:var(--mono);color:var(--muted);white-space:nowrap}
+td.cap{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:1rem}
+tr:last-child td{border-bottom:0}
+
+.next ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;max-width:70ch}
+@media (max-width:640px){
+  .mod summary{grid-template-columns:2.4rem 1fr}
+  .who{grid-column:2;justify-content:flex-start}
+  .body{grid-template-columns:1fr;padding-left:16px}
+}
+@media (prefers-reduced-motion:no-preference){.mod{transition:opacity .2s}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Onboarding programme · draft for review</div>
+  <h1>Thulir repair software: training map</h1>
+  <p class="lede">Twelve short modules, in the order a board moves through the shop. Each person watches only the modules for their role. Pick a role below to see their path.</p>
+  <p class="notice"><b>How this was built:</b> I read the rules straight from the live system's data model: the pipeline, the 9 roles, and the checks the database refuses to break. The <b>role-to-module mapping is my proposal, so please confirm it</b>. I couldn't reach the source code, the spec-kit documents or the web app yet, so the screen-level details (field labels, button names, screenshots) are still to come.</p>
+</header>
+
+<section>
+  <h2>What each module contains</h2>
+  <div class="format">
+    <div class="fmt"><b>60–90 s clip</b><span>A screen recording of the real form with a moving pointer and 3–5 word captions. No narration needed, so it works on a noisy shop floor.</span></div>
+    <div class="fmt"><b>Do / Don't card</b><span>One page: the form with numbered callouts, the rules, and the common mistakes. Print it and pin it at the desk.</span></div>
+    <div class="fmt"><b>3-question check</b><span>Scenario questions such as “6 identical power supplies arrive. How many inward lines?”</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>The pipeline everyone must know</h2>
+  <p>Module 00 teaches this picture. A job's stage and sub-status is the one thing every role reads and changes.</p>
+  <div class="pipe-scroll"><div class="pipe" id="pipe"></div></div>
+  <div class="legend">
+    <span><i style="background:var(--amber)"></i>Paused: no time can be booked</span>
+    <span><i style="background:var(--accent)"></i>Counts as success</span>
+    <span><i style="background:var(--red)"></i>Counts as wastage</span>
+  </div>
+</section>
+
+<section>
+  <h2>Learning path by role</h2>
+  <div class="personas" id="personas" role="group" aria-label="Choose a role"></div>
+  <p class="persona-note" id="pnote"></p>
+  <div class="mods" id="mods"></div>
+</section>
+
+<section>
+  <h2>Pilot storyboard: 02 · Receiving a delivery (Inward)</h2>
+  <p>This is what one clip looks like on paper. It runs about 75 seconds. I record it from the real screen once I can reach the app.</p>
+  <div class="board-scroll">
+  <table>
+    <thead><tr><th>Time</th><th>On screen</th><th>Caption</th></tr></thead>
+    <tbody>
+      <tr><td>0:00</td><td>A courier box on the counter; cut to the Inward screen.</td><td class="cap">A delivery arrives. One Inward.</td></tr>
+      <tr><td>0:08</td><td>Pick the customer, then the contact. The customer code fills in by itself.</td><td class="cap">Pick customer. Never type a code.</td></tr>
+      <tr><td>0:18</td><td>The “Brought in by” field is highlighted.</td><td class="cap">Who brought it? Always fill.</td></tr>
+      <tr><td>0:26</td><td>Six identical PSUs are entered as <b>one line, qty 6</b>. A red ✕ shows over six separate lines.</td><td class="cap">Same item = one line.</td></tr>
+      <tr><td>0:38</td><td>Save. Six job numbers appear, one per unit.</td><td class="cap">Each unit gets its own job.</td></tr>
+      <tr><td>0:48</td><td>Serial number, accessories received, condition on receipt and storage bin are filled for one job.</td><td class="cap">Serial. Accessories. Condition. Bin.</td></tr>
+      <tr><td>1:02</td><td>The status chip reads <span class="mono">Pre-Repair › Inward</span>.</td><td class="cap">Next stop: assessment.</td></tr>
+      <tr><td>1:10</td><td>End card showing the 3 rules.</td><td class="cap">Scan the QR for the Do / Don't card.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section class="next">
+  <h2>What I need to finish this</h2>
+  <ol>
+    <li><b>Source code and spec-kit docs.</b> The GitHub repo <span class="mono">srbasha1974/repair-service</span> isn't visible to my GitHub connection. It is probably private, or the Claude GitHub App isn't installed on it.</li>
+    <li><b>The web app.</b> This session's network policy blocks <span class="mono">repair.thulirtech.com</span>. Add it to the environment's allowed domains. I'll also need a <b>training login</b> for each role, ideally on a copy with sample data rather than live customers.</li>
+    <li><b>Confirm the role map</b> above, especially who builds invoice batches and who raises purchase requests.</li>
+    <li><b>Captions:</b> English only, or also Tamil?</li>
+  </ol>
+</section>
+</div>
+
+<script>
+const PIPE=[
+ {n:"Pre-Repair",subs:[["Inward"],["Under Assessment"],["Awaiting Customer Input"],["Awaiting Quotation Approval"]]},
+ {n:"In-Repair",subs:[["Alloted"],["In Progress"],["Pending Spare","block"],["On Hold","block"]]},
+ {n:"Repair Completed",subs:[["Ready for Verification"],["In Verification"],["Awaiting Customer Confirmation"]]},
+ {n:"Closed",end:true,subs:[["Ready for Invoice","win"],["Non-Repairable","waste"],["Customer Rejected","waste"]]}
+];
+document.getElementById("pipe").innerHTML=PIPE.map((s,i)=>`<div class="stage"><h3>${s.n}<small>${s.end?"end":"stage "+(i+1)}</small></h3>${s.subs.map(([t,c])=>`<div class="sub ${c||""}">${t}</div>`).join("")}</div>`).join("");
+
+const P={
+ "Front Office":"Receives deliveries, sends challans, handles paperwork with purchasing and billing.",
+ "Sales Engineer":"Owns customers and contacts, brings in work, and follows quotes through.",
+ "Liaison":"Talks to the customer while a job is in the shop: inputs, quotes and confirmations.",
+ "Engineer":"Assesses, repairs, books parts and time, and verifies other engineers' boards.",
+ "Service Head":"Leads repair: allots jobs, watches queues and stuck jobs, decides on closure.",
+ "Operations Manager":"Runs stock, rates and settings, including sub-statuses, without a software release.",
+ "Sales Head":"Leads sales: customer lifecycle, ownership moves and quote performance.",
+ "Executive / Admin":"Needs the big picture and the dashboards, not the data entry."
+};
+// p = primary (must do), a = awareness
+const M=[
+ {id:"00",t:"How a board moves through the shop",s:"The 4 stages, 14 sub-statuses, and where your role fits",who:{p:Object.keys(P)},
+  do:["Read the job's sub-status before you act. It tells you whose turn it is.","Add a short note when you change status. Leads use it to spot stuck jobs."],
+  dont:["Don't treat “Closed” as final. A lead can send a closed job back to an engineer.","Don't keep work outside the system. Time spent in each sub-status is measured."],clips:"Clip: The pipeline in 90 seconds"},
+ {id:"01",t:"Customers, contacts and follow-ups",s:"Creating customers, the primary contact, lifecycle stages, interactions",who:{p:["Sales Engineer","Sales Head"],a:["Front Office","Liaison"]},
+  do:["Let the system give the customer code. It never changes.","Mark one primary contact per company. Setting a new one clears the old one.","Log an interaction on the same day it happens."],
+  dont:["Don't move a customer to Trial or Regular “to test”. Lifecycle moves can't be undone.","Don't edit a contact's name when they change employer. Record it as a job move.","Don't backdate interactions. Late entries are flagged."],clips:"Clips: New customer · Primary contact · Logging a call"},
+ {id:"02",t:"Receiving a delivery (Inward)",s:"One delivery = one inward. Lines, quantities, and units becoming jobs",who:{p:["Front Office"],a:["Sales Engineer"]},
+  do:["Identical items go on one line with a quantity (6 PSUs = 1 line, qty 6).","Always fill “Brought in by” with the sales person.","Record serial, accessories, condition on receipt and storage bin for every job."],
+  dont:["Don't split identical items into separate lines.","Don't leave “Brought in by” wrong. It can only be fixed while every board on the delivery is still open."],clips:"Clips: Inward a delivery · Filling a job tag"},
+ {id:"03",t:"Assessment",s:"The only way out of Inward, and when to wait for the customer",who:{p:["Engineer","Service Head"],a:["Liaison"]},
+  do:["Assess every board before anything else. A board can only leave Inward through assessment.","Use Awaiting Customer Input when you need an answer from the customer."],
+  dont:["Don't expect to allot a job at Awaiting Customer Input. The system refuses, because the Liaison is still waiting."],clips:"Clip: Assessing a board"},
+ {id:"04",t:"Quotations",s:"One quote for many units, revisions, approvals and rejections",who:{p:["Liaison","Sales Engineer"],a:["Sales Head","Service Head"]},
+  do:["Put all units of a delivery on one quotation, one line per item.","Revise an existing quote. Earlier versions stay readable.","Approve only the units the customer accepted (e.g. 4 of 6)."],
+  dont:["Don't try to quote a job nobody has assessed. Only Under Assessment jobs can be quoted.","Don't create a second live quote for the same job.","Rejecting a quote closes those jobs as Customer Rejected, so check before you click."],clips:"Clips: Build a quote · Revise · Partial approval"},
+ {id:"05",t:"Allotting and repairing",s:"Alloted → In Progress, and when to pause",who:{p:["Service Head","Engineer"]},
+  do:["Move a job to In Progress when you start work on it.","Use Pending Spare when waiting for parts and On Hold for anything else."],
+  dont:["Don't leave a paused job in In Progress. It will show up as stuck.","Warranty rework is a new job linked to the old one. Don't reopen the old job."],clips:"Clips: Allot a job · Start / pause / resume"},
+ {id:"06",t:"Parts and purchase requests",s:"Booking components, Other Spares, PRs and goods receipts",who:{p:["Engineer","Front Office","Operations Manager"]},
+  do:["Book catalogued parts from the list. This reduces stock automatically.","Use Other Spares, with a description, only for uncatalogued items.","Enter the email date when a PR is sent to front office."],
+  dont:["Don't book parts on a closed job.","Don't edit a goods receipt. Fix the count with a stock adjustment.","Don't expect a job to resume on a partial delivery unless its whole requirement arrived."],clips:"Clips: Book a part · Raise a PR · Receive goods"},
+ {id:"07",t:"Timesheets",s:"Daily time on your own jobs, weekly submission",who:{p:["Engineer"],a:["Service Head"]},
+  do:["Book time daily, only on jobs allotted to you.","Submit your week (Mon–Sun). Submitting locks it."],
+  dont:["Don't book time on a paused or closed job. The system refuses.","Don't exceed the daily hour limit. Entries past it are refused.","Don't type a cost rate. The system applies the rate for you."],clips:"Clips: Log a day · Submit the week"},
+ {id:"08",t:"Verification",s:"Checking a repaired board, pass or fail",who:{p:["Engineer","Service Head"]},
+  do:["Record the failure symptom when a board fails. It goes back to the bench.","Book verification hours while you hold the board."],
+  dont:["Avoid verifying your own repair. It is allowed but recorded as self-verification."],clips:"Clip: Pass / fail a board"},
+ {id:"09",t:"Closing a job",s:"Ready for Invoice, Non-Repairable, premiums",who:{p:["Service Head","Liaison"],a:["Engineer"]},
+  do:["Pick a Non-Repairable reason from the list.","Pick a premium reason whenever a premium is charged."],
+  dont:["Don't close a board as Non-Repairable without a reason."],clips:"Clip: Three ways to close"},
+ {id:"10",t:"Dispatch (Delivery challan)",s:"Gate pass for boards leaving the building",who:{p:["Front Office"],a:["Liaison"]},
+  do:["Make a challan for every consignment leaving the facility.","Add accessories as their own line when they travel without a board."],
+  dont:["Don't hand the challan to the customer as an invoice. It is an internal gate pass."],clips:"Clip: Create a challan"},
+ {id:"11",t:"Invoice batches and Zoho",s:"Grouping finished jobs into one sales order",who:{p:["Front Office","Operations Manager"],a:["Sales Head"]},
+  do:["Build one batch per customer.","Check the batch before you send. A sent batch is frozen.","To take a job off a draft batch, remove its line. The job returns to the worklist."],
+  dont:["Don't try to put a job on two batches. The system refuses.","Don't expect to edit a batch after sending. Fix it in Zoho."],clips:"Clips: Build a batch · Push to Zoho · Push failed"},
+ {id:"12",t:"For leads: queues, rates and dashboards",s:"Stuck jobs, service rates, sub-statuses, targets",who:{p:["Service Head","Sales Head","Operations Manager","Executive / Admin"]},
+  do:["Enter a new service rate with a start date. Don't edit the old one.","Retire a sub-status rather than deleting it. Jobs in it stay counted.","Reassign a customer's owner through the reassign action so the move is recorded."],
+  dont:["Don't create two overlapping rates for the same customer, board and service level.","Don't judge a stuck job by its age. Use the time spent in its current sub-status."],clips:"Clips: Stuck-job queue · New rate · MIS dashboard"}
+];
+
+const pb=document.getElementById("personas"),mods=document.getElementById("mods"),note=document.getElementById("pnote");
+let cur="All roles";
+try{const s=localStorage.getItem("persona");if(s&&(s==="All roles"||P[s]))cur=s}catch(e){}
+function render(){
+  pb.innerHTML=["All roles",...Object.keys(P)].map(n=>`<button type="button" aria-pressed="${n===cur}">${n}</button>`).join("");
+  const mine=M.filter(m=>cur==="All roles"||m.who.p.includes(cur)||(m.who.a||[]).includes(cur));
+  note.textContent=cur==="All roles"?"All 13 modules, in workflow order. Green tags mark the roles that must complete a module; grey tags mark awareness only.":`${P[cur]} Path: ${mine.length} modules, about ${Math.round(mine.length*1.4)} minutes of video.`;
+  mods.innerHTML=M.map(m=>{
+    const on=mine.includes(m);
+    const tags=[...m.who.p.map(w=>`<em class="p">${w}</em>`),...(m.who.a||[]).map(w=>`<em>${w}</em>`)].join("");
+    return `<details class="mod ${on?"":"dim"}"><summary><span class="num">${m.id}</span><span class="t"><h3>${m.t}</h3><span>${m.s}</span></span><span class="who">${tags}</span></summary>
+    <div class="body"><div class="col do"><h4>Do</h4><ul>${m.do.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+    <div class="col dont"><h4>Don't</h4><ul>${m.dont.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+    <div class="clips"><b>Planned:</b> ${m.clips}</div></div></details>`}).join("");
+}
+pb.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;cur=b.textContent;try{localStorage.setItem("persona",cur)}catch(e){}render()});
+render();
+</script>
