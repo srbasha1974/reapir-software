@@ -1,0 +1,151 @@
+{
+ "id": "12",
+ "title": {
+  "en": "For leads: queues, rates and dashboards",
+  "ta": "Lead-களுக்கு: வரிசைகள், rate-கள், dashboard-கள்"
+ },
+ "role": "Operations Manager · Service Head · Sales Head · Executive / Admin",
+ "path": "Overview › MIS dashboard, Stuck tasks · Service › Performance · CRM › Service rates · Admin › Status hierarchy, Users and roles · CRM › a customer › Change owner",
+ "video": {
+  "en": "media/12-leads.mp4",
+  "ta": "media/12-leads-ta.mp4"
+ },
+ "poster": {
+  "en": "media/12-poster.jpg",
+  "ta": "media/12-poster-ta.jpg"
+ },
+ "seconds": {
+  "en": 154,
+  "ta": 152
+ },
+ "do": {
+  "en": [
+   "Executive / Ops Manager: start on the <b>MIS dashboard</b>. Every open board by stage; each figure opens the jobs behind it. Chase <b>Needs attention today</b> first.",
+   "Read <b>Stuck tasks</b>: Alloted or In Progress jobs with no hours, part or status change for the configured business days (5). Any activity resets the clock.",
+   "Service Head: set each engineer's <b>monthly target</b> on <b>Performance</b> (labour margin on their closed jobs). Revise it any time; who changed it is recorded.",
+   "Operations Manager: a service rate is <b>one board, one service level, from a date</b>, on one customer's rate card. For a new price, <b>End this rate</b> and add a new one.",
+   "Operations Manager: a sub-status nobody uses any more? <b>Retire</b> it in Status hierarchy. It keeps its history, and Restore brings it back.",
+   "Operations Manager / Admin: a new person arrives from the Workspace directory with no role (“Awaiting role”). <b>Grant a role</b> in Users and roles.",
+   "Sales Head: move an account to another sales person with <b>Change owner</b>, and say why. Who, when and why go into the account history."
+  ],
+  "ta": [
+   "Executive / Ops Manager: <b>MIS dashboard</b>-இல் தொடங்கவும். ஒவ்வொரு திறந்த போர்டும் நிலை வாரியாக; ஒவ்வொரு எண்ணும் பின்னுள்ள job-களைத் திறக்கும். முதலில் <b>Needs attention today</b>.",
+   "<b>Stuck tasks</b>: Alloted அல்லது In Progress job-களில் அமைக்கப்பட்ட வேலை நாட்கள் (5) நேரம், part, status மாற்றம் இல்லை. எந்தச் செயலும் கணக்கை மீண்டும் தொடங்கும்.",
+   "Service Head: <b>Performance</b>-இல் ஒவ்வொரு engineer-க்கும் <b>மாத target</b> அமைக்கவும் (மூடிய job-களின் labour margin). எப்போதும் மாற்றலாம்; யார் மாற்றினார் என்பது பதிவாகும்.",
+   "Operations Manager: service rate = <b>ஒரு போர்டு, ஒரு service level, ஒரு தேதியிலிருந்து</b>, ஒரு வாடிக்கையாளரின் rate card-இல். புதிய விலைக்கு <b>End this rate</b>, பின் புதியதைச் சேர்க்கவும்.",
+   "Operations Manager: பயன்படாத sub-status-ஐ Status hierarchy-இல் <b>Retire</b> செய்யவும். வரலாறு இருக்கும்; Restore அதைத் திரும்பக் கொண்டுவரும்.",
+   "Operations Manager / Admin: Workspace directory-இலிருந்து வரும் புதிய நபருக்கு role இருக்காது (“Awaiting role”). Users and roles-இல் <b>Grant a role</b>.",
+   "Sales Head: <b>Change owner</b> மூலம் கணக்கை வேறு sales நபருக்கு மாற்றவும், காரணத்துடன். யார், எப்போது, ஏன் என்பது கணக்கு வரலாற்றில் சேரும்."
+  ]
+ },
+ "dont": {
+  "en": [
+   "Don't add a second rate that overlaps an existing one for the same board and service level. The system refuses it.",
+   "Don't expect to change a rate's price. Rates are ended, not edited; jobs keep the price in force when they were registered.",
+   "Don't delete a sub-status. There is no delete: retire it.",
+   "Don't judge a job by its age. Look at the time in its current state; Pending Spare and On Hold are watched on Queue aging, not Stuck tasks.",
+   "Don't move an account's owner without a reason. The move is refused without one."
+  ],
+  "ta": [
+   "ஒரே போர்டு, service level-க்கு ஏற்கனவே உள்ள rate-உடன் ஒன்றின் மேல் ஒன்று வரும் இரண்டாவது rate-ஐச் சேர்க்க வேண்டாம். சிஸ்டம் மறுக்கும்.",
+   "Rate-இன் விலையை மாற்ற எதிர்பார்க்க வேண்டாம். Rate-கள் முடிக்கப்படும், திருத்தப்படாது; job-கள் பதிவான நேரத்து விலையையே வைத்திருக்கும்.",
+   "Sub-status-ஐ நீக்க வேண்டாம். நீக்கும் வசதியே இல்லை: Retire செய்யவும்.",
+   "Job-ஐ அதன் வயதால் மதிப்பிட வேண்டாம். இப்போதைய நிலையில் இருக்கும் நேரத்தைப் பார்க்கவும்; Pending Spare, On Hold ஆகியவை Stuck tasks-இல் அல்ல, Queue aging-இல் கண்காணிக்கப்படும்.",
+   "காரணம் இல்லாமல் கணக்கின் owner-ஐ மாற்ற வேண்டாம். காரணம் இல்லையெனில் மாற்றம் மறுக்கப்படும்."
+  ]
+ },
+ "quiz": {
+  "en": [
+   {
+    "q": "A customer agrees a new price for DPS-600 Minor from next month. Their current rate is open-ended. What do you do?",
+    "o": [
+     "Edit the old rate's price",
+     "End this rate, then add the new rate from next month",
+     "Add the new rate; the system picks the newest"
+    ],
+    "a": 1,
+    "why": "Two rates for the same board and level can't overlap. End the old one, then add the new one from its start date. Jobs already registered keep their price."
+   },
+   {
+    "q": "Nobody uses the sub-status “On Hold” any more. What does the Operations Manager do?",
+    "o": [
+     "Delete it",
+     "Retire it in Status hierarchy",
+     "Rename it to “Unused”"
+    ],
+    "a": 1,
+    "why": "Sub-statuses are retired, never deleted. The history stays, and Restore brings it back."
+   },
+   {
+    "q": "A job has been at Pending Spare for 3 weeks. Why is it not on Stuck tasks?",
+    "o": [
+     "Stuck tasks only covers Alloted and In Progress; waiting on a part is watched on Queue aging",
+     "It is a bug",
+     "Its engineer logged hours yesterday"
+    ],
+    "a": 0,
+    "why": "Stuck tasks measures neglect of work that should be moving. Paused states are left out by configuration and measured on Queue aging."
+   },
+   {
+    "q": "The Sales Head moves a customer to another sales engineer but leaves Why empty. What happens?",
+    "o": [
+     "The move is saved without a reason",
+     "The move is refused until a reason is given",
+     "The Operations Manager is asked to approve"
+    ],
+    "a": 1,
+    "why": "Change owner needs a reason; who, when and why are kept in the account history."
+   }
+  ],
+  "ta": [
+   {
+    "q": "அடுத்த மாதத்திலிருந்து DPS-600 Minor-க்கு புதிய விலைக்கு வாடிக்கையாளர் ஒப்புக்கொள்கிறார். இப்போதைய rate முடிவுத் தேதி இல்லாதது. என்ன செய்வீர்கள்?",
+    "o": [
+     "பழைய rate-இன் விலையைத் திருத்துவேன்",
+     "End this rate, பின் அடுத்த மாதத்திலிருந்து புதிய rate சேர்ப்பேன்",
+     "புதிய rate-ஐச் சேர்ப்பேன்; சிஸ்டம் புதியதைத் தேர்ந்தெடுக்கும்"
+    ],
+    "a": 1,
+    "why": "ஒரே போர்டு, level-க்கு இரண்டு rate-கள் overlap ஆகக்கூடாது. பழையதை முடித்து, புதியதை அதன் தொடக்கத் தேதியிலிருந்து சேர்க்கவும். பதிவான job-கள் தங்கள் விலையை வைத்திருக்கும்."
+   },
+   {
+    "q": "“On Hold” sub-status-ஐ இனி யாரும் பயன்படுத்துவதில்லை. Operations Manager என்ன செய்வார்?",
+    "o": [
+     "நீக்குவார்",
+     "Status hierarchy-இல் Retire செய்வார்",
+     "“Unused” என்று பெயர் மாற்றுவார்"
+    ],
+    "a": 1,
+    "why": "Sub-status-கள் Retire செய்யப்படும், நீக்கப்படாது. வரலாறு இருக்கும்; Restore அதைத் திரும்பக் கொண்டுவரும்."
+   },
+   {
+    "q": "ஒரு job 3 வாரமாக Pending Spare-இல் உள்ளது. அது ஏன் Stuck tasks-இல் இல்லை?",
+    "o": [
+     "Stuck tasks, Alloted, In Progress-ஐ மட்டுமே பார்க்கும்; part-க்காகக் காத்திருப்பது Queue aging-இல் கண்காணிக்கப்படும்",
+     "அது ஒரு bug",
+     "Engineer நேற்று நேரம் பதிவு செய்தார்"
+    ],
+    "a": 0,
+    "why": "Stuck tasks, நகர வேண்டிய வேலையின் புறக்கணிப்பை அளக்கிறது. நிறுத்த நிலைகள் configuration மூலம் விலக்கப்பட்டு Queue aging-இல் அளக்கப்படும்."
+   },
+   {
+    "q": "Sales Head ஒரு வாடிக்கையாளரை வேறு sales engineer-க்கு மாற்றுகிறார், ஆனால் Why-ஐக் காலியாக விடுகிறார். என்ன நடக்கும்?",
+    "o": [
+     "காரணம் இல்லாமல் சேமிக்கப்படும்",
+     "காரணம் தரும் வரை மாற்றம் மறுக்கப்படும்",
+     "Operations Manager ஒப்புதல் கேட்கப்படும்"
+    ],
+    "a": 1,
+    "why": "Change owner-க்கு காரணம் வேண்டும்; யார், எப்போது, ஏன் என்பது கணக்கு வரலாற்றில் இருக்கும்."
+   }
+  ]
+ },
+ "notes": [
+  "One clip, four roles: the session is swapped in place (00-helpers.ts asUser mints a new session in the same browser), so there is no cut. Order: exec@ (MIS, Stuck tasks) → servicehead@ (Performance target) → opsmanager@ (Service rates, Status hierarchy, Users and roles) → saleshead@ (Change owner).",
+  "Changes made per run: a fresh customer “Hosur Drives NNNN” (rate DPS-600 Minor ₹4,500 from today; owner moved to Test Sales Head), and Test Both Roles' September 2026 target set to ₹50,000. Retire and Grant were opened and pointed at, never confirmed.",
+  "App bug: a rate that starts in the future is not “in force” yet, and choosing it on the card shows “Same board, 0 customers” with no End this rate, so a future-dated rate cannot be ended from the screen. The clip uses a rate starting today to show End this rate. Also the card header counts it “0 in force” while the Whose agreement index shows 1 in force.",
+  "Not shown for time: Labour rates (Admin › Labour rates), Configuration (where the stuck threshold is set), Queue aging and the Sales analytics MIS page, Sales Head's Qualify as big potential.",
+  "Durations: EN 154 s (slightly over the 150 s ceiling); TA 152 s while its title card says “சுமார் 3 நிமிடங்கள்” (server response times varied between takes; the re-record limit was reached).",
+  "The draft line “Sales Head: reassign a customer's owner with the reassign action so the move is recorded” holds; Admin and Executive Management may also do it (reassign_customer_owner). The move is limited to an active Sales Engineer or the Sales Head."
+ ]
+}

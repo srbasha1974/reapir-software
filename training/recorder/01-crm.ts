@@ -40,12 +40,9 @@ await setupInward(stamp, trialName, stamp)
 // ── The clip ──────────────────────────────────────────────────────────────────────────────────
 const s = await Stage.open('salesengineer@thulirtech.com', '/crm/customers/new', join(OUT, 'raw'))
 const p = s.page
-const t0 = Date.now()
-const say0 = s.say.bind(s)
-s.say = (async (h: string, hold?: number, k?: 'do' | 'dont') => { console.log(((Date.now() - t0) / 1000).toFixed(1), h.slice(0, 30)); return say0(h, hold, k) }) as typeof s.say
 const company = `Selvam Pumps ${stamp}`
 /** Click, then fill at once: for the fields the viewer need not watch being typed. */
-const put = async (l: ReturnType<typeof p.locator>, v: string) => { await s.click(l); await l.fill(v); await s.wait(200) }
+const put = async (l: ReturnType<typeof p.locator>, v: string) => { await l.fill(v); await s.wait(300) }
 
 await s.card(`<div class="k">${c.kicker}</div><h1>${c.title}</h1><p>${c.sub}</p>`, 3500 * pace)
 
@@ -64,7 +61,6 @@ await s.point(p.getByText(/registered as TTS-/))
 await s.say(c.registered, 2800 * pace, 'do')
 await s.unring()
 const openRec = p.getByRole('link', { name: 'Open the record' })
-const companyHref = (await openRec.getAttribute('href')) ?? ''
 await s.click(openRec)
 await p.waitForLoadState('networkidle')
 await s.wait(900)
@@ -80,13 +76,12 @@ await put(p.locator('#lastName'), 'Natarajan')
 await put(p.locator('#jobTitle'), 'Maintenance Manager')
 await put(p.locator('#email'), `priya.${stamp}@example.com`)
 await s.point(p.locator('#email'))
-await s.say(c.reach, 2100 * pace, 'do')
+await s.say(c.reach, 1900 * pace, 'do')
 await s.unring()
 await s.click(p.getByRole('button', { name: 'Add contact' }))
 await p.getByText('Priya added.').waitFor({ timeout: 20000 })
 await s.wait(500)
 await put(p.locator('#firstName'), 'Arun')
-await put(p.locator('#jobTitle'), 'Purchase')
 await put(p.locator('#mobileNumber'), '+919843012345')
 await s.click(p.getByRole('button', { name: 'Add contact' }))
 await p.getByText('Arun added.').waitFor({ timeout: 20000 })
@@ -95,7 +90,7 @@ await s.wait(600)
 const row = (n: string) => p.locator('table.slots tr', { hasText: n })
 await s.click(row('Priya').getByRole('button', { name: 'Make primary' }))
 await p.waitForLoadState('networkidle')
-await s.wait(800)
+await s.wait(500)
 await s.click(row('Arun').getByRole('button', { name: 'Make primary' }))
 await p.waitForLoadState('networkidle')
 await s.wait(900)
@@ -115,9 +110,6 @@ await s.type(p.locator('#notes'), 'Wants a quote for 4 drives.', 35)
 await s.click(p.getByRole('button', { name: 'Log it' }))
 await p.getByText(/Logged\./).first().waitFor({ timeout: 20000 })
 await s.wait(500)
-await s.point(p.locator('ul.tl li').first())
-await s.say(c.logged, 1500 * pace)
-await s.unring()
 
 const y = new Date(Date.now() - 86400000)
 const yday = `${y.getFullYear()}-${String(y.getMonth() + 1).padStart(2, '0')}-${String(y.getDate()).padStart(2, '0')}T16:30`
@@ -141,7 +133,6 @@ await s.unring()
 await s.click(p.locator('ul.tl li', { hasText: 'Backdated' }).first().getByRole('link', { name: /Priya/ }))
 await p.waitForLoadState('networkidle')
 await s.wait(900)
-await s.say(c.contact, 1900 * pace)
 await s.point(p.locator('#jobTitle'))
 await s.say(c.typo, 2800 * pace)
 await s.unring()
@@ -164,18 +155,11 @@ await s.point(p.locator('section[data-code="EMP"]'))
 await s.say(c.movedDone, 2900 * pace, 'do')
 await s.unring()
 
-// UC-004 — lifecycle
-await s.goto(`${companyHref}?tab=lifecycle`)
-await s.wait(500)
-await s.point(p.getByText(/No transitions yet/))
-await s.say(c.lifecycle, 2600 * pace)
-await s.unring()
 await s.quiet()
 
 // The Sales Head, briefly
 await asUser(s, 'saleshead@thulirtech.com', `/crm/customers/${trialId}?tab=lifecycle`)
 await s.wait(400)
-await s.say(c.salesHead, 1700 * pace)
 await s.point(p.locator('table.slots tbody tr').first())
 await s.say(c.trialOwner, 2800 * pace)
 await s.unring()

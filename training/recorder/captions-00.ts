@@ -33,7 +33,7 @@ export const CAPTIONS = {
   ta: {
     kicker: 'துளிர் பயிற்சி · பாடம் 00 · அனைவருக்கும்',
     title: 'ஒரு போர்டு கடைக்குள் எப்படி நகர்கிறது',
-    sub: 'நான்கு நிலைகள், பதினான்கு sub-status-கள், யாருடைய முறை என்பது. சுமார் 70 வினாடிகள்.',
+    sub: 'நான்கு நிலைகள், பதினான்கு sub-status-கள், யாருடைய முறை என்பது. சுமார் 85 வினாடிகள்.',
     map: 'ஒவ்வொரு போர்டும் இடமிருந்து வலமாக 4 நிலைகளைக் கடக்கிறது.<small>ஒவ்வொரு நிலைக்கும் தனி sub-status-கள் உண்டு.</small>',
     pre: 'Pre-Repair: பதிவு, assessment, quotation.<small>Front Office பதிவு செய்யும். Liaison அல்லது Service Head assess செய்து quote தருவார்கள்.</small>',
     inRepair: 'In-Repair: allot செய்து, பின் பழுதுபார்ப்பு.<small>Service Head அல்லது Liaison allot செய்வார். Engineer பழுதுபார்ப்பார்.</small>',

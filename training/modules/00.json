@@ -1,0 +1,146 @@
+{
+ "id": "00",
+ "title": {
+  "en": "How a board moves through the shop",
+  "ta": "ஒரு போர்டு கடைக்குள் எப்படி நகர்கிறது"
+ },
+ "role": "Everyone",
+ "path": "Overview › Pipeline · Service › a job card · Service › What has stalled",
+ "video": {
+  "en": "media/00-pipeline.mp4",
+  "ta": "media/00-pipeline-ta.mp4"
+ },
+ "poster": {
+  "en": "media/00-poster.jpg",
+  "ta": "media/00-poster-ta.jpg"
+ },
+ "seconds": {
+  "en": 70,
+  "ta": 85
+ },
+ "do": {
+  "en": [
+   "Know the <b>4 stages</b>: Pre-Repair → In-Repair → Repair Completed → Closed. Each has its own sub-statuses.",
+   "<b>Pre-Repair</b> (Inward, Under Assessment, Awaiting Customer Input, Awaiting Quotation Approval): Front Office books it in; Liaison or Service Head assess and quote.",
+   "<b>In-Repair</b> (Alloted, In Progress, Pending Spare, On Hold): Service Head or Liaison allots; the engineer repairs.",
+   "<b>Repair Completed</b> (Ready for Verification, In Verification, Awaiting Customer Confirmation): a second engineer verifies; the Liaison runs customer testing.",
+   "<b>Closed</b>: Ready for Invoice (goes on an invoice batch), Non-Repairable or Customer Rejected.",
+   "Read a job's <b>sub-status</b> before you act. It tells you whose turn it is. <b>This job so far</b> shows every move, when and by whom."
+  ],
+  "ta": [
+   "<b>4 நிலைகள்</b>: Pre-Repair → In-Repair → Repair Completed → Closed. ஒவ்வொன்றுக்கும் தனி sub-status-கள்.",
+   "<b>Pre-Repair</b> (Inward, Under Assessment, Awaiting Customer Input, Awaiting Quotation Approval): Front Office பதிவு செய்யும்; Liaison அல்லது Service Head assess செய்து quote தருவார்கள்.",
+   "<b>In-Repair</b> (Alloted, In Progress, Pending Spare, On Hold): Service Head அல்லது Liaison allot செய்வார்; engineer பழுதுபார்ப்பார்.",
+   "<b>Repair Completed</b> (Ready for Verification, In Verification, Awaiting Customer Confirmation): இரண்டாவது engineer சரிபார்ப்பார்; Liaison வாடிக்கையாளர் சோதனையை நடத்துவார்.",
+   "<b>Closed</b>: Ready for Invoice (invoice batch-இல் சேரும்), Non-Repairable அல்லது Customer Rejected.",
+   "செயல்படும் முன் job-இன் <b>sub-status</b>-ஐப் படிக்கவும். யாருடைய முறை என்று அது சொல்லும். <b>This job so far</b> ஒவ்வொரு நகர்வையும், எப்போது, யாரால் என்று காட்டும்."
+  ]
+ },
+ "dont": {
+  "en": [
+   "Don't try to log hours on a job at <b>Pending Spare</b> or <b>On Hold</b>. They mean paused, and the system refuses the time.",
+   "Don't expect a <b>Closed</b> job to be reopened. A lead can send an <b>open</b> job back to the engineer (<b>Send it back to the engineer</b>, with a reason); a board that returns after closing is a new <b>Rework</b> job.",
+   "Don't keep work outside the system. Time in each sub-status is measured, and a job sitting too long shows as <b>Stuck</b>.",
+   "Don't judge a job by the day it arrived. <b>Days</b> on What has stalled count from entering the current sub-status."
+  ],
+  "ta": [
+   "<b>Pending Spare</b> அல்லது <b>On Hold</b>-இல் உள்ள job-இல் நேரம் பதிவு செய்ய முயல வேண்டாம். அவை நிறுத்தம்; சிஸ்டம் ஏற்காது.",
+   "<b>Closed</b> job மீண்டும் திறக்கப்படும் என எதிர்பார்க்க வேண்டாம். ஒரு lead <b>திறந்த</b> job-ஐ மட்டும் காரணத்துடன் engineer-இடம் திருப்பலாம் (<b>Send it back to the engineer</b>); மூடிய பின் திரும்பும் போர்டு ஒரு புதிய <b>Rework</b> job.",
+   "வேலையை சிஸ்டத்துக்கு வெளியே வைக்க வேண்டாம். ஒவ்வொரு sub-status-இலும் நேரம் அளக்கப்படுகிறது; அதிக நாள் நின்ற job <b>Stuck</b> ஆகக் காட்டப்படும்.",
+   "போர்டு வந்த நாளை வைத்து job-ஐ மதிப்பிட வேண்டாம். What has stalled-இல் <b>Days</b>, இப்போதைய sub-status-க்கு வந்ததிலிருந்து கணக்கிடப்படும்."
+  ]
+ },
+ "quiz": {
+  "en": [
+   {
+    "q": "A job is at Pending Spare. The engineer wants to book 2 hours on it today. What happens?",
+    "o": [
+     "The hours are saved as usual",
+     "The system refuses: the job is paused waiting for a part",
+     "The hours go to the Service Head for approval"
+    ],
+    "a": 1,
+    "why": "Pending Spare and On Hold block time logging. The job has to be back In Progress first."
+   },
+   {
+    "q": "A board closed as Ready for Invoice last month comes back with the same fault. What do you do?",
+    "o": [
+     "Send the closed job back to the engineer",
+     "Change its status by hand to In Progress",
+     "Register it as a new Rework job"
+    ],
+    "a": 2,
+    "why": "A closed job is never reopened. Send it back works only on open jobs; a returning board is a new Rework job linked to the old one."
+   },
+   {
+    "q": "Which stage holds Awaiting Customer Confirmation?",
+    "o": [
+     "Pre-Repair",
+     "Repair Completed",
+     "Closed"
+    ],
+    "a": 1,
+    "why": "Repair Completed: Ready for Verification, In Verification, Awaiting Customer Confirmation. The Liaison records the customer's test."
+   },
+   {
+    "q": "On What has stalled, a job shows 21 in the Days column. What does 21 count?",
+    "o": [
+     "Days since the board arrived at the counter",
+     "Days since it entered its current sub-status",
+     "Days since the engineer last logged in"
+    ],
+    "a": 1,
+    "why": "The queue measures time in the current state, not the board's age."
+   }
+  ],
+  "ta": [
+   {
+    "q": "ஒரு job Pending Spare-இல் உள்ளது. Engineer இன்று அதில் 2 மணி நேரம் பதிவு செய்ய விரும்புகிறார். என்ன நடக்கும்?",
+    "o": [
+     "நேரம் வழக்கம்போல் பதிவாகும்",
+     "சிஸ்டம் மறுக்கும்: job part-க்காகக் காத்திருக்கிறது",
+     "நேரம் Service Head ஒப்புதலுக்குச் செல்லும்"
+    ],
+    "a": 1,
+    "why": "Pending Spare, On Hold நேரப் பதிவைத் தடுக்கும். Job முதலில் In Progress-க்குத் திரும்ப வேண்டும்."
+   },
+   {
+    "q": "கடந்த மாதம் Ready for Invoice ஆக மூடிய போர்டு அதே பழுதுடன் திரும்பி வருகிறது. என்ன செய்வீர்கள்?",
+    "o": [
+     "மூடிய job-ஐ engineer-இடம் திருப்பி அனுப்புவேன்",
+     "Status-ஐ கையால் In Progress ஆக மாற்றுவேன்",
+     "புதிய Rework job ஆகப் பதிவு செய்வேன்"
+    ],
+    "a": 2,
+    "why": "மூடிய job மீண்டும் திறக்கப்படாது. Send it back திறந்த job-களுக்கு மட்டுமே; திரும்பும் போர்டு பழையதுடன் இணைந்த புதிய Rework job."
+   },
+   {
+    "q": "Awaiting Customer Confirmation எந்த நிலையில் உள்ளது?",
+    "o": [
+     "Pre-Repair",
+     "Repair Completed",
+     "Closed"
+    ],
+    "a": 1,
+    "why": "Repair Completed: Ready for Verification, In Verification, Awaiting Customer Confirmation. வாடிக்கையாளர் சோதனையை Liaison பதிவு செய்வார்."
+   },
+   {
+    "q": "What has stalled-இல் ஒரு job-க்கு Days = 21. இந்த 21 எதைக் கணக்கிடுகிறது?",
+    "o": [
+     "போர்டு கவுண்டருக்கு வந்த நாளிலிருந்து",
+     "இப்போதைய sub-status-க்கு வந்ததிலிருந்து",
+     "Engineer கடைசியாக login செய்ததிலிருந்து"
+    ],
+    "a": 1,
+    "why": "வரிசை, போர்டின் வயதை அல்ல, இப்போதைய நிலையில் இருக்கும் நேரத்தை அளக்கிறது."
+   }
+  ]
+ },
+ "notes": [
+  "The brief and the old draft said a lead can send a CLOSED job back. The app refuses it: return_to_engineer() raises “Work order … is closed. Register a rework job against it rather than reopening this one.”, and the job card hides Send it back on terminal jobs. The clip teaches that open jobs can be sent back (not from In Progress) and closed ones become Rework jobs.",
+  "The draft line “Add a short note when you change status” was not taught: status changes on screen carry notes only in specific acts (e.g. Send it back needs a reason, Pending Spare records what it waits for); there is no general note field.",
+  "Two different “stuck” measures exist: What has stalled (Service) lists jobs past the threshold by time in the current state (it excludes boards waiting on a part), while Overview › Stuck tasks counts Alloted/In Progress jobs with no timesheet, part or status activity for N business days. The clip only says “sitting too long in one state shows as Stuck”.",
+  "Filmed as admin.test@ (Admin sees every screen). The job shown is read, never changed: the open job with the longest history, preferring Pending Spare (WO/26-27/00005 in these takes). The sub-status flags `blocks_labour` are not what enforces the time refusal: the timesheet trigger names Pending Spare and On Hold directly, so a new sub-status flagged “No time logging” in Status hierarchy would NOT block time (the flag appears unused by enforcement).",
+  "On the job card the Non-Repairable act is labelled “It cannot be saved…” in red, which at a glance reads like an error message."
+ ]
+}
