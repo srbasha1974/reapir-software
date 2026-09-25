@@ -1,0 +1,147 @@
+{
+ "id": "07",
+ "title": {
+  "en": "Timesheets",
+  "ta": "Timesheet"
+ },
+ "role": "Engineer",
+ "path": "Service › My timesheet",
+ "video": {
+  "en": "media/07-timesheets.mp4",
+  "ta": "media/07-timesheets-ta.mp4"
+ },
+ "poster": {
+  "en": "media/07-poster.jpg",
+  "ta": "media/07-poster-ta.jpg"
+ },
+ "seconds": {
+  "en": 73,
+  "ta": 83
+ },
+ "do": {
+  "en": [
+   "Book your hours <b>every day</b> on <b>My timesheet</b>. There is one sheet per week, starting Monday, with a row per work order.",
+   "Use <b>+ Add a work order</b> to start a row. Only boards on your own bench are offered.",
+   "Type the hours under their day. The cell saves when you leave it, and the <b>Day total</b> is worked out by the system.",
+   "If a cell is refused, read the message under the row, correct the number and leave the cell again.",
+   "When the week is finished, press <b>Submit week</b>."
+  ],
+  "ta": [
+   "<b>My timesheet</b>-இல் <b>தினமும்</b> நேரம் பதியுங்கள். வாரத்துக்கு ஒரு sheet, திங்கள் முதல், ஒவ்வொரு work order-க்கும் ஒரு வரி.",
+   "வரி தொடங்க <b>+ Add a work order</b>. உங்கள் bench-இல் உள்ள போர்டுகள் மட்டுமே வரும்.",
+   "நேரத்தை அந்த நாளின் கட்டத்தில் எழுதுங்கள். Cell-ஐ விட்டு நகர்ந்ததும் சேமிக்கப்படும். <b>Day total</b>-ஐ சிஸ்டமே கணக்கிடும்.",
+   "Cell மறுக்கப்பட்டால், வரியின் கீழ் உள்ள செய்தியைப் படித்து, எண்ணைத் திருத்தி, மீண்டும் cell-ஐ விட்டு நகருங்கள்.",
+   "வாரம் முடிந்ததும் <b>Submit week</b> அழுத்துங்கள்."
+  ]
+ },
+ "dont": {
+  "en": [
+   "Don't book time on a job allotted to someone else. It isn't offered, and the system refuses it.",
+   "Don't book time on a paused job (<b>Pending Spare</b> or <b>On Hold</b>) or a closed job. The row turns read-only and entries are refused.",
+   "Don't go over the daily limit. A day's total across all jobs may not pass the configured maximum (10 hours now).",
+   "Don't look for a rate to type. The system applies your cost rate to every hour.",
+   "Don't submit a week you still need to change. A submitted week is locked. A correction is a talk with your Service Head."
+  ],
+  "ta": [
+   "வேறொருவருக்கு allot ஆன job-இல் நேரம் பதிய வேண்டாம். அது பட்டியலில் வராது, சிஸ்டமும் மறுக்கும்.",
+   "Paused job (<b>Pending Spare</b> அல்லது <b>On Hold</b>), மூடிய job-களில் நேரம் பதிய வேண்டாம். அந்த வரி படிக்க மட்டும், பதிவு மறுக்கப்படும்.",
+   "தினசரி வரம்பைத் தாண்ட வேண்டாம். எல்லா job-களும் சேர்ந்து ஒரு நாளின் மொத்தம் அமைக்கப்பட்ட அதிகபட்சத்தைத் (இப்போது 10 மணி) தாண்டக்கூடாது.",
+   "Rate எழுத இடம் தேட வேண்டாம். ஒவ்வொரு மணி நேரத்துக்கும் உங்கள் cost rate-ஐ சிஸ்டமே சேர்க்கும்.",
+   "இன்னும் மாற்ற வேண்டிய வாரத்தை submit செய்ய வேண்டாம். Submit ஆன வாரம் பூட்டப்படும். திருத்தம் வேண்டுமானால் Service Head-இடம் பேசுங்கள்."
+  ]
+ },
+ "quiz": {
+  "en": [
+   {
+    "q": "You already have 6 hours on Thursday and try to add 5 more on another job for the same day. What happens?",
+    "o": [
+     "It saves: the limit is per job",
+     "It is refused: a day's total across all jobs may not pass the limit (10 h)",
+     "It saves, and the Service Head is warned"
+    ],
+    "a": 1,
+    "why": "The ceiling is per engineer per day, across every job. The refusal names the total and the limit. Correct the number and it saves."
+   },
+   {
+    "q": "Your board went to Pending Spare this morning. You spent an hour on it before that. Can you add hours to it now?",
+    "o": [
+     "Yes, any time this week",
+     "No, a paused job takes no hours; its row is read-only",
+     "Only if you type a reason"
+    ],
+    "a": 1,
+    "why": "Pending Spare and On Hold block labour. Hours already booked stay on the record."
+   },
+   {
+    "q": "Where do you enter your hourly cost rate?",
+    "o": [
+     "In a column next to the hours",
+     "Nowhere: the system applies the rate in force for you",
+     "On Submit week"
+    ],
+    "a": 1,
+    "why": "The system prices every entry at the rate in force for you on that date. The Operations Manager keeps the rate card."
+   },
+   {
+    "q": "You pressed Submit week, then noticed a wrong number on Tuesday. What now?",
+    "o": [
+     "Edit the cell. Submitted weeks stay open for a day",
+     "Talk to your Service Head. A submitted week is locked",
+     "Book the difference on next week"
+    ],
+    "a": 1,
+    "why": "Submitting locks the week and the system refuses any change to it. A correction is a conversation, not an edit."
+   }
+  ],
+  "ta": [
+   {
+    "q": "வியாழனில் ஏற்கனவே 6 மணி நேரம் உள்ளது. அதே நாளில் வேறு job-இல் இன்னும் 5 சேர்க்க முயல்கிறீர்கள். என்ன நடக்கும்?",
+    "o": [
+     "சேமிக்கப்படும்: வரம்பு job-க்குத் தனி",
+     "மறுக்கப்படும்: எல்லா job-களும் சேர்ந்த நாள் மொத்தம் வரம்பை (10 மணி) தாண்டக்கூடாது",
+     "சேமிக்கப்படும், Service Head-க்கு எச்சரிக்கை போகும்"
+    ],
+    "a": 1,
+    "why": "வரம்பு ஒரு engineer-க்கு ஒரு நாளுக்கு, எல்லா job-களும் சேர்த்து. மறுப்புச் செய்தி மொத்தத்தையும் வரம்பையும் சொல்லும். எண்ணைத் திருத்தினால் சேமிக்கப்படும்."
+   },
+   {
+    "q": "இன்று காலை உங்கள் போர்டு Pending Spare ஆனது. அதற்கு முன் ஒரு மணி நேரம் வேலை செய்தீர்கள். இப்போது அதில் நேரம் சேர்க்க முடியுமா?",
+    "o": [
+     "ஆம், இந்த வாரம் எப்போது வேண்டுமானாலும்",
+     "இல்லை, paused job-இல் நேரம் பதிய முடியாது; அதன் வரி படிக்க மட்டும்",
+     "காரணம் எழுதினால் மட்டும்"
+    ],
+    "a": 1,
+    "why": "Pending Spare, On Hold நிலைகளில் நேரம் பதிய முடியாது. ஏற்கனவே பதிந்த நேரம் பதிவில் இருக்கும்."
+   },
+   {
+    "q": "உங்கள் ஒரு மணி நேர cost rate-ஐ எங்கே எழுதுவீர்கள்?",
+    "o": [
+     "நேரத்துக்கு அருகில் உள்ள column-இல்",
+     "எங்கும் இல்லை: நடைமுறையில் உள்ள rate-ஐ சிஸ்டமே சேர்க்கும்",
+     "Submit week-இல்"
+    ],
+    "a": 1,
+    "why": "அந்த தேதியில் உங்களுக்கு நடைமுறையில் உள்ள rate-இல் ஒவ்வொரு பதிவையும் சிஸ்டம் கணக்கிடும். Rate card-ஐ Operations Manager வைத்திருப்பார்."
+   },
+   {
+    "q": "Submit week அழுத்திய பின், செவ்வாய்க்கிழமையில் ஒரு தவறான எண் தெரிகிறது. இப்போது?",
+    "o": [
+     "Cell-ஐ மாற்றுவேன். Submit ஆன வாரம் ஒரு நாள் திறந்திருக்கும்",
+     "Service Head-இடம் பேசுவேன். Submit ஆன வாரம் பூட்டப்பட்டது",
+     "வித்தியாசத்தை அடுத்த வாரத்தில் பதிவேன்"
+    ],
+    "a": 1,
+    "why": "Submit செய்ததும் வாரம் பூட்டப்படும், எந்த மாற்றத்தையும் சிஸ்டம் மறுக்கும். திருத்தம் ஒரு பேச்சு, திருத்தம் செய்வது அல்ல."
+   }
+  ]
+ },
+ "notes": [
+  "The week in the database runs Monday to Sunday (week_start_date + 6), but the grid shows only Monday to Saturday columns. A Sunday entry counts in the row total but has no cell. The clip says 'from Monday' and doesn't mention Sunday.",
+  "The clip submits an earlier week of our own (24 Aug for EN, 31 Aug for TA), not the current one. Test Engineer is shared with the module 05 recording, and submitting the current week would have locked it.",
+  "The engineer's current week also shows a demo row (WO/26-27/00004), because the grid lists every job with hours that week.",
+  "The 'not your job' and 'closed job' refusals aren't shown on screen: such jobs aren't offered in + Add a work order, and a job that has left your bench shows 'off your bench — its hours stay'. Both are refused by timesheet_entry_is_permitted(). They are taught as captions and in the don't list.",
+  "The title-card durations were re-rendered as stills after recording so they match the final length.",
+  "Recording note: after a cell saves, the recording can stop showing caption changes for a few seconds. The script reloads the page (the ?job= rows are kept in the address) before the next caption."
+ ]
+}
