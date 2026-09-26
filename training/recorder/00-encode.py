@@ -48,8 +48,19 @@ for i, px in enumerate(pixels(0, H - 3)):
     else:
         spans.append([i, i])
 
+# A corrected title card (00-title.ts), laid over the frames where the recorded card is up.
+title = os.path.join(HERE, 'out', f'{num}-title.{lang}.png')
+card_end = first
+while card_end + 1 < len(top) and near(top[card_end + 1], (238, 240, 243), 6):
+    card_end += 1
 expr = f'gte(n,{start})' + ''.join(f'*not(between(n,{a - 1},{b + 1}))' for a, b in spans)
-subprocess.run([FF, '-y', '-loglevel', 'error', '-i', src, '-vf', f"fps=25,select='{expr}',setpts=N/25/TB",
+pick = f"select='{expr}',setpts=N/25/TB"
+if os.path.exists(title):
+    graph = ['-i', src, '-loop', '1', '-i', title, '-filter_complex',
+             f"[0:v]fps=25[m];[m][1:v]overlay=shortest=1:enable='between(n,{first},{card_end})',{pick}"]
+else:
+    graph = ['-i', src, '-vf', f'fps=25,{pick}']
+subprocess.run([FF, '-y', '-loglevel', 'error', *graph,
                 '-r', '25', '-c:v', 'libx264', '-preset', 'slow', '-crf', '24', '-pix_fmt', 'yuv420p',
                 '-movflags', '+faststart', '-an', mp4], check=True)
 subprocess.run([FF, '-y', '-loglevel', 'error', '-ss', '1.0', '-i', mp4, '-frames:v', '1', '-q:v', '3', poster], check=True)
@@ -57,4 +68,4 @@ out = subprocess.run([FF, '-i', mp4], capture_output=True, text=True).stderr
 h, m, s = [l for l in out.splitlines() if 'Duration' in l][0].split(',')[0].split()[-1].split(':')
 secs = int(h) * 3600 + int(m) * 60 + float(s)
 cut = sum(b - a + 3 for a, b in spans) / 25
-print(f'{os.path.basename(mp4)} start={start / 25:.2f}s cut={cut:.1f}s in {len(spans)} spans -> {secs:.1f}s {os.path.getsize(mp4) / 1e6:.1f}MB')
+print(f'{os.path.basename(mp4)} title={"patched" if os.path.exists(title) else "as filmed"} start={start / 25:.2f}s cut={cut:.1f}s in {len(spans)} spans -> {secs:.1f}s {os.path.getsize(mp4) / 1e6:.1f}MB')
