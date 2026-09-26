@@ -21,11 +21,12 @@
  *   npx tsx 06-parts.ts [en|ta]    → out/06-parts.<lang>.mp4 (joined, near-lossless)
  */
 import { Stage } from './stage'
+import { joinAtCards } from './06-join'
 import type { Locator } from '@playwright/test'
 import { CAPTIONS, type Lang } from './captions-06'
 import { join } from 'node:path'
 import { readFileSync } from 'node:fs'
-import { execFileSync, spawnSync } from 'node:child_process'
+import { execFileSync } from 'node:child_process'
 
 const OUT = join(import.meta.dirname, 'out')
 const RAW = join(OUT, 'raw')
@@ -147,7 +148,7 @@ if (runs(2)) {
   await s.wait(700 * pace)
   await s.quiet()
   await s.click(p.getByRole('button', { name: /Raise the request/ }))
-  await p.waitForURL(/raised=/)
+  await p.waitForURL(/raised=/, { waitUntil: 'commit', timeout: 90000 })
   await p.waitForLoadState('networkidle')
   pr = decodeURIComponent(new URL(p.url()).searchParams.get('raised') ?? '')
   await s.wait(500)
@@ -158,7 +159,7 @@ if (runs(2)) {
   await s.point(send)
   await s.say(c.send, 2000 * pace, 'do')
   await tap(s, send)
-  await p.waitForURL(/sent=/)
+  await p.waitForURL(/sent=/, { waitUntil: 'commit', timeout: 90000 })
   await p.waitForLoadState('networkidle')
   // The act lands on the waiting tab; the request's new state is read on On order.
   await s.goto('/service-centre/spares?tab=orders')
@@ -187,7 +188,7 @@ if (runs(3)) {
   await s.type(po, `PO-${setup.stamp}`, 70)
   await s.wait(300)
   await s.click(row().getByRole('button', { name: 'Mark ordered' }))
-  await p.waitForURL(/ordered=/)
+  await p.waitForURL(/ordered=/, { waitUntil: 'commit', timeout: 90000 })
   await p.waitForLoadState('networkidle')
   await reload(s)
   await s.point(row().locator('td').nth(3))
@@ -208,7 +209,7 @@ if (runs(3)) {
   await s.say(c.accepted, 2400 * pace, 'do')
   await s.unring()
   await s.click(p.getByRole('button', { name: 'Record the delivery' }))
-  await p.waitForURL(/resumed=/)
+  await p.waitForURL(/resumed=/, { waitUntil: 'commit', timeout: 90000 })
   await p.waitForLoadState('networkidle')
   await reload(s)
   await s.point(p.locator('.warn.good').first())
@@ -243,7 +244,7 @@ if (runs(4)) {
   await s.type(p.locator('#notes'), 'One cracked on the shelf', 25)
   await s.say(c.adjust, 2000 * pace)
   await s.click(p.getByRole('button', { name: 'Correct the count' }))
-  await p.waitForURL(/adjusted=/)
+  await p.waitForURL(/adjusted=/, { waitUntil: 'commit', timeout: 90000 })
   await p.waitForLoadState('networkidle')
   // After this redirect the recording stops showing overlay changes until the next full load, so
   // load the same address again (a GET: nothing is repeated).
@@ -258,19 +259,6 @@ if (runs(4)) {
   await s.close(out)
 }
 
-// ── Join: each segment starts where its (dark) card is first fully drawn ─────────────────────
-const FF = execFileSync('python3', ['-c', 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())']).toString().trim()
-const detect = (f: string): number => {
-  const r = spawnSync(FF, ['-i', f, '-vf', 'blackdetect=d=0.3:pic_th=0.80:pix_th=0.12', '-an', '-f', 'null', '-'])
-  const m = /black_start:([\d.]+)/.exec(String(r.stderr))
-  if (!m || Number(m[1]) > 12) throw new Error(`No title card found early in ${f}`)
-  return Number(m[1]) + 0.25
-}
-const trims = segments.map(detect)
-console.log('segment starts', trims)
-const inputs = segments.flatMap((f, i) => ['-ss', String(trims[i]), '-i', f])
-const filter = segments.map((_, i) => `[${i}:v]setpts=PTS-STARTPTS[v${i}]`).join(';') +
-  ';' + segments.map((_, i) => `[v${i}]`).join('') + `concat=n=${segments.length}:v=1:a=0[out]`
-const joined = join(OUT, `06-parts.${lang}.mp4`)
-execFileSync(FF, ['-y', '-loglevel', 'error', ...inputs, '-filter_complex', filter, '-map', '[out]', '-c:v', 'libx264', '-preset', 'fast', '-crf', '14', '-pix_fmt', 'yuv420p', '-an', joined])
+// ── Join: each segment starts where its card is first fully drawn (06-join.ts) ─────────────────────
+const joined = joinAtCards(segments, join(OUT, `06-parts.${lang}.mp4`))
 console.log(joined, 'PR', pr)

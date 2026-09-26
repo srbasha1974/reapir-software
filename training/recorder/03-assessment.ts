@@ -90,7 +90,7 @@ await s.point(narrow)
 await s.say(c.narrow, 2200 * pace)
 await s.type(narrow, 'Rajapal', 60)
 await s.wait(900)
-await s.click(p.getByRole('option', { name: new RegExp(CUSTOMER) }).first())
+await s.click(p.getByRole('listbox', { name: 'Narrow the queue to one customer matches' }).getByRole('option', { name: new RegExp(CUSTOMER) }).first())
 await p.waitForURL(/customer=/, { timeout: 20000 })
 await settle(1500)
 

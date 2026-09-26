@@ -41,7 +41,7 @@ interface Captions {
 const en: Captions = {
   kicker: 'Thulir training · Module 17 · Sales Head · Sales Engineer',
   title: 'What your accounts are worth',
-  sub: 'Charged, filled, unpriced, premium and discount, won, conversion, velocity. About 2½ minutes.',
+  sub: 'Charged, filled, unpriced, premium and discount, won, conversion, velocity. About 2 minutes.',
   open: 'Overview › Sales. By engineer: what each person’s accounts produced.<small>Demo figures on screen. Your figures will differ.</small>',
   exCharged: {
     kicker: 'Worked example · Charged',

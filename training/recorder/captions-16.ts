@@ -24,7 +24,7 @@ export const CAPTIONS = {
         ['D · write-off', '—', 'never priced · 6 h = ₹2,400 of hours'],
         ['= Labour margin', '₹14,900', 'on labour charge ₹22,100 · charged ₹26,000'],
       ],
-      read: 'The figures next to each board are its <b>labour margin</b> (Module 15).',
+      read: 'The figures next to each board are its <b>labour margin</b> (clip Money 1).',
     } as Card,
     refresh: 'MIS reads a copy, refreshed nightly.<small>Press “Refresh now” before you read a month.</small>',
     baseCard: {
@@ -125,7 +125,7 @@ export const CAPTIONS = {
         ['D · ரைட்-ஆஃப்', '—', 'ப்ரைஸ் போடல · 6 h = ₹2,400 ஹவர்ஸ்'],
         ['= Labour margin', '₹14,900', 'லேபர் சார்ஜ் ₹22,100 மேல · Charged ₹26,000'],
       ],
-      read: 'ஒவ்வொரு போர்டு பக்கத்துலயும் இருக்கறது அதோட <b>லேபர் மார்ஜின்</b> (மாட்யூல் 15).',
+      read: 'ஒவ்வொரு போர்டு பக்கத்துலயும் இருக்கறது அதோட <b>லேபர் மார்ஜின்</b> (மணி 1 கிளிப்).',
     } as Card,
     refresh: 'MIS ஒரு காப்பியை படிக்குது, ராத்திரி அப்டேட் ஆகும்.<small>மாசத்தை படிக்கறதுக்கு முன்னாடி “Refresh now” அழுத்துங்க.</small>',
     baseCard: {

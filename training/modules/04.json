@@ -23,9 +23,9 @@
       "Open <b>Service › Quotations</b>. <b>Waiting on a price</b> lists the customers with boards Under Assessment. Choose one (or come from the reservoir with the boards already ticked).",
       "<b>Tick every board</b> the quotation covers. Nothing is pre-ticked. Approval releases exactly the ticked boards.",
       "Boards of one kind (brand, model, service level) share a line and a price; another kind gets its own line. One board needs a different price? <b>Own line</b> (<b>Back with its kind</b> undoes it).",
-      "For each line fill <b>What is quoted</b> and <b>Price per unit</b> (what the customer pays for one board). <b>Normal price</b> = what that repair usually costs, parts included: shown from the rate card, or typed by you where there is none (<b>Set by hand</b>).",
+      "For each line fill <b>What is quoted</b> and <b>Price per unit</b> (what the customer pays for one board). <b>Normal price</b> = what that repair usually costs, parts included: shown from the rate card, or typed by you where there is none (<b>set by hand</b>).",
       "Price per unit <b>above</b> normal: the extra is a <b>Premium</b>. Choose <b>Why a premium</b> (Urgent turnaround, Out of hours, Site attendance, Scarce component, Customer request). <b>Below</b> normal: the gap is a <b>Discount</b>, nothing more to fill. Equal: neither.",
-      "<b>Engineer’s labour charge</b> = normal price less parts. It is worked out for you. The customer sees each line’s price and the total only; the dashed split rows are internal.",
+      "<b>Labour charge</b> = normal price less parts. It is worked out for you. The customer sees each line’s price and the total only; the dashed split rows are internal.",
       "Once it has gone by email or on paper, press <b>Record as sent</b>. Every board on it moves to <b>Awaiting Quotation Approval</b>.",
       "New price, or the customer wants only some boards? <b>Revise it</b>, ticking only the boards the new version covers, then <b>Record as sent</b>. A board left off goes back to <b>Under Assessment</b>. Record the answer with <b>Who decided</b> (a named person)."
     ],
@@ -33,9 +33,9 @@
       "<b>Service › Quotations</b> திறங்க. <b>Waiting on a price</b>ல Under Assessment போர்டு இருக்கற கஸ்டமர் லிஸ்ட் வரும். ஒருத்தரை செலக்ட் பண்ணுங்க (அல்லது Reservoirல இருந்து டிக் பண்ணியே வாங்க).",
       "கொட்டேஷன்ல வர்ற <b>ஒவ்வொரு போர்டையும் டிக்</b> பண்ணுங்க. எதுவும் தானா டிக் ஆகாது. அப்ரூவல், டிக் பண்ண போர்டை மட்டும் தான் ரிலீஸ் பண்ணும்.",
       "ஒரே மாதிரி போர்டுக்கு (பிராண்ட், மாடல், சர்வீஸ் லெவல்) ஒரே லைன், ஒரே ப்ரைஸ்; வேற மாதிரிக்கு தனி லைன். ஒரு போர்டுக்கு மட்டும் வேற ப்ரைஸா? <b>Own line</b> (<b>Back with its kind</b> அழுத்தினா பழையபடி).",
-      "ஒவ்வொரு லைனுக்கும் <b>What is quoted</b>, <b>Price per unit</b> (ஒரு போர்டுக்கு கஸ்டமர் கட்டற விலை) போடுங்க. <b>Normal price</b> = அந்த ரிப்பேருக்கு வழக்கமா ஆகற விலை, பார்ட்ஸ் சேர்த்து: ரேட் கார்டுல இருந்து வரும், இல்லன்னா நீங்க டைப் பண்ணணும் (<b>Set by hand</b>).",
+      "ஒவ்வொரு லைனுக்கும் <b>What is quoted</b>, <b>Price per unit</b> (ஒரு போர்டுக்கு கஸ்டமர் கட்டற விலை) போடுங்க. <b>Normal price</b> = அந்த ரிப்பேருக்கு வழக்கமா ஆகற விலை, பார்ட்ஸ் சேர்த்து: ரேட் கார்டுல இருந்து வரும், இல்லன்னா நீங்க டைப் பண்ணணும் (<b>set by hand</b>).",
       "Price per unit நார்மலை விட <b>அதிகம்</b>: அந்த எக்ஸ்ட்ரா <b>ப்ரீமியம்</b>. <b>Why a premium</b> செலக்ட் பண்ணுங்க (Urgent turnaround, Out of hours, Site attendance, Scarce component, Customer request). <b>கம்மி</b>: அந்த வித்தியாசம் <b>டிஸ்கவுண்ட்</b>, வேற எதுவும் வேண்டாம். சமம்: ரெண்டும் இல்ல.",
-      "<b>Engineer’s labour charge</b> = நார்மல் ப்ரைஸ் மைனஸ் பார்ட்ஸ். சிஸ்டமே கணக்கு போடும். கஸ்டமருக்கு லைன் ப்ரைஸும் டோட்டலும் மட்டும் தெரியும்; டேஷ் போட்ட ஸ்ப்ளிட் வரிகள் உள்ளுக்கு மட்டும்.",
+      "<b>Labour charge</b> = நார்மல் ப்ரைஸ் மைனஸ் பார்ட்ஸ். சிஸ்டமே கணக்கு போடும். கஸ்டமருக்கு லைன் ப்ரைஸும் டோட்டலும் மட்டும் தெரியும்; டேஷ் போட்ட ஸ்ப்ளிட் வரிகள் உள்ளுக்கு மட்டும்.",
       "ஈமெயில் அல்லது பேப்பர்ல அனுப்பினதும் <b>Record as sent</b> அழுத்துங்க. எல்லா போர்டும் <b>Awaiting Quotation Approval</b>க்கு போகும்.",
       "புது ப்ரைஸா, இல்ல கஸ்டமருக்கு சில போர்டு மட்டும் வேணுமா? <b>Revise it</b>, புது வெர்ஷன்ல வர்ற போர்டை மட்டும் டிக் பண்ணி, அப்புறம் <b>Record as sent</b>. விட்டுப்போன போர்டு <b>Under Assessment</b>க்கு திரும்பும். பதிலை <b>Who decided</b> (ஆள் பேரோட) போட்டு பதிவு பண்ணுங்க."
     ]
@@ -83,7 +83,7 @@
         "o": [
           "Why a premium",
           "Nothing: the ₹500 is recorded as a discount",
-          "The engineer’s labour charge"
+          "The labour charge"
         ],
         "a": 1,
         "why": "Below normal, the gap is a discount. The labour charge is worked out for you."
@@ -125,7 +125,7 @@
         "o": [
           "Why a premium",
           "ஒண்ணும் இல்ல: ₹500 டிஸ்கவுண்ட்டா பதிவாகும்",
-          "இன்ஜினியர் லேபர் சார்ஜ்"
+          "லேபர் சார்ஜ்"
         ],
         "a": 1,
         "why": "நார்மலை விட கம்மின்னா அந்த வித்தியாசம் டிஸ்கவுண்ட். லேபர் சார்ஜ் சிஸ்டமே போடும்."
@@ -143,7 +143,7 @@
     ]
   },
   "notes": [
-    "No customer in the demo has a rate card (service_rate is empty), so the clip shows the Normal price typed by hand (“Set by hand”). With a rate card the Normal price is shown read-only with a “Rate card” tag; not filmed.",
+    "No customer in the demo has a rate card (service_rate is empty), so the clip shows the Normal price typed by hand (“set by hand”). With a rate card the Normal price is shown read-only with a “Rate card” tag; not filmed.",
     "What the premium and discount mean for profit (the premium cut on Job profitability, margins) is left to the KPI module; this clip teaches only which box to fill when.",
     "Estimated hours and Parts expected are per quotation, not per line.",
     "Own line was pointed at, not pressed. Record rejection was not shown in the clip (it would close the demo jobs); it is in the card’s don’ts. A price agreed on the phone (Negotiated) has the same Normal price / premium split; shown on screen, not performed.",

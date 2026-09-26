@@ -24,7 +24,7 @@
       "<b>Brought by</b> = the customer's person who sent it. <b>Sales engineer</b> = who gets the credit. It is always filled.",
       "One <b>item</b> per distinct model. Press <b>Add a unit</b> for every physical unit.",
       "Type a <b>serial for every unit</b>. The form won't register without it.",
-      "Type a short <b>bin</b> code and wait for the green <b>free</b> badge. “holds …” means that shelf is taken.",
+      "Type a short <b>bin</b> code and wait for the <b>free</b> tick. “holds …” means that shelf is taken.",
       "Write <b>Came with</b> (accessories) for the item, and <b>Condition on receipt</b> for each unit.",
       "Business-critical? Set <b>Priority</b> and enter <b>Needed by</b>, the date the customer asked for. The SLA date is set later, at allotment.",
       "Warranty return? Set Job type <b>Rework</b> and enter the <b>previous job number</b>."
@@ -34,7 +34,7 @@
       "<b>Brought by</b> = போர்டை அனுப்பின கஸ்டமர் பக்க ஆள். <b>Sales engineer</b> = கிரெடிட் யாருக்கு. இதை எப்பவும் ஃபில் பண்ணுங்க.",
       "ஒவ்வொரு தனி மாடலுக்கும் ஒரு <b>ஐட்டம்</b>. ஒவ்வொரு யூனிட்டுக்கும் <b>Add a unit</b> அழுத்துங்க.",
       "<b>ஒவ்வொரு யூனிட்டுக்கும் சீரியல் நம்பர்</b> போடுங்க. அது இல்லாம Register ஆகாது.",
-      "சின்ன <b>பின்</b> கோடு போட்டு, பச்சை <b>free</b> வர்ற வரை பாருங்க. “holds …” வந்தா அந்த பின்ல ஏற்கனவே போர்டு இருக்கு.",
+      "சின்ன <b>பின்</b> கோடு போட்டு, <b>free</b> டிக் வர்ற வரை பாருங்க. “holds …” வந்தா அந்த பின்ல ஏற்கனவே போர்டு இருக்கு.",
       "ஐட்டத்துக்கு <b>Came with</b> (கூட வந்த அக்சஸரீஸ்), ஒவ்வொரு யூனிட்டுக்கும் <b>Condition on receipt</b> எழுதுங்க.",
       "அவசர வேலையா? <b>Priority</b>-ஐ Business-critical ஆக்கி, கஸ்டமர் கேட்ட தேதியை <b>Needed by</b>-ல போடுங்க. SLA தேதி அலாட் பண்ணும்போது வரும்.",
       "வாரண்டியில திரும்பி வந்ததா? Job type-ஐ <b>Rework</b> ஆக்கி, <b>previous job number</b> போடுங்க."

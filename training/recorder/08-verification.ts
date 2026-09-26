@@ -21,10 +21,10 @@
  *   npx tsx 08-verification.ts [en|ta]    → out/08-verification.<lang>.mp4
  */
 import { Stage } from './stage'
+import { joinAtCards } from './06-join'
 import { CAPTIONS, type Lang } from './captions-08'
 import { join } from 'node:path'
 import { readFileSync } from 'node:fs'
-import { execFileSync, spawnSync } from 'node:child_process'
 
 const OUT = join(import.meta.dirname, 'out')
 const RAW = join(OUT, 'raw')
@@ -66,7 +66,7 @@ if (runs(1)) {
   await s.say(c.peer, 2600 * pace, 'do')
   await s.unring()
   await s.click(p.getByRole('button', { name: /Give 2 boards to them/ }))
-  await p.waitForURL(/given=/)
+  await p.waitForURL(/given=/, { waitUntil: 'commit', timeout: 90000 })
   await p.waitForLoadState('networkidle')
   // A full load after the redirect: overlay changes are not recorded reliably until one.
   await s.goto('/service-centre/verification?view=checking')
@@ -90,7 +90,7 @@ if (runs(2)) {
   await s.point(ts)
   await s.say(c.hours, 2400 * pace, 'do')
   await s.click(ts)
-  await p.waitForURL(/timesheet/)
+  await p.waitForURL(/timesheet/, { waitUntil: 'commit', timeout: 90000 })
   await p.waitForLoadState('networkidle')
   await s.wait(600)
   const cell = p.getByLabel(`${D} ${today}`)
@@ -110,7 +110,7 @@ if (runs(2)) {
   await s.say(c.symptom, 3200 * pace, 'dont')
   await s.type(p.getByLabel('Observed symptom'), 'Still trips on overcurrent at 40% load', 35)
   await s.click(p.getByRole('button', { name: 'Fail — back to the bench' }))
-  await p.waitForURL(/failed=/)
+  await p.waitForURL(/failed=/, { waitUntil: 'commit', timeout: 90000 })
   await p.waitForLoadState('networkidle')
   await s.goto(`/service-centre/jobs/${D}`)
   await s.point(p.getByText(/Verification failed/).first())
@@ -124,7 +124,7 @@ if (runs(2)) {
   await s.point(pass)
   await s.say(c.pass, 1800 * pace, 'do')
   await s.click(pass)
-  await p.waitForURL(/passed=/)
+  await p.waitForURL(/passed=/, { waitUntil: 'commit', timeout: 90000 })
   await p.waitForLoadState('networkidle')
   await s.goto('/service-centre/verification?view=customer')
   await s.point(p.locator('a.item', { hasText: E }).first())
@@ -148,7 +148,7 @@ if (runs(3)) {
   await s.point(p.getByRole('button', { name: 'Still faulty — back to the bench' }))
   await s.say(c.choices, 2600 * pace)
   await s.click(p.getByRole('button', { name: 'It works — close it' }))
-  await p.waitForURL(/closed=/)
+  await p.waitForURL(/closed=/, { waitUntil: 'commit', timeout: 90000 })
   await p.waitForLoadState('networkidle')
   await s.goto(`/service-centre/jobs/${E}`)
   await s.point(p.locator('dd', { hasText: /Ready for invoice/i }).first())
@@ -160,18 +160,5 @@ if (runs(3)) {
 }
 
 // ── Join at each segment's card ─────────────────────────────────────────────────────────────
-const FF = execFileSync('python3', ['-c', 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())']).toString().trim()
-const detect = (f: string): number => {
-  const r = spawnSync(FF, ['-i', f, '-vf', 'blackdetect=d=0.3:pic_th=0.80:pix_th=0.12', '-an', '-f', 'null', '-'])
-  const m = /black_start:([\d.]+)/.exec(String(r.stderr))
-  if (!m || Number(m[1]) > 12) throw new Error(`No title card found early in ${f}`)
-  return Number(m[1]) + 0.25
-}
-const trims = segments.map(detect)
-console.log('segment starts', trims)
-const inputs = segments.flatMap((f, i) => ['-ss', String(trims[i]), '-i', f])
-const filter = segments.map((_, i) => `[${i}:v]fps=25,setpts=PTS-STARTPTS[v${i}]`).join(';') +
-  ';' + segments.map((_, i) => `[v${i}]`).join('') + `concat=n=${segments.length}:v=1:a=0[out]`
-const joined = join(OUT, `08-verification.${lang}.mp4`)
-execFileSync(FF, ['-y', '-loglevel', 'error', ...inputs, '-filter_complex', filter, '-map', '[out]', '-c:v', 'libx264', '-preset', 'fast', '-crf', '14', '-pix_fmt', 'yuv420p', '-an', joined])
+const joined = joinAtCards(segments, join(OUT, `08-verification.${lang}.mp4`))
 console.log(joined)
