@@ -399,7 +399,7 @@ if (process.env.STEP === 'rework') {
       await p.getByRole('button', { name: 'Book it' }).click()
       await settle(p, 1800)
       await s.goto(`/service-centre/timesheet?week=2026-09-21&job=${encodeURIComponent(st.R)}`)
-      const cell = p.getByLabel(`${st.R} Thu`)
+      const cell = p.getByLabel(`${st.R} Fri`)
       await cell.fill('2')
       await cell.press('Enter')
       await settle(p, 1500)
@@ -437,7 +437,7 @@ writeFileSync(
         'Engineer is Test Engineer (the catalogue\'s Ramachandran), costed at ₹700/h (Senior Engineer since 2025-11-30); Test Both Roles (the catalogue\'s Baleswar) at ₹450/h standard. So labour cost and every margin on screen differ from the catalogue\'s ₹400/h figures; prices, premium, discount, labour charge, charged and parts margin match.',
         'Hours are on the week of 14 Sep: C Mon 4 + Thu 4, B Tue 4, D Wed 3 + Fri 3, A Sat 5, verification A Sat 1 (Test Both Roles). All closed 26 Sep 2026 (September).',
         'Test Engineer\'s seeded September target is ₹60,000 (not ₹20,000); it was left as seeded. Test Engineer also has other agents\' closed jobs in September, so scorecard and Achievement will not show only A–D.',
-        st.R ? 'R: warranty rework of A (Rework inward naming A, after A was dispatched on a challan), priced ₹0 (WARRANTY_REWORK). 2 h + ₹300 part as Other spares. Left In Progress; its cost rolls up onto A immediately.' : 'R: not created yet (planned after module 15 is recorded: challan for A, then a Rework inward naming A).',
+        st.R ? 'R: warranty rework of A (Rework inward naming A, after A was dispatched on a challan), priced ₹0 (WARRANTY_REWORK). A was first dispatched on a challan (warranty to 2026-12-26). R has 2 h (Fri 25 Sep, ₹1,400 at ₹700/h) + a ₹300 encoder cable as Other spares = ₹1,700, rolled up onto A (A labour margin ₹3,650 → ₹1,950 on screen). R is left In Progress (so September rework rate / scorecard Rework are unaffected; R shows under Labour on open boards). It is a September comeback here, not 31 Oct as in the catalogue.' : 'R: not created yet (planned after module 15 is recorded: challan for A, then a Rework inward naming A).',
         'The MIS view was refreshed after set-up. Refresh again (MIS › Refresh now, as opsmanager@) if you change anything.',
       ],
     },
