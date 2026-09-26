@@ -24,6 +24,10 @@ Please confirm or fix these before managers rely on the dashboards. Details and 
 | K9 | Day boundaries | Sales dates closures by the Kolkata day, Profitability by the UTC day; a job closed just after midnight IST can fall in different months on the two screens. |
 | K10 | Unbilled hours | Shifts as jobs change status; the comment in `hours.ts` says they are all from closed jobs, which is wrong. |
 | K11 | No screen | Quotation win rate (S-08) and prices agreed by negotiation (S-11) exist as measures but are shown nowhere. |
+| K13 | Rate card | No screen sets a board's internal reference or service level, so a newly booked board can never pick up a rate-card price: every price is "Set by hand" and the "Rate card" tag never appears. |
+| K14 | Job card › Premium | The Premium row shows no reason, although the job stores it (e.g. "Urgent turnaround") and the quotation record displays it. |
+| K15 | Spares not charged | Shows Qty "0" for an Other spares line. |
+| K16 | Queue aging | At 1366×768 the testing-gate rows break: the count drops below the state name and Awaiting Customer Confirmation is missing (the table shows 3 where the gates panel says 9). |
 | K12 | "Parts premium" | Not a field anywhere. Taught as: parts beyond the normal price reduce the opportunity premium; markup on parts is the separate *Parts margin*. |
 
 ## Open: from round 1

@@ -1,0 +1,411 @@
+{
+  "id": "15",
+  "title": {
+    "en": "Numbers · Money 1: how one job's price splits",
+    "ta": "எண்கள் · மணி 1: ஒரு ஜாப் ப்ரைஸ் எப்படி பிரியுது"
+  },
+  "role": "Liaison · Service Head · Operations Manager",
+  "path": "Service › Quotations · Service › My jobs › job card (“What it cost, and what it made”)",
+  "video": {
+    "en": "media/15-money-price.mp4",
+    "ta": "media/15-money-price-ta.mp4"
+  },
+  "poster": {
+    "en": "media/15-poster.jpg",
+    "ta": "media/15-poster-ta.jpg"
+  },
+  "seconds": {
+    "en": 152,
+    "ta": 185
+  },
+  "do": {
+    "en": [
+      "Remember the one rule: prices are <b>all-in</b>. Parts are inside the price, never added on top.",
+      "Fill <b>Normal price</b> honestly when there is no rate card: what a regular customer pays for this repair on a normal day, parts included. It is tagged <b>Set by hand</b>.",
+      "Read <b>Labour charge</b> as the engineer's share: normal price − parts billed (never below ₹0). It moves every time a part is booked.",
+      "Give a reason (<b>Why a premium</b>) whenever the price is above normal. The form will not raise without one.",
+      "Read <b>Premium</b> and <b>Discount</b> as commercial results. They sit beside the work and never enter the labour margin.",
+      "Read <b>Labour margin</b> (the owner's “base margin”) as delivery: labour charge − hours − rework. Read <b>Total margin</b> as the job's profit."
+    ],
+    "ta": [
+      "ஒரே ரூல்: ப்ரைஸ் <b>all-in</b>. பார்ட்ஸ் ப்ரைஸுக்குள்ளயே இருக்கு, மேல சேர்க்க வேண்டாம்.",
+      "ரேட் கார்டு இல்லைன்னா <b>Normal price</b>-ஐ நேர்மையா போடுங்க: ரெகுலர் கஸ்டமர் சாதாரண நாள்ல இந்த ரிப்பேருக்கு கொடுக்கற ப்ரைஸ், பார்ட்ஸ் சேர்த்து. <b>Set by hand</b>னு டேக் வரும்.",
+      "<b>Labour charge</b> = இன்ஜினியரோட பங்கு: நார்மல் ப்ரைஸ் − Parts billed (₹0க்கு கீழ போகாது). ஒவ்வொரு பார்ட் புக் ஆகும்போதும் மாறும்.",
+      "நார்மலுக்கு மேல ப்ரைஸ் போட்டா காரணம் (<b>Why a premium</b>) சொல்லுங்க. இல்லாம ஃபார்ம் raise ஆகாது.",
+      "<b>Premium</b>, <b>Discount</b> கமர்ஷியல் ரிசல்ட். வேலைக்கு பக்கத்துல தனியா இருக்கும், லேபர் மார்ஜின்ல சேராது.",
+      "<b>Labour margin</b> (ஓனர் சொல்ற “base margin”) = டெலிவரி: லேபர் சார்ஜ் − ஹவர்ஸ் − ரீவொர்க். <b>Total margin</b> = ஜாப்போட ப்ராஃபிட்."
+    ]
+  },
+  "dont": {
+    "en": [
+      "Don't read <b>Charged</b> as “₹12,000 + parts”. Charged already includes the parts.",
+      "Don't expect a premium job to raise the engineer's labour charge. It doesn't, by design.",
+      "Don't look for a “parts premium” field. There isn't one: parts above the normal price reduce the Premium, and profit on parts is <b>Parts margin</b>.",
+      "Don't read Labour margin as the job's profit. That is Total margin.",
+      "Don't try to change the split after approval. A different split is a new quotation version."
+    ],
+    "ta": [
+      "<b>Charged</b>-ஐ “₹12,000 + பார்ட்ஸ்”னு படிக்காதீங்க. பார்ட்ஸ் ஏற்கனவே அதுக்குள்ள இருக்கு.",
+      "ப்ரீமியம் ஜாப்னா இன்ஜினியரோட லேபர் சார்ஜ் ஏறும்னு எதிர்பார்க்காதீங்க. வேணும்னே அப்படி இல்ல.",
+      "“பார்ட்ஸ் ப்ரீமியம்” ஃபீல்டை தேடாதீங்க. அது இல்ல: நார்மலை தாண்டுற பார்ட்ஸ் Premium-ஐ குறைக்கும்; பார்ட்ஸ் லாபம் = <b>Parts margin</b>.",
+      "Labour margin-ஐ ஜாப்போட ப்ராஃபிட்னு படிக்காதீங்க. அது Total margin.",
+      "அப்ரூவ் ஆனதுக்கு அப்புறம் ஸ்ப்ளிட்டை மாத்த முயற்சிக்காதீங்க. வேற ஸ்ப்ளிட்னா புது கொட்டேஷன் வெர்ஷன்."
+    ]
+  },
+  "examples": {
+    "en": [
+      {
+        "title": "Board A: ₹12,000 servo drive",
+        "lines": [
+          [
+            "Normal price N",
+            "₹10,000",
+            "typed, Set by hand"
+          ],
+          [
+            "Parts billed P",
+            "− ₹2,400",
+            "2 IGBTs + gate driver"
+          ],
+          [
+            "= Labour charge",
+            "₹7,600",
+            "N − P, the engineer's share"
+          ],
+          [
+            "Customer pays",
+            "₹12,000",
+            "the larger of Q ₹12,000 and P ₹2,400"
+          ],
+          [
+            "Covered by normal",
+            "− ₹10,000",
+            "the larger of N and P"
+          ],
+          [
+            "= Premium",
+            "₹2,000",
+            "Urgent turnaround"
+          ]
+        ],
+        "read": "The premium sits beside the labour charge. The engineer's share is the same whether A was quoted ₹10,000 or ₹25,000."
+      },
+      {
+        "title": "“Parts premium”: A with ₹11,000 of parts",
+        "lines": [
+          [
+            "Customer pays",
+            "₹12,000",
+            "the larger of Q ₹12,000 and P ₹11,000"
+          ],
+          [
+            "Covered by normal",
+            "− ₹11,000",
+            "the larger of N ₹10,000 and P ₹11,000"
+          ],
+          [
+            "= Premium",
+            "₹1,000",
+            "was ₹2,000"
+          ],
+          [
+            "Labour charge",
+            "₹0",
+            "10,000 − 11,000, never below 0"
+          ]
+        ],
+        "read": "There is no parts premium figure. Parts beyond the normal price eat the premium; profit on parts is Parts margin."
+      },
+      {
+        "title": "Board C: rate ₹10,000 sold at ₹8,000",
+        "lines": [
+          [
+            "Normal price N",
+            "₹10,000",
+            ""
+          ],
+          [
+            "Customer pays",
+            "₹8,000",
+            "parts billed ₹1,000 inside it"
+          ],
+          [
+            "= Discount",
+            "₹2,000",
+            "the larger of N and P − pays"
+          ],
+          [
+            "Labour charge",
+            "₹9,000",
+            "still N − P"
+          ]
+        ],
+        "read": "The discount is recorded apart. It never comes out of the engineer's labour charge."
+      },
+      {
+        "title": "Board A: from price to margin",
+        "lines": [
+          [
+            "Labour charge",
+            "₹7,600",
+            ""
+          ],
+          [
+            "Hours",
+            "− ₹2,400",
+            "6 h × ₹400"
+          ],
+          [
+            "= Labour margin",
+            "₹5,200",
+            "the owner's “base margin”"
+          ],
+          [
+            "Parts margin",
+            "+ ₹450",
+            "₹2,400 billed − ₹1,950 cost (incl. a ₹150 free fuse)"
+          ],
+          [
+            "Premium − discount",
+            "+ ₹2,000",
+            ""
+          ],
+          [
+            "= Total margin",
+            "₹7,650",
+            "= ₹12,000 charged − ₹4,350 cost"
+          ]
+        ],
+        "read": "Labour margin says how well we delivered; Total margin is the job's profit."
+      }
+    ],
+    "ta": [
+      {
+        "title": "போர்டு A: ₹12,000 சர்வோ டிரைவ்",
+        "lines": [
+          [
+            "Normal price N",
+            "₹10,000",
+            "டைப் பண்ணது, Set by hand"
+          ],
+          [
+            "Parts billed P",
+            "− ₹2,400",
+            "2 IGBT + கேட் டிரைவர்"
+          ],
+          [
+            "= Labour charge",
+            "₹7,600",
+            "N − P, இன்ஜினியரோட பங்கு"
+          ],
+          [
+            "கஸ்டமர் கொடுப்பது",
+            "₹12,000",
+            "Q ₹12,000, P ₹2,400-ல பெருசு"
+          ],
+          [
+            "நார்மல் கவர் பண்றது",
+            "− ₹10,000",
+            "N, P-ல பெருசு"
+          ],
+          [
+            "= Premium",
+            "₹2,000",
+            "Urgent turnaround"
+          ]
+        ],
+        "read": "ப்ரீமியம் லேபர் சார்ஜுக்கு பக்கத்துல தனியா. A-க்கு ₹10,000 போட்டாலும் ₹25,000 போட்டாலும் இன்ஜினியர் பங்கு மாறாது."
+      },
+      {
+        "title": "“பார்ட்ஸ் ப்ரீமியம்”: A-ல ₹11,000 பார்ட்ஸ்",
+        "lines": [
+          [
+            "கஸ்டமர் கொடுப்பது",
+            "₹12,000",
+            "Q ₹12,000, P ₹11,000-ல பெருசு"
+          ],
+          [
+            "நார்மல் கவர் பண்றது",
+            "− ₹11,000",
+            "N ₹10,000, P ₹11,000-ல பெருசு"
+          ],
+          [
+            "= Premium",
+            "₹1,000",
+            "முன்னாடி ₹2,000"
+          ],
+          [
+            "Labour charge",
+            "₹0",
+            "10,000 − 11,000, ₹0க்கு கீழ போகாது"
+          ]
+        ],
+        "read": "பார்ட்ஸ் ப்ரீமியம்னு ஃபிகர் இல்ல. நார்மலை தாண்டுற பார்ட்ஸ் ப்ரீமியத்தை குறைக்கும்; பார்ட்ஸ் லாபம் = Parts margin."
+      },
+      {
+        "title": "போர்டு C: ₹10,000 ரேட், ₹8,000க்கு",
+        "lines": [
+          [
+            "Normal price N",
+            "₹10,000",
+            ""
+          ],
+          [
+            "கஸ்டமர் கொடுப்பது",
+            "₹8,000",
+            "₹1,000 பார்ட்ஸ் உள்ள"
+          ],
+          [
+            "= Discount",
+            "₹2,000",
+            "(N, P-ல பெருசு) − கொடுப்பது"
+          ],
+          [
+            "Labour charge",
+            "₹9,000",
+            "அப்பவும் N − P"
+          ]
+        ],
+        "read": "டிஸ்கவுண்ட் தனியா பதிவாகும். இன்ஜினியரோட லேபர் சார்ஜ்ல இருந்து போகாது."
+      },
+      {
+        "title": "போர்டு A: ப்ரைஸ்ல இருந்து மார்ஜின் வரை",
+        "lines": [
+          [
+            "Labour charge",
+            "₹7,600",
+            ""
+          ],
+          [
+            "ஹவர்ஸ்",
+            "− ₹2,400",
+            "6 h × ₹400"
+          ],
+          [
+            "= Labour margin",
+            "₹5,200",
+            "ஓனர் சொல்ற “base margin”"
+          ],
+          [
+            "Parts margin",
+            "+ ₹450",
+            "₹2,400 பில் − ₹1,950 காஸ்ட் (₹150 ஃப்ரீ ஃப்யூஸ் சேர்த்து)"
+          ],
+          [
+            "ப்ரீமியம் − டிஸ்கவுண்ட்",
+            "+ ₹2,000",
+            ""
+          ],
+          [
+            "= Total margin",
+            "₹7,650",
+            "= ₹12,000 Charged − ₹4,350 காஸ்ட்"
+          ]
+        ],
+        "read": "Labour margin = வேலையை எவ்வளவு நல்லா முடிச்சோம்; Total margin = ஜாப்போட ப்ராஃபிட்."
+      }
+    ]
+  },
+  "quiz": {
+    "en": [
+      {
+        "q": "Normal price ₹10,000, quoted ₹12,000, parts billed ₹2,400. What is the engineer's labour charge?",
+        "o": [
+          "₹12,000",
+          "₹10,000",
+          "₹7,600",
+          "₹9,600"
+        ],
+        "a": 2,
+        "why": "Labour charge = normal price − parts billed = 10,000 − 2,400. The premium never reaches the engineer."
+      },
+      {
+        "q": "Same board, but the parts billed rise to ₹11,000. What does the customer pay, and what is the premium?",
+        "o": [
+          "₹23,000 / ₹2,000",
+          "₹12,000 / ₹1,000",
+          "₹12,000 / ₹2,000",
+          "₹11,000 / ₹0"
+        ],
+        "a": 1,
+        "why": "Pays = the larger of 12,000 and 11,000. Premium = 12,000 − the larger of 10,000 and 11,000 = 1,000."
+      },
+      {
+        "q": "A board with a normal price of ₹10,000 is sold at ₹8,000. What happens to the engineer's labour margin?",
+        "o": [
+          "It falls by ₹2,000",
+          "Unchanged: the ₹2,000 is recorded as a Discount",
+          "It becomes negative",
+          "Only the parts margin falls"
+        ],
+        "a": 1,
+        "why": "The discount is its own line and sits outside the labour margin."
+      },
+      {
+        "q": "A colleague asks where the job card shows the “parts premium”. What do you tell them?",
+        "o": [
+          "It is the Premium row",
+          "There is no such figure: parts above the normal price reduce the Premium, and profit on parts is Parts margin",
+          "It is Parts billed minus Normal price"
+        ],
+        "a": 1,
+        "why": "The system has no parts-premium field. Parts beyond N eat the premium; selling price − purchase price of parts is Parts margin."
+      }
+    ],
+    "ta": [
+      {
+        "q": "நார்மல் ப்ரைஸ் ₹10,000, கொட்டேஷன் ₹12,000, Parts billed ₹2,400. இன்ஜினியரோட லேபர் சார்ஜ் எவ்வளவு?",
+        "o": [
+          "₹12,000",
+          "₹10,000",
+          "₹7,600",
+          "₹9,600"
+        ],
+        "a": 2,
+        "why": "லேபர் சார்ஜ் = நார்மல் ப்ரைஸ் − Parts billed = 10,000 − 2,400. ப்ரீமியம் இன்ஜினியருக்கு போகாது."
+      },
+      {
+        "q": "அதே போர்டு, ஆனா Parts billed ₹11,000 ஆச்சு. கஸ்டமர் எவ்வளவு கொடுப்பாங்க, ப்ரீமியம் எவ்வளவு?",
+        "o": [
+          "₹23,000 / ₹2,000",
+          "₹12,000 / ₹1,000",
+          "₹12,000 / ₹2,000",
+          "₹11,000 / ₹0"
+        ],
+        "a": 1,
+        "why": "கொடுப்பது = 12,000, 11,000-ல பெருசு. ப்ரீமியம் = 12,000 − (10,000, 11,000-ல பெருசு) = 1,000."
+      },
+      {
+        "q": "₹10,000 நார்மல் ப்ரைஸ் போர்டை ₹8,000க்கு கொடுத்தோம். இன்ஜினியரோட லேபர் மார்ஜின் என்ன ஆகும்?",
+        "o": [
+          "₹2,000 குறையும்",
+          "மாறாது: ₹2,000 Discount-ஆ தனியா பதிவாகும்",
+          "நெகட்டிவ் ஆகும்",
+          "பார்ட்ஸ் மார்ஜின் மட்டும் குறையும்"
+        ],
+        "a": 1,
+        "why": "டிஸ்கவுண்ட் தனி லைன், லேபர் மார்ஜினுக்கு வெளியே."
+      },
+      {
+        "q": "“பார்ட்ஸ் ப்ரீமியம்” ஜாப் கார்டுல எங்கன்னு ஒருத்தர் கேக்குறாங்க. என்ன சொல்லுவீங்க?",
+        "o": [
+          "Premium ரோ தான்",
+          "அப்படி ஃபிகர் இல்ல: நார்மலை தாண்டுற பார்ட்ஸ் Premium-ஐ குறைக்கும், பார்ட்ஸ் லாபம் Parts margin",
+          "Parts billed − Normal price"
+        ],
+        "a": 1,
+        "why": "பார்ட்ஸ் ப்ரீமியம் ஃபீல்டு இல்ல. N-ஐ தாண்டுற பார்ட்ஸ் ப்ரீமியத்தை குறைக்கும்; பார்ட்ஸ் செல்லிங் − பர்சேஸ் = Parts margin."
+      }
+    ]
+  },
+  "notes": [
+    "Set-up: training/recorder/15-setup.ts built boards A–D and R through the app (job numbers in training/recorder/kpi-seed.json). The raise form in the clip is filled live on a like board X (WO/26-27/00059, Ayyan, Under Assessment) and never raised; A's approved quotation is QT/26-09/000007.",
+    "Rate-card pricing cannot be reached through the app: rates exist per internal reference + service level (/crm/rates), but no screen sets a work order's internal_reference or service_level, so no new board can take a rate. The clip therefore never shows the “Rate card” tag; B and C carry typed normal prices (Set by hand), priced by phone. Worth raising as an app gap.",
+    "On screen, board A's hours are costed at ₹700/h (Test Engineer is a Senior Engineer since 2025-11-30) plus ₹450 for the 1 h verification by Test Both Roles: labour ₹3,950, labour margin ₹3,650, total margin ₹6,100, against the catalogue's ₹400/h card figures (₹2,400 / ₹5,200 / ₹7,650). Prices, premium, discount, labour charge, charged and parts margin match the cards exactly. The clip says so in a caption.",
+    "App finding: the job card's Premium row shows no reason, although A stores premium_reason “Urgent turnaround” (the quotation record shows it). lib/domain/work-orders.ts reads r.premium?.reason_text, which comes back empty on the job card.",
+    "The quotation record's internal row reads “Labour charge ₹10,000 less parts” (the split at approval); the job card reads ₹7,600 once parts are booked. The clip teaches both as the same rule.",
+    "Recorded before the comeback R was created. Since then A's job card also shows “Rework rolled up ₹1,700”, labour margin ₹1,950 and total margin ₹4,400; a re-record would show that extra row.",
+    "The owner's words: “base margin” is taught as Labour margin (job card) / Base margin % (MIS, module 16); “opportunity premium” is the Premium row; “parts premium” is explained as not a field.",
+    "Clip length: EN 152 s (brief allows ~150); Tamil at the ×1.25 hold is 185 s."
+  ]
+}

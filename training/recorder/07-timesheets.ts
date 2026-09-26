@@ -94,6 +94,7 @@ await s.point(p.locator('tr.paused', { hasText: T2 }))
 await s.say(c.paused, 4000 * pace, 'dont')
 await s.unring()
 
+await s.goto(new URL(p.url()).pathname + new URL(p.url()).search)
 await s.point(p.locator('table.week-grid tbody'), false)
 await s.say(c.rate, 3000 * pace)
 await s.quiet()
