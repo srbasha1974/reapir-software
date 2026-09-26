@@ -2,9 +2,9 @@
   "id": "09",
   "title": {
     "en": "Closing a job",
-    "ta": "Job-ஐ மூடுதல்"
+    "ta": "ஜாப்-ஐ க்ளோஸ் பண்றது"
   },
-  "role": "Service Head · Liaison · Engineer",
+  "role": "Engineer · Service Head · Liaison",
   "path": "Service centre › My jobs (the job card) · Verification › With the customer · Reservoir › Before the bench",
   "video": {
     "en": "media/09-closing.mp4",
@@ -15,13 +15,14 @@
     "ta": "media/09-poster-ta.jpg"
   },
   "seconds": {
-    "en": 122,
-    "ta": 122
+    "en": 108,
+    "ta": 111
   },
   "do": {
     "en": [
       "A job closes in one of three ways: <b>Ready for Invoice</b>, <b>Non-Repairable</b> or <b>Customer Rejected</b>.",
-      "Board can't be saved? Open the job and press <b>It cannot be saved…</b> (Service Head). Pick the reason <b>from the list</b>.",
+      "Engineer, your own board can't be saved? On its job card press <b>Cannot repair…</b> and pick the reason <b>from the list</b>.",
+      "Service Head or Liaison: the same closure is <b>It cannot be saved…</b> on the job card, with the same reason list.",
       "No reason fits? Ask the <b>Operations Manager</b> to add one to the list. There is no free-text box.",
       "Liaison: record the customer's test under <b>Verification › With the customer</b>. Write <b>What they said</b>, then <b>It works — close it</b>. The job goes to <b>Ready for Invoice</b>.",
       "Customer still sees the fault? <b>Still faulty — back to the bench</b>. The job returns to In Progress.",
@@ -29,50 +30,53 @@
       "Open job not right? Service Head or Liaison: <b>Send it back to the engineer</b>, with a reason the engineer can act on."
     ],
     "ta": [
-      "ஒரு job மூன்றில் ஒரு வழியில் மூடப்படும்: <b>Ready for Invoice</b>, <b>Non-Repairable</b> அல்லது <b>Customer Rejected</b>.",
-      "போர்டைச் சரிசெய்ய முடியவில்லையா? Job-ஐத் திறந்து <b>It cannot be saved…</b> அழுத்தவும் (Service Head). காரணத்தைப் <b>பட்டியலில் இருந்து</b> தேர்ந்தெடுக்கவும்.",
-      "எந்தக் காரணமும் பொருந்தவில்லையா? பட்டியலில் சேர்க்க <b>Operations Manager</b>-இடம் கேட்கவும். சொந்தமாக எழுத இடம் இல்லை.",
-      "Liaison: வாடிக்கையாளர் சோதனையை <b>Verification › With the customer</b>-இல் பதிவு செய்யவும். <b>What they said</b> எழுதி, <b>It works — close it</b> அழுத்தவும். Job <b>Ready for Invoice</b>-க்குச் செல்லும்.",
-      "வாடிக்கையாளருக்கு இன்னும் பழுதா? <b>Still faulty — back to the bench</b>. Job மீண்டும் In Progress ஆகும்.",
-      "Assessment நடக்கும்போதே வாடிக்கையாளருக்குப் பழுதுபார்ப்பு வேண்டாமா? Liaison: reservoir-இல் <b>Customer withdrew</b> அழுத்தி, எப்படித் தெரியும் என்று எழுதவும். Job <b>Customer Rejected</b> ஆக மூடப்படும்.",
-      "திறந்த job சரியில்லையா? Service Head அல்லது Liaison: engineer செயல்படக்கூடிய காரணத்துடன் <b>Send it back to the engineer</b>."
+      "ஒரு ஜாப் மூணுல ஒரு வழியில க்ளோஸ் ஆகும்: <b>Ready for Invoice</b>, <b>Non-Repairable</b>, இல்லன்னா <b>Customer Rejected</b>.",
+      "இன்ஜினியர்: உங்க போர்டை சரி பண்ண முடியலையா? அதோட ஜாப் கார்டுல <b>Cannot repair…</b> அழுத்தி, காரணத்தை <b>லிஸ்ட்ல இருந்து</b> செலக்ட் பண்ணுங்க.",
+      "சர்வீஸ் ஹெட் அல்லது Liaison: அதே க்ளோஸ், ஜாப் கார்டுல <b>It cannot be saved…</b>. அதே காரண லிஸ்ட்.",
+      "எந்த காரணமும் பொருந்தலையா? லிஸ்ட்ல சேர்க்க <b>Operations Manager</b>-கிட்ட கேளுங்க. சொந்தமா எழுத இடம் இல்ல.",
+      "Liaison: கஸ்டமர் டெஸ்டை <b>Verification › With the customer</b>-ல பதியுங்க. <b>What they said</b> எழுதி, <b>It works — close it</b> அழுத்துங்க. ஜாப் <b>Ready for Invoice</b>-க்குப் போகும்.",
+      "கஸ்டமருக்கு இன்னும் பிரச்சனையா? <b>Still faulty — back to the bench</b>. ஜாப் மறுபடி In Progress ஆகும்.",
+      "அசெஸ்மென்ட் நடக்கும்போதே கஸ்டமருக்கு ரிப்பேர் வேண்டாமா? Liaison: ரிசர்வாயர்ல <b>Customer withdrew</b> அழுத்தி, எப்படித் தெரியும்னு எழுதுங்க. ஜாப் <b>Customer Rejected</b>-ஆ க்ளோஸ் ஆகும்.",
+      "திறந்த ஜாப் சரியில்லையா? சர்வீஸ் ஹெட் அல்லது Liaison: இன்ஜினியருக்குப் புரியிற காரணத்தோட <b>Send it back to the engineer</b>."
     ]
   },
   "dont": {
     "en": [
       "Don't close as Non-Repairable to “park” a board. There is no way back. A new attempt is a new job, registered as a rework.",
+      "Don't use <b>Put on hold</b> to close a job. It only pauses an In Progress job until someone presses <b>Release hold</b>.",
       "Don't press <b>Record rejection</b> on a quotation without checking. It closes every job on it as Customer Rejected.",
       "Don't expect to send a closed job back to the engineer. The system refuses. Register a rework job at the counter instead.",
       "Don't record a customer test as passed before the customer has actually confirmed it. The job goes straight to billing."
     ],
     "ta": [
-      "போர்டை “ஒதுக்கி வைக்க” Non-Repairable ஆக மூட வேண்டாம். திரும்பப் பெற முடியாது. மீண்டும் முயற்சிக்க rework ஆகப் புதிய job பதிவு செய்ய வேண்டும்.",
-      "சரிபார்க்காமல் quotation-இல் <b>Record rejection</b> அழுத்த வேண்டாம். அதிலுள்ள எல்லா job-களும் Customer Rejected ஆக மூடப்படும்.",
-      "மூடிய job-ஐ engineer-க்குத் திருப்பி அனுப்ப முடியும் என்று நினைக்க வேண்டாம். சிஸ்டம் மறுக்கும். பதிலாக, கவுண்டரில் rework job பதிவு செய்யவும்.",
-      "வாடிக்கையாளர் உண்மையில் உறுதிப்படுத்தும் முன் சோதனை வெற்றி என்று பதிவு செய்ய வேண்டாம். Job நேராகப் பில்லுக்குச் செல்லும்."
+      "போர்டை “ஒதுக்கி வைக்க” Non-Repairable-ஆ க்ளோஸ் பண்ணாதீங்க. திரும்ப மாத்த முடியாது. மறுபடி ட்ரை பண்ணணும்னா ரீவொர்க்கா புது ஜாப் போடணும்.",
+      "ஜாப்பை க்ளோஸ் பண்ண <b>Put on hold</b> யூஸ் பண்ணாதீங்க. அது In Progress ஜாப்பை யாராவது <b>Release hold</b> அழுத்துற வரை நிறுத்தி வைக்கும், அவ்வளவு தான்.",
+      "செக் பண்ணாம கொட்டேஷன்ல <b>Record rejection</b> அழுத்தாதீங்க. அதுல இருக்கிற எல்லா ஜாப்பும் Customer Rejected-ஆ க்ளோஸ் ஆகும்.",
+      "க்ளோஸ் ஆன ஜாப்பை இன்ஜினியருக்குத் திருப்பி அனுப்பலாம்னு நினைக்காதீங்க. சிஸ்டம் ஏத்துக்காது. கவுண்டர்ல ரீவொர்க் ஜாப் போடுங்க.",
+      "கஸ்டமர் உண்மையா கன்ஃபர்ம் பண்றதுக்கு முன்னாடி டெஸ்ட் பாஸ்னு பதியாதீங்க. ஜாப் நேரா பில்லிங்குக்குப் போயிடும்."
     ]
   },
   "quiz": {
     "en": [
       {
-        "q": "A board can't be repaired because the part is no longer made. How do you close it?",
+        "q": "You are the engineer on a board whose part is no longer made. How do you close it?",
         "o": [
-          "Type “part obsolete” in the job note and close it",
-          "It cannot be saved… and pick “Component unavailable” from the list",
-          "Leave it at Pending Spare until someone decides"
+          "Type “part obsolete” in the job note and ask the Service Head to close it",
+          "On your job card: Cannot repair… and pick “Component unavailable” from the list",
+          "Put it on hold until someone decides"
         ],
         "a": 1,
-        "why": "Non-Repairable needs a reason from the list. There is no free-text box, so the failure stays countable."
+        "why": "The engineer closes their own board with Cannot repair…, and the reason must come from the list, so failures stay countable."
       },
       {
-        "q": "The customer phones: the repaired unit works on their machine. What does the Liaison do?",
+        "q": "A board is In Progress and waiting on the customer's site to be ready. The Liaison sees Put on hold beside It cannot be saved…. Which one?",
         "o": [
-          "Verification › With the customer: write what they said, then It works — close it",
-          "Ask the engineer to press Ready for verification again",
-          "Nothing; the job closes on its own after the challan"
+          "It cannot be saved…, because work has stopped",
+          "Put on hold, with what it is waiting for; release it later",
+          "Neither: send it back to the engineer"
         ],
-        "a": 0,
-        "why": "The Liaison records the customer's test for them. A pass moves the job to Ready for Invoice."
+        "a": 1,
+        "why": "Put on hold pauses an In Progress job with a reason and is released later. It cannot be saved… closes the job for good as Non-Repairable."
       },
       {
         "q": "A board is under assessment and the customer says they no longer want it repaired. What happens?",
@@ -97,57 +101,56 @@
     ],
     "ta": [
       {
-        "q": "உதிரிப் பாகம் இனி தயாரிக்கப்படாததால் போர்டைச் சரிசெய்ய முடியவில்லை. எப்படி மூடுவீர்கள்?",
+        "q": "நீங்க இன்ஜினியர். ஒரு போர்டோட பார்ட் இப்போ தயாரிக்கிறதே இல்ல. எப்படி க்ளோஸ் பண்ணுவீங்க?",
         "o": [
-          "Job குறிப்பில் “part obsolete” என்று எழுதி மூடுவேன்",
-          "It cannot be saved… அழுத்தி, பட்டியலில் “Component unavailable” தேர்வு செய்வேன்",
-          "யாராவது முடிவு செய்யும் வரை Pending Spare-இல் விடுவேன்"
+          "ஜாப் நோட்ல “part obsolete”னு எழுதி, சர்வீஸ் ஹெட்-கிட்ட க்ளோஸ் பண்ணச் சொல்லுவேன்",
+          "என் ஜாப் கார்டுல Cannot repair… அழுத்தி, லிஸ்ட்ல “Component unavailable” செலக்ட் பண்ணுவேன்",
+          "யாராவது முடிவு பண்ற வரை ஹோல்டுல வைப்பேன்"
         ],
         "a": 1,
-        "why": "Non-Repairable-க்குப் பட்டியலில் உள்ள காரணம் தேவை. சொந்தமாக எழுத இடம் இல்லை; அதனால் தோல்விகளை எண்ண முடிகிறது."
+        "why": "இன்ஜினியர் தன் போர்டை Cannot repair…-ல க்ளோஸ் பண்ணலாம். காரணம் லிஸ்ட்ல இருந்து தான் வரணும்; அப்போ தான் ஃபெயிலியர்களை எண்ண முடியும்."
       },
       {
-        "q": "பழுது நீக்கிய யூனிட் அவர்கள் இயந்திரத்தில் வேலை செய்கிறது என்று வாடிக்கையாளர் போனில் சொல்கிறார். Liaison என்ன செய்வார்?",
+        "q": "ஒரு போர்டு In Progress-ல இருக்கு, கஸ்டமர் சைட் ரெடி ஆகுறதுக்கு வெயிட் பண்ணுது. Liaison-க்கு It cannot be saved… பக்கத்துல Put on hold தெரியுது. எதை அழுத்தணும்?",
         "o": [
-          "Verification › With the customer: அவர்கள் சொன்னதை எழுதி, It works — close it",
-          "Engineer-இடம் மீண்டும் Ready for verification அழுத்தச் சொல்வார்",
-          "ஒன்றும் இல்லை; சலானுக்குப் பிறகு job தானாக மூடும்"
+          "It cannot be saved…, வேலை நின்னுடுச்சே",
+          "Put on hold, எதுக்கு வெயிட் பண்ணுதுன்னு எழுதி; அப்புறம் ரிலீஸ் பண்ணலாம்",
+          "ரெண்டும் இல்ல: இன்ஜினியருக்குத் திருப்பி அனுப்புவேன்"
         ],
-        "a": 0,
-        "why": "வாடிக்கையாளர் சோதனையை Liaison அவர்கள் சார்பாகப் பதிவு செய்கிறார். வெற்றி என்றால் job Ready for Invoice-க்குச் செல்லும்."
+        "a": 1,
+        "why": "Put on hold காரணத்தோட In Progress ஜாப்பை நிறுத்தி வைக்கும், அப்புறம் ரிலீஸ் பண்ணலாம். It cannot be saved… ஜாப்பை நிரந்தரமா Non-Repairable-ஆ க்ளோஸ் பண்ணும்."
       },
       {
-        "q": "ஒரு போர்டு assessment-இல் இருக்கிறது; வாடிக்கையாளருக்கு இனி பழுதுபார்ப்பு வேண்டாம். என்ன நடக்கும்?",
+        "q": "ஒரு போர்டு அசெஸ்மென்ட்ல இருக்கு; கஸ்டமருக்கு இனி ரிப்பேர் வேண்டாம். என்ன ஆகும்?",
         "o": [
-          "Job-ஐ நீக்குவேன்",
-          "Non-Repairable ஆக மூடுவேன்",
-          "Liaison Customer withdrew அழுத்தி, எப்படித் தெரியும் என்று எழுதுவார். Customer Rejected ஆக மூடும்"
+          "ஜாப்பை டெலீட் பண்ணுவேன்",
+          "Non-Repairable-ஆ க்ளோஸ் பண்ணுவேன்",
+          "Liaison Customer withdrew அழுத்தி, எப்படித் தெரியும்னு எழுதுவார். Customer Rejected-ஆ க்ளோஸ் ஆகும்"
         ],
         "a": 2,
-        "why": "விலகல் (அல்லது நிராகரிக்கப்பட்ட quotation) job-ஐ Customer Rejected ஆக மூடும். பின்னர் வாடிக்கையாளருக்குத் திரும்ப சலானுக்குக் காத்திருக்கும்."
+        "why": "வேண்டாம்னு சொன்னா (அல்லது கொட்டேஷன் ரிஜெக்ட் ஆனா) ஜாப் Customer Rejected-ஆ க்ளோஸ் ஆகும். அப்புறம் கஸ்டமருக்குத் திரும்ப சலானுக்கு வெயிட் பண்ணும்."
       },
       {
-        "q": "ஒரு job கடந்த வாரம் Non-Repairable ஆக மூடப்பட்டது. வாடிக்கையாளர் மீண்டும் முயற்சிக்கச் சொல்கிறார். என்ன செய்வீர்கள்?",
+        "q": "போன வாரம் ஒரு ஜாப் Non-Repairable-ஆ க்ளோஸ் ஆச்சு. கஸ்டமர் இப்போ மறுபடி ட்ரை பண்ணச் சொல்றாங்க. என்ன பண்ணுவீங்க?",
         "o": [
-          "Engineer-க்குத் திருப்பி அனுப்புவேன்",
-          "கவுண்டரில் புதிய rework job பதிவு செய்வேன்",
-          "Status-ஐ மாற்றச் சொல்வேன்"
+          "இன்ஜினியருக்குத் திருப்பி அனுப்புவேன்",
+          "கவுண்டர்ல புது ரீவொர்க் ஜாப் போடுவேன்",
+          "ஸ்டேட்டஸை மாத்தச் சொல்லுவேன்"
         ],
         "a": 1,
-        "why": "மூடிய job-ஐத் திருப்பி அனுப்பினால் மறுக்கப்படும். மீண்டும் முயற்சிப்பது புதிய work order, rework ஆகப் பதிவு."
+        "why": "க்ளோஸ் ஆன ஜாப்பை திருப்பி அனுப்பினா சிஸ்டம் ஏத்துக்காது. மறுபடி ட்ரை பண்றது புது ஜாப், ரீவொர்க்கா பதியணும்."
       }
     ]
   },
   "notes": [
-    "APP BUG: the engineer's own “Cannot repair…” on the job card shows an empty reason list. The Engineer role lacks non_repairable_reason.read (only Liaison, Service Head, Operations Manager hold it), so reasonList() returns nothing and the close button never enables. The Engineer holds work_order.close_non_repairable but cannot use it through the screen. The clip therefore shows the Service Head's “It cannot be saved…”; the Engineer is named in the role line because UC-014 makes them the primary actor.",
-    "Premium: no screen sets a premium or a premium reason. The database requires a premium reason when premium_amount > 0 (work_order CHECK), and the job card only displays an existing premium. Not taught.",
-    "“Terminal ≠ frozen: a lead can send a job back” is only half true. return_to_engineer() works from any OPEN sub-status (shown), but refuses every closed job, including Ready for Invoice: “Register a rework job against it rather than reopening this one.” The job card offers nothing on a closed job (“This job is closed; nothing moves it on from here.”). Taught as: closed → rework job.",
-    "The Liaison has no Non-Repairable act (no work_order.close_non_repairable); Liaison + Service Head can send back.",
-    "Customer Rejected from a rejected quotation is stated in a caption (Record rejection, quotation_moves_the_job migration), not shown.",
-    "UX: after “Customer withdrew” the row just disappears from the queue with no confirmation (the done message is never rendered); the clip opens the job card to show the new status.",
-    "UX: on Verification › With the customer the JOB bay says only “These are with their customers…” and never shows the chosen board; the Result bay is narrow and its note wraps one word per line.",
-    "UX: after “It works — close it” the redirect lands on the “Waiting to be given out” list, not the customer list.",
-    "The job history shows the Inward move at 05:30 (a date-only timestamp rendered in IST).",
-    "Clip is 122 s (above the 110 s target) because it covers four acts across two roles; set-up (fresh 4-unit delivery for Ayyan Industrial Systems, moved through pick-up, agreed price, allotment, repair and peer verification) is unrecorded."
+    "Round 2: the engineer's own “Cannot repair…” now works (finding 1 fixed) and is shown; the Liaison's “It cannot be saved…” is shown too (the Service Head has the same act, stated in a caption).",
+    "“Put on hold” is shown beside “It cannot be saved…” and captioned as not closing; holding and releasing themselves belong to module 05.",
+    "Premium with a reason (finding 15) is set on the quotation or phone-price form, not on any closing screen, so it is left to module 04 and the money/KPI module.",
+    "“Terminal ≠ frozen: a lead can send a job back” is only half true. return_to_engineer() works from any OPEN sub-status (shown), but refuses every closed job, including Ready for Invoice. The job card says “This job is closed; nothing moves it on from here.” Taught as: closed → rework job.",
+    "Customer Rejected from a rejected quotation is stated in a caption (Record rejection), not shown.",
+    "UX (unchanged): after “Customer withdrew” the row just disappears from the queue with no confirmation; the clip opens the job card to show the new status. After “It works — close it” the redirect lands on “Waiting to be given out”. “It cannot be saved…” is shown in red.",
+    "The shared set-up's agreePrice() now fills Normal price (#normalPrice-ph-<customer>) with the agreed price, so no premium arises; if a rate card makes it read-only and the price is above it, the first premium reason is chosen.",
+    "The app was slow under shared load, so the Tamil take ran 128 s; it was sped up 1.15× at encode to 111 s (captions still hold ≥ 2.5 s). The English take is real time.",
+    "Set-up (unrecorded): a fresh 5-unit delivery for Ayyan Industrial Systems per take, priced on the phone, allotted, two left In Progress, two verified. Takes leave closed test jobs in the shared database."
   ]
 }

@@ -47,7 +47,7 @@ interface Captions {
 const en: Captions = {
   kicker: 'Thulir training · Module 13 · Service Head · Operations Manager',
   title: 'Where the floor loses time',
-  sub: 'Yield, wastage, rework, queues, stuck boards, unbilled hours. About 3 minutes.',
+  sub: 'Yield, wastage, rework, queues, stuck boards, unbilled hours. About 2½ minutes.',
   demo: 'The MIS dashboard.<small>Demo figures on screen. Your figures will differ.</small>',
   period: 'Every figure follows the period you pick.<small>Here: This month, September.</small>',
   exYield: {

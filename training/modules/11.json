@@ -2,7 +2,7 @@
   "id": "11",
   "title": {
     "en": "Invoice batches and Zoho",
-    "ta": "Invoice batch-களும் Zoho-வும்"
+    "ta": "இன்வாய்ஸ் பேட்ச்சும் Zoho-வும்"
   },
   "role": "Liaison · Operations Manager",
   "path": "Front office › Invoicing",
@@ -15,27 +15,27 @@
     "ta": "media/11-poster-ta.jpg"
   },
   "seconds": {
-    "en": 74,
-    "ta": 79
+    "en": 77,
+    "ta": 82
   },
   "do": {
     "en": [
       "Open <b>Front office › Invoicing</b>. Closed jobs with a price wait under <b>Waiting to be billed</b>, grouped by customer.",
       "Tick the jobs of <b>one customer</b> that go on one invoice, then press <b>Prepare a batch for …</b>. Check the customer name and total on the button.",
       "A Non-Repairable job with an agreed charge can be billed too. It shows with the <b>Non-Repairable</b> tag.",
-      "Read the batch before sending: number <b>IB/YY-MM/XXXXXX</b>, one line per job (“Service Charges for … - S/N …”), the amount taken from the job.",
+      "Read every line before sending: number <b>IB/YY-MM/XXXXXX</b>, one line per job (“Service Charges for … - S/N …”) in a box you can read in full. Fix the wording there and press <b>Save</b>; the amount comes from the job.",
       "To take a job off a <b>Draft</b> batch, press <b>Remove</b> on its line. It goes back to the worklist for a later batch.",
       "If <b>Send to Zoho Books</b> is greyed, read the reason under it (no Zoho organisation, no SAC code, or no customer GSTIN) and get it fixed.",
       "When Send works, Zoho gets one <b>draft sales order</b> with the batch number as its reference. Nothing is emailed to the customer."
     ],
     "ta": [
-      "<b>Front office › Invoicing</b> திறக்கவும். விலை உள்ள மூடிய job-கள் வாடிக்கையாளர் வாரியாக <b>Waiting to be billed</b>-இல் காத்திருக்கும்.",
-      "ஒரே invoice-இல் போகும் <b>ஒரு வாடிக்கையாளரின்</b> job-களை டிக் செய்து <b>Prepare a batch for …</b> அழுத்தவும். பட்டனில் உள்ள பெயரையும் மொத்தத்தையும் சரிபார்க்கவும்.",
-      "ஒப்புக்கொண்ட கட்டணம் உள்ள Non-Repairable job-க்கும் பில் போடலாம். அதில் <b>Non-Repairable</b> குறி இருக்கும்.",
-      "அனுப்பும் முன் batch-ஐப் படிக்கவும்: எண் <b>IB/YY-MM/XXXXXX</b>, job-க்கு ஒரு வரி (“Service Charges for … - S/N …”), தொகை job-இலிருந்து.",
-      "<b>Draft</b> batch-இலிருந்து ஒரு job-ஐ எடுக்க, அதன் வரியில் <b>Remove</b> அழுத்தவும். பின்னர் வேறு batch-க்காக worklist-க்குத் திரும்பும்.",
-      "<b>Send to Zoho Books</b> செயலிழந்திருந்தால், கீழே உள்ள காரணத்தைப் படிக்கவும் (Zoho organisation, SAC code அல்லது வாடிக்கையாளர் GSTIN இல்லை), சரிசெய்யச் சொல்லவும்.",
-      "Send வேலை செய்யும்போது, batch எண்ணை reference ஆகக் கொண்டு Zoho-வில் ஒரு <b>draft sales order</b> உருவாகும். வாடிக்கையாளருக்கு email போகாது."
+      "<b>Front office › Invoicing</b> திறங்க. ப்ரைஸ் போட்ட, க்ளோஸ் ஆன ஜாப்ஸ் கஸ்டமர் வாரியா <b>Waiting to be billed</b>-ல வெயிட் பண்ணும்.",
+      "ஒரே இன்வாய்ஸ்ல போகிற <b>ஒரு கஸ்டமரோட</b> ஜாப்ஸை டிக் பண்ணி <b>Prepare a batch for …</b> அழுத்துங்க. பட்டன்ல கஸ்டமர் பேரும் டோட்டலும் செக் பண்ணுங்க.",
+      "அக்ரீ பண்ண சார்ஜ் இருக்கிற Non-Repairable ஜாப்புக்கும் பில் போடலாம். அதுல <b>Non-Repairable</b> டேக் இருக்கும்.",
+      "அனுப்புறதுக்கு முன்னாடி ஒவ்வொரு லைனையும் படிங்க: நம்பர் <b>IB/YY-MM/XXXXXX</b>, ஒரு ஜாப்புக்கு ஒரு லைன் (“Service Charges for … - S/N …”), முழுசா படிக்கிற மாதிரி பாக்ஸ்ல. வார்த்தையை அங்கேயே திருத்தி <b>Save</b> அழுத்துங்க; அமௌண்ட் ஜாப்ல இருந்து வருது.",
+      "<b>Draft</b> பேட்ச்ல இருந்து ஒரு ஜாப்பை எடுக்க, அதோட லைன்ல <b>Remove</b> அழுத்துங்க. அடுத்த பேட்ச்சுக்காக worklist-க்குத் திரும்பும்.",
+      "<b>Send to Zoho Books</b> க்ரே ஆயிருந்தா, கீழே இருக்கிற காரணத்தைப் படிங்க (Zoho organisation, SAC code, இல்ல கஸ்டமர் GSTIN இல்ல), சரி பண்ணச் சொல்லுங்க.",
+      "Send வேலை செஞ்சா, பேட்ச் நம்பரை reference-ஆ வெச்சு Zoho-ல ஒரு <b>draft sales order</b> வரும். கஸ்டமருக்கு email போகாது."
     ]
   },
   "dont": {
@@ -44,14 +44,14 @@
       "Don't try to put a job on a second batch. A job can be on one batch, ever; once on a batch it leaves the worklist.",
       "Don't send before checking the lines. A sent batch is frozen: no edits, no removals, and its jobs can never be billed again.",
       "Don't try to change an amount on the batch. It comes from the job; if it is wrong, the job's price is wrong.",
-      "Don't expect Front Office or the Service Head to do this. Only the Liaison and the Operations Manager can build and send batches."
+      "Don't expect Front Office or the Service Head to do this. Only the Liaison and the Operations Manager can build and send batches; others get a refusal even by URL."
     ],
     "ta": [
-      "வாடிக்கையாளர்களைக் கலக்க வேண்டாம். ஒரு batch = ஒரு வாடிக்கையாளர்; இருவரை டிக் செய்தால் மறுக்கப்படும்.",
-      "ஒரு job-ஐ இரண்டாவது batch-இல் சேர்க்க முயல வேண்டாம். ஒரு job எப்போதும் ஒரே batch-இல் மட்டும்; batch-இல் சேர்ந்ததும் worklist-இலிருந்து போய்விடும்.",
-      "வரிகளைச் சரிபார்க்காமல் அனுப்ப வேண்டாம். அனுப்பிய batch உறைந்துவிடும்: திருத்தம், நீக்கம் இல்லை; அதன் job-களுக்கு மீண்டும் பில் போட முடியாது.",
-      "Batch-இல் தொகையை மாற்ற முயல வேண்டாம். அது job-இலிருந்து வருகிறது; தவறு என்றால் job-இன் விலை தவறு.",
-      "Front Office அல்லது Service Head இதைச் செய்வார்கள் என்று எதிர்பார்க்க வேண்டாம். Liaison, Operations Manager மட்டுமே batch உருவாக்கி அனுப்ப முடியும்."
+      "கஸ்டமர்களைக் கலக்காதீங்க. ஒரு பேட்ச் = ஒரு கஸ்டமர்; ரெண்டு பேரை டிக் பண்ணா ஏத்துக்காது.",
+      "ஒரு ஜாப்பை ரெண்டாவது பேட்ச்ல சேர்க்க ட்ரை பண்ணாதீங்க. ஒரு ஜாப் எப்பவும் ஒரே பேட்ச்ல தான்; பேட்ச்ல சேர்ந்ததும் worklist-ல இருந்து போயிடும்.",
+      "லைன்களை செக் பண்ணாம அனுப்பாதீங்க. அனுப்பின பேட்ச் ஃப்ரீஸ் ஆயிடும்: எடிட்டும் இல்ல, ரிமூவும் இல்ல; அதோட ஜாப்ஸுக்கு மறுபடி பில் போட முடியாது.",
+      "பேட்ச்ல அமௌண்ட்டை மாத்த ட்ரை பண்ணாதீங்க. அது ஜாப்ல இருந்து வருது; தப்புன்னா ஜாப்போட ப்ரைஸ் தான் தப்பு.",
+      "Front Office, சர்வீஸ் ஹெட் இதைப் பண்ணுவாங்கன்னு எதிர்பார்க்காதீங்க. Liaison, Operations Manager மட்டும் தான் பேட்ச் போட்டு அனுப்ப முடியும்; மத்தவங்களுக்கு URL-ல போனாலும் மறுப்பு வரும்."
     ]
   },
   "quiz": {
@@ -99,55 +99,54 @@
     ],
     "ta": [
       {
-        "q": "முடிந்த இரண்டு job-களை டிக் செய்கிறீர்கள்: ஒன்று Ayyan, ஒன்று Kovai. என்ன நடக்கும்?",
+        "q": "முடிஞ்ச ரெண்டு ஜாப்பை டிக் பண்றீங்க, ஒண்ணு Ayyan, ஒண்ணு Kovai. என்ன ஆகும்?",
         "o": [
-          "இரண்டு வரிகளுடன் ஒரு batch உருவாகும்",
-          "Prepare a batch செயலிழந்தே இருக்கும்: ஒரு batch-க்கு ஒரு வாடிக்கையாளர்",
-          "தானாக இரண்டு batch-கள் உருவாகும்"
+          "ரெண்டு லைனோட ஒரு பேட்ச் வரும்",
+          "Prepare a batch க்ரே ஆயிருக்கும்: ஒரு பேட்ச்சுக்கு ஒரு கஸ்டமர்",
+          "தானா ரெண்டு பேட்ச் வரும்"
         ],
         "a": 1,
-        "why": "ஒரு batch ஒரே ஒரு வாடிக்கையாளருக்கு மட்டும். திரை கலப்புத் தேர்வை மறுக்கும்; database-உம் மறுக்கும்."
+        "why": "ஒரு பேட்ச் ஒரே ஒரு கஸ்டமருக்குத் தான். ஸ்க்ரீன் கலந்த செலக்ஷனை ஏத்துக்காது, டேட்டாபேஸும் ஏத்துக்காது."
       },
       {
-        "q": "Draft batch-இல் உள்ள ஒரு job அடுத்த மாதம் வரை காத்திருக்க வேண்டும். என்ன செய்வீர்கள்?",
+        "q": "Draft பேட்ச்ல இருக்கிற ஒரு ஜாப் அடுத்த மாசம் வரை வெயிட் பண்ணணும். என்ன பண்ணுவீங்க?",
         "o": [
-          "அதன் வரியில் Remove அழுத்துவேன்; worklist-க்குத் திரும்பும்",
-          "முழு batch-ஐயும் நீக்குவேன்",
-          "அதன் தொகையை பூஜ்யமாக்குவேன்"
+          "அதோட லைன்ல Remove அழுத்துவேன்; worklist-க்குத் திரும்பும்",
+          "முழு பேட்ச்சையும் டெலீட் பண்ணுவேன்",
+          "அதோட அமௌண்ட்டை ஜீரோ ஆக்குவேன்"
         ],
         "a": 0,
-        "why": "Draft batch-இலிருந்து job-ஐ எடுக்க அதன் வரியை Remove செய்வதே வழி. பின்னர் வேறு batch-இல் பில் போடலாம்."
+        "why": "Draft பேட்ச்ல இருந்து ஜாப்பை எடுக்க லைனை ரிமூவ் பண்றது தான் வழி. அடுத்த பேட்ச்ல பில் போடலாம்."
       },
       {
-        "q": "Send to Zoho Books “set the zoho organisation first” என்று செயலிழந்துள்ளது. இதன் பொருள்?",
+        "q": "Send to Zoho Books க்ரே ஆயிருக்கு, “set the zoho organisation first”னு இருக்கு. இதுக்கு என்ன அர்த்தம்?",
         "o": [
-          "Batch பழுதாகிவிட்டது; மீண்டும் உருவாக்கவும்",
-          "இங்கே Zoho அனுப்புதல் அமைக்கப்படவில்லை; batch சரியாக உள்ளது, அமைக்கும் வரை காத்திருக்கும்",
-          "Zoho ஏற்கனவே பெற்றுவிட்டது"
+          "பேட்ச் உடைஞ்சிடுச்சு; மறுபடி போடணும்",
+          "இங்கே Zoho செட்டப் ஆகல; பேட்ச் சரியா இருக்கு, செட்டப் ஆகுற வரை வெயிட் பண்ணும்",
+          "Zoho-க்கு ஏற்கனவே போயிடுச்சு"
         ],
         "a": 1,
-        "why": "Batch உருவாக்க Zoho தேவையில்லை. அனுப்புவதற்குத் தேவை; Operations Manager Configuration-இல் அமைக்கும் வரை காரணம் batch-இல் தெரியும்."
+        "why": "பேட்ச் போட Zoho வேண்டாம். அனுப்ப தான் வேணும்; Operations Manager Configuration-ல செட் பண்ற வரை காரணம் பேட்ச்லயே தெரியும்."
       },
       {
-        "q": "நேற்று அனுப்பிய batch-இல் ஒரு வரியின் வாசகம் தவறு. Batch-இலேயே திருத்த முடியுமா?",
+        "q": "நேத்து ஒரு பேட்ச் அனுப்பியாச்சு, ஒரு லைன்ல வார்த்தை தப்பு. பேட்ச்லயே திருத்த முடியுமா?",
         "o": [
-          "ஆம், வரியைத் திருத்தி மீண்டும் அனுப்பலாம்",
-          "ஆம், வரியை நீக்கி மீண்டும் சேர்க்கலாம்",
-          "இல்லை. அனுப்பிய batch உறைந்துவிடும்; திருத்தம் Zoho-வில்"
+          "முடியும், லைனை எடிட் பண்ணி மறுபடி அனுப்பலாம்",
+          "முடியும், லைனை ரிமூவ் பண்ணி திரும்ப சேர்க்கலாம்",
+          "முடியாது. அனுப்பின பேட்ச் ஃப்ரீஸ்; திருத்தம் Zoho-ல தான்"
         ],
         "a": 2,
-        "why": "அனுப்பியதும் batch-உம் அதன் வரிகளும் உறைந்துவிடும்; அதன் job-களுக்கு மீண்டும் பில் போட முடியாது. Send-க்கு முன் வரிகளைச் சரிபார்க்கவும்."
+        "why": "அனுப்பினதும் பேட்ச்சும் லைன்களும் ஃப்ரீஸ், அதோட ஜாப்ஸுக்கு மறுபடி பில் போட முடியாது. Send-க்கு முன்னாடியே லைன்களை செக் பண்ணுங்க."
       }
     ]
   },
   "notes": [
-    "Zoho is not connected locally: system_configuration has no zoho_organization_id and no service_sac_code. The worklist shows “Nothing can be pushed to Zoho Books yet.” and the batch's Send act is disabled with “set the zoho organisation first”. The clip shows that blocked state and only describes what Send does (one draft sales order, batch number as reference, nothing emailed, retry adopts an existing order). No push was attempted, so “What has been tried” is empty and no batch is Sent.",
+    "Zoho is still not connected locally: system_configuration has no zoho_organization_id and no service_sac_code. The worklist shows “Nothing can be pushed to Zoho Books yet.” and the batch's Send act is disabled with “set the zoho organisation first”. The clip shows that blocked state and only describes what Send does. No push was attempted and no batch is Sent.",
     "“A sent batch is frozen” is stated in a caption and on the card, not shown: no batch can reach Sent locally.",
-    "Access: invoice_batch.manage is held by the Liaison and the Operations Manager only, and the Invoicing link is hidden from everyone else. But Front Office can open /front-office/invoicing by typing the URL and sees the whole “Waiting to be billed” list with prices (the Batches bay is empty for them). Writes would be refused by RLS; not tested. Worth fixing (page-level guard) or confirming as intended.",
-    "APP BUG (layout): on the batch page the “What the line says” textarea is squeezed to about one character wide next to a wide Save button, so the line the customer will read cannot be checked on screen. Line text in the database is correct, e.g. “Service Charges for Servo drive R88D-KN - S/N OM6005381”.",
-    "UX: in the worklist the customer name (group row) is crushed into the 38 px tick column (“Ayy / Indu / Sys”).",
-    "UX: after Remove, the confirmation “… is back on the worklist” is never visible (the row and its form unmount); the line just disappears.",
-    "Leftover data: each take prepared a real Draft batch for Ayyan Industrial Systems (IB/26-09/000001 to 000005, two lines each, one line removed on screen). They are Drafts and can be removed line by line; nothing was sent.",
-    "Set-up (unrecorded): a fresh 3-unit delivery for Ayyan Industrial Systems priced by an agreed price, two taken to Ready for Invoice, one closed Non-Repairable by the Service Head (billable diagnostic charge). The cross-customer refusal ticks and unticks an existing Kovai job (WO/26-27/00010) without writing anything."
+    "Round 2: the line box (“What this line says to the customer”) is now a readable two-row textarea with Save (finding 6 fixed); the clip points at it and teaches reading/fixing the wording.",
+    "Round 2: Front Office typing /front-office/invoicing now gets a refusal page (finding 4 fixed), so the access note is dropped; the Invoicing link is shown only to the Liaison and the Operations Manager.",
+    "UX (unchanged): in the worklist the customer name (group row) is crushed into the narrow tick column (“Ayy / Indu / Sys”); after Remove, the confirmation is never visible because the row unmounts.",
+    "Leftover data: each take prepared a real Draft batch for Ayyan Industrial Systems (two lines each, one removed on screen). Nothing was sent.",
+    "Set-up (unrecorded): a fresh 3-unit delivery for Ayyan Industrial Systems per take, priced by an agreed price, two taken to Ready for Invoice, one closed Non-Repairable by the Service Head. The cross-customer refusal ticks and unticks an existing job of another customer (WO/26-27/00010) without writing anything."
   ]
 }

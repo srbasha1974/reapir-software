@@ -1,14 +1,14 @@
 /**
  * Module 11 captions, English and Tamil.
  *
- * Tamil keeps the app's own words in English (button names, field labels, statuses), because
- * that is what staff will see on screen.
+ * Tamil follows TAMIL-STYLE.md: spoken Tamil, business words in Tamil script, on-screen labels in
+ * English letters.
  */
 export const CAPTIONS = {
   en: {
     kicker: 'Thulir training · Module 11 · Liaison · Operations Manager',
     title: 'Invoice batches and Zoho',
-    sub: 'Billing finished jobs. About 75 seconds.',
+    sub: 'Billing finished jobs. About 80 seconds.',
     worklist: 'Closed, priced jobs wait here to be billed.<small>Front office › Invoicing. Liaison and Operations Manager only.</small>',
     zohoOff: 'Zoho Books is not connected on this system yet.<small>You can still build a batch. Only sending needs Zoho.</small>',
     oneCustomer: 'One batch = one customer.<small>Tick two customers and the batch is refused.</small>',
@@ -16,7 +16,8 @@ export const CAPTIONS = {
     nonRep: 'Non-Repairable with an agreed charge can be billed too.',
     prepare: 'Check the customer and total, then prepare.',
     number: 'The batch gets its number: IB/YY-MM/XXXXXX.<small>It stays Draft until it is sent.</small>',
-    lines: 'The customer sees one line per job.<small>No parts breakdown, no separate premium. The amount comes from the job.</small>',
+    lines: 'The customer sees one line per job.<small>No parts breakdown, no separate premium.</small>',
+    lineText: 'Read each line: this is what the customer reads.<small>Fix the words and press Save. The amount comes from the job.</small>',
     remove: 'Not billing a job now? Remove its line.<small>It goes back to the worklist for a later batch.</small>',
     removed: 'Back on the worklist. A job can sit on one batch only.',
     blocked: 'Send is blocked here: no Zoho organisation is set.<small>The reason is shown on the batch. Ask the Operations Manager.</small>',
@@ -26,33 +27,34 @@ export const CAPTIONS = {
     rules: [
       '<b>One customer</b> per batch',
       'A job goes on <b>one batch, ever</b>',
-      '<b>Check the lines</b> before Send. Sent = frozen',
+      '<b>Read every line</b> before Send. Sent = frozen',
       'Wrong job on a draft? <b>Remove its line</b>',
     ],
   },
   ta: {
-    kicker: 'துளிர் பயிற்சி · பாடம் 11 · Liaison · Operations Manager',
-    title: 'Invoice batch-களும் Zoho-வும்',
-    sub: 'முடிந்த job-களுக்குப் பில் போடுதல். சுமார் 80 வினாடிகள்.',
-    worklist: 'மூடப்பட்ட, விலை உள்ள job-கள் பில்லுக்காக இங்கே காத்திருக்கும்.<small>Front office › Invoicing. Liaison, Operations Manager மட்டும்.</small>',
-    zohoOff: 'இந்த சிஸ்டத்தில் Zoho Books இன்னும் இணைக்கப்படவில்லை.<small>Batch உருவாக்கலாம். அனுப்புவதற்கு மட்டுமே Zoho தேவை.</small>',
-    oneCustomer: 'ஒரு batch = ஒரு வாடிக்கையாளர்.<small>இரண்டு வாடிக்கையாளரை டிக் செய்தால் batch மறுக்கப்படும்.</small>',
-    pick: 'ஒரே invoice-இல் போகும் job-களை டிக் செய்யவும்.<small>சிஸ்டம் தானாகச் சேர்க்காது. நீங்களே தேர்வு செய்யவும்.</small>',
-    nonRep: 'ஒப்புக்கொண்ட கட்டணம் உள்ள Non-Repairable-க்கும் பில் போடலாம்.',
-    prepare: 'வாடிக்கையாளர் பெயரையும் மொத்தத்தையும் சரிபார்த்து, prepare செய்யவும்.',
-    number: 'Batch-க்கு எண் கிடைக்கும்: IB/YY-MM/XXXXXX.<small>அனுப்பும் வரை Draft நிலையில் இருக்கும்.</small>',
-    lines: 'வாடிக்கையாளருக்கு ஒரு job-க்கு ஒரு வரி மட்டும்.<small>உதிரிப் பாகப் பிரிவு இல்லை, தனி premium இல்லை. தொகை job-இலிருந்து வரும்.</small>',
-    remove: 'இப்போது பில் போட வேண்டாமா? அதன் வரியை Remove செய்யவும்.<small>பின்னர் வேறு batch-க்காக worklist-க்குத் திரும்பும்.</small>',
-    removed: 'Worklist-க்குத் திரும்பியது. ஒரு job ஒரு batch-இல் மட்டுமே இருக்கும்.',
-    blocked: 'இங்கே Send தடுக்கப்பட்டுள்ளது: Zoho organisation அமைக்கப்படவில்லை.<small>காரணம் batch-இலேயே தெரியும். Operations Manager-இடம் கேட்கவும்.</small>',
-    onSend: 'இணைத்த பிறகு, Send அழுத்தினால் Zoho-வில் ஒரு draft sales order உருவாகும்.<small>வாடிக்கையாளருக்கு email போகாது. Batch எண்ணே அதன் reference.</small>',
-    frozen: 'அனுப்பிய batch உறைந்துவிடும்.<small>திருத்தமும் நீக்கமும் இல்லை. அதன் job-களுக்கு மீண்டும் பில் போட முடியாது.</small>',
-    remember: 'நினைவில் கொள்ளுங்கள்',
+    kicker: 'துளிர் ட்ரெயினிங் · மாட்யூல் 11 · Liaison · Operations Manager',
+    title: 'இன்வாய்ஸ் பேட்ச்சும் Zoho-வும்',
+    sub: 'முடிஞ்ச ஜாப்புக்கு பில்லிங். சுமார் 80 செகண்ட்.',
+    worklist: 'க்ளோஸ் ஆன, ப்ரைஸ் போட்ட ஜாப்ஸ் பில்லிங்குக்கு இங்கே வெயிட் பண்ணும்.<small>Front office › Invoicing. Liaison, Operations Manager மட்டும்.</small>',
+    zohoOff: 'இந்த சிஸ்டத்துல Zoho Books இன்னும் கனெக்ட் ஆகல.<small>பேட்ச் போடலாம். அனுப்ப மட்டும் தான் Zoho வேணும்.</small>',
+    oneCustomer: 'ஒரு பேட்ச் = ஒரு கஸ்டமர்.<small>ரெண்டு கஸ்டமரை டிக் பண்ணா பேட்ச் ஏத்துக்காது.</small>',
+    pick: 'ஒரே இன்வாய்ஸ்ல போற ஜாப்ஸை டிக் பண்ணுங்க.<small>சிஸ்டம் தானா சேர்க்காது. நீங்களே செலக்ட் பண்ணுங்க.</small>',
+    nonRep: 'அக்ரீ பண்ண சார்ஜ் இருக்கிற Non-Repairable-க்கும் பில் போடலாம்.',
+    prepare: 'கஸ்டமர் பேரையும் டோட்டலையும் செக் பண்ணிட்டு prepare பண்ணுங்க.',
+    number: 'பேட்ச்சுக்கு நம்பர் வரும்: IB/YY-MM/XXXXXX.<small>அனுப்புற வரை Draft-ஆ இருக்கும்.</small>',
+    lines: 'கஸ்டமருக்கு ஒரு ஜாப்புக்கு ஒரு லைன் தான்.<small>பார்ட்ஸ் பிரிச்சு காட்டாது, தனி ப்ரீமியம் இல்ல.</small>',
+    lineText: 'ஒவ்வொரு லைனையும் படிங்க: கஸ்டமர் படிக்கிறது இது தான்.<small>வார்த்தையை திருத்தி Save அழுத்துங்க. அமௌண்ட் ஜாப்ல இருந்து வருது.</small>',
+    remove: 'இந்த ஜாப்புக்கு இப்போ பில் வேண்டாமா? அதோட லைனை Remove பண்ணுங்க.<small>அடுத்த பேட்ச்சுக்காக worklist-க்குத் திரும்பும்.</small>',
+    removed: 'Worklist-க்குத் திரும்பிடுச்சு. ஒரு ஜாப் ஒரு பேட்ச்ல மட்டும் தான் இருக்கும்.',
+    blocked: 'இங்கே Send ப்ளாக் ஆகியிருக்கு: Zoho organisation செட் பண்ணல.<small>காரணம் பேட்ச்லயே தெரியும். Operations Manager-கிட்ட கேளுங்க.</small>',
+    onSend: 'கனெக்ட் ஆனதும், Send அழுத்தினா Zoho-ல ஒரு draft sales order வரும்.<small>கஸ்டமருக்கு email போகாது. பேட்ச் நம்பர் தான் அதோட reference.</small>',
+    frozen: 'அனுப்பின பேட்ச் ஃப்ரீஸ் ஆயிடும்.<small>எடிட்டும் இல்ல, ரிமூவும் இல்ல. அதோட ஜாப்ஸுக்கு மறுபடி பில் போட முடியாது.</small>',
+    remember: 'ஞாபகம் வெச்சுக்குங்க',
     rules: [
-      'ஒரு batch-க்கு <b>ஒரு வாடிக்கையாளர்</b>',
-      'ஒரு job <b>ஒரே ஒரு batch-இல் மட்டும்</b>',
-      'Send-க்கு முன் <b>வரிகளைச் சரிபார்க்கவும்</b>. அனுப்பியது = உறைந்தது',
-      'Draft-இல் தவறான job? <b>அதன் வரியை Remove செய்யவும்</b>',
+      'ஒரு பேட்ச்சுக்கு <b>ஒரு கஸ்டமர்</b>',
+      'ஒரு ஜாப் <b>ஒரே ஒரு பேட்ச்ல மட்டும்</b>',
+      'Send-க்கு முன்னாடி <b>ஒவ்வொரு லைனையும் படிங்க</b>. அனுப்பினா ஃப்ரீஸ்',
+      'Draft-ல தப்பான ஜாப்? <b>அதோட லைனை Remove பண்ணுங்க</b>',
     ],
   },
 } as const

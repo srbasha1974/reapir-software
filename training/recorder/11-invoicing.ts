@@ -7,7 +7,8 @@
  *  - [...batch]/page.tsx + batch-acts.tsx: IB/YY-MM/XXXXXX, Draft / Sent / Refused, one line per job
  *    ("Service Charges for …"), amount from the job, "Remove" while not sent, Send disabled with the
  *    reason when no Zoho organisation / SAC / GSTIN; a sent batch is frozen by a trigger.
- *  - invoice_batch.manage = Liaison, Operations Manager (nav hides Invoicing from everyone else).
+ *  - invoice_batch.manage = Liaison, Operations Manager (nav hides Invoicing; refusal.tsx refuses others by URL).
+ *  - batch-acts.tsx EditLine: "What this line says to the customer", a two-row textarea + Save.
  *  - Zoho is NOT configured locally, so the clip shows the blocked Send and says what Send does.
  *
  *   npx tsx 11-invoicing.ts [en|ta]    → out/11-invoicing.<lang>.webm
@@ -21,7 +22,7 @@ const OUT = join(import.meta.dirname, 'out')
 const lang = (process.argv[2] ?? 'en') as Lang
 const c = CAPTIONS[lang]
 if (!c) throw new Error('Language must be en or ta')
-const pace = (lang === 'ta' ? 1.15 : 1) * 0.9
+const pace = (lang === 'ta' ? 1.1 : 1) * 0.9
 
 // ---- Unrecorded set-up: three priced units for one customer, two repaired and one written off. ----
 const CUSTOMER = 'Ayyan Industrial Systems'
@@ -90,7 +91,10 @@ await s.wait(600)
 await s.point(p.locator('.card-head').first())
 await s.say(c.number, 3400 * pace)
 await s.point(p.locator('table.lines'))
-await s.say(c.lines, 3800 * pace)
+await s.say(c.lines, 3600 * pace)
+const k1box = p.locator('table.lines tr', { hasText: K1 }).locator('textarea')
+await s.point(k1box)
+await s.say(c.lineText, 3600 * pace, 'do')
 const k3row = p.locator('table.lines tr', { hasText: K3 })
 const remove = k3row.getByRole('button', { name: 'Remove' })
 await s.point(remove)

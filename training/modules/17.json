@@ -1,0 +1,364 @@
+{
+  "id": "17",
+  "title": {
+    "en": "Numbers · Sales: what your accounts are worth",
+    "ta": "நம்பர்கள் · சேல்ஸ்: உங்க அக்கவுண்ட்டுகளோட மதிப்பு"
+  },
+  "role": "Sales Head · Sales Engineer",
+  "path": "Overview › Sales › By engineer; Overview › Profitability › Premium",
+  "video": {
+    "en": "media/17-sales.mp4",
+    "ta": "media/17-sales-ta.mp4"
+  },
+  "poster": {
+    "en": "media/17-poster.jpg",
+    "ta": "media/17-poster-ta.jpg"
+  },
+  "seconds": {
+    "en": 130,
+    "ta": 150
+  },
+  "do": {
+    "en": [
+      "Read <b>Charged</b> as the price this system set on jobs closed in the period from deliveries <b>you brought in</b>. The premium is included and the discount already taken off.",
+      "Click the Charged figure to see the jobs behind it. A closed job with no price shows “not priced” and is counted in <b>unpriced</b>, never summed.",
+      "Read <b>Filled</b> as the part of Charged from old deliveries where nobody recorded who brought them in; the customer's owner was assumed.",
+      "Use Profitability › <b>Premium</b> by <b>Customer</b> or <b>Segment</b> to see who pays for urgency and who pays below normal. <b>Set by hand</b> shows how much rests on a typed normal price, and who typed it.",
+      "Read <b>Won</b> as accounts that became Regular, credited to whoever owned the account when it converted, in the month the account was <b>opened</b>.",
+      "Read <b>team conversion</b> as Regular ÷ opened for one cohort, and the <b>velocity</b> figures as medians over accounts that took the step."
+    ],
+    "ta": [
+      "<b>Charged</b>: <b>நீங்க கொண்டு வந்த</b> டெலிவரில பீரியட்ல க்ளோஸ் ஆன ஜாப்புக்கு சிஸ்டம் போட்ட விலை. ப்ரீமியம் சேர்த்து, டிஸ்கவுண்ட் கழிச்சு.",
+      "Charged நம்பரை க்ளிக் பண்ணா பின்னாடி இருக்கற ஜாப்ஸ் தெரியும். விலை இல்லாத க்ளோஸ் ஜாப் “not priced”-ஆ வரும், <b>unpriced</b>-ல எண்ணும், கூட்டாது.",
+      "<b>Filled</b>: யார் கொண்டு வந்தாங்கன்னு பதிவு இல்லாத பழைய டெலிவரில இருந்து வந்த Charged; கஸ்டமர் ஓனர் பேர்ல போட்டது.",
+      "Profitability › <b>Premium</b>-ல <b>Customer</b> அல்லது <b>Segment</b> வாரியா பாருங்க: யார் அவசரத்துக்கு பணம் தர்றாங்க, யார் நார்மலுக்கு கீழ. <b>Set by hand</b>: டைப் பண்ண நார்மல் விலை மேல எவ்வளவு, யார் டைப் பண்ணாங்க.",
+      "<b>Won</b>: Regular ஆன அக்கவுண்ட், கன்வர்ட் ஆனப்போ ஓனரா இருந்தவருக்கு கிரெடிட், அக்கவுண்ட் <b>திறந்த</b> மாசத்துல.",
+      "<b>Team conversion</b> = ஒரு கோஹார்ட்ல Regular ÷ திறந்தது. <b>Velocity</b> = அந்த ஸ்டெப் எடுத்த அக்கவுண்ட்டுகளோட மீடியன்."
+    ]
+  },
+  "dont": {
+    "en": [
+      "Don't read Charged as money invoiced or collected. Nothing is read back from Zoho Books.",
+      "Don't net premium and discount into “₹0 overall”. They are reported apart on purpose.",
+      "Don't judge a recent month's Won or conversion: its accounts have not had time to convert. Compare months at least a quarter old.",
+      "Don't compare conversion per engineer. It is shown for the team only, because once accounts move the two bases differ.",
+      "Don't expect a Sales Head to set prices from the Premium tab. Quotation raisers set them; the Sales Head reads the result."
+    ],
+    "ta": [
+      "Charged-ஐ இன்வாய்ஸ் ஆன பணம், வசூல் ஆன பணம்னு படிக்காதீங்க. Zoho Books-ல இருந்து எதுவும் வராது.",
+      "ப்ரீமியம், டிஸ்கவுண்டை கழிச்சு “மொத்தம் ₹0”ன்னு சொல்லாதீங்க. வேணும்னே தனித்தனியா காட்டுது.",
+      "புது மாசத்தோட Won, கன்வர்ஷனை வெச்சு முடிவு பண்ணாதீங்க: அக்கவுண்ட் கன்வர்ட் ஆக டைம் ஆகல. 3 மாசம் பழைய மாசங்களை கம்பேர் பண்ணுங்க.",
+      "இன்ஜினியர் வாரியா கன்வர்ஷன் கம்பேர் பண்ணாதீங்க. டீமுக்கு மட்டும் தான் காட்டும்; அக்கவுண்ட் கைமாறினா கணக்கு மாறும்.",
+      "Premium டேப்ல இருந்து சேல்ஸ் ஹெட் விலை போடுவாங்கன்னு எதிர்பார்க்காதீங்க. கொட்டேஷன் போடறவங்க விலை போடறாங்க; சேல்ஸ் ஹெட் ரிசல்ட் படிக்கறாங்க."
+    ]
+  },
+  "examples": {
+    "en": [
+      {
+        "title": "Charged: Arun's September",
+        "lines": [
+          [
+            "A: quoted ₹12,000 (normal ₹10,000)",
+            "₹12,000",
+            "premium included"
+          ],
+          [
+            "C: sold at ₹8,000 (normal ₹10,000)",
+            "₹8,000",
+            "discount netted"
+          ],
+          [
+            "D: written off, never priced",
+            "—",
+            "counted as 1 unpriced"
+          ],
+          [
+            "= Charged",
+            "₹20,000",
+            ""
+          ],
+          [
+            "of which Filled (C's old delivery)",
+            "₹8,000",
+            "₹12,000 recorded at the counter"
+          ]
+        ],
+        "read": "Board B came from Priya's delivery, so its ₹6,000 is on Priya's row."
+      },
+      {
+        "title": "Premium and discount by customer",
+        "lines": [
+          [
+            "AYYAN: 1 job",
+            "+ ₹2,000",
+            "Set by hand ₹2,000 (normal price typed)"
+          ],
+          [
+            "C's customer: 1 job",
+            "− ₹2,000",
+            "Set by hand — (rate card)"
+          ],
+          [
+            "= Reported",
+            "apart",
+            "never netted to ₹0"
+          ]
+        ],
+        "read": "A customer who is always discounted is a pricing conversation."
+      },
+      {
+        "title": "Team conversion: the Q1 cohort",
+        "lines": [
+          [
+            "Opened in Q1",
+            "40",
+            "Potential bar"
+          ],
+          [
+            "Reached Trial",
+            "21",
+            "Trial bar"
+          ],
+          [
+            "Reached Regular",
+            "6",
+            "Regular bar"
+          ],
+          [
+            "= Team conversion",
+            "15.0%",
+            "6 ÷ 40"
+          ]
+        ],
+        "read": "The same quarter's figure rises for months as the cohort matures."
+      },
+      {
+        "title": "Velocity: Trial → Regular",
+        "lines": [
+          [
+            "Days each account took",
+            "10, 20, 34, 40, 90",
+            ""
+          ],
+          [
+            "= Median (on screen)",
+            "34 d",
+            ""
+          ],
+          [
+            "Mean, for comparison",
+            "38.8 d",
+            "pulled up by the 90-day account"
+          ]
+        ],
+        "read": "Only accounts that took the step are counted; “none yet” means nobody has."
+      }
+    ],
+    "ta": [
+      {
+        "title": "Charged: அருணோட செப்டம்பர்",
+        "lines": [
+          [
+            "A: கொட்டேஷன் ₹12,000 (நார்மல் ₹10,000)",
+            "₹12,000",
+            "ப்ரீமியம் சேர்த்து"
+          ],
+          [
+            "C: ₹8,000-க்கு (நார்மல் ₹10,000)",
+            "₹8,000",
+            "டிஸ்கவுண்ட் கழிச்சு"
+          ],
+          [
+            "D: ரைட்-ஆஃப், விலை இல்ல",
+            "—",
+            "1 unpriced-ஆ எண்ணும்"
+          ],
+          [
+            "= Charged",
+            "₹20,000",
+            ""
+          ],
+          [
+            "அதுல Filled (C பழைய டெலிவரி)",
+            "₹8,000",
+            "கவுண்டர்ல பதிவானது ₹12,000"
+          ]
+        ],
+        "read": "போர்டு B ப்ரியாவோட டெலிவரி, அதனால ₹6,000 ப்ரியா ரோவுல."
+      },
+      {
+        "title": "கஸ்டமர் வாரியா ப்ரீமியம், டிஸ்கவுண்ட்",
+        "lines": [
+          [
+            "AYYAN: 1 ஜாப்",
+            "+ ₹2,000",
+            "Set by hand ₹2,000 (நார்மல் விலை டைப் பண்ணது)"
+          ],
+          [
+            "C-யோட கஸ்டமர்: 1 ஜாப்",
+            "− ₹2,000",
+            "Set by hand — (ரேட் கார்டு)"
+          ],
+          [
+            "= காட்டுவது",
+            "தனித்தனியா",
+            "₹0-ன்னு கழிக்காது"
+          ]
+        ],
+        "read": "எப்பவும் டிஸ்கவுண்ட் வாங்கற கஸ்டமர்னா ப்ரைஸிங் பேசணும்."
+      },
+      {
+        "title": "Team conversion: Q1 கோஹார்ட்",
+        "lines": [
+          [
+            "Q1-ல திறந்தது",
+            "40",
+            "Potential பார்"
+          ],
+          [
+            "Trial ஆனது",
+            "21",
+            "Trial பார்"
+          ],
+          [
+            "Regular ஆனது",
+            "6",
+            "Regular பார்"
+          ],
+          [
+            "= டீம் கன்வர்ஷன்",
+            "15.0%",
+            "6 ÷ 40"
+          ]
+        ],
+        "read": "கோஹார்ட் வளர வளர அதே க்வார்ட்டர் நம்பர் மாசக்கணக்கா ஏறும்."
+      },
+      {
+        "title": "Velocity: Trial → Regular",
+        "lines": [
+          [
+            "ஒவ்வொரு அக்கவுண்ட்டுக்கும் ஆன நாள்",
+            "10, 20, 34, 40, 90",
+            ""
+          ],
+          [
+            "= மீடியன் (ஸ்க்ரீன்ல)",
+            "34 d",
+            ""
+          ],
+          [
+            "சராசரி, கம்பேர் பண்ண",
+            "38.8 d",
+            "90 நாள் அக்கவுண்ட் இழுக்குது"
+          ]
+        ],
+        "read": "ஸ்டெப் எடுத்த அக்கவுண்ட் மட்டும் சேரும்; “none yet”னா இன்னும் யாரும் இல்ல."
+      }
+    ]
+  },
+  "quiz": {
+    "en": [
+      {
+        "q": "A job you brought in was quoted ₹25,000 (normal ₹10,000) and closed yesterday. How much of it lands in your Charged?",
+        "o": [
+          "₹10,000",
+          "₹15,000",
+          "₹25,000",
+          "Nothing until Zoho invoices it"
+        ],
+        "a": 2,
+        "why": "Charged is the full price this system charged, premium included."
+      },
+      {
+        "q": "Three boards from your delivery close on Monday: two repaired and one non-repairable with no price. What does the sales row show?",
+        "o": [
+          "All three summed",
+          "Two summed, plus “1 unpriced”",
+          "Only the repaired ones, with no mention of the third",
+          "Nothing until invoiced"
+        ],
+        "a": 1,
+        "why": "Unpriced closed jobs are counted, not summed."
+      },
+      {
+        "q": "You converted an account in June, and in August the Sales Head moves it to a colleague. Who is credited Won?",
+        "o": [
+          "The colleague",
+          "You",
+          "Both",
+          "Nobody"
+        ],
+        "a": 1,
+        "why": "Credit goes to the owner at the moment of conversion."
+      },
+      {
+        "q": "Q1 team conversion reads 10% in April and 15% in July. What changed?",
+        "o": [
+          "The formula",
+          "More of the Q1 cohort reached Regular since April",
+          "New accounts were added to Q1",
+          "Filled deliveries were removed"
+        ],
+        "a": 1,
+        "why": "The cohort is fixed by opening date and matures over time."
+      }
+    ],
+    "ta": [
+      {
+        "q": "நீங்க கொண்டு வந்த ஜாப்புக்கு கொட்டேஷன் ₹25,000 (நார்மல் ₹10,000), நேத்து க்ளோஸ் ஆச்சு. உங்க Charged-ல எவ்வளவு வரும்?",
+        "o": [
+          "₹10,000",
+          "₹15,000",
+          "₹25,000",
+          "Zoho இன்வாய்ஸ் பண்ற வரை ஒண்ணுமில்ல"
+        ],
+        "a": 2,
+        "why": "Charged = சிஸ்டம் போட்ட முழு விலை, ப்ரீமியம் சேர்த்து."
+      },
+      {
+        "q": "உங்க டெலிவரில 3 போர்டு திங்கள் க்ளோஸ் ஆச்சு: 2 ரிப்பேர், 1 விலை இல்லாத நான்-ரிப்பேரபிள். சேல்ஸ் ரோ என்ன காட்டும்?",
+        "o": [
+          "மூணையும் கூட்டி",
+          "ரெண்டை கூட்டி, கூட “1 unpriced”",
+          "ரிப்பேர் ஆனது மட்டும், மூணாவது பத்தி ஒண்ணுமில்ல",
+          "இன்வாய்ஸ் வரை ஒண்ணுமில்ல"
+        ],
+        "a": 1,
+        "why": "விலை இல்லாத க்ளோஸ் ஜாப் எண்ணும், கூட்டாது."
+      },
+      {
+        "q": "ஜூன்ல ஒரு அக்கவுண்ட்டை நீங்க கன்வர்ட் பண்ணீங்க, ஆகஸ்ட்ல சேல்ஸ் ஹெட் அதை வேற ஒருத்தருக்கு மாத்தறாங்க. Won யாருக்கு?",
+        "o": [
+          "அந்த இன்னொருத்தருக்கு",
+          "உங்களுக்கு",
+          "ரெண்டு பேருக்கும்",
+          "யாருக்கும் இல்ல"
+        ],
+        "a": 1,
+        "why": "கன்வர்ட் ஆன நேரத்துல ஓனரா இருந்தவருக்கு கிரெடிட்."
+      },
+      {
+        "q": "Q1 டீம் கன்வர்ஷன் ஏப்ரல்ல 10%, ஜூலையில 15%. என்ன மாறிச்சு?",
+        "o": [
+          "ஃபார்முலா",
+          "ஏப்ரலுக்கு அப்புறம் Q1 கோஹார்ட்ல இன்னும் சில Regular ஆச்சு",
+          "Q1-ல புது அக்கவுண்ட் சேர்த்தாங்க",
+          "Filled டெலிவரி நீக்கினாங்க"
+        ],
+        "a": 1,
+        "why": "கோஹார்ட் திறந்த தேதியால ஃபிக்ஸ்; நேரம் போக போக வளரும்."
+      }
+    ]
+  },
+  "notes": [
+    "Filmed as the Sales Head on the boards from kpi-seed.json (A WO/26-27/00058 ₹12,000, C WO/26-27/00062 ₹8,000, D WO/26-27/00063 not priced, credited to Test Sales Engineer = the catalogue's Arun; B to Test Sales Head = Priya). Charged on screen also holds other agents' closures, so no caption quotes the total.",
+    "Differs from the catalogue on screen: C's normal price had to be typed (no rate card is reachable through the app), so Rajapalayam Spinners also shows ₹2,000 under Set by hand, and the note reads ₹4,000 by Test Liaison, 2 jobs. A caption says so.",
+    "Demo has no Filled deliveries, no account at Regular and nobody who took Trial → Regular: Filled shows “—”, Won 0, team conversion 0%, Trial → Regular “none yet”. Filled, Won, conversion and velocity are taught on cards only. Potential → Trial median reads 0d (demo accounts went to Trial the day they were opened).",
+    "⚠ Won's cohort is customers opened in the period (clock-in date), not conversions that happened in the period as MET-001 S-03 says.",
+    "⚠ The velocity figures are medians per step; the seeded measure funnel.velocity says a mean over the whole journey.",
+    "⚠ Sales dates closures by the Asia/Kolkata day, Profitability (mv_job_margin) by the UTC day: a job closed 00:00–05:30 IST on the 1st can land in different months on the two screens.",
+    "UX: the Charged drill's State column shows “—” for every job; and the drill is paged to fit the window, so A, C and D were split across pages — the script opens it with rows=40.",
+    "Quotation win rate (S-08) and prices agreed by negotiation (S-11) are measures no screen shows; not taught.",
+    "MIS data refreshed with tools/reports/refresh.ts before filming. Nothing was written for this clip."
+  ]
+}

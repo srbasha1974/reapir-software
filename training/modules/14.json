@@ -1,0 +1,320 @@
+{
+  "id": "14",
+  "title": {
+    "en": "Numbers · Operations 2: reading a scorecard",
+    "ta": "நம்பர்கள் · ஆப்பரேஷன்ஸ் 2: ஸ்கோர்கார்டை படிக்கறது"
+  },
+  "role": "Engineer · Service Head",
+  "path": "Service › Performance",
+  "video": {
+    "en": "media/14-ops-scorecard.mp4",
+    "ta": "media/14-ops-scorecard-ta.mp4"
+  },
+  "poster": {
+    "en": "media/14-poster.jpg",
+    "ta": "media/14-poster-ta.jpg"
+  },
+  "seconds": {
+    "en": 91,
+    "ta": 107
+  },
+  "do": {
+    "en": [
+      "Every column is over the jobs <b>assigned to you and closed that month</b>. An Engineer sees only their own row; the Service Head sees everyone.",
+      "<b>Efficiency</b> = standard hours ÷ hours logged × 100, on jobs with a standard time only. Above 100% is faster than standard. “of N” means only N of your jobs could be compared.",
+      "<b>First pass</b> = jobs that never failed peer verification ÷ jobs closed.",
+      "<b>Rework</b> = rework jobs among the jobs you closed. <b>Non-repairable</b> = jobs closed as Non-Repairable ÷ jobs closed.",
+      "<b>Small sample</b> = fewer closures than the configured minimum (5). The row is listed last and not ranked.",
+      "Read Efficiency next to First pass and Rework, never alone."
+    ],
+    "ta": [
+      "எல்லா காலமும் <b>உங்களுக்கு அலாட் ஆகி அந்த மாசம் க்ளோஸ் ஆன ஜாப்</b> மேல தான். இன்ஜினியருக்கு அவங்க ரோ மட்டும்; சர்வீஸ் ஹெட்டுக்கு எல்லாரும்.",
+      "<b>Efficiency</b> = ஸ்டாண்டர்டு ஹவர்ஸ் ÷ போட்ட ஹவர்ஸ் × 100, ஸ்டாண்டர்டு டைம் உள்ள ஜாப் மட்டும். 100%-க்கு மேலன்னா வேகம். “of N”னா N ஜாப் மட்டும் கம்பேர் ஆச்சு.",
+      "<b>First pass</b> = பியர் வெரிஃபிகேஷன்ல ஒரு தடவை கூட ஃபெயில் ஆகாத ஜாப் ÷ க்ளோஸ் ஆன ஜாப்.",
+      "<b>Rework</b> = நீங்க க்ளோஸ் பண்ணதுல ரீவொர்க் ஜாப். <b>Non-repairable</b> = Non-Repairable-ஆ க்ளோஸ் ஆனது ÷ க்ளோஸ் ஆன ஜாப்.",
+      "<b>Small sample</b> = கான்ஃபிகரேஷன்ல இருக்கற குறைந்தபட்சத்தை (5) விட கம்மியான க்ளோஸ். அந்த ரோ கடைசியா வரும், ரேங்க் இல்ல.",
+      "Efficiency-ஐ First pass, Rework கூட சேர்த்து படிங்க, தனியா இல்ல."
+    ]
+  },
+  "dont": {
+    "en": [
+      "Don't read Rework as “my repairs came back”. A comeback you fix for someone else counts on your row; the cost of the comeback goes to the original job.",
+      "Don't read First pass as “verified OK”. A write-off that was never verified still counts as a first pass.",
+      "Don't compare Efficiency on a board with no standard time: it is left out, and a row with none says “not comparable”.",
+      "Don't rank anyone on a Small sample row. On two or three jobs a percentage measures luck.",
+      "Don't expect Customer Rejected in Non-repairable. Only Non-Repairable closures count there."
+    ],
+    "ta": [
+      "Rework-ஐ “என் ரிப்பேர் திரும்ப வந்தது”ன்னு படிக்காதீங்க. வேற ஒருத்தரோட போர்டை நீங்க சரி பண்ணாலும் உங்க ரோவுல வரும்; காஸ்ட் பழைய ஜாப் மேல போகும்.",
+      "First pass-ஐ “வெரிஃபை ஆகி ஓகே”ன்னு எடுத்துக்காதீங்க. வெரிஃபை ஆகாத ரைட்-ஆஃப்பும் ஃபர்ஸ்ட் பாஸ்ல சேரும்.",
+      "ஸ்டாண்டர்டு டைம் இல்லாத போர்டுக்கு Efficiency கம்பேர் பண்ணாதீங்க: அது சேராது, ஒண்ணுமே இல்லன்னா “not comparable”.",
+      "Small sample ரோவை ரேங்க் பண்ணாதீங்க. 2, 3 ஜாப்ல வர்ற சதவீதம் லக்.",
+      "Non-repairable-ல Customer Rejected வரும்னு எதிர்பார்க்காதீங்க. Non-Repairable க்ளோஸ் மட்டும் தான்."
+    ]
+  },
+  "examples": {
+    "en": [
+      {
+        "title": "Efficiency: Ramachandran's September",
+        "lines": [
+          [
+            "A: standard 6 h, logged",
+            "6 h",
+            "includes 1 h of someone else's peer verification"
+          ],
+          [
+            "B: standard 4 h, logged",
+            "4 h",
+            ""
+          ],
+          [
+            "C: standard 10 h, logged",
+            "8 h",
+            ""
+          ],
+          [
+            "D: no standard time",
+            "—",
+            "left out on both sides"
+          ],
+          [
+            "= Efficiency",
+            "111.1%",
+            "20 h ÷ 18 h, shown “of 3”"
+          ]
+        ],
+        "read": "Faster than standard on the 3 jobs that could be compared."
+      },
+      {
+        "title": "First pass, Rework, Non-repairable",
+        "lines": [
+          [
+            "A, C passed first time; D never verified",
+            "3",
+            "B failed once"
+          ],
+          [
+            "= First pass",
+            "75%",
+            "3 ÷ 4"
+          ],
+          [
+            "= Rework",
+            "0%",
+            "no rework job among the 4"
+          ],
+          [
+            "= Non-repairable",
+            "25%",
+            "D: 1 ÷ 4"
+          ]
+        ],
+        "read": "D, a write-off, counts as a first pass because it never failed a verification."
+      },
+      {
+        "title": "Small sample",
+        "lines": [
+          [
+            "Jobs closed",
+            "4",
+            ""
+          ],
+          [
+            "Minimum for comparison",
+            "5",
+            "system configuration"
+          ],
+          [
+            "= Row tag",
+            "Small sample",
+            "listed last, not ranked"
+          ]
+        ],
+        "read": "With no closed job that has a standard time, Efficiency shows “not comparable” instead of a guess."
+      }
+    ],
+    "ta": [
+      {
+        "title": "Efficiency: ராமச்சந்திரன் செப்டம்பர்",
+        "lines": [
+          [
+            "A: ஸ்டாண்டர்டு 6 h, போட்டது",
+            "6 h",
+            "வேற ஒருத்தரோட 1 h பியர் வெரிஃபிகேஷனும் சேர்ந்து"
+          ],
+          [
+            "B: ஸ்டாண்டர்டு 4 h, போட்டது",
+            "4 h",
+            ""
+          ],
+          [
+            "C: ஸ்டாண்டர்டு 10 h, போட்டது",
+            "8 h",
+            ""
+          ],
+          [
+            "D: ஸ்டாண்டர்டு டைம் இல்ல",
+            "—",
+            "ரெண்டு பக்கமும் சேராது"
+          ],
+          [
+            "= எஃபிஷியன்சி",
+            "111.1%",
+            "20 h ÷ 18 h, “of 3”"
+          ]
+        ],
+        "read": "கம்பேர் ஆன 3 ஜாப்ல ஸ்டாண்டர்டை விட வேகம்."
+      },
+      {
+        "title": "First pass, Rework, Non-repairable",
+        "lines": [
+          [
+            "A, C முதல் தடவையே பாஸ்; D வெரிஃபை ஆகல",
+            "3",
+            "B ஒரு தடவை ஃபெயில்"
+          ],
+          [
+            "= ஃபர்ஸ்ட் பாஸ்",
+            "75%",
+            "3 ÷ 4"
+          ],
+          [
+            "= ரீவொர்க்",
+            "0%",
+            "4-லயும் ரீவொர்க் ஜாப் இல்ல"
+          ],
+          [
+            "= நான்-ரிப்பேரபிள்",
+            "25%",
+            "D: 1 ÷ 4"
+          ]
+        ],
+        "read": "D ரைட்-ஆஃப், வெரிஃபிகேஷன் ஃபெயில் ஆகல, அதனால ஃபர்ஸ்ட் பாஸ் கணக்கு."
+      },
+      {
+        "title": "Small sample",
+        "lines": [
+          [
+            "க்ளோஸ் ஆன ஜாப்",
+            "4",
+            ""
+          ],
+          [
+            "கம்பேர் பண்ண குறைந்தபட்சம்",
+            "5",
+            "சிஸ்டம் கான்ஃபிகரேஷன்"
+          ],
+          [
+            "= ரோ டேக்",
+            "Small sample",
+            "கடைசியா வரும், ரேங்க் இல்ல"
+          ]
+        ],
+        "read": "ஸ்டாண்டர்டு டைம் உள்ள க்ளோஸ் ஜாப்பே இல்லன்னா Efficiency ஊகிக்காம “not comparable” காட்டும்."
+      }
+    ]
+  },
+  "quiz": {
+    "en": [
+      {
+        "q": "Your scorecard says Rework 25%. What does that mean?",
+        "o": [
+          "A quarter of your repairs came back",
+          "A quarter of the jobs you closed were rework jobs, whoever did the original",
+          "You failed verification on a quarter of jobs",
+          "A quarter of your hours were unbilled"
+        ],
+        "a": 1,
+        "why": "The column counts jobs of type Rework among your own closures."
+      },
+      {
+        "q": "You closed 4 boards: standards 6 h, 4 h, 10 h and none; you logged 6 h, 4 h, 8 h and 6 h. What does Efficiency show?",
+        "o": [
+          "83.3%",
+          "111.1% of 3",
+          "90.0%",
+          "not comparable"
+        ],
+        "a": 1,
+        "why": "Only boards with a standard count: 20 h ÷ 18 h = 111.1%, and “of 3” says one board was left out."
+      },
+      {
+        "q": "A board you wrote off was never sent to peer verification. How does it affect First pass?",
+        "o": [
+          "It lowers it",
+          "It is left out",
+          "It counts as a first pass",
+          "It counts as a failed pass"
+        ],
+        "a": 2,
+        "why": "First pass counts jobs with no failed verification cycle, and a write-off has none."
+      },
+      {
+        "q": "A new engineer closed 3 jobs this month. What does their row show?",
+        "o": [
+          "Their rank among the engineers",
+          "A Small sample tag, listed last and not ranked",
+          "Nothing: the row is hidden",
+          "0% in every column"
+        ],
+        "a": 1,
+        "why": "Below the configured minimum (5) the row is tagged Small sample and not ranked."
+      }
+    ],
+    "ta": [
+      {
+        "q": "உங்க ஸ்கோர்கார்டுல Rework 25%. என்ன அர்த்தம்?",
+        "o": [
+          "உங்க ரிப்பேர்ல கால்வாசி திரும்ப வந்தது",
+          "நீங்க க்ளோஸ் பண்ணதுல கால்வாசி ரீவொர்க் ஜாப், முதல்ல யார் பண்ணியிருந்தாலும்",
+          "கால்வாசி ஜாப்ல வெரிஃபிகேஷன் ஃபெயில்",
+          "கால்வாசி ஹவர்ஸ் அன்பில்டு"
+        ],
+        "a": 1,
+        "why": "உங்க க்ளோஸ்ல Rework டைப் ஜாப் எத்தனைன்னு தான் இந்த காலம் எண்ணும்."
+      },
+      {
+        "q": "4 போர்டு க்ளோஸ் பண்ணீங்க: ஸ்டாண்டர்டு 6 h, 4 h, 10 h, இல்ல; போட்டது 6 h, 4 h, 8 h, 6 h. Efficiency என்ன?",
+        "o": [
+          "83.3%",
+          "111.1% of 3",
+          "90.0%",
+          "not comparable"
+        ],
+        "a": 1,
+        "why": "ஸ்டாண்டர்டு உள்ள போர்டு மட்டும்: 20 h ÷ 18 h = 111.1%, “of 3”னா ஒரு போர்டு சேரல."
+      },
+      {
+        "q": "நீங்க ரைட்-ஆஃப் பண்ண போர்டு பியர் வெரிஃபிகேஷனுக்கு போகவே இல்ல. First pass-ஐ என்ன பண்ணும்?",
+        "o": [
+          "குறைக்கும்",
+          "சேராது",
+          "ஃபர்ஸ்ட் பாஸ்ஸா எண்ணும்",
+          "ஃபெயில்னு எண்ணும்"
+        ],
+        "a": 2,
+        "why": "ஃபெயில் ஆன வெரிஃபிகேஷன் இல்லாத ஜாப் எல்லாம் ஃபர்ஸ்ட் பாஸ்; ரைட்-ஆஃப்க்கு ஃபெயில் இல்ல."
+      },
+      {
+        "q": "புது இன்ஜினியர் இந்த மாசம் 3 ஜாப் க்ளோஸ் பண்ணாங்க. அவங்க ரோ என்ன காட்டும்?",
+        "o": [
+          "இன்ஜினியர்கள்ல அவங்க ரேங்க்",
+          "Small sample டேக், கடைசியா, ரேங்க் இல்ல",
+          "ஒண்ணுமில்ல: ரோ மறைஞ்சிடும்",
+          "எல்லா காலமும் 0%"
+        ],
+        "a": 1,
+        "why": "குறைந்தபட்சம் (5)-க்கு கீழன்னா Small sample, ரேங்க் இல்ல."
+      }
+    ]
+  },
+  "notes": [
+    "Filmed as the Engineer (own row only), then the Service Head (everyone). Cards use the catalogue's Ramachandran (Test Engineer) and boards A–D; the demo scorecard also holds other training agents' closures (19–25 jobs during filming), so no caption quotes a screen figure.",
+    "⚠ First pass counts write-offs that were never verified as first passes (verification_cycle_count = 0).",
+    "⚠ Efficiency on board A includes the 1 h of peer verification logged by another engineer on A (it sits in A's hours); without it A alone would read 120%.",
+    "⚠ The scorecard's Rework column counts rework jobs the engineer closed (job_type = REWORK), not how often the engineer's own work came back; MET-001 E-03 asks the latter and nothing answers it.",
+    "Demo has only one standard time (SIEMENS POWER_SUPPLY 6EP1334-3BA10), so Efficiency reads “of 3” on the Test Engineer row; Test Both Roles shows Small sample and “not comparable”.",
+    "Actual / Target / Achievement are left to module 16. Noticed: the Engineer's view and the Service Head's view a minute apart showed different Actual (₹1,28,750 vs ₹1,29,200); most likely a concurrent closure, not verified.",
+    "Nothing was written for this clip."
+  ]
+}

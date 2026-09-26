@@ -161,6 +161,8 @@ await s.click(p.getByRole('button', { name: /^Issue the challan/ }).first())
 await p.waitForURL(/\/front-office\/challans\/DC\//)
 await p.waitForLoadState('networkidle')
 await s.wait(800)
+// The redirect can reload the record under the caption; reopen it so the caption sticks.
+await s.goto(new URL(p.url()).pathname)
 await s.point(p.getByText('accessory only — no job').first())
 await s.say(c.accIssued, 2800 * pace)
 await s.unring()
