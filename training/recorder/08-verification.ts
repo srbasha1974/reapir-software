@@ -32,9 +32,11 @@ const lang = (process.argv[2] ?? 'en') as Lang
 const c = CAPTIONS[lang]
 if (!c) throw new Error('Language must be en or ta')
 const pace = lang === 'ta' ? 1.25 : 1
-const { D, E } = JSON.parse(readFileSync(join(OUT, `06-setup.${lang}.json`), 'utf8')).jobs as Record<string, string>
+const { D, E } = JSON.parse(readFileSync(join(OUT, `06-setup.${lang}${process.env.ONLY === '08' ? '.08' : ''}.json`), 'utf8')).jobs as Record<string, string>
 const ENGINEER = '10000000-0000-4000-a000-000000000007'
 const BOTH = '10000000-0000-4000-a000-000000000010'
+/** Each segment is a fresh browser: give its cards the module's code chip (stage.ts keeps it per session). */
+const code = (s: Stage) => s.page.evaluate(() => sessionStorage.setItem('stg-code', 'TRN 08'))
 const roleCard = (k: string, h: string) => `<div class="k">${k}</div><h1>${h}</h1>`
 const segments = [1, 2, 3].map((n) => join(OUT, `08-verification.${lang}.${n}.webm`))
 const only = process.env.SEG ? process.env.SEG.split(',').map(Number) : [1, 2, 3]
@@ -82,6 +84,7 @@ if (runs(2)) {
   const s = await Stage.open('bothroles@thulirtech.com', `/service-centre/verification?view=mine&card=${encodeURIComponent(D)}`, RAW)
   const p = s.page
   await s.wait(1200)
+  await code(s)
   await s.card(roleCard(c.chkK, c.chkH), 1600 * pace)
   await s.point(p.locator('nav.views a', { hasText: 'With you to check' }))
   await s.say(c.mine, 2200 * pace)
@@ -139,6 +142,7 @@ if (runs(3)) {
   const s = await Stage.open('liaison@thulirtech.com', `/service-centre/verification?view=customer&card=${encodeURIComponent(E)}`, RAW)
   const p = s.page
   await s.wait(1200)
+  await code(s)
   await s.card(roleCard(c.custK, c.custH), 1600 * pace)
   await s.point(p.locator('a.item', { hasText: E }).first())
   await s.say(c.withCust, 3000 * pace)

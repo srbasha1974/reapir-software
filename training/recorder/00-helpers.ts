@@ -95,7 +95,7 @@ export class Cuts {
   private t0 = 0
   private spans: [number, number][] = []
   mark() { this.t0 = Date.now() }
-  async slow<T>(fn: () => Promise<T>, keep = 700): Promise<T> {
+  async slow<T>(fn: () => Promise<T>, keep = 1500): Promise<T> {
     const a = Date.now()
     const r = await fn()
     const b = Date.now()

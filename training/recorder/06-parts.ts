@@ -45,6 +45,8 @@ const setup = JSON.parse(readFileSync(setupFile, 'utf8')) as {
 const { A, B, C } = setup.jobs
 const lot = `lot ${setup.stamp}`
 const jobUrl = (j: string) => `/service-centre/jobs/${j}`
+/** Each segment is a fresh browser: give its cards the module's code chip (stage.ts keeps it per session). */
+const code = (s: Stage) => s.page.evaluate(() => sessionStorage.setItem('stg-code', 'TRN 06'))
 const roleCard = (k: string, h: string) => `<div class="k">${k}</div><h1>${h}</h1>`
 /** Reloads the address the page is on (a GET). After a server-action redirect the recording can stop
  *  showing overlay changes until the next full load, so every act that redirects is followed by this. */
@@ -128,6 +130,7 @@ let pr = process.env.PR ?? ''
 if (runs(2)) {
   const s = await Stage.open('liaison@thulirtech.com', '/service-centre/spares?tab=raise', RAW)
   const p = s.page
+  await code(s)
   await s.card(roleCard(c.liaK, c.liaH), 1200 * pace)
 
   const part = p.getByRole('combobox', { name: 'Part on line 1' })
@@ -177,6 +180,7 @@ if (runs(2)) {
 if (runs(3)) {
   const s = await Stage.open('frontoffice@thulirtech.com', '/service-centre/spares?tab=orders', RAW)
   const p = s.page
+  await code(s)
   await s.card(roleCard(c.foK, c.foH), 1200 * pace)
   const rx = new RegExp(pr.replace(/\//g, '\\/'))
   const row = () => p.getByRole('row', { name: rx }).first()
@@ -230,6 +234,7 @@ if (runs(4)) {
   await s.wait(2500) // this screen paints late; a card drawn before it is never recorded
   const count = String(Number(execFileSync('docker', ['exec', 'supabase_db_Repair_Service', 'psql', '-U', 'postgres', '-At', '-c',
     `select current_quantity from part where part_name = '${setup.parts.P1}'`]).toString().trim()) - 1)
+  await code(s)
   await s.card(roleCard(c.adjK, c.adjH), 1200 * pace)
   await s.point(p.getByText('Correct a count', { exact: true }).first())
   await s.say(c.noEdit, 2200 * pace, 'dont')

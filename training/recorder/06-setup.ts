@@ -24,7 +24,9 @@ const stamp = process.env.STAMP ?? Date.now().toString().slice(-5)
 const MODEL = 'ACS355'
 /** ONLY=06: just the three boards module 06 needs (a re-take of 06 alone, leaving 07/08's records be). */
 const only06 = process.env.ONLY === '06'
-const N = only06 ? 3 : 8
+/** ONLY=08: just the two boards module 08 needs (D and E at Ready for verification). */
+const only08 = process.env.ONLY === '08'
+const N = only06 ? 3 : only08 ? 2 : 8
 const serial = (u: number) => `ACS${stamp}${u}`
 const tag = process.argv[2] ?? 'en'
 /** Each take submits its own earlier week in module 07, so the two takes' hours never share a day. */
@@ -101,6 +103,7 @@ if (rows.length !== N) throw new Error(`Expected ${N} jobs, found ${rows.length}
 const job = (u: number) => rows[u - 1][1]
 const J: Record<string, string> = only06
   ? { A: job(1), B: job(2), C: job(3) }
+  : only08 ? { D: job(1), E: job(2) }
   : { A: job(1), B: job(2), C: job(3), T1: job(4), T2: job(5), T3: job(6), D: job(7), E: job(8) }
 console.log(J)
 
@@ -137,7 +140,7 @@ console.log(J)
     await p.getByRole('button', { name: 'Start work' }).first().click()
     await p.waitForTimeout(1800)
   }
-  if (!only06) {
+  if (!only06 && !only08) {
   // 07: 2 h on T2 this Wednesday, before it is paused
   await s.goto(`/service-centre/timesheet?job=${encodeURIComponent(J.T2)}`)
   await p.getByLabel(`${J.T2} Wed`).fill('2')
@@ -154,8 +157,8 @@ console.log(J)
   }
   }
   // Pauses: C (06) and T2 (07)
-  const pauses: Array<[string, string]> = [[J.C, 'Gate driver IC IR2110']]
-  if (!only06) pauses.push([J.T2, 'Current sensor LEM LA55'])
+  const pauses: Array<[string, string]> = only08 ? [] : [[J.C, 'Gate driver IC IR2110']]
+  if (!only06 && !only08) pauses.push([J.T2, 'Current sensor LEM LA55'])
   for (const [j, what] of pauses) {
     await s.goto(jobUrl(j))
     await p.getByRole('button', { name: 'Pending spare' }).click()
@@ -173,6 +176,11 @@ console.log(J)
 }
 
 // 4 · Liaison adds two parts of our own; the first gets a count
+if (only08) {
+  writeFileSync(join(OUT, `06-setup.${tag}.08.json`), JSON.stringify({ stamp, jobs: J }, null, 2))
+  console.log('written', J)
+  process.exit(0)
+}
 const P1 = `MOSFET IRFP460 · lot ${stamp}`
 const P2 = `Gate driver IC IR2110 · lot ${stamp}`
 {

@@ -13,6 +13,7 @@
 import { Stage } from './stage'
 import { CAPTIONS, type Lang } from './captions-02'
 import { join } from 'node:path'
+import { Cuts } from './00-helpers'
 
 const OUT = join(import.meta.dirname, 'out')
 const lang = (process.argv[2] ?? 'en') as Lang
@@ -27,6 +28,8 @@ const stamp = Date.now().toString().slice(-4)
 // Short shelf codes in the app's own style (its placeholder is "68B"), fresh each run so every one is free.
 const shelf = (u: number) => `${(Number(stamp) % 89) + 10}${'ABC'[u - 1]}`
 
+const cut = new Cuts()
+cut.mark()
 await s.card(`<div class="k">${c.kicker}</div><h1>${c.title}</h1><p>${c.sub}</p>`, 3500 * pace)
 
 await s.point(p.locator('section[data-code="IN"]'))
@@ -35,8 +38,9 @@ await s.say(c.arrive, 3000 * pace)
 // Customer
 await s.say(c.customer, 600 * pace)
 await s.type(p.getByLabel('Customer', { exact: true }), 'Kovai', 90)
-await s.wait(900)
-await s.click(p.getByRole('option', { name: /Kovai Textile Mills/ }))
+const kovai = p.getByRole('option', { name: /Kovai Textile Mills/ })
+await cut.slow(() => kovai.waitFor({ timeout: 20000 }), 900)
+await s.click(kovai)
 await s.wait(1600)
 
 await s.point(p.getByRole('button', { name: 'They are not on the list' }))
@@ -45,8 +49,11 @@ await s.say(c.newCustomer, 3200 * pace)
 // Brought by (the customer's contact)
 const broughtBy = p.getByLabel('Brought by', { exact: true })
 await s.type(broughtBy, ' ', 60)
-await s.wait(900)
-await s.click(p.getByRole('option').first())
+// Wait for the customer's contacts (a slow server can take a while); the priority list has options too.
+const contact = p.getByRole('option', { name: /Suresh Kumar/ }).first()
+await cut.slow(() => contact.waitFor({ timeout: 20000 }), 900)
+await s.wait(300)
+await s.click(contact)
 await s.say(c.broughtBy, 2600 * pace)
 
 // Sales engineer (credited)
@@ -103,12 +110,16 @@ await s.point(p.getByText(/ to WO\//))
 await s.say(c.numbers, 3400 * pace)
 await s.unring()
 
-await s.click(p.getByRole('button', { name: /Register 3 units/ }))
-await p.waitForLoadState('networkidle')
-await s.wait(1500)
+await cut.slow(async () => {
+  await s.click(p.getByRole('button', { name: /Register 3 units/ }))
+  await p.waitForURL((u) => !u.pathname.endsWith('/inward'), { timeout: 30000 })
+  await p.waitForLoadState('networkidle')
+})
+await s.wait(1000)
 await s.say(c.done, 4200 * pace, 'do')
 await s.quiet()
 
 await s.card(`<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`, 6000 * pace)
 
+console.log('cut', cut.save(join(OUT, `02-inward.${lang}.cuts.json`)).toFixed(1), 's')
 console.log(await s.close(join(OUT, `02-inward.${lang}.webm`)))
