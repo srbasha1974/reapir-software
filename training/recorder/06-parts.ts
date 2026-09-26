@@ -244,8 +244,11 @@ if (runs(4)) {
   await s.click(p.getByRole('option', { name: new RegExp(lot) }))
   await s.wait(500)
   await s.type(p.locator('#quantityAfter'), count, 90)
+  // Six reasons: the app's Choice opens a type-to-search list on click. Pick the value and close it.
   await s.click(p.locator('#reason'))
   await p.locator('#reason').selectOption('DAMAGED')
+  await p.keyboard.press('Escape')
+  await s.wait(300)
   await s.type(p.locator('#notes'), 'One cracked on the shelf', 25)
   await s.say(c.adjust, 2000 * pace)
   await s.click(p.getByRole('button', { name: 'Correct the count' }))

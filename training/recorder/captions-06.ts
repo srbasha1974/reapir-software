@@ -8,7 +8,7 @@ export const CAPTIONS = {
   en: {
     kicker: 'Thulir training · Module 06 · Engineer · Liaison · Front Office',
     title: 'Parts, purchase requests and stock',
-    sub: 'Book a part, raise a request, order it, receive it, fix a count. About 2½ minutes.',
+    sub: 'Book a part, raise a request, order it, receive it, fix a count. About 2 minutes.',
 
     engK: 'Engineer · job card',
     engH: 'Book what you fit',
