@@ -16,7 +16,7 @@
  },
  "seconds": {
   "en": 79,
-  "ta": 83
+  "ta": 88
  },
  "do": {
   "en": [
@@ -138,10 +138,10 @@
  },
  "notes": [
   "The week in the database runs Monday to Sunday (week_start_date + 6), but the grid shows only Monday to Saturday columns (finding 19, not fixed). A Sunday entry counts in the row total but has no cell. The clip says 'from Monday' and doesn't mention Sunday.",
-  "The clip submits an earlier week of our own (24 Aug for EN, 31 Aug for TA), not the current one, so Test Engineer's current week stays open for the other recordings.",
+  "The clip submits an earlier week of our own (24 Aug for EN, 17 Aug for TA), not the current one, so Test Engineer's current week stays open for the other recordings.",
   "The engineer's current week also shows a demo row (WO/26-27/00004), because the grid lists every job with hours that week.",
   "The 'not your job' and 'closed job' refusals aren't shown on screen: such jobs aren't offered in + Add a work order, and a job that has left your bench shows 'off your bench — its hours stay'. Both are refused by timesheet_entry_is_permitted(). They are taught as captions and in the don't list.",
   "Which sub-statuses block hours now follows each sub-status's blocks_labour flag (finding 17); Pending Spare and On Hold carry it, so the clip's rule is unchanged.",
-  "Recording note: after a cell saves, the recording can lag on caption changes for a few seconds, so the script reloads the page (the ?job= rows are kept in the address) before the next caption. A re-take of the same language needs `npx tsx 07-prep.ts again <lang> <earlier Monday>` first (clears the take's Thursday cells, fills another week to submit). The English take was recorded twice: the first lost the 'paused job' caption to that lag."
+  "Recording note: after a cell saves, the recording can lag on caption changes for several seconds, so the script reloads the page (the ?job= rows are kept in the address) before the captions that follow. A re-take of the same language needs `npx tsx 07-prep.ts again <lang> <earlier Monday>` first (clears the take's Thursday cells, fills another week to submit). Each language was recorded twice: the first English take lost the 'paused job' caption and the first Tamil take the 'no rate' caption to that lag."
  ]
 }

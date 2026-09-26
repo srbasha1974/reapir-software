@@ -16,7 +16,7 @@
  },
  "seconds": {
   "en": 153,
-  "ta": 178
+  "ta": 143
  },
  "do": {
   "en": [
@@ -146,12 +146,12 @@
  },
  "notes": [
   "Send to the front office still sends no email. It sets the status and the date; with no internal address configured the screen says 'it is read here rather than sent anywhere'. Front Office read the request on Spares › On order.",
-  "Length: EN 153 s (title card says about 2½ minutes), over the ~140 s aim because four roles are shown and the Front Office segment now includes Mark ordered. Dev-server page loads account for much of it; the English take came straight from the script with no edits after recording.",
+  "Length: EN 153 s, TA 143 s (title cards say about 2½ minutes). Over the ~140 s aim in English because four roles are shown and the Front Office segment now includes Mark ordered; dev-server page loads account for much of it and vary between runs. Both takes came straight from the script with no edits after recording.",
   "Not shown for length: the engineer's Pending spare step (module 05 covers pausing). Its rule stays in the do list.",
   "The release rule works per request line (goods_receipt_releases_jobs, finding 18, not fixed): a board waiting on two different lines is set back to In Progress when either line covers it. The clip and quiz use one line, where 'one unit, one board' holds.",
   "App UX: after Send to the front office and after Record a delivery the page redirects to the Waiting on a part tab, not On order. The banner after a delivery lists every waiting board in the shop ('Still waiting: …'), which gets long.",
   "Recording: after a server-action redirect the recording can stop showing caption changes until a full load, so the script reloads the page after those acts. A re-take of 06 alone: `ONLY=06 npx tsx 06-setup.ts <lang>` then `ONLY=06 npx tsx 06-parts.ts <lang>`. The set-up first receives the balance of any earlier take's gate-driver request, so On order shows only the new request.",
-  "The English take was recorded four times (one over the two-re-take limit): the third was fine but ran 147 s against a title card that said about 2¼ minutes, so the card was corrected to 2½ and recorded again rather than edited by hand.",
+  "Takes: English four (one over the two-re-take limit: the third was fine but ran 147 s against a title card that said about 2¼ minutes, so the card was corrected and recorded again rather than edited by hand); Tamil two (the first ran 148 s against a card that said 2¾).",
   "Setup (unrecorded, through the app): 06-setup.ts registers 8 units as Front Office, the Liaison picks them up and allots them to Test Engineer, and the engineer starts work. It also adds two catalogue parts of our own (lot-stamped names); the first is given its count by a stock adjustment."
  ]
 }
