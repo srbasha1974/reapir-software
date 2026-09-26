@@ -15,8 +15,8 @@
   "ta": "media/07-poster-ta.jpg"
  },
  "seconds": {
-  "en": 79,
-  "ta": 88
+  "en": 108,
+  "ta": 112
  },
  "do": {
   "en": [
@@ -142,6 +142,7 @@
   "The engineer's current week also shows a demo row (WO/26-27/00004), because the grid lists every job with hours that week.",
   "The 'not your job' and 'closed job' refusals aren't shown on screen: such jobs aren't offered in + Add a work order, and a job that has left your bench shows 'off your bench — its hours stay'. Both are refused by timesheet_entry_is_permitted(). They are taught as captions and in the don't list.",
   "Which sub-statuses block hours now follows each sub-status's blocks_labour flag (finding 17); Pending Spare and On Hold carry it, so the clip's rule is unchanged.",
-  "Recording note: after a cell saves, the recording can lag on caption changes for several seconds, so the script reloads the page (the ?job= rows are kept in the address) before the captions that follow. A re-take of the same language needs `npx tsx 07-prep.ts again <lang> <earlier Monday>` first (clears the take's Thursday cells, fills another week to submit). Each language was recorded twice: the first English take lost the 'paused job' caption and the first Tamil take the 'no rate' caption to that lag."
+  "Recording note: after a cell saves, the recording can lag on caption changes for several seconds, so the script reloads the page (the ?job= rows are kept in the address) before the captions that follow. A re-take of the same language needs `npx tsx 07-prep.ts again <lang> <earlier Monday>` first (clears the take's Thursday cells, fills another week to submit). Each language was recorded twice: the first English take lost the 'paused job' caption and the first Tamil take the 'no rate' caption to that lag.",
+  "Round 3 (2026-09-26, app develop/030-training): re-recorded in both languages with the Rack & Bin look; no behaviour change on this screen. The Tamil take shows the app's new header \"Training\" chip and help (?) icons, which appeared mid-session (feature 030 in progress); the English take predates them."
  ]
 }

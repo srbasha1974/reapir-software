@@ -15,8 +15,8 @@
   "ta": "media/08-poster-ta.jpg"
  },
  "seconds": {
-  "en": 120,
-  "ta": 113
+  "en": 123,
+  "ta": 150
  },
  "do": {
   "en": [
@@ -140,6 +140,7 @@
   "The success banner on the Verification screen shows only the job number (e.g. 'WO/26-27/00078'), with no sentence. The clip reloads and points at the list or the job card instead.",
   "bothroles@ (Engineer + Service Head) is the checker, so the verifier is not the repairer (engineer@). The timesheet in the clip shows the checking hours booked for the current day.",
   "A customer-testing fail needs no symptom (the note is optional). Only a peer-verification fail requires one. The clip shows the 'Still faulty — back to the bench' button but records a pass.",
-  "Recording note: after a server-action redirect the recording can stop showing caption changes, so the script does a full page load before the caption that follows. Pressing Pass took several seconds on the dev server, so 'It works? Pass.' stays on screen longer than planned."
+  "Recording note: after a server-action redirect the recording can stop showing caption changes, so the script does a full page load before the caption that follows. Pressing Pass took several seconds on the dev server, so 'It works? Pass.' stays on screen longer than planned.",
+  "Round 3 (2026-09-26, app develop/030-training): re-recorded in both languages with the Rack & Bin look; no behaviour change on this screen. The Tamil take shows the app's new header \"Training\" chip and help (?) icons, which appeared mid-session (feature 030 in progress); the English take predates them."
  ]
 }
