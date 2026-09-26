@@ -103,11 +103,14 @@ await s.point(p.getByText(/There is already a rate/))
 await s.say(c.overlap, 3400 * pace, 'dont')
 await s.unring()
 await s.quiet()
-await s.click(bay('CARD').getByRole('link', { name: 'DPS-600' }).first())
+const boardLink = bay('CARD').getByRole('link', { name: 'DPS-600' }).first()
+const boardHref = (await boardLink.getAttribute('href')) ?? ''
+await s.click(boardLink)
 await p.waitForLoadState('networkidle')
 await s.wait(500)
-// The board opens by a soft navigation that can leave the overlay stale; reload the same address.
-{ const u = new URL(p.url()); await s.goto(u.pathname + u.search) }
+// After the refused add, the soft navigation does not always land (the list re-fits its rows and
+// replaces the address); open the board's own address, which also keeps the overlay fresh.
+await s.goto(boardHref)
 await p.waitForFunction(() => (window as unknown as { __stage?: unknown }).__stage)
 await s.point(p.getByRole('button', { name: /End this rate/ }).first())
 await s.say(c.endRate, 3200 * pace)

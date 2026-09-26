@@ -24,7 +24,7 @@
       "Start from <b>Front office › Challans</b>: tick one customer's boards and press <b>Raise a challan for …</b>.",
       "Let <b>Leaves as</b> set the reason. It comes from each job's state; nobody picks it.",
       "In <b>Came in with these boards</b>, tick every accessory going back. If one stays or was used up, press <b>They stay with us</b>.",
-      "Fill <b>Received by</b> (who carries it) and <b>Goes by</b> (van, courier…). Add the docket number if there is one.",
+      "Fill <b>Received by</b> (who carries it) and <b>Goes by</b> (van, courier…). Add the docket number if there is one. Until Received by is filled, Issue stays greyed: “say who is carrying it”.",
       "After <b>Issue the challan</b>, press <b>Print</b> and send the printout with the consignment.",
       "Going for customer testing? It leaves as <b>Site testing — expected back</b>: set <b>Expected back</b>, and press <b>Record the return</b> when it comes back.",
       "Only an accessory leaving, the board staying? <b>Send an accessory on its own</b>: choose the board it belongs to, check <b>What is leaving</b>, issue. The reason is <b>Accessory only</b> and the board keeps its shelf."
@@ -34,7 +34,7 @@
       "<b>Front office › Challans</b>-ல ஆரம்பிங்க: ஒரு கஸ்டமரோட போர்டுகளை டிக் பண்ணி <b>Raise a challan for …</b> அழுத்துங்க.",
       "காரணத்தை <b>Leaves as</b> முடிவு பண்ணட்டும். அது ஒவ்வொரு ஜாப் ஸ்டேட்டஸ்ல இருந்து வருது; யாரும் செலக்ட் பண்றதில்ல.",
       "<b>Came in with these boards</b>-ல திரும்பப் போகிற ஒவ்வொரு அக்சஸரியையும் டிக் பண்ணுங்க. நம்மகிட்டயே இருந்தா, இல்ல யூஸ் ஆயிடுச்சுன்னா <b>They stay with us</b> அழுத்துங்க.",
-      "<b>Received by</b> (யார் கொண்டு போறாங்க), <b>Goes by</b> (van, courier…) ஃபில் பண்ணுங்க. டாக்கெட் நம்பர் இருந்தா சேருங்க.",
+      "<b>Received by</b> (யார் கொண்டு போறாங்க), <b>Goes by</b> (van, courier…) ஃபில் பண்ணுங்க. டாக்கெட் நம்பர் இருந்தா சேருங்க. Received by காலியா இருந்தா Issue பட்டன் க்ரே-ஆ இருக்கும்: “say who is carrying it”.",
       "<b>Issue the challan</b> அப்புறம் <b>Print</b> எடுத்து, ப்ரிண்டை சரக்கோட அனுப்புங்க.",
       "கஸ்டமர் டெஸ்டிங்குக்குப் போகுதா? <b>Site testing — expected back</b>-ஆ போகும்: <b>Expected back</b> தேதி போடுங்க; திரும்ப வந்ததும் <b>Record the return</b> அழுத்துங்க.",
       "அக்சஸரி மட்டும் போகுது, போர்டு இங்கேயே இருக்கா? <b>Send an accessory on its own</b>: அது எந்த போர்டோடதுன்னு செலக்ட் பண்ணி, <b>What is leaving</b> செக் பண்ணி இஷ்யூ பண்ணுங்க. காரணம் <b>Accessory only</b>; போர்டு அதே பின்ல இருக்கும்."
@@ -150,6 +150,6 @@
     "Dispatching the repaired boards also starts their warranty window (UC-009); not taught.",
     "UX (unchanged): the accessories warning appears in yellow as soon as a board with accessories is ticked, before anyone has had a chance to tick them.",
     "Set-up (unrecorded): a fresh 5-unit delivery for Kovai Textile Mills per take, taken to Ready for Invoice ×2, Non-Repairable (Service Head), Awaiting Customer Confirmation, and one left at Inward. Each take issued real challans in the shared database.",
-    "Re-recorded by the coordinator after the helper fixed the script: both takes are real time (101 s) and show the final “Issued: a challan line with no job” caption."
+    "Round 3 (develop, Rack & Bin look): re-recorded both languages. New on develop: the Issue act now stays greyed with “say who is carrying it” until Received by is filled (critique fix f8cb234); taught in the do list. Locators unchanged."
   ]
 }

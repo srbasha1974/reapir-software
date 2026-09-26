@@ -13,11 +13,11 @@ const near = (a: number[], b: number[], t: number) => a.every((v, i) => Math.abs
 
 export function cardStart(file: string): number {
   const cols = [20, 300, 1000]
-  const f = cols.map((x, i) => `[0:v]crop=1:${HGT}:${x}:0[c${i}]`).join(';') + `;[c0][c1][c2]hstack=3,fps=10[o]`
+  const f = '[0:v]format=rgb24,split=3[a0][a1][a2];' + cols.map((x, i) => `[a${i}]crop=2:${HGT}:${x}:0[c${i}]`).join(';') + `;[c0][c1][c2]hstack=3,fps=10[o]`
   const raw = execFileSync(FF, ['-loglevel', 'error', '-t', '12', '-i', file, '-filter_complex', f, '-map', '[o]', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], { maxBuffer: 1 << 28 })
-  const frame = 3 * HGT * 3
+  const frame = 6 * HGT * 3
   for (let k = 0; k * frame < raw.length; k++) {
-    const px = (x: number, y: number) => { const o = k * frame + (y * 3 + x) * 3; return [raw[o], raw[o + 1], raw[o + 2]] }
+    const px = (x: number, y: number) => { const o = k * frame + (y * 6 + x * 2) * 3; return [raw[o], raw[o + 1], raw[o + 2]] }
     let grey = true
     for (let y = 0; y < HGT && grey; y += 4) grey = near(px(0, y), [238, 240, 243], 8)
     if (!grey) continue

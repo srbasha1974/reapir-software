@@ -8,7 +8,7 @@ export const CAPTIONS = {
   en: {
     kicker: 'Thulir training · Module 07 · Engineer',
     title: 'Timesheets',
-    sub: 'Hours on your own jobs, every day. About 75 seconds.',
+    sub: 'Hours on your own jobs, every day. About 1½ minutes.',
     open: 'My timesheet: one sheet per week, from Monday.<small>A row per work order.</small>',
     add: 'Add a work order.<small>Only boards on your bench are offered.</small>',
     type: 'Type the hours under their day.<small>The cell saves when you leave it.</small>',
@@ -30,7 +30,7 @@ export const CAPTIONS = {
   ta: {
     kicker: 'துளிர் ட்ரெயினிங் · மாட்யூல் 07 · Engineer',
     title: 'டைம்ஷீட்',
-    sub: 'உங்க சொந்த ஜாப்ல தினமும் ஹவர்ஸ் போடுறது. சுமார் 90 செகண்ட்.',
+    sub: 'உங்க சொந்த ஜாப்ல தினமும் ஹவர்ஸ் போடுறது. சுமார் 2 நிமிஷம்.',
     open: 'My timesheet: வாரத்துக்கு ஒரு ஷீட், திங்கள்ல இருந்து.<small>ஒவ்வொரு work order-க்கும் ஒரு ரோ.</small>',
     add: '“Add a work order”.<small>உங்க பெஞ்சுல இருக்கற போர்டு மட்டும் தான் வரும்.</small>',
     type: 'ஹவர்ஸை அந்த நாள் கட்டத்துல டைப் பண்ணுங்க.<small>கட்டத்தை விட்டு வெளிய வந்தா சேவ் ஆயிடும்.</small>',
