@@ -2,7 +2,7 @@
  "id": "01",
  "title": {
   "en": "Customers, contacts and follow-ups",
-  "ta": "வாடிக்கையாளர்கள், தொடர்பாளர்கள், பின்தொடர்தல்"
+  "ta": "கஸ்டமர், காண்டாக்ட், ஃபாலோ-அப்"
  },
  "role": "Sales Engineer · Sales Head",
  "path": "CRM › Customers › Register a customer · the customer record (People, Timeline, Lifecycle) · a contact's record",
@@ -15,27 +15,27 @@
   "ta": "media/01-poster-ta.jpg"
  },
  "seconds": {
-  "en": 122,
-  "ta": 138
+  "en": 116,
+  "ta": 125
  },
  "do": {
   "en": [
    "New prospect: <b>Register a customer</b> with the company name (the only required field). It is created as <b>Potential</b>, owned by you.",
    "Let the system give the <b>customer code</b> (TTS-00000). The code and the clock-in date never change.",
    "Add the people on the <b>People</b> tab. Each contact needs an <b>email or a mobile</b>.",
-   "Keep one <b>primary</b> contact. <b>Make primary</b> on another person clears the old one.",
+   "Keep one <b>primary</b> contact. Tick <b>Primary</b> as you add a person (the hint names who it replaces), or press <b>Make primary</b> later. Either way the old primary is cleared.",
    "Log every call, email, visit, meeting or message on the <b>Timeline</b>, on the day. Logged late? Set <b>When</b>; the entry is marked <b>Backdated</b>.",
    "Typo in a contact's name, title, email or mobile: fix it on their record with <b>Save corrections</b>. Every change is recorded.",
    "Contact changed company: <b>Record employment change</b> (Where to, date). Left with no known destination: leave Where to as “Not known”; they become inactive."
   ],
   "ta": [
-   "புதிய வாய்ப்பு: company name (கட்டாயமான ஒரே புலம்) உடன் <b>Register a customer</b>. அது உங்கள் பெயரில் <b>Potential</b> ஆக உருவாகும்.",
-   "<b>Customer code</b>-ஐ (TTS-00000) சிஸ்டமே தரட்டும். Code-உம் clock-in தேதியும் ஒருபோதும் மாறாது.",
-   "<b>People</b> tab-இல் நபர்களைச் சேர்க்கவும். ஒவ்வொரு contact-க்கும் <b>email அல்லது mobile</b> வேண்டும்.",
-   "ஒரே ஒரு <b>primary</b> contact. வேறொருவருக்கு <b>Make primary</b> அழுத்தினால் பழையது நீங்கும்.",
-   "ஒவ்வொரு call, email, visit, meeting, message-ஐயும் அன்றே <b>Timeline</b>-இல் பதிவு செய்யவும். தாமதமா? <b>When</b>-ஐ அமைக்கவும்; பதிவு <b>Backdated</b> எனக் குறிக்கப்படும்.",
-   "Contact-இன் பெயர், பதவி, email, mobile-இல் பிழை: அவரது பக்கத்தில் <b>Save corrections</b> மூலம் சரிசெய்யவும். ஒவ்வொரு மாற்றமும் பதிவாகும்.",
-   "Contact வேறு நிறுவனத்துக்கு மாறினார்: <b>Record employment change</b> (Where to, தேதி). எங்கே சென்றார் தெரியாதா: Where to-ஐ “Not known” ஆக விடவும்; அவர் inactive ஆவார்."
+   "புது ப்ராஸ்பெக்ட்: <b>Register a customer</b>, Company name மட்டும் போதும் (அது மட்டும் கட்டாயம்). <b>Potential</b>-ஆ, உங்க பேர்ல சேரும்.",
+   "<b>கஸ்டமர் கோடு</b> (TTS-00000) சிஸ்டமே தரும். கோடும் clock-in தேதியும் எப்பவும் மாறாது.",
+   "<b>People</b> டேப்ல ஆட்களைச் சேருங்க. ஒவ்வொரு காண்டாக்ட்டுக்கும் <b>email அல்லது mobile</b> வேணும்.",
+   "ஒரே ஒரு <b>primary</b> காண்டாக்ட். சேர்க்கும் போதே <b>Primary</b> டிக் பண்ணலாம் (யாரை மாத்துதுன்னு கீழே எழுதியிருக்கும்), இல்லன்னா அப்புறம் <b>Make primary</b>. எப்படிப் பண்ணாலும் பழைய primary போயிடும்.",
+   "ஒவ்வொரு கால், email, விசிட், மீட்டிங், மெசேஜையும் அன்னைக்கே <b>Timeline</b>-ல போடுங்க. லேட்டா போடுறீங்களா? <b>When</b> செட் பண்ணுங்க; <b>Backdated</b>-ன்னு காட்டும்.",
+   "காண்டாக்ட் பேர், டைட்டில், email, mobile-ல தப்பா? அவங்க பக்கத்துல <b>Save corrections</b> வெச்சு சரி பண்ணுங்க. ஒவ்வொரு மாற்றமும் பதிவாகும்.",
+   "காண்டாக்ட் வேற கம்பெனிக்கு மாறினா: <b>Record employment change</b> (Where to, தேதி). எங்க போனாங்கன்னு தெரியலன்னா Where to-வை “Not known”-ஆ விடுங்க; அவங்க inactive ஆயிடுவாங்க."
   ]
  },
  "dont": {
@@ -44,14 +44,14 @@
    "Don't rename a contact who moved to another company. Record the move, so past conversations stay with the old company.",
    "Don't expect to edit or delete a timeline entry. A correction is a new entry. A future date is refused.",
    "Don't look for a “Move to Trial” button. The account becomes <b>Trial</b> by itself when its first work order is booked in.",
-   "Sales Head: don't convert Trial to <b>Regular</b> before a trial job reaches Closed / Ready for Invoice. The system refuses. Moving an account backward is only for the Operations Manager, with a reason."
+   "Sales Head: don't convert Trial to <b>Regular</b> before a trial job reaches Closed / Ready for Invoice. The system refuses. Moving an account back is only for the Operations Manager, with a reason."
   ],
   "ta": [
-   "Customer code-ஐத் தட்டச்சு செய்ய வேண்டாம்; ஏற்கனவே உள்ள நிறுவனத்தை மீண்டும் பதிவு செய்ய வேண்டாம். பெயர்கள் எழுத்து அளவு, இடைவெளி பார்க்காமல் ஒப்பிடப்படும்.",
-   "வேறு நிறுவனத்துக்கு மாறிய contact-இன் விவரங்களை மாற்றி எழுத வேண்டாம். Move-ஐப் பதிவு செய்யவும்; பழைய உரையாடல்கள் பழைய நிறுவனத்துடனே இருக்கும்.",
-   "Timeline பதிவைத் திருத்தவோ நீக்கவோ எதிர்பார்க்க வேண்டாம். திருத்தம் என்பது புதிய பதிவு. எதிர்காலத் தேதி ஏற்கப்படாது.",
-   "“Move to Trial” பொத்தானைத் தேட வேண்டாம். முதல் work order பதிவானதும் கணக்கு தானாகவே <b>Trial</b> ஆகும்.",
-   "Sales Head: ஒரு trial job Closed / Ready for Invoice அடையும் முன் <b>Regular</b> ஆக convert செய்ய வேண்டாம்; சிஸ்டம் மறுக்கும். கணக்கைப் பின்னோக்கி நகர்த்துவது Operations Manager மட்டுமே, காரணத்துடன்."
+   "கஸ்டமர் கோடு டைப் பண்ணாதீங்க; ஏற்கனவே இருக்கற கம்பெனியை திரும்ப பதிவு பண்ணாதீங்க. பேர்ல கேப்பிட்டல், ஸ்பேஸ் வித்தியாசம் இருந்தாலும் சிஸ்டம் கண்டுபிடிக்கும்.",
+   "வேற கம்பெனிக்கு மாறினவங்க பேரை மாத்தி எழுதாதீங்க. மூவ் பதிவு பண்ணுங்க; பழைய பேச்சு பழைய கம்பெனியோடவே இருக்கும்.",
+   "Timeline என்ட்ரியை எடிட் பண்ணவோ டெலீட் பண்ணவோ முடியாது. திருத்தம்னா புது என்ட்ரி. ஃபியூச்சர் தேதி ஏத்துக்காது.",
+   "“Move to Trial” பட்டன் தேடாதீங்க. முதல் ஜாப் Inward ஆனதும் கஸ்டமர் தானா <b>Trial</b> ஆயிடும்.",
+   "Sales Head: Trial ஜாப் Closed / Ready for Invoice வர்றதுக்கு முன்னாடி <b>Regular</b>-ஆ Convert பண்ணாதீங்க; சிஸ்டம் ஏத்துக்காது. கஸ்டமரை பின்னாடி நகர்த்துறது Operations Manager மட்டும், காரணத்தோட."
   ]
  },
  "quiz": {
@@ -77,14 +77,14 @@
     "why": "Earlier dates are allowed and marked Backdated. Only future dates are refused."
    },
    {
-    "q": "Arun is the primary contact. You press Make primary on Priya. What happens to Arun?",
+    "q": "Priya is the primary contact. You add Arun and tick Primary. What happens to Priya?",
     "o": [
-     "He stays primary too",
-     "He is no longer primary",
-     "He becomes inactive"
+     "She stays primary too",
+     "She is no longer primary",
+     "She becomes inactive"
     ],
     "a": 1,
-    "why": "A company has one primary contact. Setting a new one clears the old one in the same step."
+    "why": "A company has one primary contact. Ticking Primary (or Make primary later) clears the old one in the same step; the hint names who is replaced."
    },
    {
     "q": "A Trial customer's only job is still at Inward. The Sales Head presses Convert to Regular. What happens?",
@@ -99,54 +99,55 @@
   ],
   "ta": [
    {
-    "q": "Selvam Pumps-இல் உங்கள் contact பிரியா, Kaveri Automation-இல் சேர்ந்துவிட்டார். என்ன செய்வீர்கள்?",
+    "q": "Selvam Pumps-ல உங்க காண்டாக்ட் Priya, இப்போ Kaveri Automation-ல சேர்ந்துட்டாங்க. என்ன பண்ணுவீங்க?",
     "o": [
-     "Save corrections மூலம் அவரது நிறுவனத்தை மாற்றுவேன்",
+     "அவங்க பக்கத்துல Save corrections வெச்சு கம்பெனியை மாத்துவேன்",
      "Record employment change, Where to = Kaveri Automation",
-     "அவரை நீக்கி Kaveri-இல் மீண்டும் சேர்ப்பேன்"
+     "டெலீட் பண்ணி Kaveri-ல திரும்ப சேர்ப்பேன்"
     ],
     "a": 1,
-    "why": "மாற்றம் பதிவு செய்யப்படுகிறது, மேலெழுதப்படுவதில்லை. Selvam Pumps உடனான வரலாறு அங்கேயே இருக்கும்; Save corrections பிழைகளுக்கு மட்டுமே."
+    "why": "மூவைப் பதிவு பண்ணணும், மேல எழுதக் கூடாது. Selvam Pumps-ல பேசினது அங்கேயே இருக்கும்; Save corrections தப்பு திருத்த மட்டும்."
    },
    {
-    "q": "நேற்று வாடிக்கையாளரைச் சந்தித்தீர்கள்; இன்று When-ஐ நேற்றாக அமைத்துப் பதிவு செய்கிறீர்கள். என்ன நடக்கும்?",
+    "q": "நேத்து கஸ்டமரை விசிட் பண்ணீங்க; இன்னைக்கு When-ஐ நேத்துன்னு வெச்சு பதிவு பண்றீங்க. என்ன ஆகும்?",
     "o": [
-     "மறுக்கப்படும்",
-     "பதிவாகி, Backdated எனக் குறிக்கப்படும்",
-     "இன்றைய visit ஆகப் பதிவாகும்"
+     "ஏத்துக்காது",
+     "சேவ் ஆகும், Backdated-ன்னு காட்டும்",
+     "இன்னைக்கு விசிட்டா சேவ் ஆகும்"
     ],
     "a": 1,
-    "why": "முந்தைய தேதிகள் அனுமதிக்கப்பட்டு Backdated எனக் குறிக்கப்படும். எதிர்காலத் தேதிகள் மட்டுமே மறுக்கப்படும்."
+    "why": "பழைய தேதி ஓகே, Backdated-ன்னு காட்டும். ஃபியூச்சர் தேதி மட்டும் ஏத்துக்காது."
    },
    {
-    "q": "அருண் primary contact. பிரியாவுக்கு Make primary அழுத்துகிறீர்கள். அருணுக்கு என்ன ஆகும்?",
+    "q": "Priya தான் primary. நீங்க Arun-ஐ சேர்க்கும் போது Primary டிக் பண்றீங்க. Priya-க்கு என்ன ஆகும்?",
     "o": [
-     "அவரும் primary ஆகவே இருப்பார்",
-     "அவர் இனி primary அல்ல",
-     "அவர் inactive ஆவார்"
+     "அவங்களும் primary-ஆ இருப்பாங்க",
+     "அவங்க இனிமே primary இல்ல",
+     "அவங்க inactive ஆயிடுவாங்க"
     ],
     "a": 1,
-    "why": "ஒரு நிறுவனத்துக்கு ஒரே primary contact. புதியவரை அமைத்தால் பழையவர் அதே நேரத்தில் நீங்குவார்."
+    "why": "ஒரு கம்பெனிக்கு ஒரே primary. Primary டிக் (அல்லது அப்புறம் Make primary) பண்ணா பழையவர் அதே நேரத்துல மாறிடுவாங்க; யாருன்னு கீழே எழுதியிருக்கும்."
    },
    {
-    "q": "ஒரு Trial வாடிக்கையாளரின் ஒரே job இன்னும் Inward-இல் உள்ளது. Sales Head Convert to Regular அழுத்துகிறார். என்ன நடக்கும்?",
+    "q": "ஒரு Trial கஸ்டமரோட ஒரே ஜாப் இன்னும் Inward-ல இருக்கு. Sales Head Convert to Regular அழுத்துறாங்க. என்ன ஆகும்?",
     "o": [
-     "Regular ஆக மாறும்",
-     "மறுக்கப்படும்: எந்த job-உம் Closed / Ready for Invoice வரவில்லை",
-     "Operations Manager ஒப்புதலுக்குச் செல்லும்"
+     "Regular-ஆ மாறும்",
+     "ஏத்துக்காது: எந்த ஜாபும் Closed / Ready for Invoice வரல",
+     "Operations Manager அப்ரூவலுக்குப் போகும்"
     ],
     "a": 1,
-    "why": "Convert செய்ய குறைந்தது ஒரு trial job Closed / Ready for Invoice-இல் இருக்க வேண்டும். மறுப்புச் செய்தி அதைச் சொல்லும்."
+    "why": "Convert பண்ண குறைஞ்சது ஒரு Trial ஜாப் Closed / Ready for Invoice வந்திருக்கணும். மறுப்பு மெசேஜ் அதைச் சொல்லும்."
    }
   ]
  },
  "notes": [
-  "About 122 s (EN) / 138 s (TA), over the 110 s target: five use cases in one clip. It could be split into “Prospects and contacts” and “Timeline and lifecycle”.",
-  "UC-019 AF-001 (mark primary while adding) is not in the app: the Add a person form has no primary checkbox; primary is set afterwards with Make primary on the People tab.",
+  "Round 2: Add a person now has a Primary checkbox (finding 16); the clip ticks it for Priya (“They have none yet”) and then for Arun, whose hint reads “Ticking it replaces Priya Natarajan.” Make primary is only mentioned.",
+  "Round 2: Move it back on the Lifecycle tab is now shown only to the Operations Manager (customer.lifecycle_override), and not on a Potential account (finding 3). The Sales Head part of the clip shows only Convert to Regular and its refusal.",
   "The draft line “Converting is the Sales Head's job … Lifecycle moves can't be undone” is only partly true: an Operations Manager can move an account back with a recorded reason (override_lifecycle_status). Potential → Trial is automatic on the first work order; there is no manual move to Trial.",
-  "UX bug: for a Potential or Regular account the Sales Head sees the Lifecycle tab's “Move to [Trial] · Reason · Move it back” form (it is shown to anyone holding customer.convert), but only the Operations Manager may use it and the database refuses the Sales Head. On a Potential account the form even offers “Move to Trial”, labelled Move it back.",
-  "Minor: on the Lifecycle tab the bay header reads “0 in all” while one transition is listed (tab count says 1). The convert refusal says “Its open jobs are listed above”, but no list of open jobs is drawn — only the “Caused by” job in the transitions table.",
-  "The backdated entry was logged for 16:30 yesterday in the (UTC) recording browser and shows as 22:00 IST: datetime-local is read in the browser's time zone. Fine for staff in India, worth knowing for anyone abroad.",
-  "Pre-step (unrecorded): two extra customers per run (“Kaveri Automation NNNN” as the move destination, “Madurai Plastics NNNN” with one board booked in by Front Office so it is Trial). On camera: “Selvam Pumps NNNN” with contacts Priya and Arun."
+  "Minor (not fixed): on the Lifecycle tab the bay header reads “0 in all” while one transition is listed. The convert refusal says “Its open jobs are listed above”, but no list of open jobs is drawn.",
+  "Right after Add contact the People list sometimes still showed only the earlier person (header said 2 active of 2); the script reloads the tab before pointing at it.",
+  "The backdated entry is logged for 16:30 yesterday in the (UTC) recording browser and shows as 22:00 IST: datetime-local is read in the browser's time zone.",
+  "Pre-step (unrecorded): two extra customers per run (“Kaveri Automation NNNN” as the move destination, “Madurai Plastics NNNN” with one board booked in by Front Office so it is Trial). On camera: “Selvam Pumps NNNN” with contacts Priya and Arun.",
+  "Durations: EN 116 s, TA 125 s (both title cards say about 2 minutes)."
  ]
 }

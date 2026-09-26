@@ -2,7 +2,7 @@
  "id": "06",
  "title": {
   "en": "Parts, purchase requests and stock",
-  "ta": "பாகங்கள், purchase request, ஸ்டாக்"
+  "ta": "பார்ட்ஸ், பர்சேஸ் ரிக்வெஸ்ட், ஸ்டாக்"
  },
  "role": "Engineer · Liaison · Front Office",
  "path": "Service › My jobs › a job card (Components booked) · Service › Spares (Raise a request, On order, Stock)",
@@ -22,36 +22,40 @@
   "en": [
    "Engineer: book a catalogued part with <b>From catalogue</b>. Choose it from the list and say how many. Stock goes down by that much.",
    "Engineer: small bits that are not in the catalogue go under <b>Other spares</b>, with what they were and what they cost. No stock moves.",
-   "Engineer: no part on the shelf? Press <b>Pending spare</b> and name the part in <b>Waiting for</b>. The Liaison sources it from that.",
-   "Liaison: in <b>Spares › Raise a request</b>, add a line per part with <b>How many</b>, and tick the waiting boards each line releases. The system numbers it <b>PR/YY-MM/NNNNNN</b>.",
-   "Liaison: when the request is ready, press <b>Send to the front office</b> on <b>On order</b>. It moves from Draft to Sent to front office, with the date.",
-   "Front Office: place the order in <b>Zoho Books</b> from the request. Front Office or Liaison: when goods arrive, <b>Record a delivery</b> against the request line, with <b>Accepted</b> and <b>Rejected</b> counted separately.",
+   "Engineer: no part on the shelf? Press <b>Pending spare</b> and name the part it waits for. The Liaison sources it from that.",
+   "Liaison: in <b>Spares › Raise a request</b>, add a line per part with <b>How many</b>, and tick the waiting boards each line releases. The system numbers it <b>PR/YY-MM/NNNNNN</b> and it starts as <b>Draft</b>.",
+   "Liaison: when the request is ready, press <b>Send to the front office</b> on <b>On order</b> (only the Liaison has this button). It shows <b>With front office</b>, with the date.",
+   "Front Office: place the order in <b>Zoho Books</b>, then on <b>Spares › On order</b> type the <b>Zoho PO no.</b> and press <b>Mark ordered</b>. The request shows <b>Ordered</b> and “PO …”.",
+   "Front Office or Liaison: when goods arrive, <b>Record a delivery</b> against the request line, with <b>Accepted</b> and <b>Rejected</b> counted separately. Part of it → <b>Part received</b>; all of it → Received.",
    "Liaison: fix a wrong shelf count in <b>Stock › Correct a count</b>, with a reason from the list and a note."
   ],
   "ta": [
-   "Engineer: Catalogue பாகத்தை <b>From catalogue</b> மூலம் பதியுங்கள். பட்டியலிலிருந்து தேர்ந்தெடுத்து எத்தனை என்று சொல்லுங்கள். ஸ்டாக் அவ்வளவு குறையும்.",
-   "Engineer: Catalogue-இல் இல்லாத சிறு பொருட்கள் <b>Other spares</b>-இல், அவை என்ன, விலை என்ன என்று. ஸ்டாக் மாறாது.",
-   "Engineer: பாகம் இல்லையா? <b>Pending spare</b> அழுத்தி, <b>Waiting for</b>-இல் பாகத்தின் பெயரை எழுதுங்கள். அதைப் பார்த்து Liaison வாங்குவார்.",
-   "Liaison: <b>Spares › Raise a request</b>-இல் ஒரு பாகத்துக்கு ஒரு வரி, <b>How many</b> உடன். ஒவ்வொரு வரியும் விடுவிக்கும் போர்டுகளை டிக் செய்யுங்கள். எண்ணை சிஸ்டம் தரும்: <b>PR/YY-MM/NNNNNN</b>.",
-   "Liaison: Request தயாரானதும் <b>On order</b>-இல் <b>Send to the front office</b> அழுத்துங்கள். அது Draft-இலிருந்து Sent to front office ஆகும், தேதியுடன்.",
-   "Front Office: Request-ஐப் பார்த்து <b>Zoho Books</b>-இல் ஆர்டர் போடுங்கள். பொருள் வந்ததும் Front Office அல்லது Liaison, request வரிக்கு எதிராக <b>Record a delivery</b>. <b>Accepted</b>, <b>Rejected</b> தனித்தனியாக.",
-   "Liaison: தவறான எண்ணிக்கையை <b>Stock › Correct a count</b>-இல் திருத்துங்கள், பட்டியலிலிருந்து ஒரு காரணமும் ஒரு குறிப்பும் சேர்த்து."
+   "Engineer: கேட்டலாக் பார்ட்டை <b>From catalogue</b>-ல புக் பண்ணுங்க. லிஸ்ட்ல இருந்து செலக்ட் பண்ணி, எத்தனைன்னு போடுங்க. ஸ்டாக் அவ்வளவு குறையும்.",
+   "Engineer: கேட்டலாக்ல இல்லாத சின்ன பொருள் <b>Other spares</b>-ல, என்ன பொருள், எவ்வளவு காஸ்ட்னு எழுதி. ஸ்டாக் மாறாது.",
+   "Engineer: ஷெல்ஃப்ல பார்ட் இல்லையா? <b>Pending spare</b> அழுத்தி, எந்த பார்ட்டுக்கு வெயிட் பண்ணுதுன்னு எழுதுங்க. அதை வெச்சு Liaison பார்ட் வாங்குவாங்க.",
+   "Liaison: <b>Spares › Raise a request</b>-ல ஒரு பார்ட்டுக்கு ஒரு லைன், <b>How many</b>-ஓட. ஒவ்வொரு லைனும் ரிலீஸ் பண்ற போர்டுகளை டிக் பண்ணுங்க. நம்பர் சிஸ்டமே போடும்: <b>PR/YY-MM/NNNNNN</b>. முதல்ல <b>Draft</b>.",
+   "Liaison: PR ரெடியானதும் <b>On order</b>-ல <b>Send to the front office</b> அழுத்துங்க (இந்த பட்டன் Liaison-க்கு மட்டும்). அது <b>With front office</b>-னு தேதியோட காட்டும்.",
+   "Front Office: <b>Zoho Books</b>-ல ஆர்டர் போடுங்க. அப்புறம் <b>Spares › On order</b>-ல <b>Zoho PO no.</b> டைப் பண்ணி <b>Mark ordered</b> அழுத்துங்க. PR <b>Ordered</b>-னு “PO …”-ஓட காட்டும்.",
+   "Front Office அல்லது Liaison: பொருள் வந்ததும் PR லைனுக்கு எதிரா <b>Record a delivery</b>. <b>Accepted</b>, <b>Rejected</b> தனித்தனியா. கொஞ்சம் வந்தா <b>Part received</b>; முழுசா வந்தா Received.",
+   "Liaison: தப்பான ஸ்டாக் கவுண்ட்டை <b>Stock › Correct a count</b>-ல சரி பண்ணுங்க, லிஸ்ட்ல இருந்து ஒரு காரணமும் ஒரு நோட்டும் சேர்த்து."
   ]
  },
  "dont": {
   "en": [
    "Don't book a catalogued part as Other spares. Each booking is one or the other, and Other spares leaves the stock count wrong.",
    "Don't look for parts booking on a closed job. The job card hides it and the system refuses it.",
-   "Don't expect every board on a request to resume on a part delivery. Only boards whose whole need has arrived go back to In Progress; the rest stay at Pending Spare.",
+   "Don't press Mark ordered before the order really exists in Zoho Books. The PO number is how the order is found there, and the button waits until you type it.",
+   "Don't expect every board on a request to resume when only part of the delivery arrives. Only as many boards as units received go back to In Progress; the rest stay at Pending Spare.",
    "Don't try to edit a goods receipt. It is final. Correct the count with a stock adjustment instead.",
    "Don't type a new count without a reason. The reason comes from the list, and the before and after are both kept."
   ],
   "ta": [
-   "Catalogue பாகத்தை Other spares-ஆகப் பதிய வேண்டாம். ஒவ்வொரு பதிவும் இரண்டில் ஒன்று மட்டுமே. Other spares-ஆகப் பதிந்தால் ஸ்டாக் எண்ணிக்கை தவறாகும்.",
-   "மூடிய job-இல் பாகம் பதிய முயல வேண்டாம். Job card அதைக் காட்டாது, சிஸ்டமும் மறுக்கும்.",
-   "பாதி டெலிவரியில் request-இல் உள்ள எல்லாப் போர்டுகளும் தொடரும் என்று எதிர்பார்க்க வேண்டாம். தேவையானது முழுவதும் வந்த போர்டுகள் மட்டுமே In Progress-க்குத் திரும்பும்; மற்றவை Pending Spare-இலேயே இருக்கும்.",
-   "Goods receipt-ஐ மாற்ற முயல வேண்டாம். அது இறுதியானது. எண்ணிக்கையை stock adjustment மூலம் திருத்துங்கள்.",
-   "காரணம் இல்லாமல் புதிய எண்ணிக்கை போட வேண்டாம். காரணம் பட்டியலிலிருந்து வரும், முன்பும் பின்பும் இரண்டும் பதிவில் இருக்கும்."
+   "கேட்டலாக் பார்ட்டை Other spares-ல புக் பண்ணாதீங்க. ஒவ்வொரு புக்கிங்கும் இதுல ஒண்ணு தான். Other spares-ல போட்டா ஸ்டாக் கவுண்ட் தப்பாயிடும்.",
+   "Closed ஜாப்ல பார்ட் புக் பண்ண தேடாதீங்க. ஜாப் கார்டுல அது வராது, சிஸ்டமும் ஏத்துக்காது.",
+   "Zoho Books-ல ஆர்டர் போடறதுக்கு முன்னாடி Mark ordered அழுத்தாதீங்க. PO நம்பர் வெச்சு தான் Zoho-ல ஆர்டரை கண்டுபிடிப்பாங்க. நம்பர் டைப் பண்ற வரைக்கும் பட்டன் வெயிட் பண்ணும்.",
+   "டெலிவரில கொஞ்சம் மட்டும் வந்தா PR-ல இருக்கற எல்லா போர்டும் திரும்ப ஆரம்பிக்கும்னு நினைக்காதீங்க. வந்த யூனிட் அளவுக்கு தான் போர்டுகள் In Progress-க்கு போகும்; மீதி Pending Spare-லயே இருக்கும்.",
+   "Goods receipt-ஐ எடிட் பண்ண ட்ரை பண்ணாதீங்க. அது ஃபைனல். கவுண்ட்டை stock adjustment-ல சரி பண்ணுங்க.",
+   "காரணம் இல்லாம புது கவுண்ட் போடாதீங்க. காரணம் லிஸ்ட்ல இருந்து வரும், முன்னாடி, பின்னாடி ரெண்டும் பதிவுல இருக்கும்."
   ]
  },
  "quiz": {
@@ -67,14 +71,14 @@
     "why": "A catalogued part is booked From catalogue, which moves stock. Uncatalogued bits go under Other spares, described, with no stock move. Each booking is one or the other."
    },
    {
-    "q": "A request for 2 gate drivers serves two waiting boards. The supplier delivers only 1. What happens when it is recorded?",
+    "q": "A request for 2 gate drivers releases two waiting boards. The supplier delivers only 1. What happens when it is recorded?",
     "o": [
      "Both boards go back to In Progress",
-     "Neither board moves until all 2 arrive",
-     "One board, whose need is fully met, goes back to In Progress; the other stays at Pending Spare"
+     "Neither board moves until both arrive",
+     "One board goes back to In Progress; the other stays at Pending Spare"
     ],
     "a": 2,
-    "why": "A board resumes only when its whole requirement has arrived. The request stays open as Partially received for the balance."
+    "why": "One unit arrived, so one board is released. The request stays open as Part received for the balance, and the other board keeps waiting."
    },
    {
     "q": "Yesterday's delivery was recorded as 5 accepted, but only 4 are on the shelf. What do you do?",
@@ -87,68 +91,67 @@
     "why": "A goods receipt cannot be changed once recorded. A correction is a stock adjustment, which keeps the before and after and books no cost to any job."
    },
    {
-    "q": "The Liaison has sent you, Front Office, a purchase request. What is your part?",
+    "q": "You are Front Office. A purchase request on Spares › On order shows “With front office”. What is your part?",
     "o": [
-     "Place the order in Zoho Books, and record the delivery when the goods arrive",
-     "Raise a second request in the app",
-     "Mark the job Pending Spare"
+     "Order it in Zoho Books, type the Zoho PO no. and press Mark ordered; record the delivery when the goods arrive",
+     "Press Send to the front office again",
+     "Raise a second request in the app"
     ],
     "a": 0,
-    "why": "The purchase request is internal. The real order is placed in Zoho Books. Front Office or Liaison records the delivery against the request line."
+    "why": "The real order is placed in Zoho Books. Mark ordered, with its PO number, moves the request to Ordered so the Liaison can see it. When goods arrive, Front Office or Liaison records the delivery against the request line."
    }
   ],
   "ta": [
    {
-    "q": "Catalogue-இல் உள்ள ஒரு MOSFET-ம், catalogue-இல் இல்லாத சில resistor-களும் பொருத்தினீர்கள். எப்படிப் பதிவீர்கள்?",
+    "q": "கேட்டலாக்ல இருக்கற ஒரு MOSFET-ம், கேட்டலாக்ல இல்லாத கொஞ்சம் resistor-ம் போட்டீங்க. எப்படி புக் பண்ணுவீங்க?",
     "o": [
-     "இரண்டையும் Other spares-இல் ஒரே தொகையாக",
-     "MOSFET-ஐ From catalogue-இல்; resistor-களை விவரம், விலையுடன் Other spares-இல்",
-     "MOSFET-ஐ From catalogue-இல், அதோடு resistor விலையையும் சேர்த்து"
+     "ரெண்டையும் Other spares-ல ஒரே தொகையா",
+     "MOSFET-ஐ From catalogue-ல; resistor-ஐ டீடெயில், காஸ்ட்டோட Other spares-ல",
+     "MOSFET-ஐ From catalogue-ல, resistor காஸ்ட்டையும் அதோட சேர்த்து"
     ],
     "a": 1,
-    "why": "Catalogue பாகம் From catalogue-இல், அது ஸ்டாக்கைக் குறைக்கும். Catalogue-இல் இல்லாதவை Other spares-இல், விவரத்துடன், ஸ்டாக் மாறாது. ஒவ்வொரு பதிவும் இரண்டில் ஒன்று."
+    "why": "கேட்டலாக் பார்ட் From catalogue-ல, அது ஸ்டாக்கை குறைக்கும். கேட்டலாக்ல இல்லாதது Other spares-ல, டீடெயிலோட, ஸ்டாக் மாறாது. ஒவ்வொரு புக்கிங்கும் இதுல ஒண்ணு தான்."
    },
    {
-    "q": "2 gate driver-களுக்கான request இரண்டு போர்டுகளுக்கு உதவுகிறது. Supplier 1 மட்டும் அனுப்பினார். பதிந்ததும் என்ன நடக்கும்?",
+    "q": "2 gate driver-க்கான PR ரெண்டு வெயிட் பண்ற போர்டுகளை ரிலீஸ் பண்ணும். சப்ளையர் 1 மட்டும் அனுப்பினாரு. ரெக்கார்ட் பண்ணதும் என்ன ஆகும்?",
     "o": [
-     "இரண்டு போர்டுகளும் In Progress-க்குத் திரும்பும்",
-     "2-ம் வரும் வரை எதுவும் நகராது",
-     "தேவை முழுவதும் வந்த ஒரு போர்டு In Progress-க்குத் திரும்பும்; மற்றது Pending Spare-இல் இருக்கும்"
+     "ரெண்டு போர்டும் In Progress-க்கு போகும்",
+     "ரெண்டும் வர்ற வரைக்கும் எதுவும் நகராது",
+     "ஒரு போர்டு In Progress-க்கு போகும்; இன்னொண்ணு Pending Spare-லயே இருக்கும்"
     ],
     "a": 2,
-    "why": "ஒரு போர்டுக்குத் தேவையானது முழுவதும் வந்தால் மட்டுமே அது தொடரும். மீதிக்கு request Partially received ஆகத் திறந்திருக்கும்."
+    "why": "ஒரு யூனிட் வந்தது, அதனால ஒரு போர்டு ரிலீஸ் ஆகும். மீதிக்கு PR “Part received”-ஆ ஓப்பனா இருக்கும், இன்னொரு போர்டு வெயிட் பண்ணும்."
    },
    {
-    "q": "நேற்றைய டெலிவரி 5 accepted எனப் பதிவானது, ஆனால் shelf-இல் 4 தான் உள்ளன. என்ன செய்வீர்கள்?",
+    "q": "நேத்து டெலிவரி 5 accepted-னு பதிவாச்சு, ஆனா ஷெல்ஃப்ல 4 தான் இருக்கு. என்ன பண்ணுவீங்க?",
     "o": [
-     "Goods receipt-ஐ 4 என மாற்றுவேன்",
-     "Liaison: Stock › Correct a count, பட்டியலிலிருந்து காரணத்துடன்",
-     "ஒன்றை ஏதாவது job-இல் பதிந்து சரிசெய்வேன்"
+     "Goods receipt-ஐ 4-னு எடிட் பண்ணுவேன்",
+     "Liaison: Stock › Correct a count, லிஸ்ட்ல இருந்து காரணத்தோட",
+     "ஒண்ணை ஏதாவது ஜாப்ல புக் பண்ணி சரி பண்ணுவேன்"
     ],
     "a": 1,
-    "why": "பதிவான goods receipt-ஐ மாற்ற முடியாது. திருத்தம் என்பது stock adjustment. அது முன்பும் பின்பும் வைத்திருக்கும், எந்த job-க்கும் செலவு சேர்க்காது."
+    "why": "பதிவான goods receipt-ஐ மாத்த முடியாது. சரி பண்றது stock adjustment தான். அது முன்னாடி, பின்னாடி ரெண்டையும் வெச்சுக்கும், எந்த ஜாபுக்கும் காஸ்ட் போடாது."
    },
    {
-    "q": "Front Office ஆகிய உங்களுக்கு Liaison ஒரு purchase request அனுப்பினார். உங்கள் வேலை என்ன?",
+    "q": "நீங்க Front Office. Spares › On order-ல ஒரு PR “With front office”-னு காட்டுது. உங்க வேலை என்ன?",
     "o": [
-     "Zoho Books-இல் ஆர்டர் போடுவது, பொருள் வந்ததும் டெலிவரியைப் பதிவது",
-     "App-இல் இன்னொரு request எழுப்புவது",
-     "Job-ஐ Pending Spare ஆக்குவது"
+     "Zoho Books-ல ஆர்டர் போட்டு, Zoho PO no. டைப் பண்ணி Mark ordered அழுத்துவேன்; பொருள் வந்ததும் டெலிவரியை ரெக்கார்ட் பண்ணுவேன்",
+     "திரும்ப Send to the front office அழுத்துவேன்",
+     "ஆப்ல இன்னொரு PR போடுவேன்"
     ],
     "a": 0,
-    "why": "Purchase request உள் ஆவணம். உண்மையான ஆர்டர் Zoho Books-இல் போடப்படும். டெலிவரியை request வரிக்கு எதிராக Front Office அல்லது Liaison பதிவார்."
+    "why": "உண்மையான ஆர்டர் Zoho Books-ல தான். PO நம்பரோட Mark ordered பண்ணா PR “Ordered” ஆகும், Liaison-க்கும் தெரியும். பொருள் வந்ததும் Front Office அல்லது Liaison PR லைனுக்கு எதிரா டெலிவரியை ரெக்கார்ட் பண்ணுவாங்க."
    }
   ]
  },
  "notes": [
-  "Nothing in the app sets a purchase request to ORDERED. The status exists in the database (DRAFT, SENT_TO_FRONT_OFFICE, ORDERED, PARTIALLY_RECEIVED, RECEIVED, CANCELLED), but the screen only goes Draft → Sent to front office → Partially received / Received. The Zoho order reference (purchase_request.zoho_purchase_order_id) can't be entered anywhere either. The clip says the order is placed in Zoho and doesn't claim an Ordered step.",
-  "Send to the front office doesn't send any email. It sets the status and emailed_on. No internal address is configured in the demo, and the screen says so ('it is read here rather than sent anywhere'). Front Office sees the request on Spares › On order. The clip doesn't claim an email arrives.",
-  "The engineer's Pending spare step was cut from the clip for length (module 05 covers pausing). Its rule is still in the Remember card and the do list. The English take was edited after recording: the pause section was removed, the one-or-the-other caption is held as a still (the recording froze on the frame before it), and the title card was re-rendered to show the true length (about 2½ minutes).",
-  "Length: 153 s (EN) and 178 s (TA). That is over the ~130 s target because four roles are shown.",
-  "App UX: after Send to the front office and after Record a delivery, the page redirects to the Waiting on a part tab, not On order. The banner after a delivery lists every waiting board in the shop ('Still waiting: …'), which gets long.",
-  "Possible bug (from reading the code, not tested): the Send to the front office button is also shown to Front Office, who lack purchase_request.manage. Row-level security would update no row, yet sendRequest() reports success.",
-  "The release rule works per request line (goods_receipt_releases_jobs walks each line's allocations, oldest first). A board waiting on two different lines is set back to In Progress when either line covers it, not only when both do.",
-  "Recording note: after some server-action redirects, the recording stopped showing caption changes until the next full page load. The scripts reload the page after those acts.",
-  "Setup (unrecorded, through the app): 06-setup.ts registers 8 units as Front Office, the Liaison picks them up and allots them to Test Engineer, and the engineer starts work. It also adds two catalogue parts of our own (lot-stamped names), and the first is given its count by a stock adjustment."
+  "Send to the front office still sends no email. It sets the status and the date; with no internal address configured the screen says 'it is read here rather than sent anywhere'. Front Office read the request on Spares › On order.",
+  "Length: EN 153 s (title card says about 2½ minutes), over the ~140 s aim because four roles are shown and the Front Office segment now includes Mark ordered. Dev-server page loads account for much of it; the English take came straight from the script with no edits after recording.",
+  "Not shown for length: the engineer's Pending spare step (module 05 covers pausing). Its rule stays in the do list.",
+  "The release rule works per request line (goods_receipt_releases_jobs, finding 18, not fixed): a board waiting on two different lines is set back to In Progress when either line covers it. The clip and quiz use one line, where 'one unit, one board' holds.",
+  "App UX: after Send to the front office and after Record a delivery the page redirects to the Waiting on a part tab, not On order. The banner after a delivery lists every waiting board in the shop ('Still waiting: …'), which gets long.",
+  "Recording: after a server-action redirect the recording can stop showing caption changes until a full load, so the script reloads the page after those acts. A re-take of 06 alone: `ONLY=06 npx tsx 06-setup.ts <lang>` then `ONLY=06 npx tsx 06-parts.ts <lang>`. The set-up first receives the balance of any earlier take's gate-driver request, so On order shows only the new request.",
+  "The English take was recorded four times (one over the two-re-take limit): the third was fine but ran 147 s against a title card that said about 2¼ minutes, so the card was corrected to 2½ and recorded again rather than edited by hand.",
+  "Setup (unrecorded, through the app): 06-setup.ts registers 8 units as Front Office, the Liaison picks them up and allots them to Test Engineer, and the engineer starts work. It also adds two catalogue parts of our own (lot-stamped names); the first is given its count by a stock adjustment."
  ]
 }
