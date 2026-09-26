@@ -7,7 +7,6 @@
  */
 import { Stage } from './stage'
 import { join } from 'node:path'
-import { writeFileSync } from 'node:fs'
 
 const APP = process.env.REPAIR_SERVICE_DIR ?? '/home/user/repair-service'
 const RAW = join(import.meta.dirname, 'out', 'raw')
@@ -87,23 +86,54 @@ export async function setupInward(customerSearch: string, customerName: string, 
 
 /**
  * Dead-time cutter. The shared dev server can take many seconds to answer a form; the viewer should
- * not watch that. `mark()` at the title card starts the clock; `slow(fn)` runs a server round trip and,
- * when it took long, remembers the idle middle of it (keeping `keep` ms after the click and 300 ms
- * before the answer). `save()` writes the spans, relative to the title card, for encode.ts.
+ * not watch that. `slow(fn)` runs a server round trip; once it has taken longer than `keep` ms it lights
+ * a 4-pixel magenta mark in the bottom-left corner (and keeps it lit across page loads) until the
+ * answer is in. 00-encode.py drops every frame that carries the mark. (Wall-clock times do not map
+ * onto the recording, which drops frames under load, so the mark travels in the picture itself.)
  */
+const MARK = `(() => {
+  const put = () => {
+    if (document.getElementById('cut-mark')) return;
+    const m = document.createElement('div'); m.id = 'cut-mark';
+    m.style.cssText = 'position:fixed;left:0;bottom:0;width:4px;height:4px;background:#ff00ff;z-index:2147483647;pointer-events:none;display:none';
+    document.body.appendChild(m);
+    const sync = () => { m.style.display = sessionStorage.getItem('cut-mark') === '1' ? 'block' : 'none'; };
+    sync(); window.__cutSync = sync;
+  };
+  if (document.body) put(); else document.addEventListener('DOMContentLoaded', put);
+})();`
+
 export class Cuts {
-  private t0 = 0
-  private spans: [number, number][] = []
-  mark() { this.t0 = Date.now() }
+  private total = 0
+  constructor(private s: Stage) {}
+  async install() {
+    await this.s.page.context().addInitScript(MARK)
+    await this.s.page.evaluate(MARK)
+  }
+  private async light(on: boolean) {
+    await this.s.page
+      .evaluate((v) => {
+        sessionStorage.setItem('cut-mark', v ? '1' : '0')
+        ;(window as unknown as { __cutSync?: () => void }).__cutSync?.()
+      }, on)
+      .catch(() => {})
+  }
   async slow<T>(fn: () => Promise<T>, keep = 1500): Promise<T> {
     const a = Date.now()
-    const r = await fn()
-    const b = Date.now()
-    if (this.t0 && b - a > keep + 1300) this.spans.push([(a - this.t0 + keep) / 1000, (b - this.t0 - 300) / 1000])
-    return r
+    let lit = false
+    const timer = setTimeout(() => { lit = true; void this.light(true) }, keep)
+    try {
+      return await fn()
+    } finally {
+      clearTimeout(timer)
+      if (lit) {
+        await this.light(false)
+        this.total += Date.now() - a - keep
+      }
+    }
   }
-  save(path: string) {
-    writeFileSync(path, JSON.stringify(this.spans.map(([a, b]) => [+a.toFixed(2), +b.toFixed(2)])))
-    return this.spans.reduce((t, [a, b]) => t + b - a, 0)
+  /** Seconds marked (wall clock; the frames dropped are fewer when the recorder was lagging). */
+  save() {
+    return this.total / 1000
   }
 }

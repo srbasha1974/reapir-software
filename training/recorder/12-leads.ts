@@ -37,10 +37,10 @@ const customerId = await setupCustomer(`Hosur Drives ${stamp}`, 'Hosur')
 
 const s = await Stage.open('exec@thulirtech.com', '/mis', join(OUT, 'raw'))
 const p = s.page
+const cut = new Cuts(s)
+await cut.install()
 const bay = (code: string) => p.locator(`section[data-code="${code}"]`)
-const cut = new Cuts()
 
-cut.mark()
 await s.card(`<div class="k">${c.kicker}</div><h1>${c.title}</h1><p>${c.sub}</p>`, 3000 * pace)
 
 // 1 · Executive: the MIS dashboard and stuck tasks
@@ -171,5 +171,5 @@ await s.quiet()
 
 await s.card(`<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`, 5500 * pace)
 
-console.log('cut', cut.save(join(OUT, `12-leads.${lang}.cuts.json`)).toFixed(1), 's')
+console.log('cut', cut.save().toFixed(1), 's')
 console.log(await s.close(join(OUT, `12-leads.${lang}.webm`)))

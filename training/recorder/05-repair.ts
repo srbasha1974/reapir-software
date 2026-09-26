@@ -168,7 +168,9 @@ const SLA = '2026-10-07'
   await s.quiet()
   // A fresh browser for this part: give the Remember card the module's code chip (stage.ts keeps it per session).
   await p.evaluate(() => sessionStorage.setItem('stg-code', 'TRN 05'))
-  await s.card(`<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`, 6500 * pace)
+  // The closing card stays up until the browser closes: under load the recorder can miss a card that is taken down again.
+  await p.evaluate((h) => (window as any).__stage.card(h), `<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`)
+  await s.wait(6500 * pace)
   await s.close(join(OUT, `05-repair.${lang}.3.webm`))
 }
 console.log('done')

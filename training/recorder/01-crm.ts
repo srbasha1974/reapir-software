@@ -41,12 +41,12 @@ await setupInward(stamp, trialName, stamp)
 // ── The clip ──────────────────────────────────────────────────────────────────────────────────
 const s = await Stage.open('salesengineer@thulirtech.com', '/crm/customers/new', join(OUT, 'raw'))
 const p = s.page
+const cut = new Cuts(s)
+await cut.install()
 const company = `Selvam Pumps ${stamp}`
 /** Click, then fill at once: for the fields the viewer need not watch being typed. */
 const put = async (l: ReturnType<typeof p.locator>, v: string) => { await l.fill(v); await s.wait(300) }
 
-const cut = new Cuts()
-cut.mark()
 await s.card(`<div class="k">${c.kicker}</div><h1>${c.title}</h1><p>${c.sub}</p>`, 3000 * pace)
 
 // UC-001 — register a prospect
@@ -200,5 +200,5 @@ await s.quiet()
 
 await s.card(`<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`, 5500 * pace)
 
-console.log('cut', cut.save(join(OUT, `01-crm.${lang}.cuts.json`)).toFixed(1), 's')
+console.log('cut', cut.save().toFixed(1), 's')
 console.log(await s.close(join(OUT, `01-crm.${lang}.webm`)))

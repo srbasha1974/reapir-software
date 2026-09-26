@@ -32,6 +32,7 @@ const tag = process.argv[2] ?? 'en'
 /** Each take submits its own earlier week in module 07, so the two takes' hours never share a day. */
 const SUBMIT_WEEK = tag === 'ta' ? '2026-08-31' : '2026-09-07'
 
+const slow = (s: Stage) => { s.page.setDefaultNavigationTimeout(90000); s.page.setDefaultTimeout(60000); return s }
 const sql = (q: string) =>
   execFileSync('docker', ['exec', 'supabase_db_Repair_Service', 'psql', '-U', 'postgres', '-At', '-c', q]).toString().trim()
 
@@ -46,7 +47,7 @@ const jobUrl = (j: string) => `/service-centre/jobs/${j}`
     where not l.deleted and p.part_name like 'Gate driver IC IR2110 · lot %' and l.quantity_received < l.quantity_requested
       and r.request_status in ('ORDERED','PARTIALLY_RECEIVED','SENT_TO_FRONT_OFFICE')`).split('\n').filter(Boolean)
   if (open.length) {
-    const s = await Stage.open('liaison@thulirtech.com', '/service-centre/spares?tab=orders', RAW, { record: false })
+    const s = slow(await Stage.open('liaison@thulirtech.com', '/service-centre/spares?tab=orders', RAW, { record: false }))
     const p = s.page
     for (const [pr] of open.map((l) => l.split('|'))) {
       await s.goto('/service-centre/spares?tab=orders')
@@ -64,7 +65,7 @@ const jobUrl = (j: string) => `/service-centre/jobs/${j}`
 
 // 1 · Front Office registers the delivery (skipped when resuming with STAMP=…)
 if (!process.env.STAMP) {
-  const s = await Stage.open('frontoffice@thulirtech.com', '/front-office/inward', RAW, { record: false })
+  const s = slow(await Stage.open('frontoffice@thulirtech.com', '/front-office/inward', RAW, { record: false }))
   const p = s.page
   await p.getByLabel('Customer', { exact: true }).pressSequentially('Kovai', { delay: 40 })
   await p.getByRole('option', { name: /Kovai Textile Mills/ }).click()
@@ -109,7 +110,7 @@ console.log(J)
 
 // 2 · Liaison picks up and allots to Test Engineer (skipped when a resumed run already did)
 if (!sql(`select assigned_user_id from work_order where job_number = '${job(N)}'`)) {
-  const s = await Stage.open('liaison@thulirtech.com', `/service-centre/reservoir?q=ACS${stamp}`, RAW, { record: false })
+  const s = slow(await Stage.open('liaison@thulirtech.com', `/service-centre/reservoir?q=ACS${stamp}`, RAW, { record: false }))
   const p = s.page
   for (let i = 0; i < N; i++) {
     const b = p.getByRole('button', { name: 'Pick up', exact: true }).first()
@@ -133,7 +134,7 @@ if (!sql(`select assigned_user_id from work_order where job_number = '${job(N)}'
 
 // 3 · Engineer starts work, then sets each module's state
 {
-  const s = await Stage.open('engineer@thulirtech.com', jobUrl(J.A), RAW, { record: false })
+  const s = slow(await Stage.open('engineer@thulirtech.com', jobUrl(J.A), RAW, { record: false }))
   const p = s.page
   for (const j of Object.values(J)) {
     await s.goto(jobUrl(j))
@@ -188,7 +189,7 @@ if (only08) {
 const P1 = `MOSFET IRFP460 · lot ${stamp}`
 const P2 = `Gate driver IC IR2110 · lot ${stamp}`
 {
-  const s = await Stage.open('liaison@thulirtech.com', '/service-centre/spares?tab=stock', RAW, { record: false })
+  const s = slow(await Stage.open('liaison@thulirtech.com', '/service-centre/spares?tab=stock', RAW, { record: false }))
   const p = s.page
   for (const [name, buy, sell] of [[P1, '180', '260'], [P2, '95', '150']] as const) {
     await s.goto('/service-centre/spares?tab=stock')

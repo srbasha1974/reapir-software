@@ -164,6 +164,8 @@ await s.say(c.approved, 2800 * pace, 'do')
 await s.unring()
 await s.quiet()
 
-await s.card(`<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`, 6500 * pace)
+// The closing card stays up until the browser closes: under load the recorder can miss a card that is taken down again.
+await p.evaluate((h) => (window as any).__stage.card(h), `<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`)
+await s.wait(6500 * pace)
 
 console.log(await s.close(join(OUT, `04-quotations.${lang}.webm`)))

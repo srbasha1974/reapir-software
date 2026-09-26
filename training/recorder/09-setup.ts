@@ -86,6 +86,10 @@ export async function registerDelivery(opts: {
     }
     await p.waitForTimeout(1500)
     await p.getByRole('button', { name: /Register \d+ units?/ }).click()
+    // A registered delivery lands on its own record; under load that can take a while.
+    await p.waitForURL((u) => !u.pathname.endsWith('/front-office/inward'), { timeout: 90000 }).catch(async () => {
+      await p.screenshot({ path: join(RAW, `register-failed-${stamp}.png`) })
+    })
     await settle(p, 1500)
   })
   const list = serials.map((x) => `'${x}'`).join(',')

@@ -24,12 +24,12 @@ const pace = lang === 'ta' ? 1.25 : 1
 
 const s = await Stage.open('frontoffice@thulirtech.com', '/front-office/inward', join(OUT, 'raw'))
 const p = s.page
+const cut = new Cuts(s)
+await cut.install()
 const stamp = Date.now().toString().slice(-4)
 // Short shelf codes in the app's own style (its placeholder is "68B"), fresh each run so every one is free.
 const shelf = (u: number) => `${(Number(stamp) % 89) + 10}${'ABC'[u - 1]}`
 
-const cut = new Cuts()
-cut.mark()
 await s.card(`<div class="k">${c.kicker}</div><h1>${c.title}</h1><p>${c.sub}</p>`, 3500 * pace)
 
 await s.point(p.locator('section[data-code="IN"]'))
@@ -121,5 +121,5 @@ await s.quiet()
 
 await s.card(`<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`, 6000 * pace)
 
-console.log('cut', cut.save(join(OUT, `02-inward.${lang}.cuts.json`)).toFixed(1), 's')
+console.log('cut', cut.save().toFixed(1), 's')
 console.log(await s.close(join(OUT, `02-inward.${lang}.webm`)))

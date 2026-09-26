@@ -154,6 +154,8 @@ await s.say(c.carried, 2600 * pace)
 await s.unring()
 await s.quiet()
 
-await s.card(`<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`, 6000 * pace)
+// The closing card stays up until the browser closes: under load the recorder can miss a card that is taken down again.
+await p.evaluate((h) => (window as any).__stage.card(h), `<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`)
+await s.wait(6000 * pace)
 
 console.log(await s.close(join(OUT, `03-assessment.${lang}.webm`)))

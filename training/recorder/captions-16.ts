@@ -13,7 +13,7 @@ export const CAPTIONS = {
   en: {
     kicker: 'Thulir training · Module 16 · Operations Manager · Service Head',
     title: 'Money 2: the month in money',
-    sub: 'Base margin, premium share, total margin, rework, achievement. About 2½ minutes.',
+    sub: 'Base margin, premium share, total margin, rework, achievement. About 3 minutes.',
     month: {
       k: 'The worked month · September',
       h: 'Four boards closed. Hours cost ₹400.',
