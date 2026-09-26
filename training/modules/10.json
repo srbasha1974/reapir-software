@@ -15,8 +15,8 @@
     "ta": "media/10-poster-ta.jpg"
   },
   "seconds": {
-    "en": 109,
-    "ta": 109
+    "en": 101,
+    "ta": 101
   },
   "do": {
     "en": [
@@ -149,8 +149,7 @@
     "The printout (“Delivery Challan · Goods outward — not a tax invoice”) is no longer opened in the clip, to keep the length; the caption on Print says it.",
     "Dispatching the repaired boards also starts their warranty window (UC-009); not taught.",
     "UX (unchanged): the accessories warning appears in yellow as soon as a board with accessories is ticked, before anyone has had a chance to tick them.",
-    "After issuing the accessory challan, the redirect reloaded the record page under the caption, so the last caption (“Issued: a challan line with no job”) did not render in either take; the ring on “accessory only — no job” shows it with the previous caption. The script now reopens the page before that caption.",
-    "The app was slow under shared load: the English take (117 s) was sped up 1.08× at encode to 109 s; the Tamil take is real time.",
-    "Set-up (unrecorded): a fresh 5-unit delivery for Kovai Textile Mills per take, taken to Ready for Invoice ×2, Non-Repairable (Service Head), Awaiting Customer Confirmation, and one left at Inward. Each take issued real challans in the shared database."
+    "Set-up (unrecorded): a fresh 5-unit delivery for Kovai Textile Mills per take, taken to Ready for Invoice ×2, Non-Repairable (Service Head), Awaiting Customer Confirmation, and one left at Inward. Each take issued real challans in the shared database.",
+    "Re-recorded by the coordinator after the helper fixed the script: both takes are real time (101 s) and show the final “Issued: a challan line with no job” caption."
   ]
 }
