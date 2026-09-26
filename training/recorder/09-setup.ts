@@ -113,7 +113,16 @@ export async function agreePrice(customer: string, jobs: string[], price: number
     const bay = p.locator('ul.pick[aria-label="Boards this price covers"]')
     for (const job of jobs) await bay.locator('li', { hasText: job }).locator('input').check()
     await p.locator(`#agreedDescription-${id}`).fill('Power supply repair')
+    // Normal price (features 017/023): typed when no rate card covers the boards. Typing the same
+    // price means no premium and no discount. With a rate card it is read-only; if the agreed price
+    // is above it, a premium reason is required, so the first reason is chosen.
+    const normal = p.locator(`#normalPrice-ph-${id}`)
+    await normal.waitFor({ state: 'attached', timeout: 10000 }).catch(() => {})
+    await p.waitForTimeout(600)
+    if ((await normal.evaluate((e) => e.tagName).catch(() => '')) === 'INPUT') await normal.fill(String(price))
     await p.locator(`#agreedUnitPrice-${id}`).fill(String(price))
+    const why = p.getByRole('combobox', { name: 'Why a premium' })
+    if (await why.isVisible().catch(() => false)) await why.selectOption({ index: 1 })
     await p.locator(`#agreedByName-${id}`).fill('R. Krishnan, Maintenance Manager')
     await p.getByRole('button', { name: /^Record ₹/ }).click()
     await settle(p, 1500)
@@ -186,10 +195,7 @@ export async function customerPass(jobs: string[]) {
   })
 }
 
-/**
- * Service Head closes an open job as non-repairable. (The engineer's own "Cannot repair…" offers an
- * empty reason list to the Engineer role, so the Service Head's act is the one that works.)
- */
+/** Service Head closes an open job as non-repairable ("It cannot be saved…"). */
 export async function closeNonRepairable(job: string, reason = 'Component unavailable') {
   await as('servicehead@thulirtech.com', jobPath(job), async (s, p) => {
     await p.getByRole('button', { name: 'It cannot be saved…' }).click()

@@ -29,7 +29,8 @@ export async function registerDelivery(o: {
   complaint: string
   units: number
   serial: string // prefix; unit u gets `${serial}0${u}`
-  neededBy?: string // yyyy-mm-dd: registers the delivery as Business-critical with this SLA date
+  neededBy?: string // yyyy-mm-dd: registers the delivery as Business-critical, Needed by = the customer's date
+  // (requestedByDate). The SLA itself is set later, at allotment, pre-filled from this date.
 }): Promise<string[]> {
   const s = await Stage.open('frontoffice@thulirtech.com', '/front-office/inward', RAW, { record: false })
   const p = s.page
@@ -47,7 +48,7 @@ export async function registerDelivery(o: {
   }
   if (o.neededBy) {
     await p.locator('#priority').selectOption('BUSINESS_CRITICAL')
-    await p.locator('#slaTargetDate').fill(o.neededBy)
+    await p.locator('#requestedByDate').fill(o.neededBy)
   }
   await p.locator('#brand-0').fill(o.brand)
   await p.locator('#deviceType-0').fill(o.deviceType)

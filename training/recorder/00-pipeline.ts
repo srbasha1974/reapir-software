@@ -4,7 +4,10 @@
  * Grounded in:
  *  - work_order_status / work_order_sub_status (4 stages, 14 sub-statuses; Closed is terminal)
  *  - app/(app)/mis/pipeline: the stage strip, drawn from the status hierarchy
- *  - timesheet trigger: Pending Spare and On Hold refuse logged time ("paused"); closed jobs too
+ *  - timesheet trigger (migration 0157): a sub-status flagged blocks_labour ("No time logging") refuses
+ *    logged time; Pending Spare and On Hold carry the flag ("paused"); closed jobs too
+ *  - hold_work_order() / release_hold() (migration 0160): Service Head or Liaison, from In Progress,
+ *    reason required — the job card's Put on hold / Release hold
  *  - service-centre/jobs/[...job]: status, "This job so far" (work_order_status_history), and
  *    "Send it back to the engineer" (work_order.return: Service Head, Liaison; return_to_engineer()
  *    refuses a closed job: "Register a rework job against it rather than reopening this one")
@@ -56,6 +59,8 @@ await s.point(stage(2))
 await s.say(c.inRepair, 3400 * pace)
 await s.point(stage(2).locator('ul.ss li').nth(2))
 await s.say(c.paused, 3600 * pace, 'dont')
+await s.point(stage(2).locator('ul.ss li', { hasText: 'On Hold' }).first())
+await s.say(c.hold, 3600 * pace)
 await s.point(stage(3))
 await s.say(c.completed, 3400 * pace)
 await s.point(stage(4))

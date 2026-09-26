@@ -5,7 +5,7 @@
  *  2. Liaison picks each up (Under Assessment) and allots all 8 to Test Engineer.
  *  3. Engineer starts work on each (In Progress), then:
  *       06: C paused for a spare; A and B stay In Progress
- *       07: T2 gets 2 h this week, then is paused; T1 gets hours on the week of 7 Sep (for Submit)
+ *       07: T2 gets 2 h this week, then is paused; T1 gets a full earlier week (7 Sep for en, 31 Aug for ta) to submit
  *       08: D and E marked Ready for verification
  *  4. Liaison adds two catalogue parts of our own and gives the first a count.
  *
@@ -24,6 +24,9 @@ const stamp = process.env.STAMP ?? Date.now().toString().slice(-5)
 const MODEL = 'ACS355'
 const N = 8
 const serial = (u: number) => `ACS${stamp}${u}`
+const tag = process.argv[2] ?? 'en'
+/** Each take submits its own earlier week in module 07, so the two takes' hours never share a day. */
+const SUBMIT_WEEK = tag === 'ta' ? '2026-08-31' : '2026-09-07'
 
 const sql = (q: string) =>
   execFileSync('docker', ['exec', 'supabase_db_Repair_Service', 'psql', '-U', 'postgres', '-At', '-c', q]).toString().trim()
@@ -111,7 +114,7 @@ console.log(J)
   await p.getByLabel(`${J.T2} Wed`).press('Enter')
   await p.waitForTimeout(2000)
   // 07: a full earlier week on T1, ready to submit in the clip
-  await s.goto(`/service-centre/timesheet?week=2026-09-07&job=${encodeURIComponent(J.T1)}`)
+  await s.goto(`/service-centre/timesheet?week=${SUBMIT_WEEK}&job=${encodeURIComponent(J.T1)}`)
   const hrs = ['7', '8', '6.5', '7', '7.5', '4']
   const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   for (let i = 0; i < days.length; i++) {
@@ -165,4 +168,4 @@ const P2 = `Gate driver IC IR2110 · lot ${stamp}`
 const state = sql(`select w.job_number || ' ' || ss.sub_status_name || ' ' || coalesce(u.email,'') from work_order w join work_order_sub_status ss using (sub_status_id) left join "system_user" u on u.user_id = w.assigned_user_id where serial_number like 'ACS${stamp}%' order by 1`)
 console.log(state)
 console.log(sql(`select part_name || ' = ' || current_quantity from part where part_name like '%lot ${stamp}'`))
-writeFileSync(join(OUT, `06-setup.${process.argv[2] ?? 'en'}.json`), JSON.stringify({ stamp, jobs: J, parts: { P1, P2 }, serialPrefix: `ACS${stamp}` }, null, 2))
+writeFileSync(join(OUT, `06-setup.${tag}.json`), JSON.stringify({ stamp, jobs: J, parts: { P1, P2 }, serialPrefix: `ACS${stamp}`, submitWeek: SUBMIT_WEEK }, null, 2))
