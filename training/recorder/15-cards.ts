@@ -10,20 +10,18 @@ import type { Stage } from './stage'
 export type Row = [label: string, amount: string, how?: string]
 
 const CSS = `<style>
-#stg-card .kc{display:flex;flex-direction:column;gap:14px}
-#stg-card .kc h2{font-size:44px;line-height:1.1;margin:0;font-weight:800}
-#stg-card .kc table{border-collapse:collapse;font-size:27px;margin-top:6px}
-#stg-card .kc tr{background:transparent!important}
-#stg-card .kc td{background:transparent!important;padding:5px 26px 5px 0;vertical-align:baseline}
-#stg-card .kc td.v{text-align:right;font-family:ui-monospace,Menlo,monospace;font-weight:700;white-space:nowrap}
-#stg-card .kc td.n{color:#9fb3ac;font-size:22px}
-#stg-card .kc tr.kxt td{border-top:2px solid #f5a524;padding-top:9px;font-weight:800;color:#7fe0bf}
-#stg-card .kc tr.kxt td.n{color:#7fe0bf;font-weight:600}
-#stg-card .kc tr.kxg td{padding-top:16px}
-#stg-card .kc td.m{color:#dfe9e5;font-size:25px}
-#stg-card .kc .read{font-size:24px;color:#dfe9e5;margin:4px 0 0;max-width:1080px}
-#stg-card .kc .read b{color:#7fe0bf}
-#stg-card .kc .wrong{font-size:23px;color:#ffb4aa;margin:0;max-width:1080px}
+#stg-card .kc{display:flex;flex-direction:column;gap:12px}
+#stg-card .kc h2{font-size:40px;line-height:1.15;margin:0;font-weight:600}
+#stg-card .kc table{border-collapse:collapse;font-size:25px;margin-top:4px;width:100%}
+#stg-card .kc td{padding:6px 18px 6px 0;border-bottom:1px solid #EEF0F3;color:#1B2027;vertical-align:top}
+#stg-card .kc td.v{text-align:right;font-family:var(--stg-mono);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+#stg-card .kc td.n{color:#5D6878;font-size:20px}
+#stg-card .kc tr.kxt td{border-top:2px solid #1B2027;border-bottom:0;padding-top:10px;font-weight:600}
+#stg-card .kc tr.kxt td.n{color:#1B2027}
+#stg-card .kc td.m{color:#4B5563;font-size:23px}
+#stg-card .kc .read{font-size:22px;color:#4B5563;margin:4px 0 0;border-left:3px solid #C7D6F3;padding-left:12px}
+#stg-card .kc .read b{color:#1B2027;font-weight:600}
+#stg-card .kc .wrong{font-size:21px;color:#B42318;background:#FDECEA;border:1px solid #F3C5BF;border-radius:6px;padding:8px 12px;margin:0}
 </style>`
 
 /** A worked example. A label starting with "= " is a total row; one starting with "+ " opens a gap. */

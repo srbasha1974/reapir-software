@@ -30,15 +30,14 @@ export interface Example {
 }
 
 const CSS = `<style>
-#stg-card .ex{border-collapse:collapse;font-size:27px;line-height:1.3;min-width:760px;max-width:1100px}
-#stg-card .ex tr,#stg-card .ex td{background:transparent!important;color:#fff;border:0}
-#stg-card .ex td{padding:7px 18px 7px 0;vertical-align:baseline}
-#stg-card .ex td.v{font:700 28px ui-monospace,Menlo,monospace;text-align:right;padding-right:28px;white-space:nowrap;color:#fff}
-#stg-card .ex td.n{font-size:21px;color:#9fb1ab}
-#stg-card .ex tr.t td{border-top:2px solid #3c4d48;padding-top:12px;font-weight:700;color:#7fe0bf}
-#stg-card .ex tr.t td.v{color:#7fe0bf;font-size:34px}
-#stg-card h2{font-size:44px;line-height:1.1;margin:0;font-weight:800}
-#stg-card p.rd{font-size:24px;color:#f5d58a;margin-top:6px;max-width:1120px}
+#stg-card .ex{border-collapse:collapse;font-size:26px;line-height:1.3;width:100%}
+#stg-card .ex tr,#stg-card .ex td{background:transparent!important;color:#1B2027;border:0}
+#stg-card .ex td{padding:7px 0;border-bottom:1px solid #EEF0F3}
+#stg-card .ex td.v{font:600 27px var(--stg-mono);text-align:right;padding-right:28px;white-space:nowrap;font-variant-numeric:tabular-nums}
+#stg-card .ex td.n{font-size:20px;color:#5D6878}
+#stg-card .ex tr.t td{border-top:2px solid #1B2027;border-bottom:0;padding-top:12px;font-weight:600}
+#stg-card .ex tr.t td.v{font-size:32px}
+#stg-card p.rd{font-size:22px;color:#4B5563;margin-top:6px;border-left:3px solid #C7D6F3;padding-left:12px}
 </style>`
 
 export function example(e: Example): string {

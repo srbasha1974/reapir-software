@@ -142,3 +142,26 @@ Operations Manager".
 - Data: refresh the MIS materialised view first (`npx tsx tools/reports/refresh.ts` in the app, or the
   Refresh act as opsmanager@) and set up the example boards through the app (unrecorded), writing their
   job numbers to `training/recorder/kpi-seed.json` so the other KPI agent can reuse them.
+
+---
+
+# Round 3 (2026-09-26): Rack & Bin branding, recorded on `develop`
+
+The clips move into the app itself (feature 030-training), so they must look like the app.
+`stage.ts`, `13-kpi-helpers.ts` and `15-cards.ts` are already restyled to the app's design system
+(repair-service `DESIGN.md`, "Rack & Bin"): title/Remember/worked-example cards are a white bay on the
+grey ground with a code chip (`TRN NN`), the logo and the 3px green brand rule under the bin label;
+captions are ink, `do` = blue wash, `dont` = red wash; the ring is attention yellow. **Don't add colours
+of your own in card HTML** — no uppercase kickers, no green anywhere except that rule (Green Quarantine
+Rule), blue only for "doing". Use `<h1>`/`<h2>`/`<p>`/`<ol>` and the helpers' classes.
+
+The app is now `repair-service` branch `030-training` (= `develop`: features 025 critique fixes, 026
+deslop pilot, 027 list sort/filter, 028 review fixes, 029 MCP semantic context). Screens may have
+changed: fix locators, and if behaviour changed, update captions and `modules/NN.json` (both languages)
+so they stay true. Database was reset to `develop` with demo data; build your own records as before.
+The stack restarts sometimes: `bash training/recorder/local-up.sh` brings it back (never RESET=1 while
+others are recording).
+
+For each module you own: re-record **both languages** with the new look, check a contact sheet once,
+re-encode to the **same file names** in `training/media/`, update `seconds` and any changed lines in
+the JSON. Title-card durations must be true.

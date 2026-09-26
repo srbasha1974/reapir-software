@@ -35,32 +35,42 @@ const OVERLAY = `
   const css = \`
     ${FACE}
     nextjs-portal{display:none!important}
+    /* Rack & Bin (repair-service DESIGN.md): Geist on white bays over the grey ground; blue is doing,
+       yellow is attention, red is refusal, and the brand green is only the 3px rule under a band. */
+    #stg-cap,#stg-card{--stg-ui:var(--font-geist),"Noto Sans Tamil","Segoe UI",system-ui,sans-serif;--stg-mono:var(--font-geist-mono),ui-monospace,Menlo,monospace}
     #stg-cap{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(12px);opacity:0;
-      background:#101816;color:#fff;font:600 26px/1.35 "Noto Sans Tamil",system-ui,Segoe UI,sans-serif;padding:14px 26px;
-      border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.35);z-index:2147483645;max-width:1100px;
-      text-align:center;transition:opacity .25s,transform .25s;pointer-events:none}
+      background:#1B2027;color:#fff;font:500 25px/1.35 var(--stg-ui);padding:14px 26px;border:1px solid #1B2027;
+      border-radius:10px;box-shadow:0 6px 24px rgba(27,32,39,.28);z-index:2147483645;max-width:1100px;
+      text-align:center;transition:opacity .25s,transform .25s;pointer-events:none;letter-spacing:-.005em}
     #stg-cap.on{opacity:1;transform:translateX(-50%) translateY(0)}
     #stg-cap.top{bottom:auto;top:64px}
-    #stg-cap.dont{background:#8f1d14}
-    #stg-cap.do{background:#0b6b52}
-    #stg-cap small{display:block;font-weight:400;font-size:18px;opacity:.85;margin-top:4px}
+    #stg-cap.do{background:#EBF1FC;color:#1A4594;border-color:#C7D6F3}
+    #stg-cap.dont{background:#FDECEA;color:#B42318;border-color:#F3C5BF}
+    #stg-cap small{display:block;font-weight:400;font-size:18px;opacity:.9;margin-top:4px}
     #stg-ptr{position:fixed;left:0;top:0;width:26px;height:26px;z-index:2147483646;pointer-events:none;
       transition:transform .7s cubic-bezier(.3,.7,.2,1);transform:translate(683px,420px)}
-    #stg-ptr svg{filter:drop-shadow(0 2px 3px rgba(0,0,0,.4))}
+    #stg-ptr svg{filter:drop-shadow(0 2px 3px rgba(27,32,39,.35))}
     #stg-ptr.click::after{content:"";position:absolute;left:-14px;top:-14px;width:28px;height:28px;border-radius:50%;
-      border:3px solid #f5a524;animation:stgp .45s ease-out}
+      border:3px solid #2256B8;animation:stgp .45s ease-out}
     @keyframes stgp{from{transform:scale(.3);opacity:1}to{transform:scale(1.4);opacity:0}}
-    #stg-ring{position:fixed;z-index:2147483645;pointer-events:none;border:3px solid #f5a524;border-radius:8px;
-      box-shadow:0 0 0 9999px rgba(10,20,18,.28);opacity:0;transition:all .35s}
+    #stg-ring{position:fixed;z-index:2147483645;pointer-events:none;border:3px solid #E8B528;border-radius:8px;
+      box-shadow:0 0 0 9999px rgba(27,32,39,.22);opacity:0;transition:all .35s}
     #stg-ring.on{opacity:1}
-    #stg-card{position:fixed;inset:0;z-index:2147483647;background:#101816;color:#fff;display:none;
-      flex-direction:column;justify-content:center;padding:0 120px;gap:18px;font-family:"Noto Sans Tamil",system-ui,Segoe UI,sans-serif}
+    #stg-card{position:fixed;inset:0;z-index:2147483647;background:#EEF0F3;color:#1B2027;display:none;
+      align-items:center;justify-content:center;font-family:var(--stg-ui)}
     #stg-card.on{display:flex}
-    #stg-card .k{font:600 18px ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:#f5a524}
-    #stg-card h1{font-size:64px;line-height:1.05;margin:0;font-weight:800}
-    #stg-card p{font-size:26px;margin:0;color:#b9c7c2}
-    #stg-card ol{margin:10px 0 0;padding-left:34px;font-size:30px;line-height:1.5}
-    #stg-card li b{color:#7fe0bf}
+    #stg-card .bay{background:#fff;border:1px solid #E3E6EB;border-radius:10px;width:1140px;max-width:calc(100% - 120px);overflow:hidden}
+    #stg-card .bl{height:64px;display:flex;align-items:center;gap:12px;padding:0 24px;border-bottom:1px solid #E3E6EB;box-shadow:inset 0 -3px 0 #58A038}
+    #stg-card .bl .code{font:500 15px var(--stg-mono);background:#EEF0F3;color:#4B5563;border-radius:6px;padding:4px 10px}
+    #stg-card .bl .org{margin-left:auto;display:flex;align-items:center}
+    #stg-card .bl img{height:30px}
+    #stg-card .bd{padding:40px 56px 48px;display:flex;flex-direction:column;gap:16px}
+    #stg-card .k{font:500 18px var(--stg-ui);color:#5D6878}
+    #stg-card h1{font-size:52px;line-height:1.1;margin:0;font-weight:600;letter-spacing:-.015em}
+    #stg-card h2{font-size:40px;line-height:1.15;margin:0;font-weight:600;letter-spacing:-.01em}
+    #stg-card p{font-size:24px;margin:0;color:#4B5563}
+    #stg-card ol{margin:6px 0 0;padding-left:36px;font-size:28px;line-height:1.55}
+    #stg-card li b{font-weight:600;color:#1B2027}
   \`;
   const add = () => {
     const s = document.createElement('style'); s.textContent = css; document.head.appendChild(s);
@@ -68,7 +78,7 @@ const OVERLAY = `
     const ring = document.createElement('div'); ring.id = 'stg-ring'; document.body.appendChild(ring);
     const card = document.createElement('div'); card.id = 'stg-card'; document.body.appendChild(card);
     const ptr = document.createElement('div'); ptr.id = 'stg-ptr';
-    ptr.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24"><path d="M4 2l16 10-7 1.5L9.5 21z" fill="#fff" stroke="#101816" stroke-width="1.6" stroke-linejoin="round"/></svg>';
+    ptr.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24"><path d="M4 2l16 10-7 1.5L9.5 21z" fill="#fff" stroke="#1B2027" stroke-width="1.6" stroke-linejoin="round"/></svg>';
     document.body.appendChild(ptr);
     const last = sessionStorage.getItem('stg-ptr');
     if (last) { ptr.style.transition = 'none'; ptr.style.transform = last; requestAnimationFrame(() => ptr.style.transition = ''); }
@@ -77,7 +87,15 @@ const OVERLAY = `
       ptr(x, y) { const t = 'translate(' + x + 'px,' + y + 'px)'; ptr.style.transform = t; sessionStorage.setItem('stg-ptr', t); },
       click() { ptr.classList.remove('click'); void ptr.offsetWidth; ptr.classList.add('click'); },
       ring(r) { if (!r) { ring.className = ''; return; } Object.assign(ring.style, { left: r.x - 6 + 'px', top: r.y - 6 + 'px', width: r.w + 12 + 'px', height: r.h + 12 + 'px' }); ring.className = 'on'; },
-      card(html) { card.innerHTML = html || ''; card.className = html ? 'on' : ''; },
+      card(html) {
+        if (!html) { card.innerHTML = ''; card.className = ''; return; }
+        const m = html.match(/(Module|மாட்யூல்|பாடம்)\\s*(\\d+)/);
+        // The title card names the module; later cards (Remember, worked examples) reuse its number.
+        if (m) sessionStorage.setItem('stg-code', 'TRN ' + m[2]);
+        const code = sessionStorage.getItem('stg-code') || 'TRN';
+        card.innerHTML = '<div class="bay"><div class="bl"><span class="code">' + code + '</span><span class="org"><img src="/thulir-logo.png" alt=""></span></div><div class="bd">' + html + '</div></div>';
+        card.className = 'on';
+      },
     };
   };
   if (document.body) add(); else document.addEventListener('DOMContentLoaded', add);
