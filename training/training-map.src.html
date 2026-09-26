@@ -135,6 +135,17 @@ tr:last-child td{border-bottom:0}
 .draft{padding:0}
 .draft.body{padding:0}
 [lang="ta"] .col ul,[lang="ta"] .q{line-height:1.6}
+.examples{display:flex;flex-direction:column;gap:10px}
+.ex-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.ex{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.ex h5{margin:0;font:700 1rem var(--display);font-stretch:85%}
+.ex table{border:0;min-width:0;width:100%;background:none;font-size:.93rem}
+.ex th,.ex td{padding:5px 6px;border-bottom:1px solid var(--line);background:none;text-transform:none;letter-spacing:0;font:inherit;color:var(--ink)}
+.ex th{color:var(--muted)}
+.ex td{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.ex td.how{text-align:left;font-family:var(--body);color:var(--muted);font-size:.85rem;white-space:normal}
+.ex tr.total th,.ex tr.total td{font-weight:700;color:var(--ink);border-top:2px solid var(--ink)}
+.ex .read{font-size:.93rem;color:var(--ink);border-left:3px solid var(--accent);padding-left:10px}
 </style>
 
 <div class="wrap">
@@ -147,7 +158,7 @@ tr:last-child td{border-bottom:0}
     </div>
   </div>
   <h1>Thulir repair software: training map</h1>
-  <p class="lede">Thirteen short modules, in the order a board moves through the shop. Pick a role to see its path, then open a module to watch the clip, read the card and take the quiz.</p>
+  <p class="lede">Sixteen short modules: thirteen follow a board through the shop, and three explain the numbers on the dashboards. Pick a role to see its path, then open a module to watch the clip, read the card and take the quiz.</p>
   <p class="notice" id="status"></p>
 </header>
 
@@ -245,16 +256,22 @@ const M=[
   dont:["Don't try to put a job on two batches. The system refuses.","Don't expect to edit a batch after sending. Fix it in Zoho."],clips:"Clips: Build a batch · Push to Zoho · Push failed"},
  {id:"12",t:"For leads: queues, rates and dashboards",s:"Stuck jobs, rates, sub-statuses, roles, targets and owners",who:{p:["Operations Manager","Service Head","Sales Head","Executive / Admin"],a:["Liaison"]},
   do:["Operations Manager: enter a new rate with a start date instead of editing the old one. Retire a sub-status rather than deleting it.","Sales Head: reassign a customer's owner with the reassign action so the move is recorded.","Service Head: set monthly engineer targets."],
-  dont:["Don't create two overlapping rates for the same customer, board and service level.","Don't judge a stuck job by its age. Use the time spent in its current sub-status."],clips:"Clips: Stuck-job queue · New rate · Roles · MIS dashboard"}
+  dont:["Don't create two overlapping rates for the same customer, board and service level.","Don't judge a stuck job by its age. Use the time spent in its current sub-status."],clips:"Clips: Stuck-job queue · New rate · Roles · MIS dashboard"},
+ {id:"13",t:"Reading the numbers: operations",s:"Yield, turnaround, stuck and ageing, efficiency, rework",who:{p:["Service Head","Operations Manager","Executive / Admin"],a:["Liaison","Engineer"]},
+  do:["Read a figure together with the period and filter above it."],dont:["Don't compare an engineer's figures without their mix of jobs."],clips:"Clip: operational KPIs with worked examples"},
+ {id:"14",t:"Reading the numbers: money",s:"Price split, base margin, parts and opportunity premium, profit",who:{p:["Operations Manager","Service Head","Liaison","Executive / Admin"],a:["Sales Head"]},
+  do:["Start from the price the customer pays, then see how it splits."],dont:["Don't read engineer margin as the job's profit."],clips:"Clip: money KPIs with worked examples"},
+ {id:"15",t:"Reading the numbers: sales",s:"Pipeline, conversion, quotation ageing, attribution",who:{p:["Sales Head","Sales Engineer","Executive / Admin"],a:["Liaison"]},
+  do:["Read conversion over a long enough period."],dont:["Don't count quotation documents as jobs."],clips:"Clip: sales KPIs with worked examples"}
 ];
 
 const UI={
  en:{watch:"Watch, read, check",card:"Do / Don't card",doH:"Do",dontH:"Don't",quizH:"Quick check",right:"Right. ",wrong:"Not quite. ",
   start:"Pick an answer for each question.",score:(g,d)=>`${g} of ${d} right so far`,all:". All correct.",retry:". Rewatch the clip and try again tomorrow.",
-  secs:s=>`${s} seconds, captions on screen and no sound.`,planned:"Planned",ready:"Ready",where:"Where"},
+  secs:s=>`${s} seconds, captions on screen and no sound.`,examples:"Worked examples",planned:"Planned",ready:"Ready",where:"Where"},
  ta:{watch:"பார்க்கவும், படிக்கவும், சோதிக்கவும்",card:"செய்யவும் / செய்ய வேண்டாம்",doH:"செய்யவும்",dontH:"செய்ய வேண்டாம்",quizH:"விரைவுச் சோதனை",right:"சரி. ",wrong:"இல்லை. ",
   start:"ஒவ்வொரு கேள்விக்கும் ஒரு பதிலைத் தேர்ந்தெடுக்கவும்.",score:(g,d)=>`${d}-இல் ${g} சரி`,all:". எல்லாம் சரி.",retry:". கிளிப்பை மீண்டும் பார்த்து, நாளை மீண்டும் முயற்சிக்கவும்.",
-  secs:s=>`${s} வினாடிகள். திரையில் தமிழ் வசனங்கள், ஒலி இல்லை.`,planned:"திட்டமிடப்பட்டது",ready:"தயார்",where:"இடம்"}
+  secs:s=>`${s} வினாடிகள். திரையில் தமிழ் வசனங்கள், ஒலி இல்லை.`,examples:"கணக்கு உதாரணங்கள்",planned:"திட்டமிடப்பட்டது",ready:"தயார்",where:"இடம்"}
 };
 const $=id=>document.getElementById(id);
 const pb=$("personas"),mods=$("mods"),note=$("pnote");
@@ -272,11 +289,18 @@ function quizHTML(m,id){
  const t=UI[lang],qs=m.quiz[lang];
  return `<div class="quiz" data-q="${id}"><h4 class="qh">${t.quizH}</h4>${qs.map((x,i)=>`<div class="q" data-i="${i}"><p>${i+1}. ${x.q}</p><div class="opts">${x.o.map((o,j)=>`<button type="button" data-j="${j}">${o}</button>`).join("")}</div><div class="why" hidden></div></div>`).join("")}<p class="score" aria-live="polite">${t.start}</p></div>`;
 }
+function examplesHTML(m){
+ const ex=m.examples&&m.examples[lang];if(!ex||!ex.length)return "";
+ return `<div class="examples"><h4 class="qh">${UI[lang].examples}</h4><div class="ex-grid">${ex.map(e=>`<div class="ex"><h5>${e.title}</h5>
+  <table>${e.lines.map(([k,v,how])=>`<tr class="${/^=/.test(k)?"total":""}"><th>${k.replace(/^=\s*/,"")}</th><td>${v}</td>${how?`<td class="how">${how}</td>`:"<td></td>"}</tr>`).join("")}</table>
+  ${e.read?`<p class="read">${e.read}</p>`:""}</div>`).join("")}</div></div>`;
+}
 function viewer(m){
  const t=UI[lang];
  return `<div class="viewer" lang="${lang}">
   <video class="vid" controls preload="none" playsinline poster="${m.poster[lang]}"><source src="${m.video[lang]}" type="video/mp4"></video>
   <p class="vid-note">${t.secs(m.seconds[lang])} ${t.where}: <span class="mono">${m.path}</span></p>
+  ${examplesHTML(m)}
   <div class="card"><div class="card-head"><div><div class="eyebrow">${t.card}</div><h3>${m.title[lang]}</h3></div><span class="mono">${m.role}</span></div>
    <div class="card-cols"><div class="col do"><h4>${t.doH}</h4><ul>${m.do[lang].map(x=>`<li>${x}</li>`).join("")}</ul></div>
    <div class="col dont"><h4>${t.dontH}</h4><ul>${m.dont[lang].map(x=>`<li>${x}</li>`).join("")}</ul></div></div></div>
