@@ -15,8 +15,8 @@
   "ta": "media/00-poster-ta.jpg"
  },
  "seconds": {
-  "en": 72,
-  "ta": 89
+  "en": 73,
+  "ta": 93
  },
  "do": {
   "en": [
@@ -144,6 +144,7 @@
   "Two different “stuck” measures exist: What has stalled (Service) lists jobs past the threshold by time in the current state (it excludes boards waiting on a part), while Overview › Stuck tasks counts Alloted/In Progress jobs with no timesheet, part or status activity for N business days. The clip only says “sitting too long in one state shows as Stuck”.",
   "Round 2: Put on hold / Release hold (Service Head, Liaison; from In Progress, reason required) is named in a caption over the pipeline's On Hold line, not demonstrated; module 05 demonstrates it. The time refusal now follows each sub-status's “No time logging” (blocks_labour) flag (migration 0157); Pending Spare and On Hold carry it.",
   "Filmed as admin.test@ (Admin sees every screen). The job shown is read, never changed: the open job with the longest history, preferring Pending Spare (WO/26-27/00005 in these takes).",
-  "On the job card the Non-Repairable act is labelled “It cannot be saved…” in red, which at a glance reads like an error message (UX, not fixed)."
+  "On the job card the Non-Repairable act is labelled “It cannot be saved…” in red, which at a glance reads like an error message (UX, not fixed).",
+  "Round 3: re-recorded on develop with the Rack & Bin look. The pipeline strip now opens with a Sourcing column (customers, not boards, outside the total); the stage pointers (Pre-Repair … Closed) are unchanged and the captions still hold. What has stalled › Stuck leaves out boards waiting on a part (chased on Spares). Durations: EN 73 s, TA 93 s (title cards: about 70 / 90 seconds)."
  ]
 }

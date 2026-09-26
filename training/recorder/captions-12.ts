@@ -37,7 +37,7 @@ export const CAPTIONS = {
   ta: {
     kicker: 'துளிர் ட்ரெயினிங் · மாட்யூல் 12 · லீட்ஸ்',
     title: 'லீட்ஸுக்கு: க்யூ, ரேட், டாஷ்போர்டு',
-    sub: 'Executive, Service Head, Operations Manager, Sales Head. சுமார் 2½ நிமிடம்.',
+    sub: 'Executive, Service Head, Operations Manager, Sales Head. சுமார் 3 நிமிடம்.',
     exec: 'Executive / Ops Manager: MIS டாஷ்போர்டுல ஆரம்பிங்க.<small>ஓப்பன் போர்டு எல்லாம் ஸ்டேஜ் வாரியா. எந்த நம்பரை அழுத்தினாலும் அதுக்குப் பின்னாடி இருக்கற ஜாப்ஸ் வரும்.</small>',
     attention: 'Needs attention today: முதல்ல இதைப் பாருங்க.',
     stuck: 'Stuck = 5 வேலை நாள் ஹவர்ஸ், பார்ட்ஸ், ஸ்டேட்டஸ் மாற்றம் எதுவும் இல்ல.<small>Alloted, In Progress மட்டும். ஏதாவது நடந்தா கணக்கு திரும்ப ஆரம்பிக்கும்.</small>',

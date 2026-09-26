@@ -15,8 +15,8 @@
   "ta": "media/01-poster-ta.jpg"
  },
  "seconds": {
-  "en": 116,
-  "ta": 125
+  "en": 128,
+  "ta": 139
  },
  "do": {
   "en": [
@@ -148,6 +148,7 @@
   "Right after Add contact the People list sometimes still showed only the earlier person (header said 2 active of 2); the script reloads the tab before pointing at it.",
   "The backdated entry is logged for 16:30 yesterday in the (UTC) recording browser and shows as 22:00 IST: datetime-local is read in the browser's time zone.",
   "Pre-step (unrecorded): two extra customers per run (“Kaveri Automation NNNN” as the move destination, “Madurai Plastics NNNN” with one board booked in by Front Office so it is Trial). On camera: “Selvam Pumps NNNN” with contacts Priya and Arun.",
-  "Durations: EN 116 s, TA 125 s (both title cards say about 2 minutes)."
+  "Round 3: re-recorded on develop (030-training) with the Rack & Bin look. The shared dev server was slow (other agents recording); long server round trips are cut from the video (frames marked by Cuts in 00-helpers.ts, dropped by 00-encode.py).",
+  "Durations: EN 128 s (title card: about 2 minutes), TA 139 s (title card: சுமார் 2½ நிமிடம்). No screen or behaviour changes found for this module on develop."
  ]
 }

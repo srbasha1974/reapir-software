@@ -15,8 +15,8 @@
     "ta": "media/03-poster-ta.jpg"
   },
   "seconds": {
-    "en": 126,
-    "ta": 140
+    "en": 133,
+    "ta": 153
   },
   "do": {
     "en": [
@@ -148,6 +148,7 @@
     "Pick up has no confirmation and no undo: nothing moves a job back to Inward.",
     "Input received and Customer withdrew are pointed at / taught in the card, not pressed, to keep the clip under 2 minutes.",
     "Set-up per take: frontoffice@ registered a fresh 3-unit Siemens 6SE70-CU delivery for Rajapalayam Spinners (serials AS<stamp>01-03); units 2 and 3 were picked up off camera, unit 1 on camera. Raise quotation was pressed but no quotation was raised.",
-    "Length: 126 s EN / 140 s TA, over the ~120 s target. The shared database has grown (40+ boards in the reservoir) and the customer lookup and page loads were slow; two short loading pauses (~3 s) were cut out of the English encode. Tamil captions are held ×1.2 (not ×1.25) to save time. Re-record budget used."
+    "Length: 133 s EN / 153 s TA (Tamil captions held ×1.2), recorded on develop (030-training) with the Rack & Bin look. The shared database is large and page loads were slow under other agents’ load; the Tamil title card says 2½ minutes.",
+    "Round 3 (develop): Before the bench is now a side column beside the allotment list; the allotment list gained its own Customer and Model filters (whose hidden option lists share names with the queue’s customer lookup), and the queue panel offers Customer withdrew beside Wait for the customer. Nothing taught changed."
   ]
 }

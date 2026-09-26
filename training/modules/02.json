@@ -15,8 +15,8 @@
     "ta": "media/02-poster-ta.jpg"
   },
   "seconds": {
-    "en": 95,
-    "ta": 107
+    "en": 108,
+    "ta": 131
   },
   "do": {
     "en": [
@@ -145,6 +145,9 @@
     ]
   },
   "notes": [
-    "The Bin column fits only short codes (like the placeholder 68B) while typing; longer names such as “Rack A, shelf 4” are cut off."
+    "The Bin column fits only short codes (like the placeholder 68B) while typing; longer names such as “Rack A, shelf 4” are cut off.",
+    "Round 3: re-recorded on develop (030-training) with the Rack & Bin look. The shared dev server was slow (other agents recording); long server round trips are cut from the video (frames marked by Cuts in 00-helpers.ts, dropped by 00-encode.py).",
+    "Round 3: the bin's “free” badge is no longer green (Rack & Bin keeps green for the brand rule only): it is a grey pill with a tick. Caption and do line now say “the free tick”.",
+    "Round 3: on a slow server the Brought by list can open before the contacts arrive (the Priority list's options are options too); the script waits for the contact by name. Durations: EN 108 s (title card redrawn to “about 2 minutes” over the filmed one), TA 131 s (சுமார் 2 நிமிடம்)."
   ]
 }

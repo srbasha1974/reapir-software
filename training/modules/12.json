@@ -15,8 +15,8 @@
   "ta": "media/12-poster-ta.jpg"
  },
  "seconds": {
-  "en": 132,
-  "ta": 147
+  "en": 145,
+  "ta": 174
  },
  "do": {
   "en": [
@@ -147,9 +147,9 @@
   "Round 2: the Status hierarchy part no longer opens “Retire On Hold” (On Hold is in real use since feature 016, and nothing stops retiring it). The clip points at the hierarchy table for Retire and at the On Hold row's “No time logging” flag, which is what the time refusal now reads (migration 0157). Nothing is retired.",
   "Round 2: future-dated rates can now be ended (finding 2); the old workaround note is dropped. The clip still adds a rate from today and shows End this rate on it. The card header's “in force” count is unchanged (UX).",
   "Changes made per run: a fresh customer “Hosur Drives NNNN” (rate DPS-600 Minor ₹4,500 from today; owner moved to Test Sales Head), and Test Both Roles' September 2026 target set to ₹50,000. Grant was opened and pointed at, never confirmed.",
-  "After opening a board on the rate card (a soft navigation) the caption overlay stayed stale; the script reloads the same address before the End this rate caption.",
   "Not shown for time: Labour rates, Configuration (where the stuck threshold is set), Queue aging and the Sales analytics MIS page, Sales Head's Qualify as big potential, the SLA/“asked” marking on MIS (taught in the do list only, from CHANGE-IMPACT).",
-  "Durations: EN 132 s, TA 147 s. The EN title card says “About 2½ minutes” for 2 min 12 s (server response times varied; this was the last allowed EN take). TA says சுமார் 2½ நிமிடம்.",
-  "The draft line “Sales Head: reassign a customer's owner with the reassign action so the move is recorded” holds; Admin and Executive Management may also do it (reassign_customer_owner). The move is limited to an active Sales Engineer or the Sales Head."
+  "The draft line “Sales Head: reassign a customer's owner with the reassign action so the move is recorded” holds; Admin and Executive Management may also do it (reassign_customer_owner). The move is limited to an active Sales Engineer or the Sales Head.",
+  "Round 3: re-recorded on develop (030-training) with the Rack & Bin look. The shared dev server was slow (other agents recording); long server round trips are cut from the video (frames marked by Cuts in 00-helpers.ts, dropped by 00-encode.py).",
+  "Round 3: after the refused overlapping rate, clicking the board on the rate card did not always navigate (the list re-fits its rows and replaces the address); the script opens the board's own address. Durations: EN 145 s (about 2½ minutes), TA 174 s (title card: சுமார் 3 நிமிடம்; redrawn over the filmed one)."
  ]
 }

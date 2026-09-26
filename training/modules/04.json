@@ -15,8 +15,8 @@
     "ta": "media/04-poster-ta.jpg"
   },
   "seconds": {
-    "en": 118,
-    "ta": 133
+    "en": 137,
+    "ta": 123
   },
   "do": {
     "en": [
@@ -149,6 +149,7 @@
     "Own line was pointed at, not pressed. Record rejection was not shown in the clip (it would close the demo jobs); it is in the card’s don’ts. A price agreed on the phone (Negotiated) has the same Normal price / premium split; shown on screen, not performed.",
     "The Raised list and the customer list are shared with other agents’ takes, so they show other quotations/customers.",
     "Set-up per take: frontoffice@ registered 2 × Danfoss CDS-303 (serials QT<stamp>01-02) and 1 × Danfoss FC-302 (QF<stamp>01) for Nilgiri Cold Storage; liaison@ picked all 3 up. Version 2 left the FC-302 off; after Record as sent it was back at Under Assessment (checked in the script).",
-    "Length: 118 s EN / 133 s TA (Tamil captions held ×1.2). Title card trimmed at encode."
+    "Length: 137 s EN / 123 s TA (Tamil captions held ×1.2; the Tamil take ran on a less loaded server). Recorded on develop (030-training) with the Rack & Bin look.",
+    "Round 3 (develop): the split row reads “Labour charge” (was “Engineer’s labour charge”) and a typed normal price is marked with a grey “set by hand” (was a “Set by hand” tag); money boxes show ₹ with Indian grouping; Why a premium is the app’s searchable dropdown when there are more than five reasons. Captions, do/dont and quiz updated to the new words."
   ]
 }

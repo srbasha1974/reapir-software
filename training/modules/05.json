@@ -15,8 +15,8 @@
     "ta": "media/05-poster-ta.jpg"
   },
   "seconds": {
-    "en": 118,
-    "ta": 133
+    "en": 134,
+    "ta": 149
   },
   "do": {
     "en": [
@@ -150,6 +150,7 @@
     "Three recordings concatenated with ffmpeg: servicehead@ (allot + SLA), engineer@ (start, pause, refused time), liaison@ (Back on the bench, job card, Put on hold, Release hold). The engineer’s bench is shared with other agents’ demo jobs, so it is busy.",
     "Rework is taught in the card only (module 02 shows the Job type Rework + previous job number).",
     "Set-up per take: frontoffice@ registered 2 business-critical ABB MS132 units for Rajapalayam Spinners, Needed by 9 Oct 2026 (serials RP<stamp>01-02); liaison@ picked both up and put unit 2 at Awaiting Customer Input.",
-    "Length: 118 s EN / 133 s TA (Tamil captions held ×1.2). Each part's page-load lead-in was trimmed before concatenation."
+    "Length: 134 s EN / 149 s TA (Tamil captions held ×1.2); both title cards say about 2½ minutes. Each part’s page-load lead-in was trimmed before concatenation. Recorded on develop (030-training) with the Rack & Bin look.",
+    "Round 3 (develop): allotment now shows Give it to and SLA by as rows under the list (SLA by pre-filled, “customer asked for …” beside it); after Pause for spare the engineer’s act form stays open. Nothing taught changed."
   ]
 }
