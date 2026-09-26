@@ -84,6 +84,8 @@ export async function pickUp(jobs: string[], who = 'liaison@thulirtech.com') {
     const row = s.page.locator('table.allot tr', { hasText: j })
     await row.getByRole('button', { name: 'Pick up' }).click()
     await s.page.waitForTimeout(1500)
+    // Under load the move can take a while to land.
+    for (let i = 0; i < 40 && stateOf(j) !== 'Under Assessment'; i++) await s.page.waitForTimeout(500)
   }
   await s.close()
   for (const j of jobs) if (stateOf(j) !== 'Under Assessment') throw new Error(`${j} is at ${stateOf(j)}`)
@@ -102,6 +104,7 @@ export async function waitForCustomer(job: string, note: string, who = 'liaison@
   await g.getByLabel('What was asked of them').fill(note)
   await g.getByRole('button', { name: 'Wait for the customer' }).click()
   await s.page.waitForTimeout(2000)
+  for (let i = 0; i < 40 && stateOf(job) !== 'Awaiting Customer Input'; i++) await s.page.waitForTimeout(500)
   await s.close()
   if (stateOf(job) !== 'Awaiting Customer Input') throw new Error(`${job} is at ${stateOf(job)}`)
 }

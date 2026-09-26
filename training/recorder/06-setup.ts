@@ -173,7 +173,8 @@ if (!sql(`select assigned_user_id from work_order where job_number = '${job(N)}'
   // 08: D and E ready for verification
   for (const j of only06 ? [] : [J.D, J.E]) {
     await s.goto(jobUrl(j))
-    if (!(await p.getByRole('button', { name: 'Ready for verification' }).first().isEnabled().catch(() => false))) continue
+    await p.waitForTimeout(1500)
+    if (sql(`select sub_status_name from work_order join work_order_sub_status using (sub_status_id) where job_number = '${j}'`) !== 'In Progress') continue
     await p.getByRole('button', { name: 'Ready for verification' }).first().click()
     await p.waitForTimeout(1800)
   }

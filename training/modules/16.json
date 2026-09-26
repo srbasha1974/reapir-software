@@ -15,8 +15,8 @@
     "ta": "media/16-poster-ta.jpg"
   },
   "seconds": {
-    "en": 136,
-    "ta": 168
+    "en": 175,
+    "ta": 184
   },
   "do": {
     "en": [
@@ -335,14 +335,16 @@
     ]
   },
   "notes": [
-    "Cards follow the catalogue's worked month. Every MIS screen shows the shared local demo's September (≈40 closures from the seed and other agents, many with ₹0 labour cost, which inflates Base margin to ~88%); captions say “demo data, your figures will differ” and never claim a screen total equals a card.",
-    "Revenue − Cost ≠ Total margin on Profitability (unpriced write-offs are in Cost, not in Total margin; profitability_without_the_ledger). Taught as computed, not as a sum that reconciles. At recording: Revenue ₹2.37 L, Cost ₹35,250, Total margin ₹2.06 L.",
-    "Comeback R (WO/26-27/00114) was built through the app: A dispatched on a challan (warranty to 26 Dec 2026), then a Rework inward naming A, priced ₹0 as WARRANTY_REWORK; 2 h (₹1,400 at ₹700/h) + a ₹300 part as Other spares = ₹1,700, rolled onto A at once. R is left In Progress and is a September comeback here (the catalogue's is 31 Oct).",
+    "Cards follow the catalogue's worked month. Every MIS screen shows the shared local demo's September (≈40 closures from the seed and other agents, many with ₹0 labour cost, which inflates Base margin to ~85%); captions say “demo data, your figures will differ” and never claim a screen total equals a card.",
+    "Revenue − Cost ≠ Total margin on Profitability (unpriced write-offs are in Cost, not in Total margin; profitability_without_the_ledger). Taught as computed, not as a sum that reconciles. At recording: Revenue ₹2.14 L, Cost ₹35,250, Total margin ₹1.83 L.",
+    "Comeback R (WO/26-27/00111) was built through the app: A dispatched on a challan (warranty to 26 Dec 2026), then a Rework inward naming A, priced ₹0 as WARRANTY_REWORK; 2 h (₹1,400 at ₹700/h) + a ₹300 part as Other spares = ₹1,700, rolled onto A at once. R is left In Progress and is a September comeback here (the catalogue's is 31 Oct).",
     "Rework carried: the Cost card shows “rework ₹1,700” and the M-10 header “₹1,700 · 0 jobs”, while the list says nothing closed in September was a second attempt (it lists only closed reworks). The clip says R is still open. When R closes, its own cost (labour margin −₹1,400, total −₹1,700) also lands in that month, so company totals will count ₹1,700 twice (catalogue ⚠, not confirmed with the owner, not taught).",
     "Spares not charged lists A's ₹150 fuse with Qty “0” (an Other spares line has no quantity; the job card shows “—”). R's ₹300 part is not listed while R is open.",
     "Performance shows Test Engineer with ~35 closed jobs and the seeded ₹60,000 September target (catalogue: ₹20,000); the target was not changed because it is shared demo data. The Actual card (verification added back) is from the catalogue and is not reconciled on screen.",
     "Labour on open boards card uses the catalogue's hypothetical boards E and F (not seeded). R appeared among the top five at recording (₹1,400).",
     "Parts margin on Profitability read 23.1% · ₹3,900 charged · ₹3,000 cost at recording, the catalogue's exact figure (only A–C had billed parts), but the clip does not claim it because other agents may book parts.",
-    "Recording presses Refresh now (as the Operations Manager), which refreshes the shared MIS view."
+    "Recording presses Refresh now (as the Operations Manager), which refreshes the shared MIS view.",
+    "Round 3 (develop): KPI figures on MIS screens now carry a “what does this mean” control (feature 030) beside their labels; the clip does not use it. The cut tabs can swallow a first click while the page fits its rows, so the script presses again.",
+    "Clip length: EN 175 s, Tamil 184 s; the title cards say about 3 minutes."
   ]
 }
