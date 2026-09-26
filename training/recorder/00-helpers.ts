@@ -7,6 +7,7 @@
  */
 import { Stage } from './stage'
 import { join } from 'node:path'
+import { writeFileSync } from 'node:fs'
 
 const APP = process.env.REPAIR_SERVICE_DIR ?? '/home/user/repair-service'
 const RAW = join(import.meta.dirname, 'out', 'raw')
@@ -82,4 +83,27 @@ export async function setupInward(customerSearch: string, customerName: string, 
     throw new Error(`Inward refused: ${text}`)
   }
   await s.close()
+}
+
+/**
+ * Dead-time cutter. The shared dev server can take many seconds to answer a form; the viewer should
+ * not watch that. `mark()` at the title card starts the clock; `slow(fn)` runs a server round trip and,
+ * when it took long, remembers the idle middle of it (keeping `keep` ms after the click and 300 ms
+ * before the answer). `save()` writes the spans, relative to the title card, for encode.ts.
+ */
+export class Cuts {
+  private t0 = 0
+  private spans: [number, number][] = []
+  mark() { this.t0 = Date.now() }
+  async slow<T>(fn: () => Promise<T>, keep = 700): Promise<T> {
+    const a = Date.now()
+    const r = await fn()
+    const b = Date.now()
+    if (this.t0 && b - a > keep + 1300) this.spans.push([(a - this.t0 + keep) / 1000, (b - this.t0 - 300) / 1000])
+    return r
+  }
+  save(path: string) {
+    writeFileSync(path, JSON.stringify(this.spans.map(([a, b]) => [+a.toFixed(2), +b.toFixed(2)])))
+    return this.spans.reduce((t, [a, b]) => t + b - a, 0)
+  }
 }

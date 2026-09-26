@@ -22,7 +22,7 @@
  */
 import { Stage } from './stage'
 import { CAPTIONS, type Lang } from './captions-12'
-import { asUser, setupCustomer } from './00-helpers'
+import { asUser, setupCustomer, Cuts } from './00-helpers'
 import { join } from 'node:path'
 
 const OUT = join(import.meta.dirname, 'out')
@@ -38,7 +38,9 @@ const customerId = await setupCustomer(`Hosur Drives ${stamp}`, 'Hosur')
 const s = await Stage.open('exec@thulirtech.com', '/mis', join(OUT, 'raw'))
 const p = s.page
 const bay = (code: string) => p.locator(`section[data-code="${code}"]`)
+const cut = new Cuts()
 
+cut.mark()
 await s.card(`<div class="k">${c.kicker}</div><h1>${c.title}</h1><p>${c.sub}</p>`, 3000 * pace)
 
 // 1 · Executive: the MIS dashboard and stuck tasks
@@ -47,8 +49,10 @@ await s.say(c.exec, 3300 * pace)
 await s.point(bay('ATT'))
 await s.say(c.attention, 2400 * pace, 'do')
 await s.unring()
-await s.click(p.getByRole('link', { name: 'Stuck tasks', exact: true }).first())
-await p.waitForLoadState('networkidle')
+await cut.slow(async () => {
+  await s.click(p.getByRole('link', { name: 'Stuck tasks', exact: true }).first())
+  await p.waitForLoadState('networkidle')
+})
 await s.wait(500)
 await s.point(bay('RULE'))
 await s.say(c.stuck, 3400 * pace)
@@ -58,7 +62,7 @@ await s.unring()
 await s.quiet()
 
 // 2 · Service Head: targets
-await asUser(s, 'servicehead@thulirtech.com', '/service-centre/performance')
+await cut.slow(() => asUser(s, 'servicehead@thulirtech.com', '/service-centre/performance'), 300)
 await s.point(bay('PERF'))
 await s.say(c.perf, 2200 * pace)
 await s.unring()
@@ -71,13 +75,15 @@ await s.type(p.locator('#note'), 'First full month on the bench', 30)
 await s.point(p.locator('#targetAmount'))
 await s.say(c.target, 3200 * pace, 'do')
 await s.unring()
-await s.click(p.getByRole('button', { name: /Set the target|Revise the target/ }))
-await p.waitForLoadState('networkidle')
+await cut.slow(async () => {
+  await s.click(p.getByRole('button', { name: /Set the target|Revise the target/ }))
+  await p.waitForLoadState('networkidle')
+})
 await s.wait(1200)
 await s.quiet()
 
 // 3 · Operations Manager: rates, sub-statuses, roles
-await asUser(s, 'opsmanager@thulirtech.com', `/crm/rates?customer=${customerId}`)
+await cut.slow(() => asUser(s, 'opsmanager@thulirtech.com', `/crm/rates?customer=${customerId}`), 300)
 await s.point(bay('CARD'))
 await s.say(c.rates, 2200 * pace)
 await s.unring()
@@ -89,8 +95,10 @@ const addRate = async (price: string, from: string) => {
   await s.type(p.locator('#rate'), price, 70)
   await p.locator('#validFrom').fill(from)
   await s.wait(300)
-  await s.click(p.getByRole('button', { name: /Add the rate/ }))
-  await p.waitForLoadState('networkidle')
+  await cut.slow(async () => {
+    await s.click(p.getByRole('button', { name: /Add the rate/ }))
+    await p.waitForLoadState('networkidle')
+  })
   await s.wait(1200)
 }
 await s.say(c.rateAdd, 600 * pace)
@@ -98,6 +106,7 @@ await addRate('4500', iso(new Date()))
 await s.point(bay('CARD').locator('tbody tr').first())
 await s.say(c.rateAdded, 2400 * pace, 'do')
 await s.unring()
+await s.quiet()
 await addRate('5000', iso(new Date(Date.now() + 30 * 86400000)))
 await s.point(p.getByText(/There is already a rate/))
 await s.say(c.overlap, 3400 * pace, 'dont')
@@ -106,18 +115,20 @@ await s.quiet()
 const boardLink = bay('CARD').getByRole('link', { name: 'DPS-600' }).first()
 const boardHref = (await boardLink.getAttribute('href')) ?? ''
 await s.click(boardLink)
-await p.waitForLoadState('networkidle')
-await s.wait(500)
+await cut.slow(async () => {
+  await p.waitForLoadState('networkidle')
+  await s.wait(500)
+  await s.goto(boardHref)
+}, 300)
 // After the refused add, the soft navigation does not always land (the list re-fits its rows and
 // replaces the address); open the board's own address, which also keeps the overlay fresh.
-await s.goto(boardHref)
 await p.waitForFunction(() => (window as unknown as { __stage?: unknown }).__stage)
 await s.point(p.getByRole('button', { name: /End this rate/ }).first())
 await s.say(c.endRate, 3200 * pace)
 await s.unring()
 await s.quiet()
 
-await s.goto('/admin/statuses')
+await cut.slow(() => s.goto('/admin/statuses'), 300)
 await s.wait(500)
 // No sub-status is opened for retiring: every one on this demo is in use (On Hold holds real boards).
 await s.point(p.locator('table.hier').first())
@@ -127,9 +138,9 @@ await s.say(c.flags, 3000 * pace)
 await s.unring()
 await s.quiet()
 
-await s.goto('/admin/users')
+await cut.slow(() => s.goto('/admin/users'), 300)
 await s.click(p.getByRole('link', { name: 'Test No Role' }))
-await p.waitForLoadState('networkidle')
+await cut.slow(() => p.waitForLoadState('networkidle'), 300)
 await s.wait(600)
 await s.point(p.getByLabel('Role to grant'))
 await s.say(c.roles, 3200 * pace)
@@ -137,7 +148,7 @@ await s.unring()
 await s.quiet()
 
 // 4 · Sales Head: change owner
-await asUser(s, 'saleshead@thulirtech.com', `/crm/customers/${customerId}?tab=lifecycle&act=owner`)
+await cut.slow(() => asUser(s, 'saleshead@thulirtech.com', `/crm/customers/${customerId}?tab=lifecycle&act=owner`), 300)
 const form = p.getByRole('form', { name: 'Change owner' })
 await s.point(form)
 await s.say(c.owner, 2200 * pace)
@@ -147,9 +158,11 @@ await s.type(p.locator('#owner-reason'), 'Key account, handled by the Sales Head
 await s.say(c.ownerWhy, 1600 * pace)
 await s.unring()
 await s.quiet()
-await s.click(form.getByRole('button', { name: /Move the account/ }))
 const history = p.locator('table.slots', { hasText: 'By, and why' })
-await history.waitFor({ timeout: 20000 })
+await cut.slow(async () => {
+  await s.click(form.getByRole('button', { name: /Move the account/ }))
+  await history.waitFor({ timeout: 30000 })
+})
 await s.wait(800)
 await s.point(history)
 await s.say(c.ownerDone, 3000 * pace, 'do')
@@ -158,4 +171,5 @@ await s.quiet()
 
 await s.card(`<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`, 5500 * pace)
 
+console.log('cut', cut.save(join(OUT, `12-leads.${lang}.cuts.json`)).toFixed(1), 's')
 console.log(await s.close(join(OUT, `12-leads.${lang}.webm`)))

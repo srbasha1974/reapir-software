@@ -13,7 +13,7 @@ export const CAPTIONS = {
   en: {
     kicker: 'Thulir training · Module 15 · Liaison · Service Head · Operations Manager',
     title: 'Money 1: how one job’s price splits',
-    sub: 'One board, from quote to margin. About 2½ minutes.',
+    sub: 'One board, from quote to margin. About 3 minutes.',
     rule: {
       k: 'The one rule · every board priced from 25 Sep 2026',
       h: 'Prices are all-in: parts are inside the price.',

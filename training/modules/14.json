@@ -15,8 +15,8 @@
     "ta": "media/14-poster-ta.jpg"
   },
   "seconds": {
-    "en": 91,
-    "ta": 107
+    "en": 89,
+    "ta": 109
   },
   "do": {
     "en": [
@@ -309,12 +309,13 @@
     ]
   },
   "notes": [
-    "Filmed as the Engineer (own row only), then the Service Head (everyone). Cards use the catalogue's Ramachandran (Test Engineer) and boards A–D; the demo scorecard also holds other training agents' closures (19–25 jobs during filming), so no caption quotes a screen figure.",
+    "Filmed as the Engineer (own row only), then the Service Head (everyone). Cards use the catalogue's Ramachandran (Test Engineer) and boards A–D; the demo scorecard also holds other training agents' closures (Test Engineer went from 3 to 5 closed jobs during filming), so no caption quotes a screen figure.",
     "⚠ First pass counts write-offs that were never verified as first passes (verification_cycle_count = 0).",
     "⚠ Efficiency on board A includes the 1 h of peer verification logged by another engineer on A (it sits in A's hours); without it A alone would read 120%.",
     "⚠ The scorecard's Rework column counts rework jobs the engineer closed (job_type = REWORK), not how often the engineer's own work came back; MET-001 E-03 asks the latter and nothing answers it.",
     "Demo has only one standard time (SIEMENS POWER_SUPPLY 6EP1334-3BA10), so Efficiency reads “of 3” on the Test Engineer row; Test Both Roles shows Small sample and “not comparable”.",
-    "Actual / Target / Achievement are left to module 16. Noticed: the Engineer's view and the Service Head's view a minute apart showed different Actual (₹1,28,750 vs ₹1,29,200); most likely a concurrent closure, not verified.",
-    "Nothing was written for this clip."
+    "Actual / Target / Achievement are left to module 16. Figures moved during filming (another agent closing jobs), so no caption quotes a screen figure.",
+    "Nothing was written for this clip.",
+    "Round 3 (2026-09-26): re-recorded in both languages on repair-service 030-training (= develop) with the Rack & Bin card look; no locator or behaviour change was needed."
   ]
 }

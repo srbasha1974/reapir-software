@@ -15,8 +15,8 @@
     "ta": "media/13-poster-ta.jpg"
   },
   "seconds": {
-    "en": 149,
-    "ta": 186
+    "en": 161,
+    "ta": 187
   },
   "do": {
     "en": [
@@ -346,13 +346,14 @@
   },
   "notes": [
     "Filmed as the Service Head (an MIS role who also has Service › What has stalled). Cards use the catalogue's September; the screens show the local demo, and a caption says the figures will differ.",
-    "Demo data was reset today, so nearly every board entered its state today: both stuck lists were empty and Queue aging sat in 0–2 d except one Pending Spare board (WO/26-27/00005, since 5 Sep). The stuck examples could only be taught on cards; neither stuck list could be shown with a board on it.",
+    "Database reset to develop demo data before filming, so nearly every board entered its state today: both stuck lists were empty and Queue aging sat in 0–2 d except one Pending Spare board (WO/26-27/00005, since 5 Sep). The stuck examples are taught on cards only.",
     "Figures moved during filming (other agents closing jobs): the dashboard's Yield, Unbilled hours and pipeline counts differ between the start and end of the clip. No caption quotes a screen number.",
     "⚠ Two screens use “stuck” for two definitions: MIS Stuck tasks (Alloted/In Progress, no activity for more than 5 business days, no holiday calendar) and What has stalled › Stuck (calendar days in the current state, every open state except Pending Spare, including On Hold and the testing gates). Taught as different on purpose.",
     "⚠ Wastage cost this period sums every hour ever logged on the period's write-offs, including earlier months; Unbilled hours dispositions follow today's status, so past months move. The docstring at lib/domain/reports/hours.ts:34 says “booked against work that closed”, but IDLE hours belong to open jobs.",
     "⚠ Yield counts Customer Rejected as wastage (counts_as_wastage flag), even for a price refusal.",
     "UX: on Queue aging at 1366×768 the testing-gate rows (Ready for Verification, Awaiting Customer Confirmation) render broken — the counts drop below the state name and the rest of the row is blank. Visible in the clip.",
     "At one moment the dashboard said 24 open work orders and Queue aging 23 (Under Assessment 3 vs 2); most likely another agent moved a board between the two reads, not verified.",
-    "Nothing was written for this clip; MIS data refreshed with tools/reports/refresh.ts before filming."
+    "Nothing was written for this clip; MIS data refreshed with tools/reports/refresh.ts before filming.",
+    "Round 3 (2026-09-26): re-recorded in both languages on repair-service 030-training (= develop) with the Rack & Bin card look; no locator or behaviour change was needed. English now runs 161 s (the title card says “Under 3 minutes”)."
   ]
 }

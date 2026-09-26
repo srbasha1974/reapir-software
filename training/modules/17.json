@@ -15,8 +15,8 @@
     "ta": "media/17-poster-ta.jpg"
   },
   "seconds": {
-    "en": 130,
-    "ta": 150
+    "en": 132,
+    "ta": 155
   },
   "do": {
     "en": [
@@ -351,7 +351,7 @@
     ]
   },
   "notes": [
-    "Filmed as the Sales Head on the boards from kpi-seed.json (A WO/26-27/00058 ₹12,000, C WO/26-27/00062 ₹8,000, D WO/26-27/00063 not priced, credited to Test Sales Engineer = the catalogue's Arun; B to Test Sales Head = Priya). Charged on screen also holds other agents' closures, so no caption quotes the total.",
+    "Filmed as the Sales Head on the boards from kpi-seed.json (A WO/26-27/00025 ₹12,000, C WO/26-27/00028 ₹8,000, D WO/26-27/00037 not priced, credited to Test Sales Engineer = the catalogue's Arun; B to Test Sales Head = Priya). Charged on screen also holds other agents' closures, so no caption quotes the total.",
     "Differs from the catalogue on screen: C's normal price had to be typed (no rate card is reachable through the app), so Rajapalayam Spinners also shows ₹2,000 under Set by hand, and the note reads ₹4,000 by Test Liaison, 2 jobs. A caption says so.",
     "Demo has no Filled deliveries, no account at Regular and nobody who took Trial → Regular: Filled shows “—”, Won 0, team conversion 0%, Trial → Regular “none yet”. Filled, Won, conversion and velocity are taught on cards only. Potential → Trial median reads 0d (demo accounts went to Trial the day they were opened).",
     "⚠ Won's cohort is customers opened in the period (clock-in date), not conversions that happened in the period as MET-001 S-03 says.",
@@ -359,6 +359,7 @@
     "⚠ Sales dates closures by the Asia/Kolkata day, Profitability (mv_job_margin) by the UTC day: a job closed 00:00–05:30 IST on the 1st can land in different months on the two screens.",
     "UX: the Charged drill's State column shows “—” for every job; and the drill is paged to fit the window, so A, C and D were split across pages — the script opens it with rows=40.",
     "Quotation win rate (S-08) and prices agreed by negotiation (S-11) are measures no screen shows; not taught.",
-    "MIS data refreshed with tools/reports/refresh.ts before filming. Nothing was written for this clip."
+    "MIS data refreshed with tools/reports/refresh.ts before filming. Nothing was written for this clip.",
+    "Round 3 (2026-09-26): re-recorded in both languages on repair-service 030-training (= develop) with the Rack & Bin card look; no locator or behaviour change was needed. Boards rebuilt after the reset (kpi-seed.json of 17:15); comeback R did not exist yet and is not used here. English title card now says “About 2 minutes” (132 s)."
   ]
 }
