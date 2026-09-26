@@ -94,3 +94,51 @@ extra claims. Title-card durations must be true of the clip.
 ```
 Validate the JSON (`python3 -m json.tool`). Your final reply: per module, the files written, durations,
 and the notes. Be brief.
+
+---
+
+# Round 2 (2026-09-26): re-record on the current app
+
+The app moved to `main` HEAD (many findings fixed, features 016–024). The database was **reset** and demo
+data reloaded; the previous round's test records are gone. Read first:
+
+- `training/CHANGE-IMPACT.md`: per module, what changed, which do/dont/quiz lines are now wrong, which
+  locators break (note the two shared set-up fixes at the bottom of its table).
+- `training/recorder/TAMIL-STYLE.md`: **the new Tamil style. Mandatory.** Business/technical words stay
+  English in Tamil script (சர்வீஸ், ரிப்பேர், கொட்டேஷன், ஜாப்…); exact on-screen labels stay in English
+  letters; short spoken sentences. Rewrite every `ta` string in captions-NN.ts and NN.json in this style,
+  don't just patch.
+- `training/APP-FINDINGS.md` and CHANGE-IMPACT §2: fixed findings must no longer be taught as limitations,
+  and the module's `notes` must drop stale items.
+
+For each module you own: update script + captions (EN where the app changed, TA always), fix locators,
+re-record **both** languages, re-check with a contact sheet, re-encode to the **same file names** in
+`training/media/`, and update `modules/NN.json` (do/dont/quiz/notes/seconds, both languages). Teach new
+behaviour that belongs in your module when it fits the length (CHANGE-IMPACT §3). Title-card durations
+must be true. Previous-round limits still apply (two re-records per language, same shared-env rules).
+
+---
+
+# KPI modules 13–17 (explaining the numbers)
+
+Source of truth: `training/KPI-CATALOGUE.md` (definitions with file:line, one consistent worked month with
+boards A–D and comeback R, clip outlines, quizzes). The modules: 13 Operations 1 (clip 1a), 14 Operations 2
+(clip 1b), 15 Money 1 (clip 2a), 16 Money 2 (clip 2b), 17 Sales (clip 3). Kicker role e.g. "Service Head ·
+Operations Manager".
+
+- **Explain, then show.** For each KPI: a short worked-example card (use `Stage.card` with a small HTML
+  table: line items, the arithmetic, the result, one line on how to read it), then point at the real
+  figure on screen. Numbers on cards must follow the catalogue's worked month. Where the screen's numbers
+  are the local demo's, say so in a caption ("your figures will differ") rather than pretending they match.
+- **Don't teach what doesn't reconcile.** The catalogue lists inconsistencies (Revenue − Cost vs Total
+  margin, rework possibly double-counted, scorecard Rework meaning, first pass counting write-offs). Teach
+  what each figure *means as computed*; never claim two screen totals add up when they don't. Record each
+  inconsistency in `notes`.
+- **Length**: up to ~150 s per clip.
+- **Page cards**: add `"examples": {"en": [...], "ta": [...]}` to `modules/NN.json`, 2–4 per module:
+  `{"title": "Board A: ₹12,000 servo drive", "lines": [["Normal price","₹10,000","rate card"], …,
+  ["= Charged","₹12,000","the larger of …"]], "read": "one sentence on how to read it"}`. A label starting
+  with `= ` renders as a total row. Same numbers in both languages.
+- Data: refresh the MIS materialised view first (`npx tsx tools/reports/refresh.ts` in the app, or the
+  Refresh act as opsmanager@) and set up the example boards through the app (unrecorded), writing their
+  job numbers to `training/recorder/kpi-seed.json` so the other KPI agent can reuse them.

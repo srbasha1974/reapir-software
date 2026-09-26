@@ -1,56 +1,75 @@
 # Findings from recording the training videos
 
-While recording the 13 training modules against a local copy of `srbasha1974/repair-service` (commit
-`b379f87`), the recording agents drove every screen as the role that uses it. These are the places where
-the app broke, disagreed with its own use cases, or confused. Each one comes from a recording or from the
-code; full context is in `modules/NN.json` → `notes`. The clips teach **what the app does today**.
+The recording agents drove every screen as the role that uses it, against a local copy of
+`srbasha1974/repair-service`. The first round (commit `b379f87`) produced 19 findings. By `main` at
+`5265318` (2026-09-26) **17 of them are fixed**. The KPI modules then added a second list: figures that
+don't reconcile or don't mean what their label or MET-001 says. Details for each module are in
+`modules/NN.json` → `notes`. The clips teach **what the app does today**.
 
-## Bugs: a role can't do what it is granted
+## Open: the money and KPI figures (found while preparing modules 13–17)
 
-| # | Where | What happens | Module |
-|---|---|---|---|
-| 1 | Job card › **Cannot repair…** (Engineer) | The reason list is empty, so an engineer can never close a job as Non-Repairable. The Engineer role holds `work_order.close_non_repairable` but not `non_repairable_reason.read`. | 09 |
-| 2 | Service rates | A rate that **starts in the future** can't be ended from the screen ("Same board, 0 customers", no *End this rate*). Its card counts "0 in force" while *Whose agreement* says 1. | 12 |
-| 3 | Customer › Lifecycle (Sales Head) | The *Move it back* form is shown to anyone with `customer.convert`, but only the Operations Manager may use it; the database refuses the Sales Head. On a Potential account it even offers "Move to Trial". | 01 |
-| 4 | `/front-office/invoicing` | The link is hidden from Front Office, but typing the URL shows the whole billing worklist with prices. Writes are presumably refused by RLS (not tested). Add a page guard. | 11 |
-| 5 | Spares › *Send to the front office* | Shown to Front Office, who lack `purchase_request.manage`; RLS would update nothing while the screen reports success (read from code, not tested). | 06 |
-| 6 | Invoice batch page | The *What the line says* box is about one character wide, so the text the customer will read can't be checked on screen (stored text is fine). | 11 |
+Please confirm or fix these before managers rely on the dashboards. Details and file:line references are in
+`KPI-CATALOGUE.md`.
 
-## The use cases say one thing, the app does another
+| # | Figure | Issue |
+|---|---|---|
+| K1 | Profitability: Revenue, Cost, Total margin | Cost includes write-offs, but Total margin, Negative margin and Jobs at a loss skip unpriced jobs, so Revenue − Cost ≠ Total margin on the same screen. In the worked month that is ₹13,400 vs ₹15,800. The "₹charged · ₹cost" line under Labour margin doesn't reconcile either. |
+| K2 | Rework cost | It is rolled up onto the original job, and the ₹0 warranty rework job also carries its own cost, so company totals may count it **twice**. A comeback also rewrites an earlier month's figures (intended?). |
+| K3 | Scorecard › Rework | Counts rework jobs the engineer *handled*, not their own work coming back (MET-001 E-03 describes the latter). |
+| K4 | Scorecard › First pass | Never-verified write-offs count as first-pass passes. |
+| K5 | Verification hours | Efficiency charges the checker's hours to the repairer and Actual adds that cost back, but Profitability › By engineer doesn't, so the two differ (₹14,900 vs ₹15,300). |
+| K6 | Two "stuck" lists | MIS *Stuck tasks* counts business days since any activity and flags above 5. *What has stalled* counts calendar days in the current state, flags at 5, and includes On Hold and the testing gates. The same board can be on one list and not the other. The clips teach both, but one name for two rules confuses. |
+| K7 | Sales › Won | Counts accounts *opened* in the period that later converted, not conversions *made* in the period (MET-001 S-03). |
+| K8 | Funnel velocity | The screen shows medians per step; the seeded measure is a mean over the whole journey. |
+| K9 | Day boundaries | Sales dates closures by the Kolkata day, Profitability by the UTC day; a job closed just after midnight IST can fall in different months on the two screens. |
+| K10 | Unbilled hours | Shifts as jobs change status; the comment in `hours.ts` says they are all from closed jobs, which is wrong. |
+| K11 | No screen | Quotation win rate (S-08) and prices agreed by negotiation (S-11) exist as measures but are shown nowhere. |
+| K12 | "Parts premium" | Not a field anywhere. Taught as: parts beyond the normal price reduce the opportunity premium; markup on parts is the separate *Parts margin*. |
 
-| # | Topic | Use case / spec | App today | Module |
-|---|---|---|---|---|
-| 7 | Partial quotation approval | Approve some units of a quotation | Approval/rejection is per whole version. Revising with fewer units leaves the dropped unit stuck at *Awaiting Quotation Approval* with no way forward on screen. | 04 |
-| 8 | Multi-line quotations | Several items/lines per quotation (data model allows) | The raise form creates exactly one line. | 04 |
-| 9 | On Hold | A hold is the Service Head's or Liaison's call | No screen or RPC sets On Hold for anyone. | 05 |
-| 10 | SLA date | Set at allotment (UC-010) | Only the Inward *Needed by* date for business-critical deliveries. | 05 |
-| 11 | Diagnosis | Recorded during assessment (UC-007 steps 1–3) | No field for findings; only move notes. | 03 |
-| 12 | Purchase request ORDERED | DRAFT → SENT → **ORDERED** → RECEIVED | Nothing sets ORDERED; the Zoho PO reference can't be entered. "Send to the front office" sends no email. | 06 |
-| 13 | Self-verification | Blocked (UC-013 E-001) | Allowed and recorded (decision 2026-09-02). Help text still says only peers are offered. | 08 |
-| 14 | Accessory-only challan line | UC-009 AF-004 | No screen raises one; accessories join the boards' line. | 10 |
-| 15 | Premium | Premium needs a reason | No screen sets a premium at all. | 09 |
-| 16 | Primary contact | Mark primary while adding (UC-019 AF-001) | Set afterwards with *Make primary*. | 01 |
-| 17 | "No time logging" flag on a sub-status | Configurable | The timesheet trigger names Pending Spare and On Hold directly; a new sub-status with the flag would still accept hours. | 00 |
-| 18 | Release on partial delivery | A job resumes when its whole requirement is met | Works per request line: a board waiting on two lines resumes when either is covered. | 06 |
-| 19 | Timesheet week | Monday–Sunday | Grid has no Sunday column; Sunday hours count but can't be seen or edited. | 07 |
+## Open: from round 1
 
-## Smaller UX issues
+| # | Where | Issue |
+|---|---|---|
+| 18 | Spares release | Works per request line: a board waiting on two lines goes back to In Progress when either is covered, not only when both are. |
+| 19 | Timesheet | The week runs Monday–Sunday, but the grid has no Sunday column; Sunday hours count but can't be seen or edited. |
+| 2b | Service rates | A future-dated rate can now be ended, but the card still counts it "0 in force". |
+| 3b | Customer › Lifecycle | Header "0 in all" while one move is listed; the convert refusal says open jobs are "listed above" but none are. |
+| 12b | Purchase request | "Send to the front office" still sends no email. |
 
-- Reservoir shows **"Assessed — rate card"** on every job Under Assessment, even with no rate cards (03).
-- *Pick up* has no confirmation and no undo (03).
-- After *Customer withdrew* the row disappears with no confirmation (09); after *Remove* on a batch line, likewise (11).
-- Verification success banner shows only the job number (08); the customer-testing form and *With the customer* bay are squeezed into the narrow Result column (08, 09).
-- Redirects after *Send to the front office* / *Record a delivery* land on *Waiting on a part*, not *On order*; the post-delivery banner lists every waiting board in the shop (06).
-- Invoicing worklist: customer name crushed into the tick column (11).
-- Lifecycle tab header says "0 in all" while one move is listed; the convert refusal says open jobs are "listed above" but none are (01).
-- The Non-Repairable act is labelled "It cannot be saved…" in red and reads like an error (00).
-- Inward move time shows as 05:30 (date-only value rendered in IST) (09).
-- The delivery-form Bin column fits only short codes while typing (02).
-- The accessories warning on the challan form appears the moment a board is ticked (10).
+Smaller UX items still open:
+- Reservoir shows the "Assessed — rate card" pill on every job Under Assessment.
+- *Pick up* has no undo.
+- Rows vanish without confirmation after *Customer withdrew* and after *Remove*.
+- The verification banner shows only the job number.
+- After sending a PR or recording a delivery, the page lands on *Waiting on a part*.
+- The invoicing worklist's customer column is crushed.
+- The Non-Repairable act reads "It cannot be saved…" in red, like an error.
+- The inward time shows as 05:30.
+- The Bin column is narrow while typing.
+- The challan's accessories warning appears the moment a board is ticked.
 
-## Test data the recordings left in the local database
+## Fixed since round 1 (commit on `main`)
 
-Only the throwaway local database was touched. It now holds extra customers (Selvam Pumps / Kaveri
-Automation / Madurai Plastics / Hosur Drives NNNN), deliveries, quotations, challans DC/26-09/000004+,
-draft invoice batches IB/26-09/000001–000005, locked timesheet weeks for the test engineer, and a
-₹50,000 September target for Test Both Roles. Nothing reached production.
+| # | Finding | Fix |
+|---|---|---|
+| 1 | Engineer couldn't close Non-Repairable (empty reason list) | Engineer reads reasons; Liaison can close too (d720ce0) |
+| 2 | Future-dated rate couldn't be ended | *End this rate* available (d720ce0) |
+| 3 | *Move it back* shown to the Sales Head | Operations Manager only (d720ce0) |
+| 4 | Invoicing open to Front Office by URL | Refusal shown (d720ce0) |
+| 5 | *Send to the front office* shown to Front Office with false success | Liaison only; reports failure honestly (d720ce0, 5cf702c) |
+| 6 | Batch line box one character wide | Fixed (d720ce0) |
+| 7 | Unit dropped from a quotation revision stuck | Returns to Under Assessment (e272746) |
+| 8 | One line per quotation | Several lines by kind, per-line split (6017ed8) |
+| 9 | No one could set On Hold | Put on hold / Release hold for Service Head and Liaison (53d9b89) |
+| 10 | No SLA at allotment | Customer's date at the counter, SLA at allotment, overdue tracking (e43e55f) |
+| 11 | No field for the diagnosis | "What the assessment found" (e43e55f) |
+| 12 | No ORDERED step or Zoho PO field | Front Office marks Ordered with the PO number (8931541) |
+| 13 | Self-verification help text | Corrected (d720ce0) |
+| 14 | No accessory-only challan line | "Send an accessory on its own" (6cd1b68) |
+| 15 | No screen set a premium | Premium with a reason on the raise and phone forms (ca744fb, e1854f6, d8252b8) |
+| 16 | Primary contact only afterwards | Primary checkbox on *Add a person* (045f088) |
+| 17 | Labour block hard-coded to names | Follows the sub-status flag (a684560) |
+
+## Test data
+
+Only the throwaway local database is touched by the recordings; nothing reaches production.

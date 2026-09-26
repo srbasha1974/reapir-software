@@ -158,7 +158,7 @@ tr:last-child td{border-bottom:0}
     </div>
   </div>
   <h1>Thulir repair software: training map</h1>
-  <p class="lede">Sixteen short modules: thirteen follow a board through the shop, and three explain the numbers on the dashboards. Pick a role to see its path, then open a module to watch the clip, read the card and take the quiz.</p>
+  <p class="lede">Eighteen short modules: thirteen follow a board through the shop, and five explain the numbers on the dashboards. Pick a role to see its path, then open a module to watch the clip, read the card and take the quiz.</p>
   <p class="notice" id="status"></p>
 </header>
 
@@ -257,11 +257,15 @@ const M=[
  {id:"12",t:"For leads: queues, rates and dashboards",s:"Stuck jobs, rates, sub-statuses, roles, targets and owners",who:{p:["Operations Manager","Service Head","Sales Head","Executive / Admin"],a:["Liaison"]},
   do:["Operations Manager: enter a new rate with a start date instead of editing the old one. Retire a sub-status rather than deleting it.","Sales Head: reassign a customer's owner with the reassign action so the move is recorded.","Service Head: set monthly engineer targets."],
   dont:["Don't create two overlapping rates for the same customer, board and service level.","Don't judge a stuck job by its age. Use the time spent in its current sub-status."],clips:"Clips: Stuck-job queue · New rate · Roles · MIS dashboard"},
- {id:"13",t:"Reading the numbers: operations",s:"Yield, turnaround, stuck and ageing, efficiency, rework",who:{p:["Service Head","Operations Manager","Executive / Admin"],a:["Liaison","Engineer"]},
-  do:["Read a figure together with the period and filter above it."],dont:["Don't compare an engineer's figures without their mix of jobs."],clips:"Clip: operational KPIs with worked examples"},
- {id:"14",t:"Reading the numbers: money",s:"Price split, base margin, parts and opportunity premium, profit",who:{p:["Operations Manager","Service Head","Liaison","Executive / Admin"],a:["Sales Head"]},
-  do:["Start from the price the customer pays, then see how it splits."],dont:["Don't read engineer margin as the job's profit."],clips:"Clip: money KPIs with worked examples"},
- {id:"15",t:"Reading the numbers: sales",s:"Pipeline, conversion, quotation ageing, attribution",who:{p:["Sales Head","Sales Engineer","Executive / Admin"],a:["Liaison"]},
+ {id:"13",t:"Numbers · Operations 1: where the floor loses time",s:"Yield, wastage, rework rate, queue aging, the two stuck lists, unbilled hours",who:{p:["Service Head","Operations Manager","Executive / Admin"],a:["Liaison"]},
+  do:["Read every figure with its period."],dont:["Don't treat the two stuck lists as the same list."],clips:"Clip: operational KPIs with worked examples"},
+ {id:"14",t:"Numbers · Operations 2: reading a scorecard",s:"Efficiency, first pass, rework, non-repairable, small samples",who:{p:["Engineer","Service Head"],a:["Operations Manager","Executive / Admin"]},
+  do:["Compare like with like: same period, enough jobs."],dont:["Don't judge a small sample."],clips:"Clip: the engineer scorecard with worked examples"},
+ {id:"15",t:"Numbers · Money 1: how one job's price splits",s:"Normal price, labour charge, opportunity premium, discount, charged, margins",who:{p:["Liaison","Service Head","Operations Manager"],a:["Engineer","Sales Head","Executive / Admin"]},
+  do:["Start from what the customer pays, then split it."],dont:["Don't read engineer margin as the job's profit."],clips:"Clip: one job's price, split"},
+ {id:"16",t:"Numbers · Money 2: the month in money",s:"Base margin %, premium share, total margin, rework carried, achievement",who:{p:["Operations Manager","Executive / Admin","Service Head"],a:["Engineer","Sales Head","Liaison"]},
+  do:["Refresh the figures before reading a month."],dont:["Don't expect last month's figures never to move."],clips:"Clip: the month in money"},
+ {id:"17",t:"Numbers · Sales: what your accounts are worth",s:"Charged, filled, premium and discount by customer, won, conversion, funnel",who:{p:["Sales Engineer","Sales Head","Executive / Admin"],a:["Operations Manager"]},
   do:["Read conversion over a long enough period."],dont:["Don't count quotation documents as jobs."],clips:"Clip: sales KPIs with worked examples"}
 ];
 
