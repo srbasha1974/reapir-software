@@ -63,13 +63,15 @@ export async function registerDelivery(opts: {
     await p.getByRole('option', { name: new RegExp(opts.customer) }).click()
     await p.waitForTimeout(900)
     await p.getByLabel('Brought by', { exact: true }).pressSequentially(' ', { delay: 40 })
-    await p.waitForTimeout(900)
-    await p.getByRole('option').first().click()
+    // Only a visible suggestion: under load the list is late, and a hidden <select> option would match.
+    const brought = p.locator('[role="option"]:visible').first()
+    await brought.waitFor({ state: 'visible', timeout: 20000 })
+    await brought.click()
     const pickSales = p.getByLabel('Sales engineer', { exact: true })
     if (await pickSales.isVisible().catch(() => false)) {
       await pickSales.click()
       await p.waitForTimeout(600)
-      await p.getByRole('option').first().click()
+      await p.locator('[role="option"]:visible').first().click()
     }
     await p.locator('#deliveryNoteReference').fill(`DC-${stamp}`)
     await p.locator('#brand-0').fill(opts.brand)

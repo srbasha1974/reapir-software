@@ -8,7 +8,7 @@ export const CAPTIONS = {
   en: {
     kicker: 'Thulir training · Module 12 · Leads',
     title: 'For leads: queues, rates and dashboards',
-    sub: 'Executive, Service Head, Operations Manager, Sales Head. About 2½ minutes.',
+    sub: 'Executive, Service Head, Operations Manager, Sales Head. About 2 minutes.',
     exec: 'Executive / Ops Manager: start on the MIS dashboard.<small>Every open board by stage. Each figure opens the jobs behind it.</small>',
     attention: 'Needs attention today: what to chase first.',
     stuck: 'Stuck = no hours, parts or status change for 5 business days.<small>Only Alloted and In Progress. Any activity resets the clock.</small>',

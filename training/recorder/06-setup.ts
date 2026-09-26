@@ -107,8 +107,8 @@ const J: Record<string, string> = only06
   : { A: job(1), B: job(2), C: job(3), T1: job(4), T2: job(5), T3: job(6), D: job(7), E: job(8) }
 console.log(J)
 
-// 2 · Liaison picks up and allots to Test Engineer
-{
+// 2 · Liaison picks up and allots to Test Engineer (skipped when a resumed run already did)
+if (!sql(`select assigned_user_id from work_order where job_number = '${job(N)}'`)) {
   const s = await Stage.open('liaison@thulirtech.com', `/service-centre/reservoir?q=ACS${stamp}`, RAW, { record: false })
   const p = s.page
   for (let i = 0; i < N; i++) {
@@ -137,7 +137,9 @@ console.log(J)
   const p = s.page
   for (const j of Object.values(J)) {
     await s.goto(jobUrl(j))
-    await p.getByRole('button', { name: 'Start work' }).first().click()
+    const start = p.getByRole('button', { name: 'Start work' }).first()
+    if (!(await start.isVisible().catch(() => false))) continue // a resumed run
+    await start.click()
     await p.waitForTimeout(1800)
   }
   if (!only06 && !only08) {
@@ -161,6 +163,7 @@ console.log(J)
   if (!only06 && !only08) pauses.push([J.T2, 'Current sensor LEM LA55'])
   for (const [j, what] of pauses) {
     await s.goto(jobUrl(j))
+    if (!(await p.getByRole('button', { name: 'Pending spare' }).isVisible().catch(() => false))) continue
     await p.getByRole('button', { name: 'Pending spare' }).click()
     await p.getByPlaceholder('The component it is waiting for…').fill(what)
     await p.getByRole('button', { name: 'Pause for spare' }).click()
@@ -169,6 +172,7 @@ console.log(J)
   // 08: D and E ready for verification
   for (const j of only06 ? [] : [J.D, J.E]) {
     await s.goto(jobUrl(j))
+    if (!(await p.getByRole('button', { name: 'Ready for verification' }).first().isEnabled().catch(() => false))) continue
     await p.getByRole('button', { name: 'Ready for verification' }).first().click()
     await p.waitForTimeout(1800)
   }

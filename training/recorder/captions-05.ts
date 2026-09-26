@@ -6,7 +6,7 @@ export const CAPTIONS = {
   en: {
     kicker: 'Thulir training · Module 05 · Service Head · Liaison · Engineer',
     title: 'Allotting and repairing',
-    sub: 'Allot with an SLA, start, pause for a spare, hold and release. About 2 minutes.',
+    sub: 'Allot with an SLA, start, pause for a spare, hold and release. About 2½ minutes.',
     // Part 1 — Service Head
     part1: 'Service Head or Liaison: Service › Reservoir.<small>Waiting on the customer? Its tick is locked.</small>',
     tick: 'Assessed and clear? Tick it.<small>Several at once is fine: Allot batch.</small>',
@@ -38,7 +38,7 @@ export const CAPTIONS = {
   ta: {
     kicker: 'துளிர் ட்ரெயினிங் · மாட்யூல் 05 · Service Head · Liaison · Engineer',
     title: 'அலாட் & ரிப்பேர்',
-    sub: 'SLA-வோட அலாட், ஸ்டார்ட், ஸ்பேருக்கு நிறுத்தறது, ஹோல்ட், ரிலீஸ். சுமார் 2 நிமிஷம்.',
+    sub: 'SLA-வோட அலாட், ஸ்டார்ட், ஸ்பேருக்கு நிறுத்தறது, ஹோல்ட், ரிலீஸ். சுமார் 2½ நிமிஷம்.',
     part1: 'சர்வீஸ் ஹெட் அல்லது Liaison: “Service › Reservoir”.<small>கஸ்டமருக்காக வெயிட்டிங்கா? டிக் லாக் ஆகியிருக்கும்.</small>',
     tick: 'அசெஸ் ஆகி க்ளியரா இருக்கா? டிக் பண்ணுங்க.<small>நிறைய ஒரே நேரத்துல பண்ணலாம்: “Allot batch”.</small>',
     slaBy: 'பிசினஸ்-க்ரிட்டிகலா? “SLA by” SLA தேதி கேக்கும்.<small>கஸ்டமர் கேட்ட தேதி ஏற்கனவே போட்டிருக்கும்.</small>',

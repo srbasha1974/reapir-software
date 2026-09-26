@@ -25,6 +25,14 @@ const pace = lang === 'ta' ? 1.25 : 1
 const s = await Stage.open('opsmanager@thulirtech.com', '/mis', join(OUT, 'raw'))
 const p = s.page
 const card = (o: Parameters<typeof sumCard>[0], ms: number) => s.card(sumCard(o), ms * pace)
+/** A cut tab; the page's own rows-to-fit redirect can swallow the first click, so press again. */
+async function openCut(name: RegExp, key: string) {
+  for (let i = 0; i < 3; i++) {
+    await s.click(p.getByRole('link', { name }).first())
+    if (await p.waitForURL(new RegExp(`cut=${key}`), { timeout: 5000 }).then(() => true, () => false)) break
+  }
+  await p.waitForLoadState('networkidle')
+}
 const fig = (label: string | RegExp) => p.locator('.fig', { has: p.locator('.lbl', { hasText: label }) }).first()
 
 await s.card(`<div class="k">${c.kicker}</div><h1>${c.title}</h1><p>${c.sub}</p>`, 3800 * pace)
@@ -63,13 +71,11 @@ await s.quiet()
 await card(c.reworkCard, 10000)
 await s.point(fig(/^Cost$/))
 await s.say(c.reworkCost, 3600 * pace)
-await s.click(p.getByRole('link', { name: /^Rework carried/ }).first())
-await p.waitForLoadState('networkidle')
+await openCut(/^Rework carried/, 'rework')
 await s.wait(800)
 await s.point(p.locator('table').filter({ hasText: 'Charged back to' }).first())
 await s.say(c.reworkTab, 3800 * pace)
-await s.click(p.getByRole('link', { name: /^Spares not charged/ }).first())
-await p.waitForLoadState('networkidle')
+await openCut(/^Spares not charged/, 'spares')
 await s.wait(800)
 await s.point(p.locator('tr', { hasText: 'Fuse, 10 A fast-blow' }).first())
 await s.say(c.spares, 3600 * pace)

@@ -107,6 +107,8 @@ const SLA = '2026-10-07'
   await s.click(p.getByRole('button', { name: 'Pause for spare' }))
   await p.waitForLoadState('networkidle')
   await s.wait(1300)
+  // The server can be slow under the other recordings' load: wait for the move to land.
+  for (let i = 0; i < 30 && stateOf(j1) !== 'Pending Spare'; i++) await s.wait(500)
   if (stateOf(j1) !== 'Pending Spare') throw new Error(`${j1} is at ${stateOf(j1)}`)
 
   await s.click(p.getByRole('button', { name: 'Half an hour more' }))
@@ -164,6 +166,8 @@ const SLA = '2026-10-07'
   await s.say(c.released, 2400 * pace, 'do')
   await s.unring()
   await s.quiet()
+  // A fresh browser for this part: give the Remember card the module's code chip (stage.ts keeps it per session).
+  await p.evaluate(() => sessionStorage.setItem('stg-code', 'TRN 05'))
   await s.card(`<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`, 6500 * pace)
   await s.close(join(OUT, `05-repair.${lang}.3.webm`))
 }

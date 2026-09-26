@@ -8,7 +8,7 @@ export const CAPTIONS = {
   en: {
     kicker: 'Thulir training · Module 02 · Front Office',
     title: 'Receiving a delivery',
-    sub: 'Booking boards in at the counter. About 90 seconds.',
+    sub: 'Booking boards in at the counter. About 1½ minutes.',
     arrive: 'A delivery arrives at the counter.<small>One delivery = one Inward.</small>',
     customer: 'Search and pick the customer.<small>The customer code comes from the system. Never type one.</small>',
     newCustomer: 'New customer? Use “They are not on the list”.<small>They are created as Potential. Sales completes the record later.</small>',
