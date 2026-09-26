@@ -15,8 +15,8 @@
   "ta": "media/06-poster-ta.jpg"
  },
  "seconds": {
-  "en": 153,
-  "ta": 143
+  "en": 124,
+  "ta": 138
  },
  "do": {
   "en": [
@@ -152,6 +152,8 @@
   "App UX: after Send to the front office and after Record a delivery the page redirects to the Waiting on a part tab, not On order. The banner after a delivery lists every waiting board in the shop ('Still waiting: …'), which gets long.",
   "Recording: after a server-action redirect the recording can stop showing caption changes until a full load, so the script reloads the page after those acts. A re-take of 06 alone: `ONLY=06 npx tsx 06-setup.ts <lang>` then `ONLY=06 npx tsx 06-parts.ts <lang>`. The set-up first receives the balance of any earlier take's gate-driver request, so On order shows only the new request.",
   "Takes: English four (one over the two-re-take limit: the third was fine but ran 147 s against a title card that said about 2¼ minutes, so the card was corrected and recorded again rather than edited by hand); Tamil two (the first ran 148 s against a card that said 2¾).",
-  "Setup (unrecorded, through the app): 06-setup.ts registers 8 units as Front Office, the Liaison picks them up and allots them to Test Engineer, and the engineer starts work. It also adds two catalogue parts of our own (lot-stamped names); the first is given its count by a stock adjustment."
+  "Setup (unrecorded, through the app): 06-setup.ts registers 8 units as Front Office, the Liaison picks them up and allots them to Test Engineer, and the engineer starts work. It also adds two catalogue parts of our own (lot-stamped names); the first is given its count by a stock adjustment.",
+  "Round 3 (2026-09-26, app develop/030-training): re-recorded in both languages with the Rack & Bin look; screen behaviour unchanged. After the reset, \"Send to the front office\" refused (\"no address is set for purchase requests. It is set on the configuration screen\") but no screen sets system_configuration.purchase_request_notify_email: the configuration form has no control for it. The address had to be set in the database (frontoffice@thulirtech.com), finding K21.",
+  "Round 3: on Spares › On order the last column is too narrow at 1366 px, so \"Send to the front office\" and \"Give the PO no.\" show cut off. Correct a count's Why now opens a type-to-search list, because there are six reasons. The On order list also shows two leftover Draft requests from a failed take."
  ]
 }
