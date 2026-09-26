@@ -15,8 +15,8 @@
     "ta": "media/10-poster-ta.jpg"
   },
   "seconds": {
-    "en": 101,
-    "ta": 101
+    "en": 114,
+    "ta": 117
   },
   "do": {
     "en": [
@@ -150,6 +150,7 @@
     "Dispatching the repaired boards also starts their warranty window (UC-009); not taught.",
     "UX (unchanged): the accessories warning appears in yellow as soon as a board with accessories is ticked, before anyone has had a chance to tick them.",
     "Set-up (unrecorded): a fresh 5-unit delivery for Kovai Textile Mills per take, taken to Ready for Invoice ×2, Non-Repairable (Service Head), Awaiting Customer Confirmation, and one left at Inward. Each take issued real challans in the shared database.",
-    "Round 3 (develop, Rack & Bin look): re-recorded both languages. New on develop: the Issue act now stays greyed with “say who is carrying it” until Received by is filled (critique fix f8cb234); taught in the do list. Locators unchanged."
+    "Round 3 (develop, Rack & Bin look): re-recorded both languages. New on develop: the Issue act now stays greyed with “say who is carrying it” until Received by is filled (critique fix f8cb234); taught in the do list. Locators unchanged.",
+    "Round 3 timing: takes ran long under shared load; English sped up 1.1× (114 s), Tamil 1.15× (117 s) at encode, so “Under 2 minutes” stays true."
   ]
 }

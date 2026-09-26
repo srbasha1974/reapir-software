@@ -27,6 +27,7 @@ Please confirm or fix these before managers rely on the dashboards. Details and 
 | K13 | Rate card | No screen sets a board's internal reference or service level, so a newly booked board can never pick up a rate-card price: every price is "Set by hand" and the "Rate card" tag never appears. |
 | K14 | Job card › Premium | The Premium row shows no reason, although the job stores it (e.g. "Urgent turnaround") and the quotation record displays it. |
 | K15 | Spares not charged | Shows Qty "0" for an Other spares line. |
+| K21 | Purchase request address | On a fresh install the address is empty, so *Send to the front office* refuses, and no screen can set it. |
 | K16 | Queue aging | At 1366×768 the testing-gate rows break: the count drops below the state name and Awaiting Customer Confirmation is missing (the table shows 3 where the gates panel says 9). |
 | K12 | "Parts premium" | Not a field anywhere. Taught as: parts beyond the normal price reduce the opportunity premium; markup on parts is the separate *Parts margin*. |
 

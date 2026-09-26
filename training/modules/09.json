@@ -15,8 +15,8 @@
     "ta": "media/09-poster-ta.jpg"
   },
   "seconds": {
-    "en": 108,
-    "ta": 111
+    "en": 110,
+    "ta": 119
   },
   "do": {
     "en": [
@@ -150,7 +150,7 @@
     "Customer Rejected from a rejected quotation is stated in a caption (Record rejection), not shown.",
     "UX (unchanged): after “Customer withdrew” the row just disappears from the queue with no confirmation; the clip opens the job card to show the new status. After “It works — close it” the redirect lands on “Waiting to be given out”. “It cannot be saved…” is shown in red.",
     "The shared set-up's agreePrice() now fills Normal price (#normalPrice-ph-<customer>) with the agreed price, so no premium arises; if a rate card makes it read-only and the price is above it, the first premium reason is chosen.",
-    "The app was slow under shared load, so the Tamil take ran 128 s; it was sped up 1.15× at encode to 111 s (captions still hold ≥ 2.5 s). The English take is real time.",
-    "Set-up (unrecorded): a fresh 5-unit delivery for Ayyan Industrial Systems per take, priced on the phone, allotted, two left In Progress, two verified. Takes leave closed test jobs in the shared database."
+    "Set-up (unrecorded): a fresh 5-unit delivery for Ayyan Industrial Systems per take, priced on the phone, allotted, two left In Progress, two verified. Takes leave closed test jobs in the shared database.",
+    "Round 3 (develop, Rack & Bin look): re-recorded both languages; screens, labels and behaviour for this module unchanged (the reason list is now the shared Choice control, still a <select>). The machine was heavily loaded (load ~20–30 on 4 cores), so takes ran long: English sped up 1.1× at encode (110 s), Tamil 1.21× (119 s) to keep the title card’s “Under 2 minutes” true."
   ]
 }

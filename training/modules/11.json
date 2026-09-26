@@ -15,8 +15,8 @@
     "ta": "media/11-poster-ta.jpg"
   },
   "seconds": {
-    "en": 77,
-    "ta": 82
+    "en": 81,
+    "ta": 83
   },
   "do": {
     "en": [
@@ -146,7 +146,8 @@
     "Round 2: the line box (“What this line says to the customer”) is now a readable two-row textarea with Save (finding 6 fixed); the clip points at it and teaches reading/fixing the wording.",
     "Round 2: Front Office typing /front-office/invoicing now gets a refusal page (finding 4 fixed), so the access note is dropped; the Invoicing link is shown only to the Liaison and the Operations Manager.",
     "UX (unchanged): in the worklist the customer name (group row) is crushed into the narrow tick column (“Ayy / Indu / Sys”); after Remove, the confirmation is never visible because the row unmounts.",
-    "Leftover data: each take prepared a real Draft batch for Ayyan Industrial Systems (two lines each, one removed on screen). Nothing was sent.",
-    "Set-up (unrecorded): a fresh 3-unit delivery for Ayyan Industrial Systems per take, priced by an agreed price, two taken to Ready for Invoice, one closed Non-Repairable by the Service Head. The cross-customer refusal ticks and unticks an existing job of another customer (WO/26-27/00010) without writing anything."
+    "Set-up (unrecorded): a fresh 3-unit delivery for Ayyan Industrial Systems per take, priced by an agreed price, two taken to Ready for Invoice, one closed Non-Repairable by the Service Head. The cross-customer refusal ticks and unticks an existing job of another customer (WO/26-27/00010) without writing anything.",
+    "Round 3 (develop, Rack & Bin look): re-recorded both languages; labels and behaviour unchanged. Under load “Prepare a batch” took up to 30 s to land on the batch; that dead wait is cut at encode (English 29 s, Tamil 5 s), and the clips are sped up 1.08× (English, 81 s) and 1.2× (Tamil, 83 s) so “About 80 seconds” stays true.",
+    "Leftover data: each take prepares a real Draft batch for Ayyan Industrial Systems (one line removed on screen). Nothing was sent."
   ]
 }
