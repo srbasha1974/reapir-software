@@ -1,23 +1,23 @@
 /**
- * Unrecorded preparation for module 07, through the app (Liaison and Engineer).
+ * Unrecorded preparation for module 07's Tamil take, through the app (Liaison and Engineer).
  *
- * The grid shows a row for every job with hours this week, so each take is prepared to show exactly
- * one paused row (its own T2) and an empty Thursday for T1/T3; and a finished earlier week to submit.
+ * The grid shows a row for every job with hours this week, so before the Tamil take the English
+ * take's rows are cleared: its Thursday cells on T1/T3, and its paused T2 (put back on the bench by the
+ * Liaison, then its Wednesday emptied). The English take needs no preparation beyond 06-setup.ts en.
  *
- *   npx tsx 07-prep.ts en   → before the English take
- *   npx tsx 07-prep.ts ta   → after the English take, before the Tamil one
+ *   npx tsx 07-prep.ts ta   → after the English take, before the Tamil one (after 06-setup.ts ta)
+ *   npx tsx 07-prep.ts again <en|ta> <yyyy-mm-dd>
+ *        → before a re-take of the same language: clears that take's Thursday cells and fills T1's
+ *          hours on another earlier week (a Monday) to submit, since the last one is now locked.
  */
 import { Stage } from './stage'
 import { join } from 'node:path'
-import { readFileSync } from 'node:fs'
+import { readFileSync, writeFileSync } from 'node:fs'
 
 const OUT = join(import.meta.dirname, 'out')
 const RAW = join(OUT, 'raw')
-const lang = process.argv[2] ?? 'en'
-const jobs = (l: string) => JSON.parse(readFileSync(join(OUT, `06-setup.${l}.json`), 'utf8')).jobs as Record<string, string>
-const en = jobs('en')
-const ta = jobs('ta')
-const FIRST_T2 = 'WO/26-27/00039' // the first set-up run's paused board, which also has hours this week
+const lang = process.argv[2] ?? 'ta'
+const en = JSON.parse(readFileSync(join(OUT, '06-setup.en.json'), 'utf8')).jobs as Record<string, string>
 const sheet = (week: string, list: string[]) =>
   `/service-centre/timesheet?week=${week}` + list.map((j) => `&job=${encodeURIComponent(j)}`).join('')
 const WEEK = '2026-09-21'
@@ -55,29 +55,21 @@ async function cells(week: string, set: Array<[string, string, string]>) {
   await s.close()
 }
 
-async function pause(job: string, what: string) {
-  const s = await Stage.open('engineer@thulirtech.com', `/service-centre/jobs/${job}`, RAW, { record: false })
-  const p = s.page
-  await p.getByRole('button', { name: 'Pending spare' }).click()
-  await p.getByPlaceholder('The component it is waiting for…').fill(what)
-  await p.getByRole('button', { name: 'Pause for spare' }).click()
-  await p.waitForTimeout(2000)
-  await s.close()
-}
-
-if (lang === 'en') {
-  // Only en's T2 stays paused with hours this week.
-  await resume([FIRST_T2, ta.T2])
-  await cells(WEEK, [[FIRST_T2, 'Wed', ''], [ta.T2, 'Wed', '']])
-  // The earlier week to submit holds only en's first-run T1 row.
-  await cells('2026-09-07', [[ta.T1, 'Sat', '']])
-} else {
-  // Clear the English take's Thursday and paused row; set up the Tamil ones.
+if (lang === 'again') {
+  const tag = process.argv[3] ?? 'en'
+  const week = process.argv[4]
+  if (!week) throw new Error('Give the earlier week to fill, e.g. 2026-08-24')
+  const file = join(OUT, `06-setup.${tag}.json`)
+  const setup = JSON.parse(readFileSync(file, 'utf8'))
+  const { T1, T3 } = setup.jobs as Record<string, string>
+  await cells(WEEK, [[T1, 'Thu', ''], [T3, 'Thu', '']])
+  const hrs = ['7', '8', '6.5', '7', '7.5', '4']
+  await cells(week, ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((d, i) => [T1, d, hrs[i]] as [string, string, string]))
+  setup.submitWeek = week
+  writeFileSync(file, JSON.stringify(setup, null, 2))
+} else if (lang === 'ta') {
   await cells(WEEK, [[en.T1, 'Thu', ''], [en.T3, 'Thu', '']])
   await resume([en.T2])
-  await cells(WEEK, [[en.T2, 'Wed', ''], [ta.T2, 'Wed', '2']])
-  await pause(ta.T2, 'Current sensor LEM LA55')
-  const hrs = ['7', '8', '6.5', '7', '7.5', '4']
-  await cells('2026-08-31', ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((d, i) => [ta.T1, d, hrs[i]] as [string, string, string]))
+  await cells(WEEK, [[en.T2, 'Wed', '']])
 }
 console.log('prepared', lang)

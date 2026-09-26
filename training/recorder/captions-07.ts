@@ -1,8 +1,8 @@
 /**
  * Module 07 captions, English and Tamil.
  *
- * Tamil keeps the app's own words in English (button names, field labels, statuses), because
- * that is what staff will see on screen.
+ * Tamil follows TAMIL-STYLE.md: spoken shop-floor Tamil, business words in Tamil script, on-screen
+ * labels (buttons, fields, statuses) in English letters.
  */
 export const CAPTIONS = {
   en: {
@@ -28,25 +28,25 @@ export const CAPTIONS = {
     ],
   },
   ta: {
-    kicker: 'துளிர் பயிற்சி · பாடம் 07 · Engineer',
-    title: 'Timesheet',
-    sub: 'உங்கள் சொந்த job-களில் தினமும் நேரம் பதிவு. சுமார் 85 வினாடிகள்.',
-    open: 'My timesheet: வாரத்துக்கு ஒரு sheet, திங்கள் முதல்.<small>ஒவ்வொரு work order-க்கும் ஒரு வரி.</small>',
-    add: 'Add a work order.<small>உங்கள் bench-இல் உள்ள போர்டுகள் மட்டுமே வரும்.</small>',
-    type: 'நேரத்தை அந்த நாளின் கட்டத்தில் எழுதவும்.<small>Cell-ஐ விட்டு நகர்ந்ததும் சேமிக்கப்படும்.</small>',
-    total: 'நாள் மொத்தத்தை சிஸ்டமே கணக்கிடும்.',
-    over: 'தினசரி வரம்பைத் தாண்டினால்? மறுக்கப்படும்.<small>ஒரு நாள் 10 மணி நேரத்தைத் தாண்டக்கூடாது. வரம்பு configuration-இல் உள்ளது.</small>',
-    fix: 'எண்ணைத் திருத்துங்கள். சேமிக்கப்படும்.',
-    paused: 'Paused job (Pending Spare, On Hold)? நேரம் பதிய முடியாது.<small>மூடிய job-களிலும், உங்களுடையதல்லாத job-களிலும் முடியாது.</small>',
-    rate: 'Rate எழுத வேண்டியதில்லை.<small>ஒவ்வொரு மணி நேரத்துக்கும் உங்கள் cost rate-ஐ சிஸ்டமே சேர்க்கும்.</small>',
-    submit: 'வாரம் முடிந்ததா? Submit week.',
-    locked: 'Submit ஆனது. வாரம் பூட்டப்பட்டது.<small>திருத்தம் வேண்டுமானால் Service Head-இடம் பேசுங்கள். நீங்களே மாற்ற முடியாது.</small>',
-    remember: 'நினைவில் கொள்ளுங்கள்',
+    kicker: 'துளிர் ட்ரெயினிங் · மாட்யூல் 07 · Engineer',
+    title: 'டைம்ஷீட்',
+    sub: 'உங்க சொந்த ஜாப்ல தினமும் ஹவர்ஸ் போடுறது. சுமார் 90 செகண்ட்.',
+    open: 'My timesheet: வாரத்துக்கு ஒரு ஷீட், திங்கள்ல இருந்து.<small>ஒவ்வொரு work order-க்கும் ஒரு ரோ.</small>',
+    add: '“Add a work order”.<small>உங்க பெஞ்சுல இருக்கற போர்டு மட்டும் தான் வரும்.</small>',
+    type: 'ஹவர்ஸை அந்த நாள் கட்டத்துல டைப் பண்ணுங்க.<small>கட்டத்தை விட்டு வெளிய வந்தா சேவ் ஆயிடும்.</small>',
+    total: 'நாள் டோட்டலை சிஸ்டமே கணக்கு போடும்.',
+    over: 'டெய்லி லிமிட்டை தாண்டினா? ஏத்துக்காது.<small>ஒரு நாளுக்கு 10 ஹவர்ஸுக்கு மேல போகக் கூடாது. லிமிட் configuration-ல இருக்கு.</small>',
+    fix: 'நம்பரை சரி பண்ணுங்க. சேவ் ஆயிடும்.',
+    paused: 'நிறுத்தி வெச்ச ஜாப் (Pending Spare, On Hold)? ஹவர்ஸ் போட முடியாது.<small>Closed ஜாப், உங்களோடது இல்லாத ஜாப்லயும் முடியாது.</small>',
+    rate: 'ரேட் டைப் பண்ண வேண்டாம்.<small>ஒவ்வொரு ஹவருக்கும் உங்க காஸ்ட் ரேட்டை சிஸ்டமே போடும்.</small>',
+    submit: 'வாரம் முடிஞ்சதா? “Submit week”.',
+    locked: 'Submit ஆச்சு. வாரம் லாக் ஆயிடுச்சு.<small>ஏதாவது சரி பண்ணணும்னா Service Head கிட்ட பேசுங்க. நீங்களே எடிட் பண்ண முடியாது.</small>',
+    remember: 'ஞாபகம் வெச்சுக்கோங்க',
     rules: [
-      '<b>தினமும்</b> நேரம் பதியுங்கள், <b>உங்கள் சொந்த</b> job-களில் மட்டும்',
-      '<b>Paused</b> அல்லது <b>மூடிய</b> job-களில் நேரம் இல்லை',
-      'ஒரு நாள் <b>தினசரி வரம்பைத்</b> தாண்டக்கூடாது',
-      'வாரம் முடிந்ததும் <b>Submit week</b>. அது பூட்டப்படும்',
+      '<b>தினமும்</b> ஹவர்ஸ் போடுங்க, <b>உங்க சொந்த</b> ஜாப்ல மட்டும்',
+      '<b>நிறுத்தி வெச்ச</b> அல்லது <b>Closed</b> ஜாப்ல ஹவர்ஸ் இல்ல',
+      'ஒரு நாள் <b>டெய்லி லிமிட்டை</b> தாண்டக் கூடாது',
+      'வாரம் முடிஞ்சதும் <b>Submit week</b>. அது லாக் ஆயிடும்',
     ],
   },
 } as const

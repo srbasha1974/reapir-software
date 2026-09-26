@@ -10,12 +10,13 @@
  *    revisable, last changer recorded
  *  - crm/rates (service_rate.manage: Operations Manager): exclusion constraint service_rate_no_overlap;
  *    endRate() ends rather than edits; a job keeps the rate in force at registration
- *  - admin/statuses (status.manage): Retire/Restore is a flag, never a delete
+ *  - admin/statuses (status.manage): Retire/Restore is a flag, never a delete; Rename changes the name
+ *    only; the "No time logging" flag (blocks_labour) is what the timesheet trigger reads (migration 0157)
  *  - admin/users (user.manage_roles: Admin, Ops Manager): grant a role; people come from the directory
  *  - customers/[id] Change owner (reassign_customer_owner: Admin, Executive, Sales Head; reason required)
  *
- * Only the pre-step customer is changed (a rate, an owner move), plus one engineer target. Retire and
- * Grant are opened and pointed at, never confirmed.
+ * Only the pre-step customer is changed (a rate, an owner move), plus one engineer target. Retire is
+ * pointed at, never opened; Grant is opened and pointed at, never confirmed.
  *
  *   npx tsx 12-leads.ts [en|ta]    → out/12-leads.<lang>.webm
  */
@@ -38,11 +39,11 @@ const s = await Stage.open('exec@thulirtech.com', '/mis', join(OUT, 'raw'))
 const p = s.page
 const bay = (code: string) => p.locator(`section[data-code="${code}"]`)
 
-await s.card(`<div class="k">${c.kicker}</div><h1>${c.title}</h1><p>${c.sub}</p>`, 3500 * pace)
+await s.card(`<div class="k">${c.kicker}</div><h1>${c.title}</h1><p>${c.sub}</p>`, 3000 * pace)
 
 // 1 · Executive: the MIS dashboard and stuck tasks
 await s.point(bay('T-01'))
-await s.say(c.exec, 3800 * pace)
+await s.say(c.exec, 3300 * pace)
 await s.point(bay('ATT'))
 await s.say(c.attention, 2400 * pace, 'do')
 await s.unring()
@@ -50,9 +51,9 @@ await s.click(p.getByRole('link', { name: 'Stuck tasks', exact: true }).first())
 await p.waitForLoadState('networkidle')
 await s.wait(500)
 await s.point(bay('RULE'))
-await s.say(c.stuck, 3800 * pace)
+await s.say(c.stuck, 3400 * pace)
 await s.point(bay('RULE').getByText('Left out', { exact: true }).locator('xpath=..'))
-await s.say(c.notAge, 3400 * pace, 'do')
+await s.say(c.notAge, 3000 * pace, 'do')
 await s.unring()
 await s.quiet()
 
@@ -68,7 +69,7 @@ await p.locator('#targetAmount').fill('')
 await s.type(p.locator('#targetAmount'), '50000', 80)
 await s.type(p.locator('#note'), 'First full month on the bench', 30)
 await s.point(p.locator('#targetAmount'))
-await s.say(c.target, 3600 * pace, 'do')
+await s.say(c.target, 3200 * pace, 'do')
 await s.unring()
 await s.click(p.getByRole('button', { name: /Set the target|Revise the target/ }))
 await p.waitForLoadState('networkidle')
@@ -99,25 +100,27 @@ await s.say(c.rateAdded, 2400 * pace, 'do')
 await s.unring()
 await addRate('5000', iso(new Date(Date.now() + 30 * 86400000)))
 await s.point(p.getByText(/There is already a rate/))
-await s.say(c.overlap, 3800 * pace, 'dont')
+await s.say(c.overlap, 3400 * pace, 'dont')
 await s.unring()
+await s.quiet()
 await s.click(bay('CARD').getByRole('link', { name: 'DPS-600' }).first())
 await p.waitForLoadState('networkidle')
 await s.wait(500)
+// The board opens by a soft navigation that can leave the overlay stale; reload the same address.
+{ const u = new URL(p.url()); await s.goto(u.pathname + u.search) }
+await p.waitForFunction(() => (window as unknown as { __stage?: unknown }).__stage)
 await s.point(p.getByRole('button', { name: /End this rate/ }).first())
 await s.say(c.endRate, 3200 * pace)
 await s.unring()
 await s.quiet()
 
 await s.goto('/admin/statuses')
-await s.wait(400)
-await s.click(p.getByRole('link', { name: 'Retire On Hold' }))
-await p.waitForLoadState('networkidle')
-await s.wait(700)
-await s.point(p.getByRole('button', { name: /Retire On Hold/ }).first().locator('xpath=ancestor::form[1]'))
-await s.say(c.retire, 3800 * pace, 'dont')
-await s.point(p.locator('tr', { hasText: 'Pending Spare' }).first())
-await s.say(c.flags, 2800 * pace)
+await s.wait(500)
+// No sub-status is opened for retiring: every one on this demo is in use (On Hold holds real boards).
+await s.point(p.locator('table.hier').first())
+await s.say(c.retire, 3400 * pace, 'dont')
+await s.point(p.locator('table.hier tr', { hasText: 'On Hold' }).first())
+await s.say(c.flags, 3000 * pace)
 await s.unring()
 await s.quiet()
 
@@ -146,10 +149,10 @@ const history = p.locator('table.slots', { hasText: 'By, and why' })
 await history.waitFor({ timeout: 20000 })
 await s.wait(800)
 await s.point(history)
-await s.say(c.ownerDone, 3400 * pace, 'do')
+await s.say(c.ownerDone, 3000 * pace, 'do')
 await s.unring()
 await s.quiet()
 
-await s.card(`<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`, 6500 * pace)
+await s.card(`<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`, 5500 * pace)
 
 console.log(await s.close(join(OUT, `12-leads.${lang}.webm`)))

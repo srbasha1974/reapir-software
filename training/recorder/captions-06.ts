@@ -8,7 +8,7 @@ export const CAPTIONS = {
   en: {
     kicker: 'Thulir training · Module 06 · Engineer · Liaison · Front Office',
     title: 'Parts, purchase requests and stock',
-    sub: 'Book a part, raise a request, order it, receive it, fix a count. About 2¼ minutes.',
+    sub: 'Book a part, raise a request, order it, receive it, fix a count. About 2½ minutes.',
 
     engK: 'Engineer · job card',
     engH: 'Book what you fit',
@@ -54,7 +54,7 @@ export const CAPTIONS = {
   ta: {
     kicker: 'துளிர் ட்ரெயினிங் · மாட்யூல் 06 · Engineer · Liaison · Front Office',
     title: 'பார்ட்ஸ், பர்சேஸ் ரிக்வெஸ்ட், ஸ்டாக்',
-    sub: 'பார்ட் புக் பண்றது, PR போடுறது, ஆர்டர், டெலிவரி, ஸ்டாக் கரெக்ஷன். சுமார் 2½ நிமிடம்.',
+    sub: 'பார்ட் புக் பண்றது, PR போடுறது, ஆர்டர், டெலிவரி, ஸ்டாக் கரெக்ஷன். சுமார் 2¾ நிமிடம்.',
 
     engK: 'Engineer · ஜாப் கார்டு',
     engH: 'போட்ட பார்ட்டை புக் பண்ணுங்க',

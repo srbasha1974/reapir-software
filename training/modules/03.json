@@ -2,7 +2,7 @@
   "id": "03",
   "title": {
     "en": "Assessment",
-    "ta": "Assessment (மதிப்பீடு)"
+    "ta": "அசெஸ்மென்ட்"
   },
   "role": "Liaison · Service Head",
   "path": "Service › Reservoir",
@@ -15,41 +15,45 @@
     "ta": "media/03-poster-ta.jpg"
   },
   "seconds": {
-    "en": 121,
-    "ta": 126
+    "en": 126,
+    "ta": 140
   },
   "do": {
     "en": [
       "Open <b>Service › Reservoir</b>. New boards show <b>Not yet assessed</b>. Press <b>Pick up</b> to start the assessment. The job moves to <b>Under Assessment</b>.",
-      "Use the search box (job, serial or company) to find the boards of one delivery.",
-      "Choose the board in <b>Before the bench</b> to see what can be done with it.",
+      "Use the search box (job, serial or company) to find one delivery’s boards, and <b>Narrow the queue to one customer</b> in <b>Before the bench</b>.",
+      "Choose the board and write <b>What the assessment found</b> (what is wrong, what you tested, what it needs), then <b>Save findings</b>. The engineer reads it on the job card.",
       "Need something from the customer? <b>Wait for the customer</b>, and write what you asked. The note is required.",
       "When the answer comes, press <b>Input received</b> and write what came back. The job returns to Under Assessment.",
-      "Then decide: clear what to do → <b>allot</b> it. A price must be agreed → raise a <b>quotation</b>. This is the assessment’s call for any customer, whatever the billing segment.",
+      "Clear what to do → tick it in <b>Waiting for an engineer</b> and allot it. This is the assessment’s call for any customer, whatever the billing segment.",
+      "A price must be agreed first → with the queue narrowed to the customer, tick their boards under assessment and press <b>Raise quotation</b>. They arrive on Quotations already ticked.",
       "Customer withdrew before any price? <b>Customer withdrew</b>, with a note. The job closes as Customer Rejected and waits for a challan."
     ],
     "ta": [
-      "<b>Service › Reservoir</b> திறக்கவும். புதிய போர்டுகளில் <b>Not yet assessed</b> இருக்கும். Assessment-ஐத் தொடங்க <b>Pick up</b> அழுத்தவும். Job, <b>Under Assessment</b>-க்கு மாறும்.",
-      "ஒரு டெலிவரியின் போர்டுகளைக் கண்டுபிடிக்க தேடல் பெட்டியைப் (job, serial அல்லது company) பயன்படுத்தவும்.",
-      "என்ன செய்யலாம் என்று பார்க்க <b>Before the bench</b>-இல் போர்டைத் தேர்ந்தெடுக்கவும்.",
-      "வாடிக்கையாளரிடம் ஏதாவது தேவையா? <b>Wait for the customer</b>, என்ன கேட்டீர்கள் என்று எழுதவும். குறிப்பு கட்டாயம்.",
-      "பதில் வந்ததும் <b>Input received</b> அழுத்தி, என்ன வந்தது என்று எழுதவும். Job மீண்டும் Under Assessment-க்கு வரும்.",
-      "பிறகு முடிவு: செய்ய வேண்டியது தெளிவு → <b>allot</b>. விலையை ஒப்புக்கொள்ள வேண்டும் → <b>quotation</b>. எந்த வாடிக்கையாளரானாலும், billing segment எதுவானாலும், இது assessment எடுக்கும் முடிவு.",
-      "விலை சொல்லும் முன்பே வாடிக்கையாளர் விலகினாரா? குறிப்புடன் <b>Customer withdrew</b>. Job, Customer Rejected ஆக மூடப்பட்டு challan-க்குக் காத்திருக்கும்."
+      "<b>Service › Reservoir</b> திறங்க. புது போர்டுல <b>Not yet assessed</b>னு இருக்கும். அசெஸ்மென்ட் ஆரம்பிக்க <b>Pick up</b> அழுத்துங்க. ஜாப் <b>Under Assessment</b>க்கு போகும்.",
+      "சர்ச் பாக்ஸ்ல (ஜாப், சீரியல் அல்லது கம்பெனி) ஒரு டெலிவரியோட போர்டுகளை கண்டுபிடிங்க. <b>Before the bench</b>ல <b>Narrow the queue to one customer</b> யூஸ் பண்ணுங்க.",
+      "போர்டை செலக்ட் பண்ணி <b>What the assessment found</b> எழுதுங்க (என்ன ப்ராப்ளம், என்ன டெஸ்ட் பண்ணீங்க, என்ன தேவை), அப்புறம் <b>Save findings</b>. இன்ஜினியர் இதை ஜாப் கார்டுல படிப்பாரு.",
+      "கஸ்டமர்கிட்ட ஏதாவது வேணுமா? <b>Wait for the customer</b>, என்ன கேட்டீங்கன்னு எழுதுங்க. நோட் கட்டாயம்.",
+      "பதில் வந்ததும் <b>Input received</b> அழுத்தி, என்ன வந்துச்சுன்னு எழுதுங்க. ஜாப் திரும்ப Under Assessmentக்கு வரும்.",
+      "என்ன பண்ணணும்னு க்ளியரா இருந்தா → <b>Waiting for an engineer</b>ல டிக் பண்ணி அலாட் பண்ணுங்க. எந்த கஸ்டமரா இருந்தாலும், எந்த பில்லிங் செக்மென்ட்டா இருந்தாலும் இது அசெஸ்மென்ட்டோட முடிவு.",
+      "முதல்ல ப்ரைஸ் ஒத்துக்கணும்னா → க்யூவை அந்த கஸ்டமருக்கு சுருக்கி, Under Assessment போர்டுகளை டிக் பண்ணி <b>Raise quotation</b> அழுத்துங்க. Quotationsல அவை டிக் ஆகியே வரும்.",
+      "ப்ரைஸ் சொல்றதுக்கு முன்னாடியே கஸ்டமர் வேணாம்னுட்டாங்களா? நோட்டோட <b>Customer withdrew</b>. ஜாப் Customer Rejected ஆக க்ளோஸ் ஆகி, சலானுக்கு வெயிட் பண்ணும்."
     ]
   },
   "dont": {
     "en": [
       "Don’t try to allot a board at Inward. The tick is locked; it leaves Inward only by Pick up.",
       "Don’t expect to allot a job at <b>Awaiting Customer Input</b>. The system refuses until you record Input received.",
-      "Don’t leave a board sitting at Under Assessment while you wait for the customer. Use Wait for the customer so the wait is visible.",
+      "Don’t leave the findings in your head. Once the board is alloted, <b>What the assessment found</b> is fixed and can’t be written any more.",
+      "Don’t mix customers on one quotation. The ticks appear only when the queue is narrowed to one customer; a board already on a quotation can’t be ticked.",
       "Don’t expect the system to message the customer. Nothing is sent; you phone or email them yourself."
     ],
     "ta": [
-      "Inward-இல் உள்ள போர்டை allot செய்ய முயல வேண்டாம். Tick பூட்டப்பட்டுள்ளது; Pick up மூலம் மட்டுமே Inward-இலிருந்து வெளியேறும்.",
-      "<b>Awaiting Customer Input</b>-இல் உள்ள job-ஐ allot செய்ய முடியும் என்று எதிர்பார்க்க வேண்டாம். Input received பதிவு செய்யும் வரை சிஸ்டம் மறுக்கும்.",
-      "வாடிக்கையாளருக்காகக் காத்திருக்கும்போது போர்டை Under Assessment-இலேயே விட வேண்டாம். காத்திருப்பு தெரிய Wait for the customer பயன்படுத்தவும்.",
-      "சிஸ்டம் வாடிக்கையாளருக்குச் செய்தி அனுப்பும் என்று எதிர்பார்க்க வேண்டாம். எதுவும் அனுப்பப்படாது; நீங்களே phone அல்லது email செய்யவும்."
+      "Inwardல இருக்கற போர்டை அலாட் பண்ண ட்ரை பண்ணாதீங்க. டிக் லாக் ஆகியிருக்கும்; Pick up மூலம் மட்டும் தான் வெளியே வரும்.",
+      "<b>Awaiting Customer Input</b>ல இருக்கற ஜாப்பை அலாட் பண்ண முடியாது. Input received போடற வரைக்கும் சிஸ்டம் ஏத்துக்காது.",
+      "கண்டுபிடிச்சதை மனசுலயே வெச்சுக்காதீங்க. போர்டு அலாட் ஆனதும் <b>What the assessment found</b> ஃபிக்ஸ் ஆகிடும், அப்புறம் எழுத முடியாது.",
+      "ஒரு கொட்டேஷன்ல ரெண்டு கஸ்டமர் வேண்டாம். க்யூ ஒரு கஸ்டமருக்கு சுருக்கினா தான் டிக் வரும்; ஏற்கனவே கொட்டேஷன்ல இருக்கற போர்டை டிக் பண்ண முடியாது.",
+      "சிஸ்டம் கஸ்டமருக்கு மெசேஜ் அனுப்பும்னு நினைக்காதீங்க. எதுவும் போகாது; நீங்களே ஃபோன் அல்லது ஈமெயில் பண்ணணும்."
     ]
   },
   "quiz": {
@@ -65,14 +69,14 @@
         "why": "A board leaves Inward only by Pick up. The system refuses to allot a job at Inward."
       },
       {
-        "q": "The ribbon cable did not come with the board and you have asked the customer to send it. What do you record?",
+        "q": "You found a burnt gate driver and dried-out capacitors on a board. Where do you record it so the engineer knows?",
         "o": [
-          "Wait for the customer, with a note saying what you asked",
-          "Nothing, leave it Under Assessment",
-          "Customer withdrew"
+          "In the Wait for the customer note",
+          "What the assessment found, then Save findings, before it is alloted",
+          "Tell the engineer; nothing to record"
         ],
-        "a": 0,
-        "why": "Awaiting Customer Input makes the wait visible, and the note is required."
+        "a": 1,
+        "why": "The findings show on the job card for the engineer. They can be corrected until allotment, then they are fixed."
       },
       {
         "q": "The job is at Awaiting Customer Input and the cable has just arrived. Can you allot it straight away?",
@@ -85,65 +89,65 @@
         "why": "Awaiting Customer Input returns only to Under Assessment. From there it can be alloted or quoted."
       },
       {
-        "q": "Who decides whether a job needs a quotation?",
+        "q": "Three boards of one customer need a price before repair. Quickest way from the reservoir?",
         "o": [
-          "The customer’s billing segment",
-          "The Front Office at the counter",
-          "The assessment, for any customer"
+          "Narrow the queue to that customer, tick the three, Raise quotation",
+          "Allot them and quote later",
+          "Tick them in Waiting for an engineer and press Allot"
         ],
-        "a": 2,
-        "why": "Since feature 010 the segment only says how the job is priced. The assessment decides: allot, or quote."
+        "a": 0,
+        "why": "Narrowed to one customer, boards under assessment can be ticked and taken to Quotations already ticked."
       }
     ],
     "ta": [
       {
-        "q": "புதிய போர்டில் “Not yet assessed” உள்ளது. Service Head அதை இப்போதே engineer-இடம் கொடுக்க விரும்புகிறார். முதலில் என்ன?",
+        "q": "புது போர்டுல “Not yet assessed”னு இருக்கு. சர்வீஸ் ஹெட் இப்பவே இன்ஜினியர் பெஞ்சுக்கு வேணும்னு சொல்றாரு. முதல்ல என்ன?",
         "o": [
-          "Tick செய்து Allot அழுத்தவும்",
-          "Pick up அழுத்தி, assess செய்து, பிறகு allot",
-          "Front Office-இடம் status மாற்றச் சொல்லவும்"
+          "டிக் பண்ணி Allot அழுத்துங்க",
+          "Pick up, அசெஸ் பண்ணி, அப்புறம் அலாட்",
+          "ஃப்ரண்ட் ஆபீஸ்கிட்ட ஸ்டேட்டஸ் மாத்த சொல்லுங்க"
         ],
         "a": 1,
-        "why": "Pick up மூலம் மட்டுமே போர்டு Inward-இலிருந்து வெளியேறும். Inward-இல் உள்ள job-ஐ allot செய்ய சிஸ்டம் மறுக்கும்."
+        "why": "Inwardல இருந்து போர்டு Pick up மூலம் மட்டும் தான் வெளியே வரும். Inward ஜாப்பை அலாட் பண்ண சிஸ்டம் ஏத்துக்காது."
       },
       {
-        "q": "போர்டுடன் ribbon cable வரவில்லை; அனுப்பச் சொல்லி வாடிக்கையாளரிடம் கேட்டுள்ளீர்கள். என்ன பதிவு செய்வீர்கள்?",
+        "q": "போர்டுல கேட் டிரைவர் எரிஞ்சிருக்கு, கெப்பாசிட்டர் காஞ்சிருக்கு. இன்ஜினியருக்கு தெரிய எங்கே எழுதணும்?",
         "o": [
-          "Wait for the customer, என்ன கேட்டீர்கள் என்ற குறிப்புடன்",
-          "எதுவும் வேண்டாம், Under Assessment-இலேயே விடவும்",
-          "Customer withdrew"
+          "Wait for the customer நோட்ல",
+          "அலாட் ஆகறதுக்கு முன்னாடி What the assessment found, அப்புறம் Save findings",
+          "இன்ஜினியர்கிட்ட சொன்னா போதும்"
+        ],
+        "a": 1,
+        "why": "ஃபைண்டிங்ஸ் இன்ஜினியருக்கு ஜாப் கார்டுல தெரியும். அலாட் ஆகற வரைக்கும் திருத்தலாம், அப்புறம் ஃபிக்ஸ் ஆகிடும்."
+      },
+      {
+        "q": "ஜாப் Awaiting Customer Inputல இருக்கு, கேபிள் இப்போ தான் வந்துச்சு. உடனே அலாட் பண்ணலாமா?",
+        "o": [
+          "ஆமா, டிக் பண்ணி அலாட்",
+          "இல்ல. முதல்ல Input received; அது Under Assessmentக்கு திரும்பும்",
+          "இல்ல. முதல்ல கொட்டேஷன் வேணும்"
+        ],
+        "a": 1,
+        "why": "Awaiting Customer Input, Under Assessmentக்கு மட்டும் தான் திரும்பும். அங்கிருந்து அலாட் அல்லது கொட்டேஷன்."
+      },
+      {
+        "q": "ஒரு கஸ்டமரோட மூணு போர்டுக்கு ரிப்பேருக்கு முன்னாடி ப்ரைஸ் வேணும். Reservoirல இருந்து சீக்கிரமான வழி?",
+        "o": [
+          "க்யூவை அந்த கஸ்டமருக்கு சுருக்கி, மூணையும் டிக் பண்ணி, Raise quotation",
+          "அலாட் பண்ணிட்டு அப்புறம் கொட்டேஷன்",
+          "Waiting for an engineerல டிக் பண்ணி Allot"
         ],
         "a": 0,
-        "why": "Awaiting Customer Input காத்திருப்பைத் தெரியச் செய்யும்; குறிப்பு கட்டாயம்."
-      },
-      {
-        "q": "Job, Awaiting Customer Input-இல் உள்ளது; cable இப்போதுதான் வந்தது. உடனே allot செய்யலாமா?",
-        "o": [
-          "ஆம், tick செய்து allot",
-          "இல்லை. முதலில் Input received; அது Under Assessment-க்குத் திரும்பும்",
-          "இல்லை. முதலில் quotation தேவை"
-        ],
-        "a": 1,
-        "why": "Awaiting Customer Input, Under Assessment-க்கு மட்டுமே திரும்பும். அங்கிருந்து allot அல்லது quote செய்யலாம்."
-      },
-      {
-        "q": "ஒரு job-க்கு quotation தேவையா என்று யார் முடிவு செய்வது?",
-        "o": [
-          "வாடிக்கையாளரின் billing segment",
-          "கவுண்டரில் Front Office",
-          "Assessment, எந்த வாடிக்கையாளருக்கும்"
-        ],
-        "a": 2,
-        "why": "Segment, job-க்கு எப்படி விலை என்பதை மட்டுமே சொல்லும். Assessment முடிவு செய்யும்: allot அல்லது quote."
+        "why": "ஒரு கஸ்டமருக்கு சுருக்கினா Under Assessment போர்டுகளை டிக் பண்ணி, Quotationsக்கு டிக் ஆகியே கொண்டு போகலாம்."
       }
     ]
   },
   "notes": [
-    "There is no field to record the diagnosis or findings on the job during assessment (UC-007 steps 1-3). The only text recorded is the note on Wait for the customer / Input received / Customer withdrew. Not taught.",
-    "Rate-card reference: the reservoir shows the pill “Assessed — rate card” for every job Under Assessment, because lib/domain/allotment.ts sets quote='rate-card' whenever quotation_gate_required is false (which is true of every job until a quotation is sent). It shows even for customers with no rate card (no service_rate rows exist in the demo). Misleading UX; not taught.",
-    "UC-010/UC-007 name the Service Head for diagnosis; the screens give the Liaison and the Service Head the same moves (work_order.allot). Recorded as liaison@.",
+    "Rate-card reference: the reservoir still shows the pill “Assessed — rate card” for every job Under Assessment (lib/domain/allotment.ts sets quote='rate-card' whenever the quotation gate is not required), even though the demo has no service_rate rows at all. Misleading UX; not taught.",
+    "UC-010/UC-007 name the Service Head for diagnosis; the screens give the Liaison and the Service Head the same moves and the findings box (work_order.allot). Recorded as liaison@.",
     "Pick up has no confirmation and no undo: nothing moves a job back to Inward.",
-    "The title card says “About 110 seconds”; the final English take is 121 s because the shared reservoir had grown to 50+ jobs and loaded slower. The Tamil card says about 2 minutes (126 s).",
-    "Set-up: frontoffice@ registered a fresh 3-unit Siemens 6SE70-CU delivery for Rajapalayam Spinners (serials AS<stamp>01-03) per take."
+    "Input received and Customer withdrew are pointed at / taught in the card, not pressed, to keep the clip under 2 minutes.",
+    "Set-up per take: frontoffice@ registered a fresh 3-unit Siemens 6SE70-CU delivery for Rajapalayam Spinners (serials AS<stamp>01-03); units 2 and 3 were picked up off camera, unit 1 on camera. Raise quotation was pressed but no quotation was raised.",
+    "Length: 126 s EN / 140 s TA, over the ~120 s target. The shared database has grown (40+ boards in the reservoir) and the customer lookup and page loads were slow; two short loading pauses (~3 s) were cut out of the English encode. Tamil captions are held ×1.2 (not ×1.25) to save time. Re-record budget used."
   ]
 }

@@ -12,8 +12,9 @@
  *  - timesheet_entry_price_at_rate_in_force(): the cost rate is set by the system, never typed.
  *  - timesheet_week_is_locked(): a submitted week cannot be changed.
  *
- * Prepared by 06-setup.ts and 07-prep.ts. The week submitted in the clip is an earlier one of our
- * own, so the shared engineer's current week stays open for the other recordings.
+ * Prepared by 06-setup.ts <lang> (and, before the Tamil take, 07-prep.ts ta). The week submitted in
+ * the clip is an earlier one of our own, so the shared engineer's current week stays open for the
+ * other recordings.
  *
  *   npx tsx 07-timesheets.ts [en|ta]    → out/07-timesheets.<lang>.webm
  */
@@ -27,8 +28,10 @@ const lang = (process.argv[2] ?? 'en') as Lang
 const c = CAPTIONS[lang]
 if (!c) throw new Error('Language must be en or ta')
 const pace = lang === 'ta' ? 1.25 : 1
-const { T1, T2, T3 } = JSON.parse(readFileSync(join(OUT, `06-setup.${lang}.json`), 'utf8')).jobs as Record<string, string>
-const submitWeek = lang === 'en' ? '2026-08-24' : '2026-08-31'
+const setup = JSON.parse(readFileSync(join(OUT, `06-setup.${lang}.json`), 'utf8'))
+const { T1, T2, T3 } = setup.jobs as Record<string, string>
+/** The earlier week 06-setup.ts filled for this take's T1 (7 Sep for en, 31 Aug for ta). */
+const submitWeek: string = setup.submitWeek
 
 const s = await Stage.open('engineer@thulirtech.com', '/service-centre/timesheet', join(OUT, 'raw'))
 const p = s.page
@@ -84,6 +87,8 @@ await s.goto(new URL(p.url()).pathname + new URL(p.url()).search)
 await s.point(p.locator('tr.sum'))
 await s.say(c.fix, 2000 * pace)
 await s.unring()
+// Another full load: after the saves above the recording can lag on overlay changes for seconds.
+await s.goto(new URL(p.url()).pathname + new URL(p.url()).search)
 
 await s.point(p.locator('tr.paused', { hasText: T2 }))
 await s.say(c.paused, 4000 * pace, 'dont')

@@ -2,10 +2,10 @@
   "id": "05",
   "title": {
     "en": "Allotting and repairing",
-    "ta": "Allot செய்தல், பழுதுபார்த்தல்"
+    "ta": "அலாட் & ரிப்பேர்"
   },
   "role": "Service Head · Liaison · Engineer",
-  "path": "Service › Reservoir · Service › My jobs · Service › Spares",
+  "path": "Service › Reservoir · Service › My jobs · Service › Spares · job card",
   "video": {
     "en": "media/05-repair.mp4",
     "ta": "media/05-repair-ta.mp4"
@@ -15,54 +15,58 @@
     "ta": "media/05-poster-ta.jpg"
   },
   "seconds": {
-    "en": 117,
-    "ta": 128
+    "en": 118,
+    "ta": 133
   },
   "do": {
     "en": [
-      "Service Head or Liaison: in <b>Service › Reservoir</b>, tick the assessed (or quotation-approved) jobs, choose the engineer under <b>Give it to</b>, press <b>Allot</b>. Several at once is an Allot batch.",
-      "Read the load beside each engineer’s name before you choose. Nothing is pre-chosen.",
-      "The SLA date is <b>Needed by</b>, set at the counter for business-critical boards. It shows on the engineer’s board.",
+      "Service Head or Liaison: in <b>Service › Reservoir</b>, tick the assessed (or quotation-approved) jobs, choose the engineer under <b>Give it to</b> (their load is beside the name), press <b>Allot</b>. Several at once is an Allot batch.",
+      "Business-critical board? The <b>SLA by</b> row asks for its SLA date, pre-filled with the date the customer asked for at the counter. Keep it or change it to the date you promise; Allot waits until every critical board has one.",
+      "The job card then reads “Business-critical · SLA …”, and “due today” or “Nd over” once it is late. On the engineer’s bench it shows as <b>Needed by</b>.",
       "Engineer: in <b>Service › My jobs</b>, choose the board and press <b>Start work</b> when you pick it up. It moves to <b>In Progress</b>.",
       "Waiting for a part? Press <b>Pending spare…</b> and name the component. The Liaison sees it on the Spares screen.",
-      "Liaison: a paused board resumes when its goods receipt is recorded, or with <b>Back on the bench</b> on the Spares screen (say what happened).",
+      "Liaison: a board paused for a spare resumes when its goods receipt is recorded, or with <b>Back on the bench</b> on Service › Spares (say why).",
+      "Stuck for anything else (customer, site, vendor)? Service Head or Liaison: <b>Put on hold</b> on the job card, from In Progress, saying what it is waiting for. When it clears, <b>Release hold</b> with what cleared it; it goes back In Progress to the same engineer.",
       "Board back under warranty? Register a <b>new Rework job</b> at Inward with the previous job number."
     ],
     "ta": [
-      "Service Head அல்லது Liaison: <b>Service › Reservoir</b>-இல் assess ஆன (அல்லது quotation approve ஆன) job-களை tick செய்து, <b>Give it to</b>-இல் engineer-ஐத் தேர்ந்தெடுத்து, <b>Allot</b> அழுத்தவும். பலவற்றை ஒன்றாக: Allot batch.",
-      "தேர்ந்தெடுக்கும் முன் ஒவ்வொரு engineer பெயருக்கும் அருகிலுள்ள வேலைச்சுமையைப் பார்க்கவும். எதுவும் முன்பே தேர்வாகாது.",
-      "SLA தேதி = <b>Needed by</b>, business-critical போர்டுகளுக்குக் கவுண்டரிலேயே அமைக்கப்படும். அது engineer-இன் போர்டில் தெரியும்.",
-      "Engineer: <b>Service › My jobs</b>-இல் போர்டைத் தேர்ந்தெடுத்து, எடுக்கும்போது <b>Start work</b> அழுத்தவும். அது <b>In Progress</b>-க்கு மாறும்.",
-      "Part-க்காகக் காத்திருக்கிறீர்களா? <b>Pending spare…</b> அழுத்தி component பெயரை எழுதவும். Liaison அதை Spares திரையில் பார்ப்பார்.",
-      "Liaison: goods receipt பதிவானதும் நிறுத்திய போர்டு தொடரும்; அல்லது Spares திரையில் <b>Back on the bench</b> (என்ன நடந்தது என்று எழுதவும்).",
-      "வாரண்டியில் போர்டு திரும்பி வந்ததா? Inward-இல் முந்தைய job number-உடன் <b>புதிய Rework job</b> பதிவு செய்யவும்."
+      "சர்வீஸ் ஹெட் அல்லது Liaison: <b>Service › Reservoir</b>ல அசெஸ் ஆன (அல்லது கொட்டேஷன் அப்ரூவ் ஆன) ஜாப்பை டிக் பண்ணி, <b>Give it to</b>ல இன்ஜினியரை செலக்ட் பண்ணி (பேருக்கு பக்கத்துல லோடு இருக்கு), <b>Allot</b> அழுத்துங்க. நிறைய ஒரே நேரத்துல = Allot batch.",
+      "பிசினஸ்-க்ரிட்டிகல் போர்டா? <b>SLA by</b> வரி SLA தேதி கேக்கும்; கவுண்டர்ல கஸ்டமர் கேட்ட தேதி ஏற்கனவே போட்டிருக்கும். அப்படியே வெச்சுக்கலாம், இல்ல நீங்க ப்ராமிஸ் பண்ற தேதிக்கு மாத்தலாம்; ஒவ்வொரு க்ரிட்டிகல் போர்டுக்கும் தேதி இருக்கற வரைக்கும் Allot வெயிட் பண்ணும்.",
+      "அப்புறம் ஜாப் கார்டுல “Business-critical · SLA …”, லேட் ஆனா “due today” அல்லது “Nd over” வரும். இன்ஜினியர் பெஞ்சுல அது <b>Needed by</b>.",
+      "இன்ஜினியர்: <b>Service › My jobs</b>ல போர்டை செலக்ட் பண்ணி, எடுக்கும்போது <b>Start work</b> அழுத்துங்க. அது <b>In Progress</b>க்கு போகும்.",
+      "பார்ட்டுக்கு வெயிட்டிங்கா? <b>Pending spare…</b> அழுத்தி கம்போனென்ட் பேர் எழுதுங்க. Liaison அதை Spares ஸ்க்ரீன்ல பார்ப்பாங்க.",
+      "Liaison: ஸ்பேருக்கு நிறுத்தின போர்டு, குட்ஸ் ரிசீட் போட்டா ரெஸ்யூம் ஆகும், இல்லன்னா Service › Spares-ல <b>Back on the bench</b> (ஏன்னு எழுதுங்க).",
+      "வேற காரணத்துக்கு நிக்குதா (கஸ்டமர், சைட், வெண்டர்)? சர்வீஸ் ஹெட் அல்லது Liaison: ஜாப் கார்டுல <b>Put on hold</b>, In Progressல இருந்து, எதுக்கு வெயிட்டிங்னு எழுதி. க்ளியர் ஆனதும் <b>Release hold</b>, என்ன க்ளியர் ஆச்சுன்னு எழுதி; அதே இன்ஜினியர்கிட்ட திரும்ப In Progress.",
+      "வாரண்டியில போர்டு திரும்ப வந்துச்சா? பழைய ஜாப் நம்பரோட Inwardல <b>புது Rework ஜாப்</b> போடுங்க."
     ]
   },
   "dont": {
     "en": [
       "Don’t expect to allot a job at Inward or <b>Awaiting Customer Input</b>. Its tick is locked and the system refuses.",
-      "Don’t book hours on a paused job (Pending Spare or On Hold). The system refuses them.",
-      "Don’t keep working a board without pressing Start work. Ready for verification is only offered from In Progress.",
+      "Don’t treat the counter’s <b>Needed by</b> as the SLA. It is the customer’s date; the SLA is set at allotment.",
+      "Don’t book hours on a paused or held job (Pending Spare or On Hold). The system refuses them.",
+      "Engineer: don’t wait for a Resume or Hold button on your card. You can’t resume a spare pause or put a board on hold; the Liaison or Service Head does.",
       "Don’t reopen the old job for a warranty return. Rework is a new job linked to it."
     ],
     "ta": [
-      "Inward அல்லது <b>Awaiting Customer Input</b>-இல் உள்ள job-ஐ allot செய்ய முடியும் என்று எதிர்பார்க்க வேண்டாம். Tick பூட்டப்பட்டுள்ளது, சிஸ்டம் மறுக்கும்.",
-      "நிறுத்திய job-இல் (Pending Spare அல்லது On Hold) நேரம் பதிவு செய்ய வேண்டாம். சிஸ்டம் மறுக்கும்.",
-      "Start work அழுத்தாமல் போர்டில் வேலை செய்ய வேண்டாம். Ready for verification, In Progress-இலிருந்து மட்டுமே கிடைக்கும்.",
-      "வாரண்டியில் திரும்பியதற்குப் பழைய job-ஐத் திறக்க வேண்டாம். Rework என்பது அதனுடன் இணைந்த புதிய job."
+      "Inward அல்லது <b>Awaiting Customer Input</b>ல இருக்கற ஜாப்பை அலாட் பண்ண முடியாது. டிக் லாக் ஆகியிருக்கும், சிஸ்டம் ஏத்துக்காது.",
+      "கவுண்டர்ல போட்ட <b>Needed by</b>ஐ SLA-ன்னு நினைக்காதீங்க. அது கஸ்டமர் கேட்ட தேதி; SLA அலாட் பண்ணும்போது தான்.",
+      "ஸ்பேருக்கு நின்ன அல்லது ஹோல்ட்ல இருக்கற ஜாப்ல (Pending Spare, On Hold) ஹவர்ஸ் போடாதீங்க. சிஸ்டம் ஏத்துக்காது.",
+      "இன்ஜினியர்: உங்க கார்டுல Resume அல்லது Hold பட்டன் தேடாதீங்க. ஸ்பேர் பாஸை ரெஸ்யூம் பண்ணவோ, ஹோல்ட் போடவோ உங்களால முடியாது; Liaison அல்லது சர்வீஸ் ஹெட் பண்ணுவாங்க.",
+      "வாரண்டி ரிட்டர்னுக்கு பழைய ஜாப்பை திறக்காதீங்க. Rework ஒரு புது, லிங்க் பண்ண ஜாப்."
     ]
   },
   "quiz": {
     "en": [
       {
-        "q": "In the reservoir, one job’s tick is locked and it says “Waiting on the customer”. What does that mean?",
+        "q": "You tick a business-critical board to allot. The SLA by date shows 9 Oct, but you have promised the customer 7 Oct. What do you do?",
         "o": [
-          "It is Awaiting Customer Input and can’t be alloted yet",
-          "Another engineer already has it",
-          "The page needs a refresh"
+          "Allot it; the SLA can’t be changed",
+          "Change the SLA by date to 7 Oct, then Allot",
+          "Ask the Front Office to change Needed by"
         ],
-        "a": 0,
-        "why": "Allotment is refused at Inward and Awaiting Customer Input. The Liaison records Input received first."
+        "a": 1,
+        "why": "The SLA is set at allotment, by the Service Head or Liaison. It is only pre-filled with the customer’s date."
       },
       {
         "q": "You pick up a newly alloted board at the bench. What do you press?",
@@ -79,73 +83,73 @@
         "o": [
           "Leave it In Progress and move to another board",
           "Pending spare…, naming the part",
-          "Cannot repair…"
+          "Ask the Liaison to put it on hold"
         ],
         "a": 1,
-        "why": "Pending spare pauses it and tells the Liaison exactly what it is waiting for."
+        "why": "Pending spare pauses it and tells the Liaison exactly what it is waiting for. On Hold is for anything that is not a part."
       },
       {
-        "q": "A board you repaired last month is back under warranty. How is it booked?",
+        "q": "A board In Progress can’t continue until the customer confirms a shutdown date. Who does what?",
         "o": [
-          "Reopen the old job",
-          "A new Rework job at Inward, with the previous job number",
-          "Add hours to the old job"
+          "The engineer presses Pending spare",
+          "The Service Head or Liaison puts it on hold, saying what it waits for, and releases it when it clears",
+          "Nobody; the engineer just stops booking hours"
         ],
         "a": 1,
-        "why": "Warranty rework is a new job linked to the old one, registered at Inward as Rework."
+        "why": "Put on hold and Release hold are the Service Head’s or Liaison’s, with a reason. While held, no hours can be booked."
       }
     ],
     "ta": [
       {
-        "q": "Reservoir-இல் ஒரு job-இன் tick பூட்டப்பட்டு “Waiting on the customer” என்று உள்ளது. அதன் பொருள் என்ன?",
+        "q": "அலாட் பண்ண பிசினஸ்-க்ரிட்டிகல் போர்டை டிக் பண்றீங்க. SLA by-ல 9 Oct இருக்கு, ஆனா கஸ்டமருக்கு 7 Oct ப்ராமிஸ் பண்ணியிருக்கீங்க. என்ன பண்ணணும்?",
         "o": [
-          "அது Awaiting Customer Input; இன்னும் allot செய்ய முடியாது",
-          "வேறு engineer ஏற்கனவே வைத்துள்ளார்",
-          "பக்கத்தை refresh செய்ய வேண்டும்"
+          "அலாட் பண்ணுங்க; SLA மாத்த முடியாது",
+          "SLA by தேதியை 7 Octக்கு மாத்தி, அப்புறம் Allot",
+          "ஃப்ரண்ட் ஆபீஸ்கிட்ட Needed by மாத்த சொல்லுங்க"
         ],
-        "a": 0,
-        "why": "Inward, Awaiting Customer Input-இல் allot மறுக்கப்படும். முதலில் Liaison, Input received பதிவு செய்ய வேண்டும்."
+        "a": 1,
+        "why": "SLA அலாட் பண்ணும்போது சர்வீஸ் ஹெட் அல்லது Liaison போடறது. கஸ்டமர் தேதி சும்மா முன்னாடியே போட்டிருக்கும்."
       },
       {
-        "q": "புதிதாக allot ஆன போர்டை bench-இல் எடுக்கிறீர்கள். எதை அழுத்துவீர்கள்?",
+        "q": "புதுசா அலாட் ஆன போர்டை பெஞ்சுல எடுக்கறீங்க. என்ன அழுத்தணும்?",
         "o": [
           "Ready for verification",
           "Start work",
-          "எதுவும் இல்லை, நேரம் மட்டும் பதிவு"
+          "ஒண்ணும் இல்ல, ஹவர்ஸ் மட்டும் போடுங்க"
         ],
         "a": 1,
-        "why": "Start work அதை Alloted-இலிருந்து In Progress-க்கு மாற்றும். Ready for verification, In Progress-இலிருந்து மட்டுமே."
+        "why": "Start work, Allotedல இருந்து In Progressக்கு மாத்தும். Ready for verification, In Progressல இருந்து தான் வரும்."
       },
       {
-        "q": "போர்டுக்கு stock-இல் இல்லாத IGBT module தேவை. என்ன செய்வீர்கள்?",
+        "q": "போர்டுக்கு ஸ்டாக்ல இல்லாத IGBT மாட்யூல் வேணும். என்ன பண்ணணும்?",
         "o": [
-          "In Progress-இலேயே விட்டு வேறு போர்டுக்குச் செல்லவும்",
-          "Pending spare…, part பெயருடன்",
-          "Cannot repair…"
+          "In Progressலயே விட்டுட்டு வேற போர்டுக்கு போங்க",
+          "Pending spare…, பார்ட் பேரோட",
+          "Liaisonகிட்ட ஹோல்ட் போட சொல்லுங்க"
         ],
         "a": 1,
-        "why": "Pending spare அதை நிறுத்தி, என்ன தேவை என்று Liaison-க்குச் சொல்லும்."
+        "why": "Pending spare அதை நிறுத்தி, எதுக்கு வெயிட்டிங்னு Liaisonக்கு சொல்லும். பார்ட் இல்லாத வேற காரணத்துக்கு தான் On Hold."
       },
       {
-        "q": "கடந்த மாதம் நீங்கள் சரிசெய்த போர்டு வாரண்டியில் திரும்பி வந்தது. எப்படிப் பதிவாகும்?",
+        "q": "In Progress போர்டு, கஸ்டமர் ஷட்டவுன் தேதி சொல்ற வரைக்கும் நகர முடியாது. யார் என்ன பண்ணணும்?",
         "o": [
-          "பழைய job-ஐத் திறக்கவும்",
-          "Inward-இல் முந்தைய job number-உடன் புதிய Rework job",
-          "பழைய job-இல் நேரம் சேர்க்கவும்"
+          "இன்ஜினியர் Pending spare அழுத்தணும்",
+          "சர்வீஸ் ஹெட் அல்லது Liaison, காரணத்தோட ஹோல்ட் போட்டு, க்ளியர் ஆனதும் ரிலீஸ் பண்ணணும்",
+          "யாரும் இல்ல; இன்ஜினியர் ஹவர்ஸ் போடறதை நிறுத்தினா போதும்"
         ],
         "a": 1,
-        "why": "வாரண்டி rework என்பது பழையதுடன் இணைந்த புதிய job, Inward-இல் Rework ஆகப் பதிவாகும்."
+        "why": "Put on hold, Release hold சர்வீஸ் ஹெட் அல்லது Liaison-னோடது, காரணத்தோட. ஹோல்ட்ல இருக்கும்போது ஹவர்ஸ் போட முடியாது."
       }
     ]
   },
   "notes": [
-    "There is no SLA date at allotment. The allot panel has only the jobs, Give it to (engineer) and Allot. The SLA target date is the inward form's “Needed by”, asked only for Business-critical deliveries; it shows as Needed by on the bench and the job card. The clip teaches that.",
-    "On Hold cannot be set by anybody on screen: the engineer's acts omit it by design (“a hold is the Service Head's or the Liaison's judgement”) but no screen or RPC for the Service Head sets it either (only pause_for_spare / resume_after_spare exist). The work-orders console offers “Hand it back” for On Hold jobs. Taught only as “On Hold is not on your bench”.",
-    "The engineer cannot resume a paused job. Pending Spare ends by goods receipt (Liaison/Front Office, module 06) or the Liaison's Back on the bench on Service › Spares (reason required). The clip's third part shows that as liaison@. The old draft line “engineer resumes” was wrong.",
-    "Old draft lines corrected: “Service Head or Liaison … set the SLA target date” (not at allotment), “use On Hold for anything else” (not the engineer's).",
-    "Paused-time refusal shown live: pressing + on the hours stepper of a Pending Spare job shows “Not booked. Repair on … is paused waiting for a part, so no time can be logged against it” (timesheet_entry_is_permitted).",
-    "Three recordings concatenated with ffmpeg: servicehead@ (allot), engineer@ (start, pause), liaison@ (Back on the bench). The engineer's bench is shared with other agents' demo jobs, so it is busy.",
-    "Rework was taught as a caption only (the inward Job type Rework + previous job number was already shown in module 02's card).",
-    "Set-up per take: frontoffice@ registered 2 business-critical ABB MS132 units for Rajapalayam Spinners, Needed by 9 Oct 2026 (serials RP<stamp>01-02); liaison@ picked both up and put unit 2 at Awaiting Customer Input."
+    "The engineer’s bench panel still labels the SLA date “Needed by” (panel.tsx), the same words the inward form uses for the customer’s date. Two meanings for one label; the clip says which is which.",
+    "Pausing for a spare is limited to the board’s engineer, the Service Head and the Liaison (not Front Office, batch 024). The engineer cannot resume a spare pause: it ends by goods receipt (module 06) or the Liaison’s Back on the bench.",
+    "Put on hold is offered only from In Progress; Release hold returns the board In Progress to the same engineer. Both need a reason; the engineer’s card shows the hold reason.",
+    "The SLA was changed from the customer’s 9 Oct 2026 to 7 Oct 2026 on screen. After 7 Oct the job card of such a board reads “Nd over”.",
+    "Three recordings concatenated with ffmpeg: servicehead@ (allot + SLA), engineer@ (start, pause, refused time), liaison@ (Back on the bench, job card, Put on hold, Release hold). The engineer’s bench is shared with other agents’ demo jobs, so it is busy.",
+    "Rework is taught in the card only (module 02 shows the Job type Rework + previous job number).",
+    "Set-up per take: frontoffice@ registered 2 business-critical ABB MS132 units for Rajapalayam Spinners, Needed by 9 Oct 2026 (serials RP<stamp>01-02); liaison@ picked both up and put unit 2 at Awaiting Customer Input.",
+    "Length: 118 s EN / 133 s TA (Tamil captions held ×1.2). Each part's page-load lead-in was trimmed before concatenation."
   ]
 }

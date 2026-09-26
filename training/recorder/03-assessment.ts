@@ -18,14 +18,14 @@
  */
 import { Stage } from './stage'
 import { CAPTIONS, type Lang } from './captions-03'
-import { registerDelivery, stamp, stateOf } from './03-setup'
+import { pickUp, registerDelivery, stamp, stateOf } from './03-setup'
 import { join } from 'node:path'
 
 const OUT = join(import.meta.dirname, 'out')
 const lang = (process.argv[2] ?? 'en') as Lang
 const c = CAPTIONS[lang]
 if (!c) throw new Error('Language must be en or ta')
-const pace = lang === 'ta' ? 1.25 : 1
+const pace = lang === 'ta' ? 1.2 : 1
 
 // ---- Set-up, unrecorded -------------------------------------------------------------------
 const CUSTOMER = 'Rajapalayam Spinners'
@@ -40,8 +40,10 @@ const jobs = await registerDelivery({
   units: 3,
   serial,
 })
-console.log('jobs', jobs)
 const [j1, j2, j3] = jobs
+// Only j1 is picked up on camera; j2 and j3 are picked up here so the clip stays short.
+await pickUp([j2, j3])
+console.log('jobs', jobs)
 
 // ---- Recording ----------------------------------------------------------------------------
 const s = await Stage.open('liaison@thulirtech.com', '/service-centre/reservoir', join(OUT, 'raw'))
@@ -55,7 +57,7 @@ const settle = async (ms = 900) => {
   await s.wait(ms)
 }
 
-await s.card(`<div class="k">${c.kicker}</div><h1>${c.title}</h1><p>${c.sub}</p>`, 3500 * pace)
+await s.card(`<div class="k">${c.kicker}</div><h1>${c.title}</h1><p>${c.sub}</p>`, 3200 * pace)
 
 await s.point(p.locator('[data-code="RES"]').first())
 await s.say(c.reservoir, 1400 * pace)
@@ -66,9 +68,9 @@ await settle(1200 * pace)
 
 // Not yet assessed, tick locked
 await s.point(row(j1).locator('.pill').first())
-await s.say(c.inward, 3000 * pace)
+await s.say(c.inward, 2800 * pace)
 await s.point(row(j1).locator('input[type=checkbox]'))
-await s.wait(700)
+await s.wait(400)
 await s.unring()
 
 // Pick up
@@ -76,17 +78,13 @@ await s.point(row(j1).getByRole('button', { name: 'Pick up' }))
 await s.say(c.pickup, 2400 * pace, 'do')
 await s.click(row(j1).getByRole('button', { name: 'Pick up' }))
 await settle(1200)
-await s.click(row(j2).getByRole('button', { name: 'Pick up' }))
-await s.wait(1100)
-await s.click(row(j3).getByRole('button', { name: 'Pick up' }))
-await settle(1200)
 await s.point(row(j1).locator('.pill').first())
-await s.say(c.only, 2400 * pace, 'do')
+await s.say(c.only, 2200 * pace, 'do')
 await s.unring()
 
 // The queue, narrowed to one customer
 await s.point(asm.locator('nav.tabs'))
-await s.say(c.queue, 2600 * pace)
+await s.say(c.queue, 2400 * pace)
 const narrow = asm.getByRole('combobox', { name: 'Narrow the queue to one customer' })
 await s.point(narrow)
 await s.say(c.narrow, 2200 * pace)
@@ -106,7 +104,7 @@ await s.type(found, 'Gate driver U12 open. DC bus caps dried out. Needs U12 + 4 
 await s.click(acts(j1).getByRole('button', { name: 'Save findings' }))
 await settle(1200)
 await s.point(acts(j1).locator('.findings'))
-await s.say(c.findingsSeen, 3000 * pace)
+await s.say(c.findingsSeen, 2800 * pace)
 await s.unring()
 
 // Wait for the customer
@@ -126,7 +124,6 @@ if (stateOf(j3) !== 'Awaiting Customer Input') throw new Error(`${j3} is at ${st
 await s.point(row(j3).locator('.pill').first())
 await s.say(c.waiting, 3000 * pace, 'dont')
 await s.unring()
-await s.say(c.nothingSent, 2600 * pace)
 
 // Input received (shown, not pressed)
 await s.click(asm.locator('nav.tabs a', { hasText: 'Waiting on the customer' }))
@@ -140,7 +137,6 @@ await s.unring()
 // Decide: allot, or quote from here
 await s.click(asm.locator('nav.tabs a', { hasText: 'Under assessment' }))
 await settle(1000)
-await s.say(c.decide, 1600 * pace)
 await s.point(row(j2).locator('input[type=checkbox]'))
 await s.say(c.allot, 2800 * pace)
 await s.unring()
@@ -154,9 +150,8 @@ await s.click(raise)
 await p.waitForURL(/\/service-centre\/quotations\?/, { timeout: 30000 })
 await settle(1500)
 await s.point(p.locator('[data-code="NEW"]').first().locator('ul.pick'))
-await s.say(c.carried, 3000 * pace)
+await s.say(c.carried, 2600 * pace)
 await s.unring()
-await s.say(c.segment, 2800 * pace, 'do')
 await s.quiet()
 
 await s.card(`<div class="k">${c.remember}</div><ol>${c.rules.map((r) => `<li>${r}</li>`).join('')}</ol>`, 6000 * pace)

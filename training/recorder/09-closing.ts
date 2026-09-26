@@ -26,8 +26,8 @@ const OUT = join(import.meta.dirname, 'out')
 const lang = (process.argv[2] ?? 'en') as Lang
 const c = CAPTIONS[lang]
 if (!c) throw new Error('Language must be en or ta')
-// Tamil captions are longer and read slower; the whole clip runs a little tight to stay near 110 s.
-const pace = (lang === 'ta' ? 1.2 : 1) * 0.85
+// Same holds in both languages, to keep the Tamil clip near 110 s.
+const pace = (lang === 'ta' ? 1.0 : 1) * 0.85
 
 // ---- Unrecorded set-up: one fresh delivery of five units, moved to the states the clip needs. ----
 const CUSTOMER = 'Ayyan Industrial Systems'
@@ -96,6 +96,8 @@ await s.wait(700)
 await s.click(p.getByRole('button', { name: 'Close as non-repairable' }))
 await p.waitForURL(/closed=1/)
 await p.waitForLoadState('networkidle')
+// A slow redirect can reload the page under the caption; reopen the card so the overlay is stable.
+await s.goto(S.jobPath(E))
 await s.point(p.getByText('This job is closed; nothing moves it on from here.'))
 await s.say(c.leadClosed, 3800 * pace, 'dont')
 await s.unring()

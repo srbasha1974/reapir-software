@@ -11,6 +11,9 @@
  *    returnable with "Expected back" and keeps the shelf; numbers are issued on submit.
  *  - record-screen.tsx: immutable once issued, "Print", "This is a transportation document and a
  *    gate pass"; "Record the return" for a returnable challan still out.
+ *  - accessory-form.tsx (?mode=accessory, "Send an accessory on its own"): one board still on a
+ *    shelf, "What is leaving" pre-filled from its inward accessories, reason "Accessory only"; the
+ *    board keeps its shelf and state; the record shows "accessory only — no job".
  *  - Grants: challan.issue = Front Office, Liaison.
  *
  *   npx tsx 10-challan.ts [en|ta]    → out/10-challan.<lang>.webm
@@ -24,12 +27,12 @@ const OUT = join(import.meta.dirname, 'out')
 const lang = (process.argv[2] ?? 'en') as Lang
 const c = CAPTIONS[lang]
 if (!c) throw new Error('Language must be en or ta')
-const pace = (lang === 'ta' ? 1.15 : 1) * 0.9
+const pace = (lang === 'ta' ? 1.05 : 1) * 0.88
 
-// ---- Unrecorded set-up: four units of one delivery, taken to the states that may leave. ----
+// ---- Unrecorded set-up: five units of one delivery; four taken to the states that may leave, one left on its shelf. ----
 const CUSTOMER = 'Kovai Textile Mills'
-const [R1, R2, N1, T1] = await S.registerDelivery({
-  customer: CUSTOMER, search: 'Kovai', units: 4, brand: 'Danfoss', device: 'Drive control board',
+const [R1, R2, N1, T1, X1] = await S.registerDelivery({
+  customer: CUSTOMER, search: 'Kovai', units: 5, brand: 'Danfoss', device: 'Drive control board',
   model: 'FC-51', complaint: 'Compressor drive faults', accessories: 'ribbon cable', prefix: 'DF',
 })
 await S.pickUp([R1, R2, N1, T1])
@@ -43,7 +46,8 @@ await S.closeNonRepairable(N1)
 S.expectState([R1, R2], 'Ready for Invoice')
 S.expectState([N1], 'Non-Repairable')
 S.expectState([T1], 'Awaiting Customer Confirmation')
-console.log('set up', { R1, R2, N1, T1 })
+S.expectState([X1], 'Inward')
+console.log('set up', { R1, R2, N1, T1, X1 })
 const cid = S.customerId(CUSTOMER)
 
 // ---- Recording ----
@@ -53,13 +57,12 @@ const p = s.page
 await s.card(`<div class="k">${c.kicker}</div><h1>${c.title}</h1><p>${c.sub}</p>`, 3500 * pace)
 
 const find = p.getByLabel('Find a board waiting to leave')
-await s.type(find, 'Kovai', 70)
+await s.type(find, 'Kovai', 40)
 await find.press('Enter')
 await p.waitForURL(/q=Kovai/)
 await p.waitForLoadState('networkidle')
 await s.point(p.locator('table.ready'))
 await s.say(c.list, 3600 * pace)
-await s.say(c.gatePass, 3600 * pace, 'dont')
 await s.unring()
 
 // A repaired board and a non-repairable one, ticked together
@@ -89,9 +92,8 @@ await s.click(p.getByLabel(`ribbon cable from ${R1} is going back`, { exact: tru
 await s.click(p.getByLabel(`ribbon cable from ${R2} is going back`, { exact: true }))
 await s.unring()
 
-await s.type(p.locator('#receivingParty'), 'Selvam, our driver', 50)
-await s.type(p.locator('#goesBy'), 'Company van', 50)
-await s.say(c.carrier, 2000 * pace)
+await s.type(p.locator('#receivingParty'), 'Selvam, our driver', 25)
+await s.type(p.locator('#goesBy'), 'Company van', 25)
 
 await s.point(p.locator('dl.sum'))
 await s.say(c.number, 3600 * pace)
@@ -105,12 +107,7 @@ await s.point(p.locator('.card-head').last())
 await s.say(c.issued, 2800 * pace, 'do')
 const printLink = p.getByRole('link', { name: 'Print', exact: true })
 await s.point(printLink)
-await s.say(c.print, 2400 * pace)
-const dc = p.url().split('/front-office/challans/')[1].split('?')[0]
-await s.unring()
-await s.goto(`/print/challan/${dc}`)
-await s.point(p.getByText('Goods outward — not a tax invoice', { exact: false }).first())
-await s.say(c.printed, 3000 * pace)
+await s.say(c.print, 3600 * pace, 'dont')
 await s.unring()
 await s.quiet()
 
@@ -127,13 +124,45 @@ await s.unring()
 await s.quiet()
 const t1Acc = p.getByLabel(`ribbon cable from ${T1} is going back`, { exact: true })
 if (await t1Acc.isVisible().catch(() => false)) await s.click(t1Acc)
-await s.type(p.locator('#receivingParty'), 'Selvam, our driver', 40)
+await s.click(p.locator('#receivingParty'))
+await p.locator('#receivingParty').fill('Selvam, our driver')
 await s.click(p.getByRole('button', { name: /^Issue the challan for/ }))
 await p.waitForURL(/\/front-office\/challans\/DC\//)
 await p.waitForLoadState('networkidle')
 await s.wait(800)
 await s.point(p.locator('.warn', { hasText: 'Still out.' }))
 await s.say(c.stillOut, 3600 * pace)
+await s.unring()
+await s.quiet()
+
+// An accessory on its own, the board staying on its shelf
+await s.goto(`/front-office/challans?customer=${cid}`)
+const accLink = p.getByRole('link', { name: 'Send an accessory on its own' }).first()
+await s.point(accLink)
+await s.say(c.accLink, 3200 * pace)
+await s.click(accLink)
+await p.waitForURL(/mode=accessory/)
+await p.waitForLoadState('networkidle')
+await s.wait(500)
+const mine = p.getByLabel(`It belongs to ${X1}`, { exact: true })
+await s.point(p.locator('table.ready tbody tr', { has: mine }))
+await s.say(c.accBoard, 3200 * pace)
+await s.click(mine)
+await s.unring()
+await s.point(p.locator('#accessory'))
+await s.say(c.accWhat, 3200 * pace)
+await s.unring()
+await s.click(p.locator('#receivingParty'))
+await p.locator('#receivingParty').fill('Selvam, our driver')
+await s.point(p.locator('dl.sum'))
+await s.say(c.accStays, 3000 * pace, 'do')
+await s.unring()
+await s.click(p.getByRole('button', { name: /^Issue the challan/ }).first())
+await p.waitForURL(/\/front-office\/challans\/DC\//)
+await p.waitForLoadState('networkidle')
+await s.wait(800)
+await s.point(p.getByText('accessory only — no job').first())
+await s.say(c.accIssued, 2800 * pace)
 await s.unring()
 await s.quiet()
 

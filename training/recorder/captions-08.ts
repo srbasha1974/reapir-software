@@ -1,8 +1,8 @@
 /**
  * Module 08 captions, English and Tamil.
  *
- * Tamil keeps the app's own words in English (button names, field labels, statuses), because
- * that is what staff will see on screen.
+ * Tamil follows TAMIL-STYLE.md: spoken shop-floor Tamil, business words in Tamil script, on-screen
+ * labels (buttons, fields, statuses) in English letters.
  */
 export const CAPTIONS = {
   en: {
@@ -44,41 +44,41 @@ export const CAPTIONS = {
     ],
   },
   ta: {
-    kicker: 'துளிர் பயிற்சி · பாடம் 08 · Liaison · Service Head · Engineer',
-    title: 'Verification, customer testing',
-    sub: 'சக engineer பழுதுபார்ப்பைச் சோதிப்பார், பின்னர் வாடிக்கையாளர் சோதிப்பார். சுமார் 2 நிமிடங்கள்.',
+    kicker: 'துளிர் ட்ரெயினிங் · மாட்யூல் 08 · Liaison · Service Head · Engineer',
+    title: 'வெரிஃபிகேஷன், கஸ்டமர் டெஸ்டிங்',
+    sub: 'வேற இன்ஜினியர் ரிப்பேரை செக் பண்ணுவாங்க, அப்புறம் கஸ்டமர் டெஸ்ட் பண்ணுவாங்க. சுமார் 2 நிமிடம்.',
 
     giveK: 'Liaison அல்லது Service Head · Verification',
-    giveH: 'சோதனைக்குப் போர்டுகளை ஒப்படைத்தல்',
-    queue: 'பழுதுபார்த்த போர்டுகள் ஒப்படைக்கப்பட இங்கே காத்திருக்கும்.',
-    tick: 'போர்டுகளை டிக் செய்து, யார் சோதிப்பார் என்று தேர்ந்தெடுக்கவும்.',
-    self: 'பழுதுபார்த்த அதே engineer-ஆ? அனுமதி உண்டு, ஆனால் பதிவாகும்.<small>அது self-verification ஆகக் கணக்கிடப்படும். வேறு யாரும் இல்லாதபோது மட்டும்.</small>',
-    peer: 'சக engineer-ஐத் தேர்ந்தெடுக்கவும்: அதைப் பழுதுபார்க்காதவர்.',
-    given: 'ஒப்படைக்கப்பட்டது. இப்போது அவை In Verification.',
+    giveH: 'செக் பண்ண போர்டுகளை கொடுங்க',
+    queue: 'ரிப்பேர் ஆன போர்டுகள் இங்க வெயிட் பண்ணும்.',
+    tick: 'போர்டுகளை டிக் பண்ணுங்க. அப்புறம் யார் செக் பண்ணணும்னு செலக்ட் பண்ணுங்க.',
+    self: 'ரிப்பேர் பண்ண அதே இன்ஜினியரா? முடியும், ஆனா பதிவாகும்.<small>அது self-verification-ஆ கணக்காகும். வேற யாரும் இல்லைன்னா மட்டும்.</small>',
+    peer: 'ரிப்பேர் பண்ணாத வேற இன்ஜினியரை செலக்ட் பண்ணுங்க.',
+    given: 'கொடுத்தாச்சு. இப்போ “In Verification”.',
 
-    chkK: 'Engineer (சோதிப்பவர்) · Verification',
-    chkH: 'சோதித்தல்',
-    mine: 'உங்கள் போர்டுகள் With you to check-இல் இருக்கும்.',
-    hours: 'சோதனைக்கு நேரம் ஆகிறதா? போர்டு உங்களிடம் இருக்கும்போதே பதியுங்கள்.',
-    booked: 'உங்கள் timesheet-இல் சோதனை நேரமாகப் பதிவானது.<small>செலவு அந்த job-க்குச் சேரும்.</small>',
-    symptom: 'சோதனையில் தோல்வியா? பார்த்ததை எழுதுங்கள்.<small>Fail-க்கு symptom கட்டாயம். அதுவரை பொத்தான் காத்திருக்கும்.</small>',
-    failed: 'மீண்டும் bench-க்கு: In Progress, உங்கள் symptom-உடன்.<small>ஒவ்வொரு தோல்வியும் பதிவில் இருக்கும்.</small>',
-    pass: 'சரியாக வேலை செய்கிறதா? Pass.',
-    passed: 'Pass ஆனது. இப்போது வாடிக்கையாளர் சோதனைக்குக் காத்திருக்கிறது.',
+    chkK: 'Engineer (செக் பண்றவர்) · Verification',
+    chkH: 'செக் பண்ணுங்க',
+    mine: 'உங்க போர்டுகள் “With you to check”-ல இருக்கும்.',
+    hours: 'செக் பண்ண டைம் ஆகுதா? போர்டு உங்க கிட்ட இருக்கும்போதே ஹவர்ஸ் போடுங்க.',
+    booked: 'உங்க டைம்ஷீட்ல செக்கிங் டைமா புக் ஆச்சு.<small>காஸ்ட் அந்த ஜாபுக்கு போகும்.</small>',
+    symptom: 'ஃபெயிலா? என்ன பார்த்தீங்கன்னு எழுதுங்க.<small>Fail-க்கு symptom கட்டாயம். எழுதற வரைக்கும் பட்டன் வெயிட் பண்ணும்.</small>',
+    failed: 'திரும்ப பெஞ்சுக்கு: “In Progress”, உங்க symptom-ஓட.<small>ஒவ்வொரு ஃபெயிலான செக்கும் பதிவுல இருக்கும்.</small>',
+    pass: 'சரியா வேலை செய்யுதா? “Pass”.',
+    passed: 'Pass ஆச்சு. இப்போ கஸ்டமர் டெஸ்ட்டுக்கு வெயிட் பண்ணுது.',
 
     custK: 'Liaison · Verification',
-    custH: 'வாடிக்கையாளர் சோதனை',
-    withCust: 'வாடிக்கையாளர் தங்கள் சொந்த சாதனத்தில் சோதிப்பார்.<small>முடிவை அவர்கள் சார்பில் நீங்கள் பதிவு செய்கிறீர்கள்.</small>',
-    said: 'அவர்கள் சொன்னதை எழுதுங்கள்.',
-    choices: 'இன்னும் கோளாறா? மீண்டும் bench-க்குப் போகும்.',
-    closed: 'வேலை செய்கிறது: job மூடப்படும், Ready for Invoice.',
+    custH: 'கஸ்டமர் டெஸ்டிங்',
+    withCust: 'கஸ்டமர் அவங்க மெஷின்ல டெஸ்ட் பண்ணுவாங்க.<small>ரிசல்ட்டை அவங்க சார்பா நீங்க பதிவு பண்ணுங்க.</small>',
+    said: 'அவங்க சொன்னதை எழுதுங்க.',
+    choices: 'இன்னும் ஃபால்ட்டா? திரும்ப பெஞ்சுக்கு போகும்.',
+    closed: 'வேலை செய்யுது: ஜாப் க்ளோஸ் ஆகும், “Ready for Invoice”.',
 
-    remember: 'நினைவில் கொள்ளுங்கள்',
+    remember: 'ஞாபகம் வெச்சுக்கோங்க',
     rules: [
-      'பழுதுபார்த்தவர் அல்ல, <b>சக engineer</b> சோதிப்பார்',
-      'Fail → <b>symptom</b> எழுதுங்கள். போர்டு bench-க்குத் திரும்பும்',
-      'சோதனை நேரம் <b>உங்கள் timesheet</b>-இல், போர்டு உங்களிடம் இருக்கும்போது',
-      'Liaison <b>customer testing</b> பதிவார். Pass → Ready for Invoice',
+      'ரிப்பேர் பண்ணவர் இல்ல, <b>வேற இன்ஜினியர்</b> செக் பண்ணணும்',
+      'Fail → <b>symptom</b> எழுதுங்க. போர்டு பெஞ்சுக்கு திரும்பும்',
+      'செக்கிங் ஹவர்ஸ் <b>உங்க டைம்ஷீட்ல</b>, போர்டு உங்க கிட்ட இருக்கும்போது',
+      'Liaison <b>கஸ்டமர் டெஸ்டிங்</b> பதிவு பண்ணுவாங்க. Pass → Ready for Invoice',
     ],
   },
 } as const

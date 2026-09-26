@@ -22,7 +22,9 @@ const OUT = join(import.meta.dirname, 'out')
 const RAW = join(OUT, 'raw')
 const stamp = process.env.STAMP ?? Date.now().toString().slice(-5)
 const MODEL = 'ACS355'
-const N = 8
+/** ONLY=06: just the three boards module 06 needs (a re-take of 06 alone, leaving 07/08's records be). */
+const only06 = process.env.ONLY === '06'
+const N = only06 ? 3 : 8
 const serial = (u: number) => `ACS${stamp}${u}`
 const tag = process.argv[2] ?? 'en'
 /** Each take submits its own earlier week in module 07, so the two takes' hours never share a day. */
@@ -32,6 +34,31 @@ const sql = (q: string) =>
   execFileSync('docker', ['exec', 'supabase_db_Repair_Service', 'psql', '-U', 'postgres', '-At', '-c', q]).toString().trim()
 
 const jobUrl = (j: string) => `/service-centre/jobs/${j}`
+
+// 0 · Earlier takes of module 06 leave their request with one unit outstanding. Receive the balance
+//     (Liaison, unrecorded) so "On order" shows only the new take's request. Only requests for our
+//     own lot-stamped parts are touched.
+{
+  const open = sql(`select l.pr_number || '|' || (l.quantity_requested - l.quantity_received) from purchase_request_line l
+    join purchase_request r using (pr_number) join part p using (part_id)
+    where not l.deleted and p.part_name like 'Gate driver IC IR2110 · lot %' and l.quantity_received < l.quantity_requested
+      and r.request_status in ('ORDERED','PARTIALLY_RECEIVED','SENT_TO_FRONT_OFFICE')`).split('\n').filter(Boolean)
+  if (open.length) {
+    const s = await Stage.open('liaison@thulirtech.com', '/service-centre/spares?tab=orders', RAW, { record: false })
+    const p = s.page
+    for (const [pr] of open.map((l) => l.split('|'))) {
+      await s.goto('/service-centre/spares?tab=orders')
+      await p.getByRole('combobox', { name: 'Against' }).pressSequentially(pr, { delay: 20 })
+      await p.waitForTimeout(800)
+      await p.getByRole('option', { name: new RegExp(pr.replace(/\//g, '\\/')) }).first().click()
+      await p.locator('#supplierName').fill('Sri Murugan Electronics')
+      await p.getByRole('button', { name: 'Record the delivery' }).click()
+      await p.waitForURL(/resumed=/)
+      console.log('received the balance of', pr)
+    }
+    await s.close()
+  }
+}
 
 // 1 · Front Office registers the delivery (skipped when resuming with STAMP=…)
 if (!process.env.STAMP) {
@@ -72,7 +99,9 @@ const rows = sql(`select serial_number, job_number from work_order where serial_
   .split('\n').map((l) => l.split('|'))
 if (rows.length !== N) throw new Error(`Expected ${N} jobs, found ${rows.length}: ${JSON.stringify(rows)}`)
 const job = (u: number) => rows[u - 1][1]
-const J = { A: job(1), B: job(2), C: job(3), T1: job(4), T2: job(5), T3: job(6), D: job(7), E: job(8) }
+const J: Record<string, string> = only06
+  ? { A: job(1), B: job(2), C: job(3) }
+  : { A: job(1), B: job(2), C: job(3), T1: job(4), T2: job(5), T3: job(6), D: job(7), E: job(8) }
 console.log(J)
 
 // 2 · Liaison picks up and allots to Test Engineer
@@ -108,6 +137,7 @@ console.log(J)
     await p.getByRole('button', { name: 'Start work' }).first().click()
     await p.waitForTimeout(1800)
   }
+  if (!only06) {
   // 07: 2 h on T2 this Wednesday, before it is paused
   await s.goto(`/service-centre/timesheet?job=${encodeURIComponent(J.T2)}`)
   await p.getByLabel(`${J.T2} Wed`).fill('2')
@@ -122,8 +152,11 @@ console.log(J)
     await p.getByLabel(`${J.T1} ${days[i]}`).press('Enter')
     await p.waitForTimeout(1200)
   }
+  }
   // Pauses: C (06) and T2 (07)
-  for (const [j, what] of [[J.C, 'Gate driver IC IR2110'], [J.T2, 'Current sensor LEM LA55']] as const) {
+  const pauses: Array<[string, string]> = [[J.C, 'Gate driver IC IR2110']]
+  if (!only06) pauses.push([J.T2, 'Current sensor LEM LA55'])
+  for (const [j, what] of pauses) {
     await s.goto(jobUrl(j))
     await p.getByRole('button', { name: 'Pending spare' }).click()
     await p.getByPlaceholder('The component it is waiting for…').fill(what)
@@ -131,7 +164,7 @@ console.log(J)
     await p.waitForTimeout(1800)
   }
   // 08: D and E ready for verification
-  for (const j of [J.D, J.E]) {
+  for (const j of only06 ? [] : [J.D, J.E]) {
     await s.goto(jobUrl(j))
     await p.getByRole('button', { name: 'Ready for verification' }).first().click()
     await p.waitForTimeout(1800)
@@ -168,4 +201,4 @@ const P2 = `Gate driver IC IR2110 · lot ${stamp}`
 const state = sql(`select w.job_number || ' ' || ss.sub_status_name || ' ' || coalesce(u.email,'') from work_order w join work_order_sub_status ss using (sub_status_id) left join "system_user" u on u.user_id = w.assigned_user_id where serial_number like 'ACS${stamp}%' order by 1`)
 console.log(state)
 console.log(sql(`select part_name || ' = ' || current_quantity from part where part_name like '%lot ${stamp}'`))
-writeFileSync(join(OUT, `06-setup.${tag}.json`), JSON.stringify({ stamp, jobs: J, parts: { P1, P2 }, serialPrefix: `ACS${stamp}`, submitWeek: SUBMIT_WEEK }, null, 2))
+writeFileSync(join(OUT, `06-setup.${tag}${only06 ? '.06' : ''}.json`), JSON.stringify({ stamp, jobs: J, parts: { P1, P2 }, serialPrefix: `ACS${stamp}`, submitWeek: SUBMIT_WEEK }, null, 2))
