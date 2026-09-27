@@ -10,13 +10,15 @@
  * internal row, and the job card's "What it cost, and what it made" (MIS roles only).
  *
  * Needs kpi-seed.json (npx tsx 15-setup.ts): A is the approved board, X a like board left Under
- * Assessment so the raise form can be filled live without raising anything.
+ * Assessment so the raise form can be filled live without raising anything, and Y a contract board
+ * (Kaveri Power Controls) still unpriced, which the Service Head prices live from the rate card (K13,
+ * Round 4). A rate fixes a board's basis once it prices it, so each take uses the next unpriced Y.
  *
  *   npx tsx 15-money-price.ts [en|ta]   → out/15-money-price.<lang>.webm
  */
 import { Stage } from './stage'
 import { become } from './09-setup'
-import { customerId, jobPath } from './09-setup'
+import { customerId, jobPath, sql } from './09-setup'
 import { CAPTIONS, type Lang } from './captions-15'
 import { sumCard, pointAll } from './15-cards'
 import { readFileSync } from 'node:fs'
@@ -31,6 +33,10 @@ const seed = JSON.parse(readFileSync(join(import.meta.dirname, 'kpi-seed.json'),
 const A: string = seed.A
 const X: string = seed.X
 const cid = customerId('Ayyan Industrial Systems')
+const Y = (seed.Y as string[]).find(
+  (j) => sql(`select w.service_rate_id is null and ss.sub_status_name = 'Under Assessment' from work_order w join work_order_sub_status ss using (sub_status_id) where w.job_number = '${j}'`) === 't'
+)
+if (!Y) throw new Error('No unpriced contract board left for the rate-card demo: add one with 15-setup.ts')
 
 const s = await Stage.open('liaison@thulirtech.com', `/service-centre/quotations?customer=${cid}&jobs=${encodeURIComponent(X)}`, join(OUT, 'raw'))
 const p = s.page
@@ -89,17 +95,43 @@ await s.say(c.record, 3800 * pace)
 await s.say(c.fixed, 2800 * pace)
 await s.unring()
 
-// ── Board A's job card, as the Service Head ────────────────────────────────────────────────────
-await become(s, 'servicehead@thulirtech.com', jobPath(A))
-await s.wait(600)
-const dt = (t: string) => p.locator('dl.money dt', { hasText: new RegExp(`^${t}$`) })
+// ── A contract board priced from the rate card, as the Service Head (K13) ─────────────────────
+const dt = (t: string) => p.locator('dl.money dt', { hasText: new RegExp(`^${t}`) }).first()
 const dd = (t: string) => dt(t).locator('xpath=following-sibling::dd[1]')
+await s.quiet()
+await card(c.rateCard, 8500)
+await become(s, 'servicehead@thulirtech.com', jobPath(Y))
+await s.wait(600)
+const act = p.getByRole('button', { name: 'Price from the rate card…' })
+await s.point(act)
+await s.say(c.rateAct, 3400 * pace)
+await s.click(act)
+const pick = p.locator(`[id="rate-${Y}"]`)
+await s.point(pick)
+const rateLabel = (await pick.locator('option').allTextContents()).find((t) => t.startsWith('PSU-24V'))!
+await pick.selectOption({ label: rateLabel })
+await s.say(c.ratePick, 3200 * pace)
+await s.click(p.getByRole('button', { name: 'Price from the rate card', exact: true }))
+await p.waitForLoadState('networkidle')
+await s.wait(1200)
+await s.goto(jobPath(Y))
+await s.wait(600)
+await pointAll(s, [dt('Normal price'), dd('Normal price')])
+await s.say(c.rateShown, 3800 * pace, 'do')
+await s.unring()
+await s.quiet()
+
+// ── Board A's job card, as the Service Head ────────────────────────────────────────────────────
+await s.goto(jobPath(A))
+await s.wait(600)
 await s.point(p.getByText('What it cost, and what it made'))
 await s.say(c.jobCard, 3600 * pace)
 await pointAll(s, [dt('Normal price'), dd('Labour charge')])
 await s.say(c.labourShown, 3800 * pace)
-await pointAll(s, [dt('Premium'), dd('Charged')])
-await s.say(c.charged, 3600 * pace, 'dont')
+await pointAll(s, [dt('Premium'), dd('Premium')])
+await s.say(c.premReason, 3000 * pace)
+await pointAll(s, [dt('Charged'), dd('Charged')])
+await s.say(c.charged, 3400 * pace, 'dont')
 await s.unring()
 await s.quiet()
 await card(c.marginCard, 10500)

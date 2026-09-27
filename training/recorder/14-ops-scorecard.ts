@@ -68,6 +68,8 @@ await s.card(example(c.exSmall), CARD)
 await asUser(s, 'servicehead@thulirtech.com', PATH)
 await s.point(p.locator('table.cards'))
 await s.say(c.lead, 2400 * pace)
+await s.point(row().locator('td').nth(4))
+await s.say(c.leadRework, 3600 * pace)
 const small = p.locator('table.cards tbody tr', { hasText: 'Small sample' }).first()
 if (await small.isVisible().catch(() => false)) {
   await s.point(small)

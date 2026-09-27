@@ -11,7 +11,8 @@
  *    Send is the Liaison's: purchase_request.manage) → ORDERED (the Front Office's "Mark ordered" with
  *    the Zoho PO no., mark_purchase_request_ordered, purchase_request.order) → PARTIALLY_RECEIVED
  *    ("Part received") / RECEIVED on a receipt (goods_receipt_releases_jobs).
- *  - goods_receipt_releases_jobs(): a board is released only when its whole allocation is covered.
+ *  - goods_receipt_releases_jobs() (Round 10.31, finding 18): a board is released only when none of its
+ *    allocations, on any request line, is unmet; the receipt names the boards released and still waiting.
  *  - goods_receipt_is_immutable(): receipts are never edited; corrections are stock adjustments.
  *
  * Several roles, so four short recordings (one per role), trimmed at their title cards and joined.
@@ -164,8 +165,9 @@ if (runs(2)) {
   await tap(s, send)
   await p.waitForURL(/sent=/, { waitUntil: 'commit', timeout: 90000 })
   await p.waitForLoadState('networkidle')
-  // The act lands on the waiting tab; the request's new state is read on On order.
-  await s.goto('/service-centre/spares?tab=orders')
+  // Since Round 10.31 the act lands on On order, beside the request. A full load of that same address
+  // (a GET) so the overlay keeps recording after the redirect.
+  await reload(s)
   await s.wait(400)
   const sentRow = p.getByRole('row', { name: new RegExp(pr.replace(/\//g, '\\/')) }).first()
   await s.point(sentRow)

@@ -15,8 +15,8 @@
   "ta": "media/00-poster-ta.jpg"
  },
  "seconds": {
-  "en": 73,
-  "ta": 93
+  "en": 68,
+  "ta": 82
  },
  "do": {
   "en": [
@@ -42,14 +42,14 @@
   "en": [
    "Don't try to log hours on a job at <b>Pending Spare</b> or <b>On Hold</b>. They mean paused, and the system refuses the time (their “No time logging” flag).",
    "Don't expect a <b>Closed</b> job to be reopened. A lead can send an <b>open</b> job back to the engineer (<b>Send it back to the engineer</b>, with a reason); a board that returns after closing is a new <b>Rework</b> job.",
-   "Don't keep work outside the system. Time in each sub-status is measured, and a job sitting too long shows as <b>Stuck</b>.",
-   "Don't judge a job by the day it arrived. <b>Days</b> on What has stalled count from entering the current sub-status."
+   "Don't keep work outside the system. A board on the bench with no hour, part or move for too many working days shows as <b>Stuck</b>.",
+   "Don't judge a job by the day it arrived. <b>Days</b> in the whole queue on What has stalled count from entering the current sub-status."
   ],
   "ta": [
    "<b>Pending Spare</b> அல்லது <b>On Hold</b>-ல இருக்கற ஜாப்ல ஹவர்ஸ் போடாதீங்க. வேலை நிக்குதுன்னு அர்த்தம்; சிஸ்டம் ஏத்துக்காது (அவங்களுக்கு “No time logging” ஃப்ளாக் இருக்கு).",
    "<b>Closed</b> ஜாப் திரும்ப ஓப்பன் ஆகும்னு எதிர்பாக்காதீங்க. <b>ஓப்பன்</b> ஜாபை மட்டும் லீட் திரும்ப இன்ஜினியருக்கு அனுப்பலாம் (<b>Send it back to the engineer</b>, காரணத்தோட). Closed ஆன பிறகு திரும்ப வர்ற போர்டு = புது <b>Rework</b> ஜாப்.",
-   "வேலையை சிஸ்டத்துக்கு வெளியே வெச்சுக்காதீங்க. ஒவ்வொரு sub-status-லயும் டைம் கணக்காகும்; ரொம்ப நாள் நின்னா <b>Stuck</b>-ன்னு காட்டும்.",
-   "போர்டு வந்த நாளை வெச்சு ஜாபை எடை போடாதீங்க. What has stalled-ல <b>Days</b> = இப்போ இருக்கற sub-status-க்கு வந்ததுல இருந்து."
+   "வேலையை சிஸ்டத்துக்கு வெளியே வெச்சுக்காதீங்க. பெஞ்ச்ல இருக்கிற போர்டுக்கு பல வேலை நாள் ஹவர், பார்ட், மூவ் எதுவும் இல்லன்னா <b>Stuck</b>-ன்னு காட்டும்.",
+   "போர்டு வந்த நாளை வெச்சு ஜாபை எடை போடாதீங்க. What has stalled-ல முழு க்யூவோட <b>Days</b> = இப்போ இருக்கற sub-status-க்கு வந்ததுல இருந்து."
   ]
  },
  "quiz": {
@@ -85,7 +85,7 @@
     "why": "Repair Completed: Ready for Verification, In Verification, Awaiting Customer Confirmation. The Liaison records the customer's test."
    },
    {
-    "q": "On What has stalled, a job shows 21 in the Days column. What does 21 count?",
+    "q": "On What has stalled, a job in the whole queue shows 21 in the Days column. What does 21 count?",
     "o": [
      "Days since the board arrived at the counter",
      "Days since it entered its current sub-status",
@@ -127,7 +127,7 @@
     "why": "Repair Completed: Ready for Verification, In Verification, Awaiting Customer Confirmation. கஸ்டமர் டெஸ்டை Liaison பதிவு பண்ணுவாங்க."
    },
    {
-    "q": "What has stalled-ல ஒரு ஜாபுக்கு Days காலத்துல 21 இருக்கு. 21 எதைக் குறிக்குது?",
+    "q": "What has stalled-ல முழு க்யூல ஒரு ஜாபுக்கு Days காலத்துல 21 இருக்கு. 21 எதைக் குறிக்குது?",
     "o": [
      "போர்டு கவுண்டருக்கு வந்ததுல இருந்து நாட்கள்",
      "இப்போ இருக்கற sub-status-க்கு வந்ததுல இருந்து நாட்கள்",
@@ -141,10 +141,11 @@
  "notes": [
   "The brief and the old draft said a lead can send a CLOSED job back. The app refuses it: return_to_engineer() raises “Work order … is closed. Register a rework job against it rather than reopening this one.”, and the job card hides Send it back on terminal jobs. The clip teaches that open jobs can be sent back (not from In Progress) and closed ones become Rework jobs.",
   "The draft line “Add a short note when you change status” was not taught: status changes carry notes only in specific acts (Send it back and Put on hold need a reason, Release hold says what cleared it, Pending Spare records what it waits for); there is no general note field.",
-  "Two different “stuck” measures exist: What has stalled (Service) lists jobs past the threshold by time in the current state (it excludes boards waiting on a part), while Overview › Stuck tasks counts Alloted/In Progress jobs with no timesheet, part or status activity for N business days. The clip only says “sitting too long in one state shows as Stuck”.",
+  "Since feature 032 (K6) What has stalled › Stuck uses MIS › Stuck tasks' rule: a board on the bench (Alloted, In Progress) with no hour, part or move for longer than the configured threshold, in working days (columns “Last activity” and “Idle”). The whole-queue panel beside it still counts calendar days in the current sub-status. The clip's caption says so.",
   "Round 2: Put on hold / Release hold (Service Head, Liaison; from In Progress, reason required) is named in a caption over the pipeline's On Hold line, not demonstrated; module 05 demonstrates it. The time refusal now follows each sub-status's “No time logging” (blocks_labour) flag (migration 0157); Pending Spare and On Hold carry it.",
   "Filmed as admin.test@ (Admin sees every screen). The job shown is read, never changed: the open job with the longest history, preferring Pending Spare (WO/26-27/00005 in these takes).",
-  "On the job card the Non-Repairable act is labelled “It cannot be saved…” in red, which at a glance reads like an error message (UX, not fixed).",
-  "Round 3: re-recorded on develop with the Rack & Bin look. The pipeline strip now opens with a Sourcing column (customers, not boards, outside the total); the stage pointers (Pre-Repair … Closed) are unchanged and the captions still hold. What has stalled › Stuck leaves out boards waiting on a part (chased on Spares). Durations: EN 73 s, TA 93 s (title cards: about 70 / 90 seconds)."
+  "Since feature 032 the job card's Non-Repairable act reads “Cannot repair…” (it read “It cannot be saved…”); still shown in red.",
+  "Round 3: re-recorded on develop with the Rack & Bin look. The pipeline strip opens with a Sourcing column (customers, not boards, outside the total); the stage pointers (Pre-Repair … Closed) are unchanged.",
+  "Round 4 (feature 032, K6): re-recorded both languages because the Stuck panel on What has stalled and its burned-in caption changed (now MIS Stuck tasks' rule; locally it lists no board). Durations: EN 68 s (title “About 70 seconds”), TA 82 s (title redrawn to “சுமார் 80 செகண்ட்” by 00-title.ts)."
  ]
 }

@@ -15,8 +15,8 @@
   "ta": "media/01-poster-ta.jpg"
  },
  "seconds": {
-  "en": 128,
-  "ta": 139
+  "en": 100,
+  "ta": 105
  },
  "do": {
   "en": [
@@ -144,11 +144,11 @@
   "Round 2: Add a person now has a Primary checkbox (finding 16); the clip ticks it for Priya (“They have none yet”) and then for Arun, whose hint reads “Ticking it replaces Priya Natarajan.” Make primary is only mentioned.",
   "Round 2: Move it back on the Lifecycle tab is now shown only to the Operations Manager (customer.lifecycle_override), and not on a Potential account (finding 3). The Sales Head part of the clip shows only Convert to Regular and its refusal.",
   "The draft line “Converting is the Sales Head's job … Lifecycle moves can't be undone” is only partly true: an Operations Manager can move an account back with a recorded reason (override_lifecycle_status). Potential → Trial is automatic on the first work order; there is no manual move to Trial.",
-  "Minor (not fixed): on the Lifecycle tab the bay header reads “0 in all” while one transition is listed. The convert refusal says “Its open jobs are listed above”, but no list of open jobs is drawn.",
+  "Fixed in feature 032: the Lifecycle tab's header now counts the moves (“1 move”, it read “0 in all”), and the convert refusal ends “Its open jobs are on the Jobs tab.” (it said “listed above”, where nothing was listed).",
   "Right after Add contact the People list sometimes still showed only the earlier person (header said 2 active of 2); the script reloads the tab before pointing at it.",
   "The backdated entry is logged for 16:30 yesterday in the (UTC) recording browser and shows as 22:00 IST: datetime-local is read in the browser's time zone.",
   "Pre-step (unrecorded): two extra customers per run (“Kaveri Automation NNNN” as the move destination, “Madurai Plastics NNNN” with one board booked in by Front Office so it is Trial). On camera: “Selvam Pumps NNNN” with contacts Priya and Arun.",
   "Round 3: re-recorded on develop (030-training) with the Rack & Bin look. The shared dev server was slow (other agents recording); long server round trips are cut from the video (frames marked by Cuts in 00-helpers.ts, dropped by 00-encode.py).",
-  "Durations: EN 128 s (title card: about 2 minutes), TA 139 s (title card: சுமார் 2½ நிமிடம்). No screen or behaviour changes found for this module on develop."
+  "Round 4 (feature 032): re-recorded both languages because the Lifecycle tab's header and the refusal's wording on screen changed; the refusal caption now adds “Its open jobs are on the Jobs tab.” Durations: EN 100 s, TA 105 s; title cards redrawn (00-title.ts) to “Under 2 minutes” / “2 நிமிஷத்துக்குள்”."
  ]
 }

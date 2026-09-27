@@ -18,7 +18,8 @@
  */
 import { Stage } from './stage'
 import { CAPTIONS, type Lang } from './captions-03'
-import { pickUp, registerDelivery, stamp, stateOf } from './03-setup'
+import { pickUp, registerDelivery, stamp, stateOf, sql } from './03-setup'
+import { CONTRACT, contractCustomer } from './03-contract'
 import { join } from 'node:path'
 
 const OUT = join(import.meta.dirname, 'out')
@@ -43,7 +44,21 @@ const jobs = await registerDelivery({
 const [j1, j2, j3] = jobs
 // Only j1 is picked up on camera; j2 and j3 are picked up here so the clip stays short.
 await pickUp([j2, j3])
-console.log('jobs', jobs)
+// A contract customer's board, for Price from the rate card (Round 4, K13): customer, segment and rate
+// are made once through the app (03-contract.ts); each take registers and picks up its own board.
+await contractCustomer()
+const cserial = `HC${st}`
+const [jc] = await registerDelivery({
+  customer: CONTRACT.customer,
+  brand: 'Yaskawa',
+  deviceType: 'Drive board',
+  model: 'CIMR-A1000',
+  complaint: 'No display, OC fault',
+  units: 1,
+  serial: cserial,
+})
+await pickUp([jc])
+console.log('jobs', jobs, 'contract', jc)
 
 // ---- Recording ----------------------------------------------------------------------------
 const s = await Stage.open('liaison@thulirtech.com', '/service-centre/reservoir', join(OUT, 'raw'))
@@ -137,6 +152,8 @@ await s.unring()
 // Decide: allot, or quote from here
 await s.click(asm.locator('nav.tabs a', { hasText: 'Under assessment' }))
 await settle(1000)
+await s.point(row(j2).locator('.pill').first())
+await s.say(c.assessed, 2600 * pace)
 await s.point(row(j2).locator('input[type=checkbox]'))
 await s.say(c.allot, 2800 * pace)
 await s.unring()
@@ -151,6 +168,35 @@ await p.waitForURL(/\/service-centre\/quotations\?/, { timeout: 30000 })
 await settle(1500)
 await s.point(p.locator('[data-code="NEW"]').first().locator('ul.pick'))
 await s.say(c.carried, 2600 * pace)
+await s.unring()
+
+// A contract customer's board: price it from their rate card (job card)
+await s.quiet()
+await s.goto(`/service-centre/jobs/${jc}`)
+await settle(1000)
+const priceAct = p.getByRole('button', { name: /Price from the rate card/ })
+await s.point(priceAct)
+await s.say(c.rateCard, 3000 * pace)
+await s.click(priceAct)
+await s.wait(500)
+const rateSel = p.locator(`[id="rate-${jc}"]`)
+await s.point(rateSel)
+await s.say(c.rateChoose, 2600 * pace, 'do')
+await rateSel.selectOption({ index: 1 })
+await s.wait(500)
+await s.click(p.getByRole('button', { name: 'Price from the rate card', exact: true }))
+await settle(1500)
+for (let i = 0; i < 20 && !sql(`select service_rate_id from work_order where job_number = '${jc}'`)[0]; i++) await s.wait(500)
+await s.goto(`/service-centre/jobs/${jc}`)
+await settle(800)
+await s.point(p.locator('dt', { hasText: /^Charged$/ }).first().locator('xpath=following-sibling::dd[1]'))
+await s.say(c.ratePriced, 3000 * pace, 'dont')
+await s.unring()
+await s.quiet()
+await s.goto(`/service-centre/reservoir?q=${encodeURIComponent(cserial)}`)
+await settle(1000)
+await s.point(row(jc).locator('.pill').first())
+await s.say(c.rateTag, 2800 * pace)
 await s.unring()
 await s.quiet()
 

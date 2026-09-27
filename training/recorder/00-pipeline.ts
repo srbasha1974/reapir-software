@@ -11,8 +11,9 @@
  *  - service-centre/jobs/[...job]: status, "This job so far" (work_order_status_history), and
  *    "Send it back to the engineer" (work_order.return: Service Head, Liaison; return_to_engineer()
  *    refuses a closed job: "Register a rework job against it rather than reopening this one")
- *  - service-centre/worklists: v_queue_aging — days since entering the current sub-status; Stuck past
- *    the configured threshold
+ *  - service-centre/worklists: the whole queue (v_queue_aging) — days since entering the current
+ *    sub-status; Stuck (feature 032, K6) — a board on the bench (Alloted, In Progress) with no hour,
+ *    part or move for longer than the configured threshold in working days, MIS › Stuck tasks' rule
  *
  * The job shown is read, never changed: an open job with the longest history, preferring one paused
  * at Pending Spare. Captions do not name its status.

@@ -2,8 +2,8 @@
  * Module 07 · Timesheets — Engineer.
  *
  * Grounded in UC-011 and the code:
- *  - app/(app)/service-centre/timesheet/: a weekly grid (Mon–Sat columns; the week in the database is
- *    week_start_date + 6, Monday to Sunday), a cell saves on leaving it via set_timesheet_cell().
+ *  - app/(app)/service-centre/timesheet/: a weekly grid, Monday to Sunday (a Sunday column since Round
+ *    10.31, finding 19; the week reads "21 – 27 Sep"), a cell saves on leaving it via set_timesheet_cell().
  *  - "+ Add a work order" offers only the engineer's own non-paused boards (api/jobs/search).
  *  - timesheet_entry_is_permitted(): only your own allotted job (or one you hold for verification);
  *    refused on Pending Spare, On Hold and closed jobs. The grid shows a paused row read-only.
@@ -38,8 +38,10 @@ const p = s.page
 
 await s.card(`<div class="k">${c.kicker}</div><h1>${c.title}</h1><p>${c.sub}</p>`, 3500 * pace)
 
+await s.point(p.locator('.wk').first())
+await s.say(c.week, 2400 * pace)
 await s.point(p.locator('table.week-grid thead'))
-await s.say(c.open, 3000 * pace)
+await s.say(c.open, 2800 * pace)
 await s.unring()
 
 async function addJob(job: string) {

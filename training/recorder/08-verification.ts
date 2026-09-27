@@ -7,6 +7,8 @@
  *    (decision of 2026-09-02; verification_marks_self() sets is_self_verification).
  *  - assign_verifier(): only from Ready for Verification → In Verification. verification.assign is
  *    held by Liaison and Service Head.
+ *  - verification/page.tsx: the banner after each act says what happened (Round 10.31): a pass or a
+ *    close in the good panel, a fail or a return in the plain one with the alert icon.
  *  - record_verification(): only the holder records; a fail needs a symptom and returns the board
  *    to In Progress with "Verification failed: <symptom>" on its history, cycle count +1; a pass
  *    goes to Awaiting Customer Confirmation.
@@ -71,9 +73,9 @@ if (runs(1)) {
   await p.waitForURL(/given=/, { waitUntil: 'commit', timeout: 90000 })
   await p.waitForLoadState('networkidle')
   // A full load after the redirect: overlay changes are not recorded reliably until one.
-  await s.goto('/service-centre/verification?view=checking')
-  await s.point(p.locator('nav.views a', { hasText: 'Being checked' }))
-  await s.say(c.given, 2400 * pace)
+  await s.goto(new URL(p.url()).pathname + new URL(p.url()).search)
+  await s.point(p.locator('.warn[role=status]').first())
+  await s.say(c.given, 2600 * pace)
   await s.unring()
   await s.quiet()
   await s.close(segments[0])
@@ -115,6 +117,9 @@ if (runs(2)) {
   await s.click(p.getByRole('button', { name: 'Fail — back to the bench' }))
   await p.waitForURL(/failed=/, { waitUntil: 'commit', timeout: 90000 })
   await p.waitForLoadState('networkidle')
+  await s.goto(new URL(p.url()).pathname + new URL(p.url()).search)
+  await s.point(p.locator('.warn[role=status]').first())
+  await s.say(c.failBanner, 2600 * pace)
   await s.goto(`/service-centre/jobs/${D}`)
   await s.point(p.getByText(/Verification failed/).first())
   await s.say(c.failed, 3600 * pace)
@@ -129,8 +134,8 @@ if (runs(2)) {
   await s.click(pass)
   await p.waitForURL(/passed=/, { waitUntil: 'commit', timeout: 90000 })
   await p.waitForLoadState('networkidle')
-  await s.goto('/service-centre/verification?view=customer')
-  await s.point(p.locator('a.item', { hasText: E }).first())
+  await s.goto(new URL(p.url()).pathname + new URL(p.url()).search)
+  await s.point(p.locator('.warn[role=status]').first())
   await s.say(c.passed, 2600 * pace)
   await s.unring()
   await s.quiet()

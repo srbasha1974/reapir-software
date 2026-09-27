@@ -8,6 +8,8 @@
  *    ("Service Charges for …"), amount from the job, "Remove" while not sent, Send disabled with the
  *    reason when no Zoho organisation / SAC / GSTIN; a sent batch is frozen by a trigger.
  *  - invoice_batch.manage = Liaison, Operations Manager (nav hides Invoicing; refusal.tsx refuses others by URL).
+ *  - Remove redirects to the batch with ?removed=<job>, which shows "<job> is back on the worklist and
+ *    can be billed later." (feature 032).
  *  - batch-acts.tsx EditLine: "What this line says to the customer", a two-row textarea + Save.
  *  - Zoho is NOT configured locally, so the clip shows the blocked Send and says what Send does.
  *
@@ -100,11 +102,14 @@ const remove = k3row.getByRole('button', { name: 'Remove' })
 await s.point(remove)
 await s.say(c.remove, 3400 * pace, 'do')
 await s.click(remove)
+// Remove redirects to the batch with ?removed=<job>; the note there says what happened (feature 032).
+await p.waitForURL(/removed=/, { timeout: 30000 })
 await k3row.waitFor({ state: 'detached' })
 await p.waitForLoadState('networkidle')
-await s.wait(1500)
+await s.wait(800)
+await s.point(p.locator('p.note[role="status"]', { hasText: 'is back on the worklist' }))
+await s.say(c.removed, 3200 * pace, 'do')
 await s.unring()
-await s.say(c.removed, 2800 * pace)
 
 // Zoho
 await s.point(p.locator('.warn', { hasText: 'The push has nothing to send to.' }))

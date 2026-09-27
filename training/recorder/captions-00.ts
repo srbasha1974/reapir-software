@@ -22,7 +22,7 @@ export const CAPTIONS = {
     noReopen: 'A closed job is never reopened.<small>A board that comes back is a new Rework job.</small>',
     queue: 'Leads watch the whole queue here.',
     days: 'Days count from entering the current sub-status.<small>Not from the day the board arrived.</small>',
-    stuck: 'Sitting too long in one state? It shows as Stuck.<small>The limit is set in configuration.</small>',
+    stuck: 'Stuck: on the bench with no hour, part or move.<small>Counted in working days, the same rule as MIS › Stuck tasks.</small>',
     remember: 'Remember',
     rules: [
       '<b>4 stages</b>: Pre-Repair → In-Repair → Repair Completed → Closed',
@@ -34,7 +34,7 @@ export const CAPTIONS = {
   ta: {
     kicker: 'துளிர் ட்ரெயினிங் · மாட்யூல் 00 · எல்லாருக்கும்',
     title: 'ஒரு போர்டு ஷாப்புக்குள்ள எப்படி நகருது',
-    sub: '4 ஸ்டேஜ், 14 sub-status, யாரோட டர்ன். சுமார் 90 செகண்ட்.',
+    sub: '4 ஸ்டேஜ், 14 sub-status, யாரோட டர்ன். சுமார் 80 செகண்ட்.',
     map: 'ஒவ்வொரு போர்டும் இடமிருந்து வலமா 4 ஸ்டேஜ் போகும்.<small>ஒவ்வொரு ஸ்டேஜுக்கும் தனி sub-status இருக்கு.</small>',
     pre: 'Pre-Repair: Inward, அசெஸ்மென்ட், கொட்டேஷன்.<small>Front Office Inward பண்ணுவாங்க. Liaison அல்லது Service Head அசெஸ் பண்ணி கொட்டேஷன் தருவாங்க.</small>',
     inRepair: 'In-Repair: அலாட், அப்புறம் ரிப்பேர்.<small>Service Head அல்லது Liaison அலாட் பண்ணுவாங்க. இன்ஜினியர் ரிப்பேர் பண்ணுவாங்க.</small>',
@@ -48,7 +48,7 @@ export const CAPTIONS = {
     noReopen: 'Closed ஜாபை திரும்ப ஓப்பன் பண்ண முடியாது.<small>திரும்ப வர்ற போர்டு = புது Rework ஜாப்.</small>',
     queue: 'லீட்ஸ் முழு க்யூவையும் இங்க பாப்பாங்க.',
     days: 'Days = இப்போ இருக்கற sub-status-க்கு வந்ததுல இருந்து.<small>போர்டு வந்த நாள்ல இருந்து இல்ல.</small>',
-    stuck: 'ஒரே ஸ்டேட்டஸ்ல ரொம்ப நாள்? Stuck-ன்னு காட்டும்.<small>லிமிட் configuration-ல செட் பண்ணியிருக்கு.</small>',
+    stuck: 'Stuck: பெஞ்ச்ல இருக்கிற போர்டுக்கு ஹவர், பார்ட், மூவ் எதுவும் இல்ல.<small>வேலை நாள் கணக்கு. MIS › Stuck tasks-ல இருக்கிற அதே ரூல்.</small>',
     remember: 'ஞாபகம் வெச்சுக்கோங்க',
     rules: [
       '<b>4 ஸ்டேஜ்</b>: Pre-Repair → In-Repair → Repair Completed → Closed',

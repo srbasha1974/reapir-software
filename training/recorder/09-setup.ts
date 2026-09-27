@@ -201,10 +201,10 @@ export async function customerPass(jobs: string[]) {
   })
 }
 
-/** Service Head closes an open job as non-repairable ("It cannot be saved…"). */
+/** Service Head closes an open job as non-repairable ("Cannot repair…", formerly "It cannot be saved…"). */
 export async function closeNonRepairable(job: string, reason = 'Component unavailable') {
   await as('servicehead@thulirtech.com', jobPath(job), async (s, p) => {
-    await p.getByRole('button', { name: 'It cannot be saved…' }).click()
+    await p.getByRole('button', { name: /^(Cannot repair|It cannot be saved)…$/ }).first().click()
     await p.locator(`select[name="reasonId"]`).selectOption({ label: reason })
     await click(p, p.getByRole('button', { name: 'Close as non-repairable' }))
   })

@@ -150,6 +150,7 @@
   "Not shown for time: Labour rates, Configuration (where the stuck threshold is set), Queue aging and the Sales analytics MIS page, Sales Head's Qualify as big potential, the SLA/“asked” marking on MIS (taught in the do list only, from CHANGE-IMPACT).",
   "The draft line “Sales Head: reassign a customer's owner with the reassign action so the move is recorded” holds; Admin and Executive Management may also do it (reassign_customer_owner). The move is limited to an active Sales Engineer or the Sales Head.",
   "Round 3: re-recorded on develop (030-training) with the Rack & Bin look. The shared dev server was slow (other agents recording); long server round trips are cut from the video (frames marked by Cuts in 00-helpers.ts, dropped by 00-encode.py).",
-  "Round 3: after the refused overlapping rate, clicking the board on the rate card did not always navigate (the list re-fits its rows and replaces the address); the script opens the board's own address. Durations: EN 145 s (about 2½ minutes), TA 174 s (title card: சுமார் 3 நிமிடம்; redrawn over the filmed one)."
+  "Round 3: after the refused overlapping rate, clicking the board on the rate card did not always navigate (the list re-fits its rows and replaces the address); the script opens the board's own address. Durations: EN 145 s (about 2½ minutes), TA 174 s (title card: சுமார் 3 நிமிடம்; redrawn over the filmed one).",
+  "Round 4 (features 031/032) — verdict no, not re-recorded: MIS › Stuck tasks (shown) is unchanged, and What has stalled now uses the same rule (K6). The clip shows neither rework costs nor the Configuration screen, which since K21 also holds “Purchase requests go to” (the Front Office address a purchase request is emailed to)."
  ]
 }

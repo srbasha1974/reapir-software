@@ -5,7 +5,7 @@
     "ta": "எண்கள் · மணி 1: ஒரு ஜாப் ப்ரைஸ் எப்படி பிரியுது"
   },
   "role": "Liaison · Service Head · Operations Manager",
-  "path": "Service › Quotations · Service › My jobs › job card (“What it cost, and what it made”)",
+  "path": "Service › Quotations · Service › My jobs › job card (“What it cost, and what it made”, “Price from the rate card…”)",
   "video": {
     "en": "media/15-money-price.mp4",
     "ta": "media/15-money-price-ta.mp4"
@@ -15,13 +15,14 @@
     "ta": "media/15-poster-ta.jpg"
   },
   "seconds": {
-    "en": 165,
-    "ta": 191
+    "en": 174,
+    "ta": 210
   },
   "do": {
     "en": [
       "Remember the one rule: prices are <b>all-in</b>. Parts are inside the price, never added on top.",
       "Fill <b>Normal price</b> honestly when there is no rate card: what a regular customer pays for this repair on a normal day, parts included. It is marked <b>set by hand</b>.",
+      "For a <b>contract</b> customer, price a board Under Assessment from its rate: on the job card, <b>Price from the rate card…</b>, choose the rate, <b>Price from the rate card</b>. The normal price then reads “from the rate card” (Service Head or Liaison).",
       "Read <b>Labour charge</b> as the engineer's share: normal price − parts billed (never below ₹0). It moves every time a part is booked.",
       "Give a reason (<b>Why a premium</b>) whenever the price is above normal. The form will not raise without one.",
       "Read <b>Premium</b> and <b>Discount</b> as commercial results. They sit beside the work and never enter the labour margin.",
@@ -30,6 +31,7 @@
     "ta": [
       "ஒரே ரூல்: ப்ரைஸ் <b>all-in</b>. பார்ட்ஸ் ப்ரைஸுக்குள்ளயே இருக்கு, மேல சேர்க்க வேண்டாம்.",
       "ரேட் கார்டு இல்லைன்னா <b>Normal price</b>-ஐ நேர்மையா போடுங்க: ரெகுலர் கஸ்டமர் சாதாரண நாள்ல இந்த ரிப்பேருக்கு கொடுக்கற ப்ரைஸ், பார்ட்ஸ் சேர்த்து. <b>set by hand</b>னு மார்க் வரும்.",
+      "<b>கான்ட்ராக்ட்</b> கஸ்டமர் போர்டு Under Assessment-ல இருந்தா ரேட்டுல இருந்து ப்ரைஸ் போடுங்க: ஜாப் கார்டுல <b>Price from the rate card…</b>, ரேட்டை செலக்ட் பண்ணி, <b>Price from the rate card</b>. அப்புறம் Normal price “from the rate card”னு வரும் (சர்வீஸ் ஹெட் இல்ல லையசன்).",
       "<b>Labour charge</b> = இன்ஜினியரோட பங்கு: நார்மல் ப்ரைஸ் − Parts billed (₹0க்கு கீழ போகாது). ஒவ்வொரு பார்ட் புக் ஆகும்போதும் மாறும்.",
       "நார்மலுக்கு மேல ப்ரைஸ் போட்டா காரணம் (<b>Why a premium</b>) சொல்லுங்க. இல்லாம ஃபார்ம் raise ஆகாது.",
       "<b>Premium</b>, <b>Discount</b> கமர்ஷியல் ரிசல்ட். வேலைக்கு பக்கத்துல தனியா இருக்கும், லேபர் மார்ஜின்ல சேராது.",
@@ -42,14 +44,16 @@
       "Don't expect a premium job to raise the engineer's labour charge. It doesn't, by design.",
       "Don't look for a “parts premium” field. There isn't one: parts above the normal price reduce the Premium, and profit on parts is <b>Parts margin</b>.",
       "Don't read Labour margin as the job's profit. That is Total margin.",
-      "Don't try to change the split after approval. A different split is a new quotation version."
+      "Don't try to change the split after approval. A different split is a new quotation version.",
+      "Don't trust “Priced from the rate card” on its own: check that Normal price reads “from the rate card”. Only an Exclusive contract customer's rate prices a board."
     ],
     "ta": [
       "<b>Charged</b>-ஐ “₹12,000 + பார்ட்ஸ்”னு படிக்காதீங்க. பார்ட்ஸ் ஏற்கனவே அதுக்குள்ள இருக்கு.",
       "ப்ரீமியம் ஜாப்னா இன்ஜினியரோட லேபர் சார்ஜ் ஏறும்னு எதிர்பார்க்காதீங்க. வேணும்னே அப்படி இல்ல.",
       "“பார்ட்ஸ் ப்ரீமியம்” ஃபீல்டை தேடாதீங்க. அது இல்ல: நார்மலை தாண்டுற பார்ட்ஸ் Premium-ஐ குறைக்கும்; பார்ட்ஸ் லாபம் = <b>Parts margin</b>.",
       "Labour margin-ஐ ஜாப்போட ப்ராஃபிட்னு படிக்காதீங்க. அது Total margin.",
-      "அப்ரூவ் ஆனதுக்கு அப்புறம் ஸ்ப்ளிட்டை மாத்த முயற்சிக்காதீங்க. வேற ஸ்ப்ளிட்னா புது கொட்டேஷன் வெர்ஷன்."
+      "அப்ரூவ் ஆனதுக்கு அப்புறம் ஸ்ப்ளிட்டை மாத்த முயற்சிக்காதீங்க. வேற ஸ்ப்ளிட்னா புது கொட்டேஷன் வெர்ஷன்.",
+      "“Priced from the rate card” மெசேஜ் மட்டும் பார்த்து நம்பாதீங்க: Normal price “from the rate card”னு வருதான்னு செக் பண்ணுங்க. Exclusive contract கஸ்டமரோட ரேட் மட்டும் தான் ப்ரைஸ் போடும்."
     ]
   },
   "examples": {
@@ -117,30 +121,30 @@
         "read": "There is no parts premium figure. Parts beyond the normal price eat the premium; profit on parts is Parts margin."
       },
       {
-        "title": "Board C: rate ₹10,000 sold at ₹8,000",
+        "title": "Board B: priced from the rate card",
         "lines": [
           [
-            "Normal price N",
-            "₹10,000",
+            "Contract rate for this board and level",
+            "₹6,000",
+            "chosen on the job card"
+          ],
+          [
+            "= Normal price N",
+            "₹6,000",
+            "“from the rate card”, not typed"
+          ],
+          [
+            "Parts billed P",
+            "− ₹500",
             ""
           ],
           [
-            "Customer pays",
-            "₹8,000",
-            "parts billed ₹1,000 inside it"
-          ],
-          [
-            "= Discount",
-            "₹2,000",
-            "the larger of N and P − pays"
-          ],
-          [
-            "Labour charge",
-            "₹9,000",
-            "still N − P"
+            "= Labour charge",
+            "₹5,500",
+            "N − P, the same rule"
           ]
         ],
-        "read": "The discount is recorded apart. It never comes out of the engineer's labour charge."
+        "read": "The Service Head or Liaison prices a contract board Under Assessment with “Price from the rate card…”. No quotation; once a rate has priced it, it is fixed."
       },
       {
         "title": "Board A: from price to margin",
@@ -151,9 +155,9 @@
             ""
           ],
           [
-            "Hours",
+            "Hours on the job",
             "− ₹2,400",
-            "6 h × ₹400"
+            "6 h × ₹400: 5 h repair + Baleswar's 1 h check"
           ],
           [
             "= Labour margin",
@@ -176,7 +180,7 @@
             "= ₹12,000 charged − ₹4,350 cost"
           ]
         ],
-        "read": "Labour margin says how well we delivered; Total margin is the job's profit."
+        "read": "Labour margin says how well we delivered; Total margin is the job's profit. For Ramachandran's credit the check hour is added back (₹5,600): it is Baleswar's."
       }
     ],
     "ta": [
@@ -243,30 +247,30 @@
         "read": "பார்ட்ஸ் ப்ரீமியம்னு ஃபிகர் இல்ல. நார்மலை தாண்டுற பார்ட்ஸ் ப்ரீமியத்தை குறைக்கும்; பார்ட்ஸ் லாபம் = Parts margin."
       },
       {
-        "title": "போர்டு C: ₹10,000 ரேட், ₹8,000க்கு",
+        "title": "போர்டு B: ரேட் கார்டுல இருந்து ப்ரைஸ்",
         "lines": [
           [
-            "Normal price N",
-            "₹10,000",
+            "இந்த போர்டு, லெவலுக்கு கான்ட்ராக்ட் ரேட்",
+            "₹6,000",
+            "ஜாப் கார்டுல செலக்ட் பண்ணது"
+          ],
+          [
+            "= Normal price N",
+            "₹6,000",
+            "“from the rate card”, டைப் பண்ணது இல்ல"
+          ],
+          [
+            "Parts billed P",
+            "− ₹500",
             ""
           ],
           [
-            "கஸ்டமர் கொடுப்பது",
-            "₹8,000",
-            "₹1,000 பார்ட்ஸ் உள்ள"
-          ],
-          [
-            "= Discount",
-            "₹2,000",
-            "(N, P-ல பெருசு) − கொடுப்பது"
-          ],
-          [
-            "Labour charge",
-            "₹9,000",
-            "அப்பவும் N − P"
+            "= Labour charge",
+            "₹5,500",
+            "N − P, அதே ரூல்"
           ]
         ],
-        "read": "டிஸ்கவுண்ட் தனியா பதிவாகும். இன்ஜினியரோட லேபர் சார்ஜ்ல இருந்து போகாது."
+        "read": "Under Assessment-ல இருக்கற கான்ட்ராக்ட் போர்டுக்கு சர்வீஸ் ஹெட் இல்ல லையசன் “Price from the rate card…” போடுவாங்க. கொட்டேஷன் தேவையில்ல; ஒரு தடவை ரேட் ப்ரைஸ் போட்டா ஃபிக்ஸ்."
       },
       {
         "title": "போர்டு A: ப்ரைஸ்ல இருந்து மார்ஜின் வரை",
@@ -277,9 +281,9 @@
             ""
           ],
           [
-            "ஹவர்ஸ்",
+            "ஜாப்ல ஹவர்ஸ்",
             "− ₹2,400",
-            "6 h × ₹400"
+            "6 h × ₹400: 5 h ரிப்பேர் + பாலேஸ்வரோட 1 h செக்"
           ],
           [
             "= Labour margin",
@@ -302,7 +306,7 @@
             "= ₹12,000 Charged − ₹4,350 காஸ்ட்"
           ]
         ],
-        "read": "Labour margin = வேலையை எவ்வளவு நல்லா முடிச்சோம்; Total margin = ஜாப்போட ப்ராஃபிட்."
+        "read": "Labour margin = வேலையை எவ்வளவு நல்லா முடிச்சோம்; Total margin = ஜாப்போட ப்ராஃபிட். ராமச்சந்திரன் கணக்குல செக் ஹவர் திரும்ப சேரும் (₹5,600): அது பாலேஸ்வரோடது."
       }
     ]
   },
@@ -399,14 +403,13 @@
     ]
   },
   "notes": [
-    "Set-up: training/recorder/15-setup.ts built boards A–D and R through the app on develop after the reset (job numbers in training/recorder/kpi-seed.json). The raise form in the clip is filled live on a like board X (WO/26-27/00026, Ayyan, Under Assessment) and never raised; A's approved quotation is QT/26-09/000006.",
-    "Rate-card pricing cannot be reached through the app: rates exist per internal reference + service level (/crm/rates), but no screen sets a work order's internal_reference or service_level, so no new board can take a rate. The clip therefore never shows the “Rate card” tag; B and C carry typed normal prices (set by hand), priced by phone. Worth raising as an app gap.",
-    "On screen, board A's hours are costed at ₹700/h (Test Engineer is a Senior Engineer since 2025-11-30) plus ₹450 for the 1 h verification by Test Both Roles: labour ₹3,950, labour margin ₹3,650, total margin ₹6,100, against the catalogue's ₹400/h card figures (₹2,400 / ₹5,200 / ₹7,650). Prices, premium, discount, labour charge, charged and parts margin match the cards exactly. The clip says so in a caption.",
-    "App finding: the job card's Premium row shows no reason, although A stores premium_reason “Urgent turnaround” (the quotation record shows it). lib/domain/work-orders.ts reads r.premium?.reason_text, which comes back empty on the job card.",
-    "The quotation record's internal row reads “Labour charge ₹10,000 less parts” (the split at approval); the job card reads ₹7,600 once parts are booked. The clip teaches both as the same rule.",
+    "Set-up (Round 4, 2026-09-27, develop b053262): training/recorder/15-setup.ts rebuilt boards A–D and R through the app on the fresh demo (job numbers in training/recorder/kpi-seed.json; A = WO/26-27/00040, quotation QT/26-09/000006). The raise form is filled live on a like board X (WO/26-27/00041) and never raised.",
+    "K13 fixed and taught: B is a board of a new contract customer, Kaveri Power Controls (registered by the Sales Head, made Exclusive contract, rate PSU-24V · Major ₹6,000 added by the Operations Manager), priced by the Service Head with “Price from the rate card…” on the job card. Each take prices a fresh Kaveri board live (WO/26-27/00044, 00059, 00060 were used; they stay Under Assessment, priced ₹6,000).",
+    "APP BUG (reported): “Price from the rate card…” is also offered on an AD-HOC customer's board when the customer has rates on file (mayPrice checks the allotment right, Under Assessment and rates, not the segment). Pressing it sets the internal reference and service level and says “Priced from the rate card: PSU-24V, major.”, but the rate-card trigger prices only Exclusive contract customers, so nothing is priced. Seen on WO/26-27/00042 while Kaveri was still ad hoc; that board then went on, unpriced, to Ready for Invoice (it stays in the demo as a closed unpriced September board).",
+    "K14 fixed: the job card's Premium row names the reason (“Urgent turnaround”) for the Service Head; the clip shows it.",
+    "On screen, board A's repair hours cost ₹700/h (Test Engineer) and the 1 h check ₹450 (Test Both Roles): labour ₹3,950, labour margin ₹3,650, total margin ₹6,100, against the catalogue's ₹400/h card figures. Prices, premium, discount, labour charge, charged and parts margin match. A caption says so.",
+    "Recorded before the comeback R was created, so A shows no rework row. A's job card now also shows Rework rolled up ₹1,200 (R: 2 h × ₹450 + ₹300 part), labour margin ₹2,450, total margin ₹4,900 — its whole-life record; a month counts R once, on R (module 16).",
     "The owner's words: “base margin” is taught as Labour margin (job card) / Base margin % (MIS, module 16); “opportunity premium” is the Premium row; “parts premium” is explained as not a field.",
-    "Recorded before the comeback R was created (so A shows no rework row). Since then A's job card also shows “Rework rolled up ₹1,700”, labour margin ₹1,950 and total margin ₹4,400.",
-    "Round 3 (develop): the typed normal price is now a grey “set by hand” mark (not a tag), and the raise form's split row is “Labour charge ₹N less parts” (was “Engineer’s labour charge”); captions follow. Price fields are grouped text boxes now (₹12,000), not number inputs.",
-    "Clip length: EN 165 s, Tamil 191 s (×1.25 holds); the title cards say about 3 minutes."
+    "Clip length: EN 174 s (title card “About 3 minutes”), Tamil 210 s (“சுமார் 3½ நிமிடம்”). Both over the ~150 s guide; the rate-card segment added about 20 s."
   ]
 }

@@ -93,20 +93,17 @@ await s.say(c.stuckRule, 3600 * pace)
 await s.unring()
 await s.say(c.stuckDo, 2800 * pace, 'do')
 
-// 6 · What has stalled › Stuck (a different list)
+// 6 · What has stalled › Stuck (the same rule, since 27 Sep: K6)
 await s.quiet()
 await s.card(example(c.exStalled), CARD)
 await s.goto('/service-centre/worklists')
 await s.wait(800)
 await s.point(p.locator('section[data-code="STK"]'))
 await s.say(c.stalled, 3200 * pace)
-const waiting = p.locator('section[data-code="Q"] tbody tr', { hasText: 'Pending Spare' }).first()
-if (await waiting.isVisible().catch(() => false)) {
-  await s.point(waiting)
-  await s.say(c.stalledPending, 3800 * pace)
-}
+await s.point(p.locator('section[data-code="Q"]'))
+await s.say(c.stalledPending, 3800 * pace)
 await s.unring()
-await s.say(c.twoLists, 3000 * pace, 'dont')
+await s.say(c.twoLists, 3000 * pace, 'do')
 
 // 7 · Unbilled hours
 await s.quiet()

@@ -1,148 +1,147 @@
 {
- "id": "07",
- "title": {
-  "en": "Timesheets",
-  "ta": "டைம்ஷீட்"
- },
- "role": "Engineer",
- "path": "Service › My timesheet",
- "video": {
-  "en": "media/07-timesheets.mp4",
-  "ta": "media/07-timesheets-ta.mp4"
- },
- "poster": {
-  "en": "media/07-poster.jpg",
-  "ta": "media/07-poster-ta.jpg"
- },
- "seconds": {
-  "en": 108,
-  "ta": 112
- },
- "do": {
-  "en": [
-   "Book your hours <b>every day</b> on <b>My timesheet</b>. There is one sheet per week, starting Monday, with a row per work order.",
-   "Use <b>+ Add a work order</b> to start a row. Only boards on your own bench are offered.",
-   "Type the hours under their day. The cell saves when you leave it, and the <b>Day total</b> is worked out by the system.",
-   "If a cell is refused, read the message under the row, correct the number and leave the cell again.",
-   "When the week is finished, press <b>Submit week</b>."
-  ],
-  "ta": [
-   "<b>My timesheet</b>-ல <b>தினமும்</b> ஹவர்ஸ் போடுங்க. வாரத்துக்கு ஒரு ஷீட், திங்கள்ல இருந்து, ஒவ்வொரு work order-க்கும் ஒரு ரோ.",
-   "ரோ ஆரம்பிக்க <b>+ Add a work order</b>. உங்க பெஞ்சுல இருக்கற போர்டு மட்டும் தான் வரும்.",
-   "ஹவர்ஸை அந்த நாள் கட்டத்துல டைப் பண்ணுங்க. கட்டத்தை விட்டு வெளிய வந்தா சேவ் ஆயிடும். <b>Day total</b>-ஐ சிஸ்டமே கணக்கு போடும்.",
-   "ஒரு கட்டம் ஏத்துக்கலைன்னா, ரோ கீழ வர்ற மெசேஜை படிச்சு, நம்பரை சரி பண்ணி, திரும்ப கட்டத்தை விட்டு வெளிய வாங்க.",
-   "வாரம் முடிஞ்சதும் <b>Submit week</b> அழுத்துங்க."
+  "id": "07",
+  "title": {
+    "en": "Timesheets",
+    "ta": "டைம்ஷீட்"
+  },
+  "role": "Engineer",
+  "path": "Service › My timesheet",
+  "video": {
+    "en": "media/07-timesheets.mp4",
+    "ta": "media/07-timesheets-ta.mp4"
+  },
+  "poster": {
+    "en": "media/07-poster.jpg",
+    "ta": "media/07-poster-ta.jpg"
+  },
+  "seconds": {
+    "en": 80,
+    "ta": 84
+  },
+  "do": {
+    "en": [
+      "Book your hours <b>every day</b> on <b>My timesheet</b>. There is one sheet per week, <b>Monday to Sunday</b> (it reads e.g. “21 – 27 Sep”), with a column for every day and a row per work order.",
+      "Use <b>+ Add a work order</b> to start a row. Only boards on your own bench are offered.",
+      "Type the hours under their day. The cell saves when you leave it, and the <b>Day total</b> is worked out by the system.",
+      "If a cell is refused, read the message under the row, correct the number and leave the cell again.",
+      "When the week is finished, press <b>Submit week</b>."
+    ],
+    "ta": [
+      "<b>My timesheet</b>-ல <b>தினமும்</b> ஹவர்ஸ் போடுங்க. வாரத்துக்கு ஒரு ஷீட், <b>திங்கள்ல இருந்து ஞாயிறு வரை</b> (உதாரணம் “21 – 27 Sep”), ஒவ்வொரு நாளுக்கும் ஒரு கட்டம், ஒவ்வொரு work order-க்கும் ஒரு ரோ.",
+      "ரோ ஆரம்பிக்க <b>+ Add a work order</b>. உங்க பெஞ்சுல இருக்கற போர்டு மட்டும் தான் வரும்.",
+      "ஹவர்ஸை அந்த நாள் கட்டத்துல டைப் பண்ணுங்க. கட்டத்தை விட்டு வெளிய வந்தா சேவ் ஆயிடும். <b>Day total</b>-ஐ சிஸ்டமே கணக்கு போடும்.",
+      "ஒரு கட்டம் ஏத்துக்கலைன்னா, ரோ கீழ வர்ற மெசேஜை படிச்சு, நம்பரை சரி பண்ணி, திரும்ப கட்டத்தை விட்டு வெளிய வாங்க.",
+      "வாரம் முடிஞ்சதும் <b>Submit week</b> அழுத்துங்க."
+    ]
+  },
+  "dont": {
+    "en": [
+      "Don't book time on a job allotted to someone else. It isn't offered, and the system refuses it.",
+      "Don't book time on a paused job (<b>Pending Spare</b> or <b>On Hold</b>) or a closed job. The row turns read-only and entries are refused.",
+      "Don't go over the daily limit. A day's total across all jobs may not pass the configured maximum (10 hours now).",
+      "Don't look for a rate to type. The system applies your cost rate to every hour.",
+      "Don't submit a week you still need to change. A submitted week is locked. A correction is a talk with your Service Head."
+    ],
+    "ta": [
+      "வேற ஒருத்தருக்கு அலாட் ஆன ஜாப்ல ஹவர்ஸ் போடாதீங்க. அது லிஸ்ட்ல வராது, சிஸ்டமும் ஏத்துக்காது.",
+      "நிறுத்தி வெச்ச ஜாப் (<b>Pending Spare</b> அல்லது <b>On Hold</b>), Closed ஜாப்ல ஹவர்ஸ் போடாதீங்க. அந்த ரோ படிக்க மட்டும், போட்டாலும் ஏத்துக்காது.",
+      "டெய்லி லிமிட்டை தாண்டாதீங்க. எல்லா ஜாபும் சேர்த்து ஒரு நாள் டோட்டல் செட் பண்ண லிமிட்டை (இப்போ 10 ஹவர்ஸ்) தாண்டக் கூடாது.",
+      "ரேட் டைப் பண்ண இடம் தேடாதீங்க. ஒவ்வொரு ஹவருக்கும் உங்க காஸ்ட் ரேட்டை சிஸ்டமே போடும்.",
+      "இன்னும் மாத்த வேண்டிய வாரத்தை submit பண்ணாதீங்க. Submit ஆன வாரம் லாக் ஆயிடும். சரி பண்ணணும்னா Service Head கிட்ட பேசுங்க."
+    ]
+  },
+  "quiz": {
+    "en": [
+      {
+        "q": "You already have 6 hours on Thursday and try to add 5 more on another job for the same day. What happens?",
+        "o": [
+          "It saves: the limit is per job",
+          "It is refused: a day's total across all jobs may not pass the limit (10 h)",
+          "It saves, and the Service Head is warned"
+        ],
+        "a": 1,
+        "why": "The ceiling is per engineer per day, across every job. The refusal names the total and the limit. Correct the number and it saves."
+      },
+      {
+        "q": "Your board went to Pending Spare this morning. You spent an hour on it before that. Can you add hours to it now?",
+        "o": [
+          "Yes, any time this week",
+          "No, a paused job takes no hours; its row is read-only",
+          "Only if you type a reason"
+        ],
+        "a": 1,
+        "why": "Pending Spare and On Hold block labour. Hours already booked stay on the record."
+      },
+      {
+        "q": "Where do you enter your hourly cost rate?",
+        "o": [
+          "In a column next to the hours",
+          "Nowhere: the system applies the rate in force for you",
+          "On Submit week"
+        ],
+        "a": 1,
+        "why": "The system prices every entry at the rate in force for you on that date. The Operations Manager keeps the rate card."
+      },
+      {
+        "q": "You pressed Submit week, then noticed a wrong number on Tuesday. What now?",
+        "o": [
+          "Edit the cell. Submitted weeks stay open for a day",
+          "Talk to your Service Head. A submitted week is locked",
+          "Book the difference on next week"
+        ],
+        "a": 1,
+        "why": "Submitting locks the week and the system refuses any change to it. A correction is a conversation, not an edit."
+      }
+    ],
+    "ta": [
+      {
+        "q": "வியாழக்கிழமை ஏற்கனவே 6 ஹவர்ஸ் இருக்கு. அதே நாள் வேற ஜாப்ல இன்னும் 5 சேர்க்க ட்ரை பண்றீங்க. என்ன ஆகும்?",
+        "o": [
+          "சேவ் ஆகும்: லிமிட் ஒவ்வொரு ஜாபுக்கும் தனி",
+          "ஏத்துக்காது: எல்லா ஜாபும் சேர்த்து நாள் டோட்டல் லிமிட்டை (10 ஹவர்ஸ்) தாண்டக் கூடாது",
+          "சேவ் ஆகும், Service Head-க்கு அலர்ட் போகும்"
+        ],
+        "a": 1,
+        "why": "லிமிட் ஒரு இன்ஜினியருக்கு ஒரு நாளுக்கு, எல்லா ஜாபும் சேர்த்து. மெசேஜ் டோட்டலையும் லிமிட்டையும் சொல்லும். நம்பரை சரி பண்ணா சேவ் ஆகும்."
+      },
+      {
+        "q": "இன்னைக்கு காலைல உங்க போர்டு Pending Spare ஆச்சு. அதுக்கு முன்னாடி ஒரு ஹவர் வேலை பார்த்தீங்க. இப்போ அதுல ஹவர்ஸ் சேர்க்க முடியுமா?",
+        "o": [
+          "முடியும், இந்த வாரம் எப்போ வேணாலும்",
+          "முடியாது, நிறுத்தி வெச்ச ஜாப்ல ஹவர்ஸ் போட முடியாது; அந்த ரோ படிக்க மட்டும்",
+          "காரணம் எழுதினா மட்டும்"
+        ],
+        "a": 1,
+        "why": "Pending Spare, On Hold-ல ஹவர்ஸ் போட முடியாது. ஏற்கனவே போட்ட ஹவர்ஸ் பதிவுல இருக்கும்."
+      },
+      {
+        "q": "உங்க ஒரு ஹவர் காஸ்ட் ரேட்டை எங்க டைப் பண்ணுவீங்க?",
+        "o": [
+          "ஹவர்ஸ் பக்கத்துல இருக்கற காலம்ல",
+          "எங்கேயும் இல்ல: அன்னைக்கு உங்களுக்கு இருக்கற ரேட்டை சிஸ்டமே போடும்",
+          "Submit week-ல"
+        ],
+        "a": 1,
+        "why": "அந்த தேதில உங்களுக்கு இருக்கற ரேட்ல ஒவ்வொரு என்ட்ரியையும் சிஸ்டம் கணக்கு போடும். ரேட் கார்டை Operations Manager பார்த்துக்குவாங்க."
+      },
+      {
+        "q": "Submit week அழுத்தினதுக்கு அப்புறம், செவ்வாய்க்கிழமை ஒரு நம்பர் தப்புன்னு தெரியுது. இப்போ?",
+        "o": [
+          "கட்டத்தை எடிட் பண்ணுவேன். Submit ஆன வாரம் ஒரு நாள் ஓப்பனா இருக்கும்",
+          "Service Head கிட்ட பேசுவேன். Submit ஆன வாரம் லாக் ஆயிடுச்சு",
+          "வித்தியாசத்தை அடுத்த வாரத்துல போடுவேன்"
+        ],
+        "a": 1,
+        "why": "Submit பண்ணா வாரம் லாக் ஆயிடும், எந்த மாற்றத்தையும் சிஸ்டம் ஏத்துக்காது. சரி பண்றது பேசி தான், எடிட் பண்ணி இல்ல."
+      }
+    ]
+  },
+  "notes": [
+    "Round 4 (2026-09-27, app develop b053262): finding 19 is fixed. The grid now has a Sunday column and the week reads e.g. “21 – 27 Sep”; the clip points at the week label and says Monday to Sunday. Nothing else on this screen changed.",
+    "The clip submits an earlier week of our own (24 Aug for EN, after a first take on 7 Sep; 31 Aug for TA), not the current one, so Test Engineer's current week stays open for the other recordings.",
+    "The engineer's current week also shows a demo row (WO/26-27/00004), because the grid lists every job with hours that week.",
+    "The 'not your job' and 'closed job' refusals aren't shown on screen: such jobs aren't offered in + Add a work order, and a job that has left your bench shows 'off your bench — its hours stay'. Both are refused by timesheet_entry_is_permitted(). They are taught as captions and in the don't list.",
+    "Which sub-statuses block hours now follows each sub-status's blocks_labour flag (finding 17); Pending Spare and On Hold carry it, so the clip's rule is unchanged.",
+    "Recording note: after a cell saves, the recording can lag on caption changes, so the script reloads the page (the ?job= rows are kept in the address) before the captions that follow. A re-take of the same language needs `npx tsx 07-prep.ts again <lang> <earlier Monday>` first. Round 4 takes: English twice (the first ran 75 s against a card that said about 1½ minutes; the card now says 1¼), Tamil once. Title cards: about 1¼ (EN) and 1½ (TA) minutes."
   ]
- },
- "dont": {
-  "en": [
-   "Don't book time on a job allotted to someone else. It isn't offered, and the system refuses it.",
-   "Don't book time on a paused job (<b>Pending Spare</b> or <b>On Hold</b>) or a closed job. The row turns read-only and entries are refused.",
-   "Don't go over the daily limit. A day's total across all jobs may not pass the configured maximum (10 hours now).",
-   "Don't look for a rate to type. The system applies your cost rate to every hour.",
-   "Don't submit a week you still need to change. A submitted week is locked. A correction is a talk with your Service Head."
-  ],
-  "ta": [
-   "வேற ஒருத்தருக்கு அலாட் ஆன ஜாப்ல ஹவர்ஸ் போடாதீங்க. அது லிஸ்ட்ல வராது, சிஸ்டமும் ஏத்துக்காது.",
-   "நிறுத்தி வெச்ச ஜாப் (<b>Pending Spare</b> அல்லது <b>On Hold</b>), Closed ஜாப்ல ஹவர்ஸ் போடாதீங்க. அந்த ரோ படிக்க மட்டும், போட்டாலும் ஏத்துக்காது.",
-   "டெய்லி லிமிட்டை தாண்டாதீங்க. எல்லா ஜாபும் சேர்த்து ஒரு நாள் டோட்டல் செட் பண்ண லிமிட்டை (இப்போ 10 ஹவர்ஸ்) தாண்டக் கூடாது.",
-   "ரேட் டைப் பண்ண இடம் தேடாதீங்க. ஒவ்வொரு ஹவருக்கும் உங்க காஸ்ட் ரேட்டை சிஸ்டமே போடும்.",
-   "இன்னும் மாத்த வேண்டிய வாரத்தை submit பண்ணாதீங்க. Submit ஆன வாரம் லாக் ஆயிடும். சரி பண்ணணும்னா Service Head கிட்ட பேசுங்க."
-  ]
- },
- "quiz": {
-  "en": [
-   {
-    "q": "You already have 6 hours on Thursday and try to add 5 more on another job for the same day. What happens?",
-    "o": [
-     "It saves: the limit is per job",
-     "It is refused: a day's total across all jobs may not pass the limit (10 h)",
-     "It saves, and the Service Head is warned"
-    ],
-    "a": 1,
-    "why": "The ceiling is per engineer per day, across every job. The refusal names the total and the limit. Correct the number and it saves."
-   },
-   {
-    "q": "Your board went to Pending Spare this morning. You spent an hour on it before that. Can you add hours to it now?",
-    "o": [
-     "Yes, any time this week",
-     "No, a paused job takes no hours; its row is read-only",
-     "Only if you type a reason"
-    ],
-    "a": 1,
-    "why": "Pending Spare and On Hold block labour. Hours already booked stay on the record."
-   },
-   {
-    "q": "Where do you enter your hourly cost rate?",
-    "o": [
-     "In a column next to the hours",
-     "Nowhere: the system applies the rate in force for you",
-     "On Submit week"
-    ],
-    "a": 1,
-    "why": "The system prices every entry at the rate in force for you on that date. The Operations Manager keeps the rate card."
-   },
-   {
-    "q": "You pressed Submit week, then noticed a wrong number on Tuesday. What now?",
-    "o": [
-     "Edit the cell. Submitted weeks stay open for a day",
-     "Talk to your Service Head. A submitted week is locked",
-     "Book the difference on next week"
-    ],
-    "a": 1,
-    "why": "Submitting locks the week and the system refuses any change to it. A correction is a conversation, not an edit."
-   }
-  ],
-  "ta": [
-   {
-    "q": "வியாழக்கிழமை ஏற்கனவே 6 ஹவர்ஸ் இருக்கு. அதே நாள் வேற ஜாப்ல இன்னும் 5 சேர்க்க ட்ரை பண்றீங்க. என்ன ஆகும்?",
-    "o": [
-     "சேவ் ஆகும்: லிமிட் ஒவ்வொரு ஜாபுக்கும் தனி",
-     "ஏத்துக்காது: எல்லா ஜாபும் சேர்த்து நாள் டோட்டல் லிமிட்டை (10 ஹவர்ஸ்) தாண்டக் கூடாது",
-     "சேவ் ஆகும், Service Head-க்கு அலர்ட் போகும்"
-    ],
-    "a": 1,
-    "why": "லிமிட் ஒரு இன்ஜினியருக்கு ஒரு நாளுக்கு, எல்லா ஜாபும் சேர்த்து. மெசேஜ் டோட்டலையும் லிமிட்டையும் சொல்லும். நம்பரை சரி பண்ணா சேவ் ஆகும்."
-   },
-   {
-    "q": "இன்னைக்கு காலைல உங்க போர்டு Pending Spare ஆச்சு. அதுக்கு முன்னாடி ஒரு ஹவர் வேலை பார்த்தீங்க. இப்போ அதுல ஹவர்ஸ் சேர்க்க முடியுமா?",
-    "o": [
-     "முடியும், இந்த வாரம் எப்போ வேணாலும்",
-     "முடியாது, நிறுத்தி வெச்ச ஜாப்ல ஹவர்ஸ் போட முடியாது; அந்த ரோ படிக்க மட்டும்",
-     "காரணம் எழுதினா மட்டும்"
-    ],
-    "a": 1,
-    "why": "Pending Spare, On Hold-ல ஹவர்ஸ் போட முடியாது. ஏற்கனவே போட்ட ஹவர்ஸ் பதிவுல இருக்கும்."
-   },
-   {
-    "q": "உங்க ஒரு ஹவர் காஸ்ட் ரேட்டை எங்க டைப் பண்ணுவீங்க?",
-    "o": [
-     "ஹவர்ஸ் பக்கத்துல இருக்கற காலம்ல",
-     "எங்கேயும் இல்ல: அன்னைக்கு உங்களுக்கு இருக்கற ரேட்டை சிஸ்டமே போடும்",
-     "Submit week-ல"
-    ],
-    "a": 1,
-    "why": "அந்த தேதில உங்களுக்கு இருக்கற ரேட்ல ஒவ்வொரு என்ட்ரியையும் சிஸ்டம் கணக்கு போடும். ரேட் கார்டை Operations Manager பார்த்துக்குவாங்க."
-   },
-   {
-    "q": "Submit week அழுத்தினதுக்கு அப்புறம், செவ்வாய்க்கிழமை ஒரு நம்பர் தப்புன்னு தெரியுது. இப்போ?",
-    "o": [
-     "கட்டத்தை எடிட் பண்ணுவேன். Submit ஆன வாரம் ஒரு நாள் ஓப்பனா இருக்கும்",
-     "Service Head கிட்ட பேசுவேன். Submit ஆன வாரம் லாக் ஆயிடுச்சு",
-     "வித்தியாசத்தை அடுத்த வாரத்துல போடுவேன்"
-    ],
-    "a": 1,
-    "why": "Submit பண்ணா வாரம் லாக் ஆயிடும், எந்த மாற்றத்தையும் சிஸ்டம் ஏத்துக்காது. சரி பண்றது பேசி தான், எடிட் பண்ணி இல்ல."
-   }
-  ]
- },
- "notes": [
-  "The week in the database runs Monday to Sunday (week_start_date + 6), but the grid shows only Monday to Saturday columns (finding 19, not fixed). A Sunday entry counts in the row total but has no cell. The clip says 'from Monday' and doesn't mention Sunday.",
-  "The clip submits an earlier week of our own (24 Aug for EN, 17 Aug for TA), not the current one, so Test Engineer's current week stays open for the other recordings.",
-  "The engineer's current week also shows a demo row (WO/26-27/00004), because the grid lists every job with hours that week.",
-  "The 'not your job' and 'closed job' refusals aren't shown on screen: such jobs aren't offered in + Add a work order, and a job that has left your bench shows 'off your bench — its hours stay'. Both are refused by timesheet_entry_is_permitted(). They are taught as captions and in the don't list.",
-  "Which sub-statuses block hours now follows each sub-status's blocks_labour flag (finding 17); Pending Spare and On Hold carry it, so the clip's rule is unchanged.",
-  "Recording note: after a cell saves, the recording can lag on caption changes for several seconds, so the script reloads the page (the ?job= rows are kept in the address) before the captions that follow. A re-take of the same language needs `npx tsx 07-prep.ts again <lang> <earlier Monday>` first (clears the take's Thursday cells, fills another week to submit). Each language was recorded twice: the first English take lost the 'paused job' caption and the first Tamil take the 'no rate' caption to that lag.",
-  "Round 3 (2026-09-26, app develop/030-training): re-recorded in both languages with the Rack & Bin look; no behaviour change on this screen. The Tamil take shows the app's new header \"Training\" chip and help (?) icons, which appeared mid-session (feature 030 in progress); the English take predates them."
- ]
 }
