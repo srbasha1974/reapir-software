@@ -34,6 +34,8 @@ interface Captions {
   bars: string
   exVel: Example
   vel: string
+  exQuote: Example
+  quote: string
   remember: string
   rules: string[]
 }
@@ -41,7 +43,7 @@ interface Captions {
 const en: Captions = {
   kicker: 'Thulir training · Module 17 · Sales Head · Sales Engineer',
   title: 'What your accounts are worth',
-  sub: 'Charged, filled, unpriced, premium and discount, won, conversion, velocity. About 2 minutes.',
+  sub: 'Charged, filled, unpriced, premium and discount, won, conversion, velocity, win rate. About 2 minutes.',
   open: 'Overview › Sales. By engineer: what each person’s accounts produced.<small>Demo figures on screen. Your figures will differ.</small>',
   exCharged: {
     kicker: 'Worked example · Charged',
@@ -78,28 +80,29 @@ const en: Captions = {
     title: 'Who pays for urgency, who pays below normal',
     rows: [
       ['AYYAN (board A): 1 job', '+ ₹2,000', 'premium · Set by hand ₹2,000 (typed)'],
-      ['C’s customer: 1 job', '− ₹2,000', 'discount · Set by hand — (rate card)'],
+      ['C’s customer: 1 job', '− ₹2,000', 'discount · Set by hand ₹2,000 (typed)'],
+      ['B’s contract customer', '—', 'rate card: no premium, no discount'],
       ['= Reported apart', 'never ₹0', 'the two columns do not net'],
     ],
-    read: 'Always discounted = a pricing conversation. A premium on a typed price proves little until rate cards exist.',
+    read: 'Always discounted = a pricing conversation. A premium on a typed price proves little until a rate card covers the board.',
   },
   premTab: 'Profitability › Premium, by Customer.',
-  premRows: 'Premium and Discount, per customer.<small>Here C’s normal price was typed too, so it also shows under Set by hand.</small>',
+  premRows: 'Premium and Discount, per customer.<small>Demo figures. Your figures will differ.</small>',
   byHand: 'Set by hand: how much rests on a typed normal price, and who typed it.<small>The Sales Head reads these. Quotation raisers set prices.</small>',
   segment: 'The same view by Segment.',
   premDont: 'Don’t net premium and discount into “₹0 overall”.',
   exWon: {
     kicker: 'Worked example · Won',
-    title: 'Credit to the owner at conversion',
+    title: 'Conversions made in the month',
     rows: [
-      ['March: Priya opens a hospital account', 'Mar', 'the cohort month'],
-      ['June: it becomes Regular, Priya owns it', 'Jun', ''],
-      ['August: handed to Arun', 'Aug', ''],
-      ['= Won, March', 'Priya 1', 'June shows nothing. Arun never gets it'],
+      ['March: Arun opens March account 1', 'Mar', 'Won for March: nothing'],
+      ['June: it becomes Regular, Arun owns it', 'Jun', ''],
+      ['= Won, June', 'Arun 1', 'credited to the owner at conversion'],
+      ['August: handed to Priya', 'Aug', 'June still credits Arun'],
     ],
-    read: 'A recent month looks weak: its accounts have not had time to convert. Compare months a quarter old.',
+    read: 'A month’s Won is fixed once the month ends. Team conversion is the rate over the accounts opened.',
   },
-  won: 'Won: no demo account has become Regular yet, so 0.',
+  won: 'Won: accounts that became Regular this month.<small>None has in the demo yet, so 0.</small>',
   exConv: {
     kicker: 'Worked example · Team conversion',
     title: 'Q1’s accounts, followed',
@@ -115,28 +118,41 @@ const en: Captions = {
   bars: 'The bars follow the same cohort: Potential, Trial, Regular.',
   exVel: {
     kicker: 'Worked example · Funnel velocity',
-    title: 'Trial → Regular, five accounts',
+    title: 'Five accounts opened in January',
     rows: [
-      ['Days each took', '10, 20, 34, 40, 90', ''],
-      ['= Median', '34 d', 'what the screen shows'],
-      ['Mean, for comparison', '38.8 d', 'pulled up by the 90-day account'],
+      ['Potential → Trial, days each', '3, 5, 10, 12, 30', ''],
+      ['= Median, Potential → Trial', '10 d', 'the middle of the five'],
+      ['Trial → Regular, days each', '7, 15, 24, 28, 60', ''],
+      ['= Median, Trial → Regular', '24 d', 'the mean, 26.8, is pulled up by the 60'],
     ],
-    read: 'Only accounts that took the step count. Long Trial → Regular times: trial customers are drifting.',
+    read: 'One median per step, on the screen and through the MCP. Accounts still waiting are left out.',
   },
-  vel: 'The medians. “none yet” means nobody has taken that step.',
+  vel: 'The medians, one per step. “none yet” means nobody has taken that step.',
+  exQuote: {
+    kicker: 'Worked example · Quotations won · Agreed by negotiation',
+    title: 'Written quotations, and prices agreed on the phone',
+    rows: [
+      ['A: written quotation, approved', '1 of 1', 'decided in the month'],
+      ['= Quotations won', '100%', 'awaiting an answer: in neither side'],
+      ['C: ₹8,000 agreed on the phone', '1', 'no written quotation'],
+      ['= Agreed by negotiation', '1', 'a count, beside the rate'],
+    ],
+    read: 'B was priced by the rate card: in neither. A phone price is agreed by definition, so it stays out of the win rate.',
+  },
+  quote: 'Quotations won and Agreed by negotiation, on Sales.<small>Demo figures. Your figures will differ.</small>',
   remember: 'Remember',
   rules: [
     '<b>Charged</b> = system price on closed jobs you brought in. Not money collected',
     '<b>Unpriced</b> jobs are counted, not summed. <b>Filled</b> should fade to zero',
     '<b>Premium</b> and <b>discount</b> are reported apart, never netted',
-    '<b>Won</b> and <b>conversion</b> follow the month an account was opened',
+    '<b>Won</b> = conversions made in the month. <b>Team conversion</b> follows the month opened',
   ],
 }
 
 const ta: Captions = {
   kicker: 'துளிர் ட்ரெயினிங் · மாட்யூல் 17 · சேல்ஸ் ஹெட் · சேல்ஸ் இன்ஜினியர்',
   title: 'உங்க அக்கவுண்ட்டுகளோட மதிப்பு',
-  sub: 'சார்ஜ்டு, ஃபில்டு, அன்ப்ரைஸ்டு, ப்ரீமியம், டிஸ்கவுண்ட், வொன், கன்வர்ஷன், வேகம். சுமார் 2½ நிமிடம்.',
+  sub: 'சார்ஜ்டு, ஃபில்டு, அன்ப்ரைஸ்டு, ப்ரீமியம், டிஸ்கவுண்ட், வொன், கன்வர்ஷன், வேகம், வின் ரேட். சுமார் 2½ நிமிடம்.',
   open: 'Overview › Sales. “By engineer”: ஒவ்வொருத்தர் அக்கவுண்ட்டும் என்ன கொடுத்தது.<small>ஸ்க்ரீன்ல இருக்கறது டெமோ நம்பர். உங்க நம்பர் வேற மாதிரி இருக்கும்.</small>',
   exCharged: {
     kicker: 'உதாரணம் · Charged',
@@ -173,28 +189,29 @@ const ta: Captions = {
     title: 'யார் அவசரத்துக்கு பணம் தர்றாங்க, யார் நார்மலுக்கு கீழ',
     rows: [
       ['AYYAN (போர்டு A): 1 ஜாப்', '+ ₹2,000', 'ப்ரீமியம் · Set by hand ₹2,000 (டைப் பண்ணது)'],
-      ['C-யோட கஸ்டமர்: 1 ஜாப்', '− ₹2,000', 'டிஸ்கவுண்ட் · Set by hand — (ரேட் கார்டு)'],
+      ['C-யோட கஸ்டமர்: 1 ஜாப்', '− ₹2,000', 'டிஸ்கவுண்ட் · Set by hand ₹2,000 (டைப் பண்ணது)'],
+      ['B-யோட கான்ட்ராக்ட் கஸ்டமர்', '—', 'ரேட் கார்டு: ப்ரீமியமும் இல்ல, டிஸ்கவுண்டும் இல்ல'],
       ['= தனித்தனியா', '₹0 இல்ல', 'ரெண்டு காலமும் கழிக்காது'],
     ],
-    read: 'எப்பவும் டிஸ்கவுண்ட்னா ப்ரைஸிங் பேசணும். டைப் பண்ண விலையில ப்ரீமியம், ரேட் கார்டு வர்ற வரை பெரிசா நிரூபிக்காது.',
+    read: 'எப்பவும் டிஸ்கவுண்ட்னா ப்ரைஸிங் பேசணும். டைப் பண்ண விலையில ப்ரீமியம், அந்த போர்டுக்கு ரேட் கார்டு வர்ற வரை பெரிசா நிரூபிக்காது.',
   },
   premTab: 'Profitability › “Premium”, “Customer” வாரியா.',
-  premRows: 'கஸ்டமர் வாரியா Premium, Discount.<small>இங்க C-யோட நார்மல் விலையும் டைப் பண்ணது, அதனால அதுவும் Set by hand-ல வருது.</small>',
+  premRows: 'கஸ்டமர் வாரியா Premium, Discount.<small>டெமோ நம்பர். உங்க நம்பர் வேற மாதிரி இருக்கும்.</small>',
   byHand: 'Set by hand: டைப் பண்ண நார்மல் விலை மேல எவ்வளவு நிக்குது, யார் டைப் பண்ணாங்க.<small>சேல்ஸ் ஹெட் படிப்பாங்க. விலை போடறது கொட்டேஷன் போடறவங்க.</small>',
   segment: 'இதையே “Segment” வாரியாவும் பார்க்கலாம்.',
   premDont: 'ப்ரீமியம், டிஸ்கவுண்டை கழிச்சு “மொத்தம் ₹0”ன்னு சொல்லாதீங்க.',
   exWon: {
     kicker: 'உதாரணம் · Won',
-    title: 'கன்வர்ட் ஆனப்போ ஓனருக்கு கிரெடிட்',
+    title: 'மாசத்துல நடந்த கன்வர்ஷன்',
     rows: [
-      ['மார்ச்: ப்ரியா ஒரு ஹாஸ்பிடல் அக்கவுண்ட் திறக்கறாங்க', 'Mar', 'கோஹார்ட் மாசம்'],
-      ['ஜூன்: Regular ஆகுது, ஓனர் ப்ரியா', 'Jun', ''],
-      ['ஆகஸ்ட்: அருணுக்கு மாத்தறாங்க', 'Aug', ''],
-      ['= Won, மார்ச்', 'ப்ரியா 1', 'ஜூன்ல எதுவும் இல்ல. அருணுக்கு வராது'],
+      ['மார்ச்: அருண் “March account 1” திறக்கறார்', 'Mar', 'மார்ச் Won: எதுவும் இல்ல'],
+      ['ஜூன்: Regular ஆகுது, ஓனர் அருண்', 'Jun', ''],
+      ['= Won, ஜூன்', 'அருண் 1', 'கன்வர்ட் ஆனப்போ இருந்த ஓனருக்கு'],
+      ['ஆகஸ்ட்: ப்ரியாவுக்கு மாத்தறாங்க', 'Aug', 'ஜூன் அப்பவும் அருணோடது'],
     ],
-    read: 'புது மாசம் வீக்கா தெரியும்: அதோட அக்கவுண்ட் கன்வர்ட் ஆக டைம் ஆகல. 3 மாசம் பழைய மாசங்களை கம்பேர் பண்ணுங்க.',
+    read: 'மாசம் முடிஞ்சதும் அந்த மாச Won மாறாது. திறந்த அக்கவுண்ட் மேல ரேட் = Team conversion.',
   },
-  won: 'Won: டெமோவுல எந்த அக்கவுண்ட்டும் இன்னும் Regular ஆகல, அதனால 0.',
+  won: 'Won: இந்த மாசம் Regular ஆன அக்கவுண்ட்.<small>டெமோவுல இன்னும் எதுவும் ஆகல, அதனால 0.</small>',
   exConv: {
     kicker: 'உதாரணம் · Team conversion',
     title: 'Q1 அக்கவுண்ட்டுகளை ஃபாலோ பண்றது',
@@ -210,21 +227,34 @@ const ta: Captions = {
   bars: 'பார்கள் அதே கோஹார்ட்டை ஃபாலோ பண்ணுது: Potential, Trial, Regular.',
   exVel: {
     kicker: 'உதாரணம் · Funnel velocity',
-    title: 'Trial → Regular, 5 அக்கவுண்ட்',
+    title: 'ஜனவரில திறந்த 5 அக்கவுண்ட்',
     rows: [
-      ['ஒவ்வொண்ணுக்கும் ஆன நாள்', '10, 20, 34, 40, 90', ''],
-      ['= மீடியன்', '34 d', 'ஸ்க்ரீன்ல வர்றது'],
-      ['சராசரி, கம்பேர் பண்ண', '38.8 d', '90 நாள் அக்கவுண்ட் இழுக்குது'],
+      ['Potential → Trial, ஒவ்வொண்ணுக்கும் நாள்', '3, 5, 10, 12, 30', ''],
+      ['= மீடியன், Potential → Trial', '10 d', 'அஞ்சுல நடுவுல'],
+      ['Trial → Regular, ஒவ்வொண்ணுக்கும் நாள்', '7, 15, 24, 28, 60', ''],
+      ['= மீடியன், Trial → Regular', '24 d', 'சராசரி 26.8, 60 இழுக்குது'],
     ],
-    read: 'அந்த ஸ்டெப் எடுத்த அக்கவுண்ட் மட்டும் சேரும். Trial → Regular ரொம்ப நாள்னா ட்ரயல் கஸ்டமர் அப்படியே விடப்படறாங்க.',
+    read: 'ஸ்டெப்புக்கு ஒரு மீடியன், ஸ்க்ரீன்லயும் MCP-லயும். இன்னும் காத்திருக்கற அக்கவுண்ட் சேராது.',
   },
-  vel: 'மீடியன்கள். “none yet”னா இன்னும் யாரும் அந்த ஸ்டெப் எடுக்கல.',
+  vel: 'மீடியன்கள், ஸ்டெப்புக்கு ஒண்ணு. “none yet”னா இன்னும் யாரும் அந்த ஸ்டெப் எடுக்கல.',
+  exQuote: {
+    kicker: 'உதாரணம் · Quotations won · Agreed by negotiation',
+    title: 'எழுதின கொட்டேஷன், ஃபோன்ல ஒத்துக்கிட்ட விலை',
+    rows: [
+      ['A: எழுதின கொட்டேஷன், அப்ரூவ் ஆச்சு', '1-ல 1', 'இந்த மாசம் முடிவானது'],
+      ['= Quotations won', '100%', 'பதிலுக்கு காத்திருக்கறது எந்த பக்கமும் இல்ல'],
+      ['C: ஃபோன்ல ₹8,000 ஒத்துக்கிட்டது', '1', 'எழுதின கொட்டேஷன் இல்ல'],
+      ['= Agreed by negotiation', '1', 'எண்ணிக்கை, ரேட்டுக்கு பக்கத்துல'],
+    ],
+    read: 'B ரேட் கார்டு விலை: ரெண்டுலயும் இல்ல. ஃபோன் விலை ஏற்கனவே ஒத்துக்கிட்டது, அதனால வின் ரேட்ல சேராது.',
+  },
+  quote: 'Sales-ல Quotations won, Agreed by negotiation.<small>டெமோ நம்பர். உங்க நம்பர் வேற மாதிரி இருக்கும்.</small>',
   remember: 'ஞாபகம் வெச்சுக்கோங்க',
   rules: [
     '<b>Charged</b> = நீங்க கொண்டு வந்த க்ளோஸ் ஜாப்போட சிஸ்டம் விலை. வசூல் இல்ல',
     '<b>Unpriced</b> ஜாப் எண்ணும், கூட்டாது. <b>Filled</b> 0 நோக்கி போகணும்',
     '<b>ப்ரீமியம்</b>, <b>டிஸ்கவுண்ட்</b> தனித்தனி, கழிக்காது',
-    '<b>Won</b>, <b>கன்வர்ஷன்</b> அக்கவுண்ட் திறந்த மாசப்படி',
+    '<b>Won</b> = மாசத்துல நடந்த கன்வர்ஷன். <b>Team conversion</b> திறந்த மாசப்படி',
   ],
 }
 

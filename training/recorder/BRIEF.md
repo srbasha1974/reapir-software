@@ -165,3 +165,52 @@ others are recording).
 For each module you own: re-record **both languages** with the new look, check a contact sheet once,
 re-encode to the **same file names** in `training/media/`, update `seconds` and any changed lines in
 the JSON. Title-card durations must be true.
+
+---
+
+# Round 4 (2026-09-27): features 031 and 032 — the findings decided
+
+The app is `repair-service` **`develop`** at `b053262`, on this Mac:
+`REPAIR_SERVICE_DIR="/Users/sadiqrahimansa/Documents/Projects/Repair Service"` (export it for every
+`npx tsx` run; `recorder/node_modules` is already linked to the app's). The app runs at
+http://127.0.0.1:3000 with demo data; ffmpeg is `python3 -c "import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())"`.
+Paths in the rounds above that start `/home/user/` mean these two directories now.
+
+Read the two changes, in the app: `git show --stat 91aed9c 4c775cc` (feature 031, decision log Round
+10.28) and `git show 9680712` (feature 032, Round 10.31), `specs/031-money-figures/spec.md`,
+`specs/032-findings/spec.md`, and the Round 10.28/10.31 rows of `specification/open-questions.md`.
+
+**What changed, in short**
+
+- **K1** a written-off board's cost is in Total margin: Revenue − Cost = Total margin now.
+- **K2** a rework's cost is counted **once, in its own month**, charged to the engineer whose repair
+  came back; the original's record still shows its whole-life cost, but totals no longer add it twice.
+  Profitability's losses list marks a rework "rework of …".
+- **K5** verification hours are the **verifier's**: in their scorecard hours and credited to their
+  Actual; Profitability › By engineer has a **Checking** column. The repairer is no longer charged them.
+- **K3** Scorecard › Rework = the engineer's own closures that came back. **K4** First pass counts only
+  boards that went through verification. **K17** the MCP scorecard measures now equal the screen.
+- **K6** *What has stalled* › Stuck uses MIS › Stuck tasks' rule: **working days since the last
+  activity (hour, part or move), for a board on the bench (Alloted, In Progress)**. The *whole queue*
+  panel beside it still flags calendar days in the current state (unchanged, a different list).
+- **K7** Sales › Won = conversions **made** in the period. **K8** funnel velocity = median per step,
+  screen and MCP. **K11** MIS › Sales shows **Quotations won** (S-08) and **Agreed by negotiation** (S-11).
+- **K13** the Service Head or Liaison sets a board's rate-card basis on the job card: **Price from the
+  rate card…** (Under Assessment, a contract customer with rates that apply automatically). Once a rate
+  has priced the board its basis is fixed. The reservoir's "Assessed — rate card" tag now appears only
+  where a rate priced the board. **K14** the Service Head sees the premium reason. **K15** a spares line
+  with no quantity shows a dash. **K16** Queue aging's testing-gate rows are normal rows.
+- **Finding 18 fixed**: a board waiting on spares resumes **only when all its parts are in**; the receipt
+  says which boards went back to the bench and which still wait. *Send to the front office* lands on
+  the Orders tab. **Finding 19 fixed**: the timesheet runs **Monday to Sunday**. **K21** the purchase-
+  request address is set on the configuration screen. The verification banner now says what happened
+  (a failure is not shown as success); "Cannot repair…" and "Why it cannot be repaired" on the job
+  card; invoicing's Remove confirms; the lifecycle refusal points to the Jobs tab; Inward's Bin column is
+  wider. K9 and K10: not acted on.
+
+**Rules for this round** — as Round 2: fix locators, update captions (EN where the app changed, TA
+always, TAMIL-STYLE.md), re-record **both** languages, one contact-sheet check, two re-records at most,
+re-encode to the **same file names**, update `modules/NN.json` (do/dont/quiz/notes/seconds, examples
+for 13–17), drop notes that are now fixed, and never teach a finding that is fixed as a limitation.
+Rack & Bin card rules from Round 3 still hold. Make your own records through the app; never reset or
+reseed; never edit the app or git. Other agents record at the same time.

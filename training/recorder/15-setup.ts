@@ -5,17 +5,22 @@
  *   npx tsx 15-setup.ts            → runs every step not yet done, saving progress to out/15-setup.json
  *   STEP=rework npx tsx 15-setup.ts → the comeback R (challan for A, then a Rework inward), run later
  *
- * What the app allows, against KPI-CATALOGUE.md's worked month:
+ * What the app allows, against KPI-CATALOGUE.md's worked month (Round 4, features 031 and 032):
  *  - A  Ayyan, quotation, normal ₹10,000 typed (Set by hand), ₹12,000, Urgent turnaround.
  *       Parts billed ₹2,400 (2 × IGBT ₹900 + gate driver ₹600; cost 2 × 700 + 400 = ₹1,800) and a
  *       ₹150 fuse as Other spares (no billed price). 5 h repair + 1 h peer verification.
- *  - B  Kovai, ₹6,000 agreed by phone, normal ₹6,000 typed (no rate card can be reached: no screen
- *       sets a board's internal reference). Siemens POWER_SUPPLY 6EP1334-3BA10, which has a 4 h
- *       standard time in the demo. Parts ₹500 / cost ₹350. 4 h. Fails verification once.
+ *  - B  Kaveri Power Controls, a new CONTRACT customer (registered by the Sales Head, made contract,
+ *       given a ₹6,000 rate by the Operations Manager). The Service Head prices B from the rate card on
+ *       the job card (K13, "Price from the rate card…"). Siemens POWER_SUPPLY 6EP1334-3BA10, which has a
+ *       4 h standard time in the demo. Parts ₹500 / cost ₹350. 4 h. Fails verification once.
+ *  - Y1, Y2  two more Kaveri power supplies left Under Assessment, unpriced, for module 15's live
+ *       "Price from the rate card…" (one per take; a rate fixes the basis once it has priced a board).
  *  - C  Rajapalayam, normal ₹10,000 typed, ₹8,000 agreed by phone → discount. Parts ₹1,000 / ₹700. 8 h.
  *  - D  Sri Devi Diagnostics, never priced, 6 h, closed Non-Repairable.
  *  - X  a second Ayyan servo drive left Under Assessment, for the live raise-form demo (never raised).
  *  - Hours go on the week of 14 Sep (the engineer's day ceiling is 10 h and other agents use other weeks).
+ *  - R  (STEP=rework) warranty rework of A, allotted to Test Both Roles (the catalogue's Baleswar), who
+ *       fixes it; verified (after a plain Engineer could not open it) by Test Both Roles; closed. Its cost is charged to Test Engineer (K2).
  */
 import { Stage } from './stage'
 import { sql, jobPath, customerId, subStatus } from './09-setup'
@@ -69,7 +74,10 @@ async function deliver(o: {
     await p.getByLabel('Brought by', { exact: true }).click()
     await p.getByLabel('Brought by', { exact: true }).pressSequentially(' ', { delay: 40 })
     await p.waitForTimeout(1200)
-    await p.getByRole('listbox').getByRole('option').first().click()
+    // A new customer has no contacts yet: "Brought by" is optional, so leave it.
+    const contact = p.getByRole('listbox').getByRole('option').first()
+    if (await contact.isVisible().catch(() => false)) await contact.click()
+    else await p.keyboard.press('Escape')
     const change = p.getByRole('button', { name: /Change Sales engineer/ })
     if (await change.isVisible().catch(() => false)) await change.click()
     const pick = p.getByLabel('Sales engineer', { exact: true })
@@ -141,34 +149,34 @@ async function phonePrice(customer: string, job: string, normal: number, price: 
   })
 }
 
-async function allot(jobs: string[]) {
+async function allot(jobs: string[], engineer = 'Test Engineer') {
   await as('servicehead@thulirtech.com', '/service-centre/reservoir', async (s, p) => {
     for (const job of jobs) {
       await s.goto(`/service-centre/reservoir?q=${encodeURIComponent(job)}`)
       await p.getByLabel(`Choose ${job}`, { exact: true }).check()
-      await p.locator('label.radio', { hasText: 'Test Engineer' }).click()
+      await p.locator('label.radio', { hasText: engineer }).first().click()
       await p.getByRole('button', { name: /^Allot/ }).click()
       await settle(p, 1500)
     }
   })
 }
 
-async function giveToVerifier(jobs: string[]) {
+async function giveToVerifier(jobs: string[], who = 'Test Both Roles') {
   await as('servicehead@thulirtech.com', '/service-centre/verification?view=queue', async (s, p) => {
     for (const job of jobs) await p.getByLabel(`Choose ${job}`, { exact: true }).check()
     const texts = await p.locator('#verifierUserId option').allTextContents()
-    const t = texts.find((x) => x.startsWith('Test Both Roles'))
-    if (!t) throw new Error('No verifier option for Test Both Roles')
+    const t = texts.find((x) => x.startsWith(who))
+    if (!t) throw new Error('No verifier option for ' + who)
     await p.locator('#verifierUserId').selectOption({ label: t })
     await p.getByRole('button', { name: /^Give \d+ boards? to them/ }).click()
     await settle(p, 1500)
   })
 }
 
-async function hours(email: string, rows: Array<[string, string, number]>) {
+async function hours(email: string, rows: Array<[string, string, number]>, week = '2026-09-14') {
   await as(email, '/service-centre/timesheet', async (s, p) => {
     for (const [job, day, h] of rows) {
-      await s.goto(`/service-centre/timesheet?week=2026-09-14&job=${encodeURIComponent(job)}`)
+      await s.goto(`/service-centre/timesheet?week=${week}&job=${encodeURIComponent(job)}`)
       const cell = p.getByLabel(`${job} ${day}`)
       await cell.fill(String(h))
       await cell.press('Enter')
@@ -177,21 +185,57 @@ async function hours(email: string, rows: Array<[string, string, number]>) {
   })
 }
 
+// ── 0 · The contract customer for B (K13): registered, made contract, given a rate ────────────
+const KAVERI = 'Kaveri Power Controls'
+await step('contractCustomer', async () => {
+  if (!customerId(KAVERI)) {
+    await as('saleshead@thulirtech.com', '/crm/customers/new', async (s, p) => {
+      await p.locator('#companyName').fill(KAVERI)
+      await p.locator('#city').fill('Coimbatore')
+      await p.getByRole('button', { name: 'Register' }).click()
+      await settle(p, 2000)
+    })
+  }
+  const id = customerId(KAVERI)
+  if (!id) throw new Error('Kaveri Power Controls was not registered')
+  await as('saleshead@thulirtech.com', `/crm/customers/${id}?tab=details`, async (s, p) => {
+    const change = p.getByRole('button', { name: 'Change to exclusive contract' })
+    if (await change.isVisible().catch(() => false)) {
+      await change.click()
+      await settle(p, 1800)
+    }
+  })
+  console.log('Kaveri segment:', sql(`select billing_segment from customer where customer_id = '${id}'`))
+})
+await step('rate', async () => {
+  const id = customerId(KAVERI)
+  await as('opsmanager@thulirtech.com', `/crm/rates?customer=${id}`, async (s, p) => {
+    await p.locator('#internalReference').fill('PSU-24V')
+    await p.locator('#partDescription').fill('PLC power supply, 24 V')
+    await p.locator('.lvl-opts label', { hasText: 'Major' }).click()
+    await p.locator('#rate').fill('6000')
+    await p.locator('#validFrom').fill('2026-09-01')
+    await p.getByRole('button', { name: 'Add the rate' }).click()
+    await settle(p, 1800)
+  })
+  console.log('rate:', sql(`select internal_reference, service_level, rate, applies_automatically from service_rate where customer_id = '${id}'`))
+})
+
 // ── 1 · Deliveries ──────────────────────────────────────────────────────────────────────────────
 await step('deliveries', async () => {
   const [A, X] = await deliver({ customer: 'Ayyan Industrial Systems', search: 'Ayyan', salesPerson: 'Test Sales Engineer', units: 2,
     brand: 'Yaskawa', device: 'Servo drive', model: 'SGDV-120A01A', complaint: 'Line down: drive trips on power-up', prefix: 'SA' })
-  const [B] = await deliver({ customer: 'Kovai Textile Mills', search: 'Kovai', salesPerson: 'Test Sales Head', units: 1,
+  const [B, Y1, Y2] = await deliver({ customer: KAVERI, search: 'Kaveri', salesPerson: 'Test Sales Head', units: 3,
     brand: 'Siemens', device: 'POWER_SUPPLY', model: '6EP1334-3BA10', complaint: 'PLC power supply, no 24 V output', prefix: 'SB' })
   const [C] = await deliver({ customer: 'Rajapalayam Spinners', search: 'Rajapalayam', salesPerson: 'Test Sales Engineer', units: 1,
     brand: 'Danfoss', device: 'VFD control board', model: 'FC-302', complaint: 'Display dead, no comms', prefix: 'SC' })
   const [D] = await deliver({ customer: 'Sri Devi Diagnostics', search: 'Sri Devi', salesPerson: 'Test Sales Engineer', units: 1,
     brand: 'Siemens', device: 'Mammography PMC board', model: 'Mammomat PMC', complaint: 'Generator fault on exposure', prefix: 'SD' })
-  st.jobs = { A, B, C, D, X }
+  st.jobs = { A, B, C, D, X, Y1, Y2 }
 })
 const J = st.jobs as Record<string, string>
 
-await step('pickup', () => pickUp([J.A, J.X, J.B, J.C, J.D]))
+await step('pickup', () => pickUp([J.A, J.X, J.B, J.Y1, J.Y2, J.C, J.D]))
 
 // ── 2 · Prices ──────────────────────────────────────────────────────────────────────────────────
 await step('quoteA', async () => {
@@ -219,7 +263,18 @@ await step('quoteA', async () => {
   })
   console.log('A quotation', st.quotationA, sql(`select quotation_status from quotation q join quotation_line l using (quotation_id) join quotation_line_job j using (quotation_line_id) where j.job_number='${J.A}' and j.is_live`))
 })
-await step('phoneB', () => phonePrice('Kovai Textile Mills', J.B, 6000, 6000, 'PLC power supply repair'))
+await step('rateB', async () => {
+  await as('servicehead@thulirtech.com', jobPath(J.B), async (s, p) => {
+    await p.getByRole('button', { name: 'Price from the rate card…' }).click()
+    const pick = p.locator(`[id="rate-${J.B}"]`)
+    const label = (await pick.locator('option').allTextContents()).find((t) => t.startsWith('PSU-24V'))
+    if (!label) throw new Error('No PSU-24V rate offered on B')
+    await pick.selectOption({ label })
+    await p.getByRole('button', { name: 'Price from the rate card', exact: true }).click()
+    await settle(p, 1800)
+  })
+  console.log('B priced:', sql(`select price_source, normal_price, quoted_price, labour_set_by_hand, service_rate_id is not null from work_order where job_number = '${J.B}'`))
+})
 await step('phoneC', () => phonePrice('Rajapalayam Spinners', J.C, 10000, 8000, 'VFD control board repair'))
 
 // ── 3 · Parts in the catalogue, with stock ─────────────────────────────────────────────────────
@@ -352,11 +407,109 @@ await step('customer', async () => {
 })
 await step('writeoffD', async () => {
   await as('servicehead@thulirtech.com', jobPath(J.D), async (s, p) => {
-    await p.getByRole('button', { name: 'It cannot be saved…' }).click()
+    await p.getByRole('button', { name: 'Cannot repair…' }).click()
     await p.locator('select[name="reasonId"]').selectOption({ label: 'Component unavailable' })
     await p.getByRole('button', { name: 'Close as non-repairable' }).click()
     await settle(p, 1500)
   })
+})
+
+// ── 5a · B again: the first B (kept as oldB) went through unpriced because the customer was still
+//    ad hoc when the Service Head set its rate basis. The next Kaveri board becomes B. ────────────
+await step('contractFix', async () => {
+  const id = customerId(KAVERI)
+  await as('saleshead@thulirtech.com', `/crm/customers/${id}?tab=details`, async (s, p) => {
+    const change = p.getByRole('button', { name: 'Change to exclusive contract' })
+    await change.click()
+    await settle(p, 1800)
+  })
+  const seg = sql(`select billing_segment from customer where customer_id = '${id}'`)
+  console.log('Kaveri segment:', seg)
+  if (seg !== 'EXCLUSIVE_CONTRACT') throw new Error('Kaveri is still ' + seg)
+  st.jobs.oldB = st.jobs.B
+  st.jobs.B = st.jobs.Y1
+  st.jobs.Y1 = st.jobs.Y2
+  delete st.jobs.Y2
+})
+await step('moreY', async () => {
+  const [Y2, Y3] = await deliver({ customer: KAVERI, search: 'Kaveri', salesPerson: 'Test Sales Head', units: 2,
+    brand: 'Siemens', device: 'POWER_SUPPLY', model: '6EP1334-3BA10', complaint: 'PLC power supply, output ripple', prefix: 'SY' })
+  st.jobs.Y2 = Y2
+  st.jobs.Y3 = Y3
+  await pickUp([Y2, Y3])
+})
+await step('rateB2', async () => {
+  await as('servicehead@thulirtech.com', jobPath(J.B), async (s, p) => {
+    await p.getByRole('button', { name: 'Price from the rate card…' }).click()
+    const pick = p.locator(`[id="rate-${J.B}"]`)
+    const label = (await pick.locator('option').allTextContents()).find((t) => t.startsWith('PSU-24V'))
+    if (!label) throw new Error('No PSU-24V rate offered on B')
+    await pick.selectOption({ label })
+    await p.getByRole('button', { name: 'Price from the rate card', exact: true }).click()
+    await settle(p, 1800)
+  })
+  const priced = sql(`select price_source || ' ' || normal_price from work_order where job_number = '${J.B}'`)
+  console.log('B priced:', priced)
+  if (!priced.startsWith('SERVICE_RATE')) throw new Error('B was not priced from the rate card')
+})
+await step('allotB2', () => allot([J.B]))
+await step('workB2', async () => {
+  await as('engineer@thulirtech.com', jobPath(J.B), async (s, p) => {
+    await p.getByRole('button', { name: 'Start work' }).first().click()
+    await settle(p, 1500)
+    await s.goto(jobPath(J.B))
+    await p.getByRole('button', { name: /From catalogue/ }).click()
+    const key = PARTS.psu[0].split(' · ')[0].slice(0, 12)
+    await p.getByRole('combobox', { name: 'Part' }).pressSequentially(key, { delay: 40 })
+    await p.waitForTimeout(900)
+    await p.getByRole('option', { name: new RegExp(key + '.*lot ' + stamp) }).first().click()
+    await p.getByLabel('Quantity').fill('1')
+    await p.getByRole('button', { name: 'Book it' }).click()
+    await settle(p, 1800)
+  })
+})
+await step('hoursB2', () => hours('engineer@thulirtech.com', [[J.B, 'Sun', 4]]))
+await step('readyB2', async () => {
+  await as('engineer@thulirtech.com', jobPath(J.B), async (s, p) => {
+    await p.getByRole('button', { name: 'Ready for verification' }).first().click()
+    await settle(p, 1500)
+  })
+})
+await step('giveB2', () => giveToVerifier([J.B]))
+await step('failB2', async () => {
+  await as('bothroles@thulirtech.com', '/service-centre/verification?view=mine', async (s, p) => {
+    await s.goto(`/service-centre/verification?view=mine&card=${encodeURIComponent(J.B)}`)
+    await p.getByLabel('Observed symptom').fill('24 V rail sags to 21 V under load')
+    await p.getByRole('button', { name: 'Fail — back to the bench' }).click()
+    await settle(p, 1800)
+  })
+  console.log('B after fail:', subStatus(J.B))
+})
+await step('readyB3', async () => {
+  await as('engineer@thulirtech.com', jobPath(J.B), async (s, p) => {
+    const start = p.getByRole('button', { name: 'Start work' })
+    if (await start.isVisible().catch(() => false)) { await start.click(); await settle(p, 1500); await s.goto(jobPath(J.B)) }
+    await p.getByRole('button', { name: 'Ready for verification' }).first().click()
+    await settle(p, 1500)
+  })
+})
+await step('giveB3', () => giveToVerifier([J.B]))
+await step('passB3', async () => {
+  await as('bothroles@thulirtech.com', '/service-centre/verification?view=mine', async (s, p) => {
+    await s.goto(`/service-centre/verification?view=mine&card=${encodeURIComponent(J.B)}`)
+    await p.getByRole('button', { name: 'Pass', exact: true }).click()
+    await settle(p, 1500)
+  })
+})
+await step('closeB2', async () => {
+  await as('liaison@thulirtech.com', '/service-centre/verification?view=customer', async (s, p) => {
+    await s.goto(`/service-centre/verification?view=customer&card=${encodeURIComponent(J.B)}`)
+    await p.locator(`#note-${J.B.replace(/\//g, '\\/')}`).fill('Works on their machine')
+    await p.getByRole('button', { name: 'It works — close it' }).click()
+    await settle(p, 1500)
+  })
+  console.log('B:', subStatus(J.B))
+  st.done = (st.done ?? []).filter((d: string) => d !== 'refresh')
 })
 
 // ── 5b · The comeback R (only with STEP=rework, after module 15 is recorded) ────────────────
@@ -387,9 +540,9 @@ if (process.env.STEP === 'rework') {
     console.log('R', R, sql(`select price_source, base_price, job_type, previous_job_number from work_order where job_number='${R}'`))
   })
   await step('pickupR', () => pickUp([st.R]))
-  await step('allotR', () => allot([st.R]))
+  await step('allotR', () => allot([st.R], 'Test Both Roles'))
   await step('workR', async () => {
-    await as('engineer@thulirtech.com', jobPath(st.R), async (s, p) => {
+    await as('bothroles@thulirtech.com', jobPath(st.R), async (s, p) => {
       await p.getByRole('button', { name: 'Start work' }).first().click()
       await settle(p, 1500)
       await s.goto(jobPath(st.R))
@@ -398,12 +551,41 @@ if (process.env.STEP === 'rework') {
       await p.getByLabel('Cost (₹)').fill('300')
       await p.getByRole('button', { name: 'Book it' }).click()
       await settle(p, 1800)
-      await s.goto(`/service-centre/timesheet?week=2026-09-21&job=${encodeURIComponent(st.R)}`)
-      const cell = p.getByLabel(`${st.R} Fri`)
-      await cell.fill('2')
-      await cell.press('Enter')
+    })
+  })
+  await step('hoursR', () => hours('bothroles@thulirtech.com', [[st.R, 'Fri', 2]], '2026-09-21'))
+  await step('readyR', async () => {
+    await as('bothroles@thulirtech.com', jobPath(st.R), async (s, p) => {
+      await p.getByRole('button', { name: 'Ready for verification' }).first().click()
       await settle(p, 1500)
     })
+  })
+  await step('giveR', () => giveToVerifier([st.R], 'Test Engineer'))
+  // A plain Engineer cannot open a colleague's board, so Test Engineer never sees R to check it (reported).
+  // The Service Head puts it back in the queue and gives it to Test Both Roles (self-verification, flagged).
+  await step('releaseR', async () => {
+    await as('servicehead@thulirtech.com', `/service-centre/verification?view=checking&card=${encodeURIComponent(st.R)}`, async (s, p) => {
+      await p.getByPlaceholder(/Why it is coming back/).fill('Test Engineer cannot open the board')
+      await p.getByRole('button', { name: /Back to\s+the queue/ }).click()
+      await settle(p, 1500)
+    })
+  })
+  await step('giveR2', () => giveToVerifier([st.R], 'Test Both Roles'))
+  await step('verifyR', async () => {
+    await as('bothroles@thulirtech.com', '/service-centre/verification?view=mine', async (s, p) => {
+      await s.goto(`/service-centre/verification?view=mine&card=${encodeURIComponent(st.R)}`)
+      await p.getByRole('button', { name: 'Pass', exact: true }).click()
+      await settle(p, 1500)
+    })
+  })
+  await step('closeR', async () => {
+    await as('liaison@thulirtech.com', '/service-centre/verification?view=customer', async (s, p) => {
+      await s.goto(`/service-centre/verification?view=customer&card=${encodeURIComponent(st.R)}`)
+      await p.locator(`#note-${st.R.replace(/\//g, '\\/')}`).fill('Works on their machine again')
+      await p.getByRole('button', { name: 'It works — close it' }).click()
+      await settle(p, 1500)
+    })
+    console.log('R:', subStatus(st.R))
   })
   st.done = (st.done ?? []).filter((d: string) => d !== 'refresh')
 }
@@ -424,20 +606,23 @@ writeFileSync(
   SEED,
   JSON.stringify(
     {
-      A: J.A, B: J.B, C: J.C, D: J.D, R: st.R ?? null, X: J.X,
+      A: J.A, B: J.B, C: J.C, D: J.D, R: st.R ?? null, X: J.X, Y: [J.Y1, J.Y2, J.Y3].filter(Boolean), oldB: J.oldB ?? null,
+      contractCustomer: KAVERI,
       quotationA: st.quotationA,
       notes: [
-        'Built through the app on 2026-09-26 by the module 15/16 set-up (training/recorder/15-setup.ts); SQL only read.',
+        'Built through the app on 2026-09-27 (Round 4) by training/recorder/15-setup.ts; SQL only read.',
         'A: Ayyan Industrial Systems, Yaskawa servo drive. Quotation ' + st.quotationA + ': normal price ₹10,000 typed (Set by hand), ₹12,000 approved, premium ₹2,000 Urgent turnaround. Parts billed ₹2,400 (2 × IGBT ₹900 + gate driver ₹600; cost ₹1,800) + ₹150 fuse booked as Other spares (no billed price). 5 h repair (Sat 19 Sep) + 1 h peer verification by Test Both Roles. Passed verification first time. Ready for Invoice.',
-        'B: Kovai Textile Mills, Siemens POWER_SUPPLY 6EP1334-3BA10 (demo has a 4 h standard time for it, so B is the only comparable job for Efficiency). ₹6,000 agreed by phone with normal ₹6,000 typed: NO rate card — no screen sets a board\'s internal reference, so rate-card pricing cannot be reached through the app. Parts ₹500 / cost ₹350. 4 h. Failed verification once (verification_cycle_count 1), then passed. Ready for Invoice. Delivery credited to Test Sales Head (the catalogue\'s Priya).',
-        'C: Rajapalayam Spinners, Danfoss VFD control board. Phone price ₹8,000 against a typed normal ₹10,000 → discount ₹2,000 (Set by hand, not Rate card). Parts ₹1,000 / ₹700. 8 h. Ready for Invoice.',
-        'D: Sri Devi Diagnostics, mammography PMC board. Never priced. 6 h. Non-Repairable (Component unavailable).',
-        'A, C, D deliveries credited to Test Sales Engineer (the catalogue\'s Arun); B to Test Sales Head. No delivery is "Filled" (C cannot be made to pre-date attribution).',
+        'B: Kaveri Power Controls, a contract customer registered for this (Sales Head), made Exclusive contract, rate PSU-24V · Major ₹6,000 from 1 Sep (Operations Manager). The Service Head priced B with "Price from the rate card…" on the job card (K13): normal price ₹6,000 from the rate card, no quotation. Siemens POWER_SUPPLY 6EP1334-3BA10 (4 h standard in the demo). Parts ₹500 / cost ₹350. 4 h. Failed verification once, then passed. Ready for Invoice. Delivery credited to Test Sales Head (the catalogue\'s Priya).',
+        'Y: more Kaveri power supplies left Under Assessment and unpriced, for module 15\'s live "Price from the rate card…" (one per take). Please do not price or quote them.',
+        'oldB (' + J.oldB + '): the first B. Its rate basis was set while Kaveri was still ad hoc, so nothing priced it (the job card offered the act and said it priced it: see the notes); it went on to Ready for Invoice unpriced. It is a closed September board of Test Engineer\'s in the demo.',
+        'C: Rajapalayam Spinners, Danfoss VFD control board. Phone price ₹8,000 against a typed normal ₹10,000 → discount ₹2,000 (Set by hand). Parts ₹1,000 / ₹700. 8 h. Verified (passed first time). Ready for Invoice.',
+        'D: Sri Devi Diagnostics, mammography PMC board. Never priced. 6 h. Non-Repairable (Component unavailable). Never verified.',
+        'A, C, D deliveries credited to Test Sales Engineer (the catalogue\'s Arun); B, oldB and the Y boards to Test Sales Head. No delivery is "Filled" (none can be made to pre-date attribution).',
         'X: a second Ayyan servo drive left Under Assessment, used by module 15 for the live raise-form demo (never raised). Please do not quote it.',
-        'Engineer is Test Engineer (the catalogue\'s Ramachandran), costed at ₹700/h (Senior Engineer since 2025-11-30); Test Both Roles (the catalogue\'s Baleswar) at ₹450/h standard. So labour cost and every margin on screen differ from the catalogue\'s ₹400/h figures; prices, premium, discount, labour charge, charged and parts margin match.',
-        'Hours are on the week of 14 Sep: C Mon 4 + Thu 4, B Tue 4, D Wed 3 + Fri 3, A Sat 5, verification A Sat 1 (Test Both Roles). All closed 26 Sep 2026 (September).',
-        'Test Engineer\'s seeded September target is ₹60,000 (not ₹20,000); it was left as seeded. Test Engineer also has other agents\' closed jobs in September, so scorecard and Achievement will not show only A–D.',
-        st.R ? 'R: warranty rework of A (Rework inward naming A, after A was dispatched on a challan), priced ₹0 (WARRANTY_REWORK). A was first dispatched on a challan (warranty to 2026-12-26). R has 2 h (Fri 25 Sep, ₹1,400 at ₹700/h) + a ₹300 encoder cable as Other spares = ₹1,700, rolled up onto A (A labour margin ₹3,650 → ₹1,950 on screen). R is left In Progress (so September rework rate / scorecard Rework are unaffected; R shows under Labour on open boards). It is a September comeback here, not 31 Oct as in the catalogue.' : 'R: not created yet (planned after module 15 is recorded: challan for A, then a Rework inward naming A).',
+        'Engineer is Test Engineer (the catalogue\'s Ramachandran), costed at ₹700/h; Test Both Roles (the catalogue\'s Baleswar) at ₹450/h. So labour cost and every margin on screen differ from the catalogue\'s ₹400/h figures; prices, premium, discount, labour charge, charged and parts margin match.',
+        'Hours are on the week of 14 Sep: C Mon 4 + Thu 4, oldB Tue 4, B Sun 20 Sep 4 (the timesheet\'s new Sunday column), D Wed 3 + Fri 3, A Sat 5, verification A Sat 1 (Test Both Roles). All closed 27 Sep 2026 (September).',
+        'Test Engineer\'s seeded September target is ₹60,000 (not ₹20,000), left as seeded. Test Engineer also has other agents\' closed jobs in September, so scorecard and Achievement do not show only A–D.',
+        st.R ? 'R: warranty rework of A (Rework inward naming A, after A went out on a challan), priced ₹0 (WARRANTY_REWORK). Allotted to Test Both Roles (Baleswar), who fixed it: 2 h (Fri 25 Sep) + a ₹300 encoder cable as Other spares; verified by Test Both Roles himself (Test Engineer, a plain Engineer, could not open a colleague\'s board to check it); closed 27 Sep. So R is a September comeback here, not 31 Oct as in the catalogue: its cost counts in September, on R, charged to Test Engineer (K2), and A shows Rework rolled up on its own record.' : 'R: not created yet (STEP=rework, after module 15 is recorded).',
         'The MIS view was refreshed after set-up. Refresh again (MIS › Refresh now, as opsmanager@) if you change anything.',
       ],
     },

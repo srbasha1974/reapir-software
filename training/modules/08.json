@@ -1,146 +1,148 @@
 {
- "id": "08",
- "title": {
-  "en": "Verification and customer testing",
-  "ta": "வெரிஃபிகேஷன், கஸ்டமர் டெஸ்டிங்"
- },
- "role": "Liaison · Service Head · Engineer",
- "path": "Service › Verification (Waiting to be given out, With you to check, With the customer) · Service › My timesheet",
- "video": {
-  "en": "media/08-verification.mp4",
-  "ta": "media/08-verification-ta.mp4"
- },
- "poster": {
-  "en": "media/08-poster.jpg",
-  "ta": "media/08-poster-ta.jpg"
- },
- "seconds": {
-  "en": 123,
-  "ta": 150
- },
- "do": {
-  "en": [
-   "Liaison or Service Head: in <b>Verification › Waiting to be given out</b>, tick the boards and choose <b>Give it to</b>. Pick a peer who did not repair them.",
-   "Checker: your boards are under <b>With you to check</b>. Book your checking hours on your timesheet while you hold the board. They count as checking time, and the job carries the cost.",
-   "Checker: if it fails, write what you saw in <b>Observed symptom</b>, then press <b>Fail — back to the bench</b>. The board returns to In Progress with your symptom on its record.",
-   "Checker: if it works, press <b>Pass</b>. It moves to Awaiting Customer Confirmation.",
-   "Liaison: under <b>With the customer</b>, write <b>What they said</b> and record the result. <b>It works — close it</b> makes the job Ready for Invoice. <b>Still faulty — back to the bench</b> returns it to In Progress."
-  ],
-  "ta": [
-   "Liaison அல்லது Service Head: <b>Verification › Waiting to be given out</b>-ல போர்டுகளை டிக் பண்ணி <b>Give it to</b> செலக்ட் பண்ணுங்க. ரிப்பேர் பண்ணாத வேற இன்ஜினியரை செலக்ட் பண்ணுங்க.",
-   "செக் பண்றவர்: உங்க போர்டுகள் <b>With you to check</b>-ல. போர்டு உங்க கிட்ட இருக்கும்போதே செக்கிங் ஹவர்ஸை டைம்ஷீட்ல போடுங்க. அது செக்கிங் டைமா கணக்காகும், காஸ்ட் அந்த ஜாபுக்கு போகும்.",
-   "செக் பண்றவர்: ஃபெயிலா? <b>Observed symptom</b>-ல என்ன பார்த்தீங்கன்னு எழுதி <b>Fail — back to the bench</b> அழுத்துங்க. போர்டு உங்க symptom-ஓட In Progress-க்கு திரும்பும்.",
-   "செக் பண்றவர்: சரியா வேலை செஞ்சா <b>Pass</b>. அது Awaiting Customer Confirmation-க்கு போகும்.",
-   "Liaison: <b>With the customer</b>-ல <b>What they said</b> எழுதி ரிசல்ட்டை பதிவு பண்ணுங்க. <b>It works — close it</b> பண்ணா ஜாப் Ready for Invoice ஆகும். <b>Still faulty — back to the bench</b> பண்ணா In Progress-க்கு திரும்பும்."
+  "id": "08",
+  "title": {
+    "en": "Verification and customer testing",
+    "ta": "வெரிஃபிகேஷன், கஸ்டமர் டெஸ்டிங்"
+  },
+  "role": "Liaison · Service Head · Engineer",
+  "path": "Service › Verification (Waiting to be given out, With you to check, With the customer) · Service › My timesheet",
+  "video": {
+    "en": "media/08-verification.mp4",
+    "ta": "media/08-verification-ta.mp4"
+  },
+  "poster": {
+    "en": "media/08-poster.jpg",
+    "ta": "media/08-poster-ta.jpg"
+  },
+  "seconds": {
+    "en": 95,
+    "ta": 109
+  },
+  "do": {
+    "en": [
+      "Liaison or Service Head: in <b>Verification › Waiting to be given out</b>, tick the boards and choose <b>Give it to</b>. Pick a peer who did not repair them.",
+      "Checker: your boards are under <b>With you to check</b>. Book your checking hours on your timesheet while you hold the board. They count as checking time and as <b>your</b> hours, not the repairer’s; the job carries the cost.",
+      "Checker: if it fails, write what you saw in <b>Observed symptom</b>, then press <b>Fail — back to the bench</b>. The board returns to In Progress with your symptom on its record.",
+      "Checker: if it works, press <b>Pass</b>. It moves to Awaiting Customer Confirmation.",
+      "Liaison: under <b>With the customer</b>, write <b>What they said</b> and record the result. <b>It works — close it</b> makes the job Ready for Invoice. <b>Still faulty — back to the bench</b> returns it to In Progress.",
+      "After each act, read the banner: it says what happened. A pass or a close shows a tick; a failure or a return shows the alert icon, never a success."
+    ],
+    "ta": [
+      "Liaison அல்லது Service Head: <b>Verification › Waiting to be given out</b>-ல போர்டுகளை டிக் பண்ணி <b>Give it to</b> செலக்ட் பண்ணுங்க. ரிப்பேர் பண்ணாத வேற இன்ஜினியரை செலக்ட் பண்ணுங்க.",
+      "செக் பண்றவர்: உங்க போர்டுகள் <b>With you to check</b>-ல. போர்டு உங்க கிட்ட இருக்கும்போதே செக்கிங் ஹவர்ஸை டைம்ஷீட்ல போடுங்க. அது செக்கிங் டைமா, <b>உங்க</b> ஹவர்ஸா கணக்காகும், ரிப்பேர் பண்ணவரோடதா இல்ல; காஸ்ட் அந்த ஜாபுக்கு போகும்.",
+      "செக் பண்றவர்: ஃபெயிலா? <b>Observed symptom</b>-ல என்ன பார்த்தீங்கன்னு எழுதி <b>Fail — back to the bench</b> அழுத்துங்க. போர்டு உங்க symptom-ஓட In Progress-க்கு திரும்பும்.",
+      "செக் பண்றவர்: சரியா வேலை செஞ்சா <b>Pass</b>. அது Awaiting Customer Confirmation-க்கு போகும்.",
+      "Liaison: <b>With the customer</b>-ல <b>What they said</b> எழுதி ரிசல்ட்டை பதிவு பண்ணுங்க. <b>It works — close it</b> பண்ணா ஜாப் Ready for Invoice ஆகும். <b>Still faulty — back to the bench</b> பண்ணா In Progress-க்கு திரும்பும்.",
+      "ஒவ்வொரு ஆக்ஷனுக்கும் அப்புறம் பேனரை படிங்க: என்ன நடந்ததுன்னு சொல்லும். Pass, close-க்கு டிக்; ஃபெயில், ரிட்டர்னுக்கு அலர்ட் ஐகான், சக்சஸ்னு காட்டாது."
+    ]
+  },
+  "dont": {
+    "en": [
+      "Avoid giving a board to the engineer who repaired it. It's allowed, but it is recorded as self-verification and shows in the figures. Use it only when nobody else can check.",
+      "Don't press Fail without a symptom. The button waits until you write one.",
+      "Don't record a result on a board somebody else holds. Only the person it was given to can pass or fail it.",
+      "Don't record customer testing before a peer has passed the board. The system refuses it."
+    ],
+    "ta": [
+      "ரிப்பேர் பண்ண அதே இன்ஜினியர் கிட்ட செக் பண்ண கொடுக்காதீங்க. முடியும், ஆனா self-verification-ஆ பதிவாகி ரிப்போர்ட்ல தெரியும். வேற யாரும் இல்லைன்னா மட்டும்.",
+      "Symptom இல்லாம Fail அழுத்தாதீங்க. நீங்க எழுதற வரைக்கும் பட்டன் வெயிட் பண்ணும்.",
+      "வேற ஒருத்தர் கிட்ட இருக்கற போர்டுக்கு ரிசல்ட் போடாதீங்க. யார் கிட்ட கொடுத்தாங்களோ அவங்க மட்டும் தான் pass அல்லது fail பண்ண முடியும்.",
+      "வேற இன்ஜினியர் pass பண்றதுக்கு முன்னாடி கஸ்டமர் டெஸ்டிங் பதிவு பண்ணாதீங்க. சிஸ்டம் ஏத்துக்காது."
+    ]
+  },
+  "quiz": {
+    "en": [
+      {
+        "q": "Two repaired boards are waiting. Only Arun, who repaired them, and Priya are in today. Who should check them?",
+        "o": [
+          "Arun, he knows the boards best",
+          "Priya, a peer who did not repair them",
+          "Nobody. Mark them Ready for Invoice"
+        ],
+        "a": 1,
+        "why": "A peer removes the repairer's bias. Giving it to Arun is allowed but recorded as self-verification, so use that only when nobody else can check."
+      },
+      {
+        "q": "You are checking a board and it still trips at 40% load. What do you do?",
+        "o": [
+          "Write the symptom in Observed symptom, then Fail — back to the bench",
+          "Press Fail and explain to the engineer later",
+          "Press Pass. The customer will test it anyway"
+        ],
+        "a": 0,
+        "why": "A fail needs a symptom. The board returns to In Progress with the symptom on its record, and every failed check stays on the record."
+      },
+      {
+        "q": "You spent 1.5 hours testing a board you were given to check. Where do they go?",
+        "o": [
+          "Nowhere. Checking is not booked",
+          "On your timesheet, against that job, while you hold it",
+          "On the repairing engineer's timesheet"
+        ],
+        "a": 1,
+        "why": "The verifier may book hours on the board while holding it. They are recorded as checking time and count as the checker's hours (their scorecard and Profitability's Checking column), not the repairer's; the job still carries the cost."
+      },
+      {
+        "q": "The customer says the passed board runs their drive fine. Who records that, and what happens?",
+        "o": [
+          "The checker presses Pass again",
+          "The Liaison records It works — close it, and the job becomes Ready for Invoice",
+          "Front Office issues the invoice"
+        ],
+        "a": 1,
+        "why": "Customer testing is recorded by the Liaison for the customer. A pass closes the job as Ready for Invoice, and a fault sends it back to the bench."
+      }
+    ],
+    "ta": [
+      {
+        "q": "ரிப்பேர் ஆன ரெண்டு போர்டு வெயிட் பண்ணுது. இன்னைக்கு அதை ரிப்பேர் பண்ண அருணும், ப்ரியாவும் மட்டும் தான் இருக்காங்க. யார் செக் பண்ணணும்?",
+        "o": [
+          "அருண், அவருக்கு போர்டு நல்லா தெரியும்",
+          "ப்ரியா, ரிப்பேர் பண்ணாத வேற இன்ஜினியர்",
+          "யாரும் வேண்டாம். Ready for Invoice பண்ணிடலாம்"
+        ],
+        "a": 1,
+        "why": "வேற இன்ஜினியர் செக் பண்ணா ரிப்பேர் பண்ணவரோட பார்வை மட்டும் இருக்காது. அருண் கிட்ட கொடுக்கலாம், ஆனா self-verification-ஆ பதிவாகும். வேற யாரும் இல்லைன்னா மட்டும்."
+      },
+      {
+        "q": "நீங்க செக் பண்ற போர்டு 40% லோட்ல இன்னும் ட்ரிப் ஆகுது. என்ன பண்ணுவீங்க?",
+        "o": [
+          "Observed symptom-ல எழுதி, Fail — back to the bench",
+          "Fail அழுத்திட்டு, அப்புறம் இன்ஜினியர் கிட்ட சொல்லுவேன்",
+          "Pass அழுத்துவேன். கஸ்டமர் எப்படியும் டெஸ்ட் பண்ணுவாங்க"
+        ],
+        "a": 0,
+        "why": "Fail-க்கு symptom கட்டாயம். போர்டு symptom-ஓட In Progress-க்கு திரும்பும். ஒவ்வொரு ஃபெயிலான செக்கும் பதிவுல இருக்கும்."
+      },
+      {
+        "q": "செக் பண்ண கொடுத்த போர்டை 1.5 ஹவர்ஸ் டெஸ்ட் பண்ணீங்க. அந்த ஹவர்ஸ் எங்க போகும்?",
+        "o": [
+          "எங்கேயும் இல்ல. செக்கிங் டைம் புக் பண்றது இல்ல",
+          "உங்க டைம்ஷீட்ல, அந்த ஜாப்ல, போர்டு உங்க கிட்ட இருக்கும்போது",
+          "ரிப்பேர் பண்ண இன்ஜினியரோட டைம்ஷீட்ல"
+        ],
+        "a": 1,
+        "why": "போர்டு உங்க கிட்ட இருக்கும்போது அதுல ஹவர்ஸ் போடலாம். அது செக்கிங் டைமா பதிவாகும், உங்க ஹவர்ஸா கணக்காகும் (உங்க scorecard, Profitability-ல “Checking” காலம்), ரிப்பேர் பண்ணவரோடதா இல்ல; காஸ்ட் அந்த ஜாபுக்கு போகும்."
+      },
+      {
+        "q": "Pass ஆன போர்டு அவங்க டிரைவ்ல நல்லா ஓடுதுன்னு கஸ்டமர் சொல்றாங்க. யார் பதிவு பண்ணணும், என்ன ஆகும்?",
+        "o": [
+          "செக் பண்ணவர் திரும்ப Pass அழுத்துவாரு",
+          "Liaison “It works — close it” பதிவு பண்ணுவாங்க, ஜாப் Ready for Invoice ஆகும்",
+          "Front Office இன்வாய்ஸ் போடுவாங்க"
+        ],
+        "a": 1,
+        "why": "கஸ்டமர் டெஸ்டிங்கை கஸ்டமர் சார்பா Liaison பதிவு பண்ணுவாங்க. Pass-னா ஜாப் Ready for Invoice-ஆ க்ளோஸ் ஆகும். ஃபால்ட்-னா பெஞ்சுக்கு திரும்பும்."
+      }
+    ]
+  },
+  "notes": [
+    "Round 4 (2026-09-27, app develop b053262): the Verification banner now says what happened per outcome (verification/page.tsx): given out, passed (“…is now with the customer to test on their own device”), failed (plain panel, alert icon: “…failed and is back on the bench…”), closed, returned. The clip now reloads the redirected address and points at the banner after Give, Fail and Pass. K5: checking hours are the verifier's (scorecard hours, Actual, Profitability › By engineer › Checking); caption, do 2 and q3 say so. The timesheet grid now has a Sunday column, so the checker books today's (Sunday's) hours in the clip.",
+    "UC-013 E-001 says self-verification is blocked. The app deliberately allows it and records it instead (decision of 2026-09-02; verification_marks_self()); the help text on 'Waiting to be given out' now says so too (finding 13). The clip follows the app.",
+    "App UX: the customer-testing form sits in the narrow Result column, so the 'What they said' field is small and its help text wraps a word per line.",
+    "bothroles@ (Engineer + Service Head) is the checker, so the verifier is not the repairer (engineer@). The timesheet in the clip shows the checking hours booked for the current day.",
+    "A customer-testing fail needs no symptom (the note is optional). Only a peer-verification fail requires one. The clip shows the 'Still faulty — back to the bench' button but records a pass.",
+    "Recording note: after a server-action redirect the recording can stop showing caption changes, so the script does a full page load before the caption that follows. Pressing Pass took several seconds on the dev server, so 'It works? Pass.' stays on screen longer than planned.",
+    "Round 4 takes: English twice (the first ran 95 s against a card that said about 2 minutes; the card now says 1½, re-taken on fresh boards from `ONLY=08 npx tsx 06-setup.ts en`, D/E = WO/26-27/00070/00071), Tamil once (06-setup ta, D/E = WO/26-27/00067/00068). The checker's timesheet also lists earlier takes' boards (“off your bench — its hours stay”), because the grid shows every job with hours that week."
   ]
- },
- "dont": {
-  "en": [
-   "Avoid giving a board to the engineer who repaired it. It's allowed, but it is recorded as self-verification and shows in the figures. Use it only when nobody else can check.",
-   "Don't press Fail without a symptom. The button waits until you write one.",
-   "Don't record a result on a board somebody else holds. Only the person it was given to can pass or fail it.",
-   "Don't record customer testing before a peer has passed the board. The system refuses it."
-  ],
-  "ta": [
-   "ரிப்பேர் பண்ண அதே இன்ஜினியர் கிட்ட செக் பண்ண கொடுக்காதீங்க. முடியும், ஆனா self-verification-ஆ பதிவாகி ரிப்போர்ட்ல தெரியும். வேற யாரும் இல்லைன்னா மட்டும்.",
-   "Symptom இல்லாம Fail அழுத்தாதீங்க. நீங்க எழுதற வரைக்கும் பட்டன் வெயிட் பண்ணும்.",
-   "வேற ஒருத்தர் கிட்ட இருக்கற போர்டுக்கு ரிசல்ட் போடாதீங்க. யார் கிட்ட கொடுத்தாங்களோ அவங்க மட்டும் தான் pass அல்லது fail பண்ண முடியும்.",
-   "வேற இன்ஜினியர் pass பண்றதுக்கு முன்னாடி கஸ்டமர் டெஸ்டிங் பதிவு பண்ணாதீங்க. சிஸ்டம் ஏத்துக்காது."
-  ]
- },
- "quiz": {
-  "en": [
-   {
-    "q": "Two repaired boards are waiting. Only Arun, who repaired them, and Priya are in today. Who should check them?",
-    "o": [
-     "Arun, he knows the boards best",
-     "Priya, a peer who did not repair them",
-     "Nobody. Mark them Ready for Invoice"
-    ],
-    "a": 1,
-    "why": "A peer removes the repairer's bias. Giving it to Arun is allowed but recorded as self-verification, so use that only when nobody else can check."
-   },
-   {
-    "q": "You are checking a board and it still trips at 40% load. What do you do?",
-    "o": [
-     "Write the symptom in Observed symptom, then Fail — back to the bench",
-     "Press Fail and explain to the engineer later",
-     "Press Pass. The customer will test it anyway"
-    ],
-    "a": 0,
-    "why": "A fail needs a symptom. The board returns to In Progress with the symptom on its record, and every failed check stays on the record."
-   },
-   {
-    "q": "You spent 1.5 hours testing a board you were given to check. Where do they go?",
-    "o": [
-     "Nowhere. Checking is not booked",
-     "On your timesheet, against that job, while you hold it",
-     "On the repairing engineer's timesheet"
-    ],
-    "a": 1,
-    "why": "The verifier may book hours on the board while holding it. They are recorded as checking time and the job carries the cost."
-   },
-   {
-    "q": "The customer says the passed board runs their drive fine. Who records that, and what happens?",
-    "o": [
-     "The checker presses Pass again",
-     "The Liaison records It works — close it, and the job becomes Ready for Invoice",
-     "Front Office issues the invoice"
-    ],
-    "a": 1,
-    "why": "Customer testing is recorded by the Liaison for the customer. A pass closes the job as Ready for Invoice, and a fault sends it back to the bench."
-   }
-  ],
-  "ta": [
-   {
-    "q": "ரிப்பேர் ஆன ரெண்டு போர்டு வெயிட் பண்ணுது. இன்னைக்கு அதை ரிப்பேர் பண்ண அருணும், ப்ரியாவும் மட்டும் தான் இருக்காங்க. யார் செக் பண்ணணும்?",
-    "o": [
-     "அருண், அவருக்கு போர்டு நல்லா தெரியும்",
-     "ப்ரியா, ரிப்பேர் பண்ணாத வேற இன்ஜினியர்",
-     "யாரும் வேண்டாம். Ready for Invoice பண்ணிடலாம்"
-    ],
-    "a": 1,
-    "why": "வேற இன்ஜினியர் செக் பண்ணா ரிப்பேர் பண்ணவரோட பார்வை மட்டும் இருக்காது. அருண் கிட்ட கொடுக்கலாம், ஆனா self-verification-ஆ பதிவாகும். வேற யாரும் இல்லைன்னா மட்டும்."
-   },
-   {
-    "q": "நீங்க செக் பண்ற போர்டு 40% லோட்ல இன்னும் ட்ரிப் ஆகுது. என்ன பண்ணுவீங்க?",
-    "o": [
-     "Observed symptom-ல எழுதி, Fail — back to the bench",
-     "Fail அழுத்திட்டு, அப்புறம் இன்ஜினியர் கிட்ட சொல்லுவேன்",
-     "Pass அழுத்துவேன். கஸ்டமர் எப்படியும் டெஸ்ட் பண்ணுவாங்க"
-    ],
-    "a": 0,
-    "why": "Fail-க்கு symptom கட்டாயம். போர்டு symptom-ஓட In Progress-க்கு திரும்பும். ஒவ்வொரு ஃபெயிலான செக்கும் பதிவுல இருக்கும்."
-   },
-   {
-    "q": "செக் பண்ண கொடுத்த போர்டை 1.5 ஹவர்ஸ் டெஸ்ட் பண்ணீங்க. அந்த ஹவர்ஸ் எங்க போகும்?",
-    "o": [
-     "எங்கேயும் இல்ல. செக்கிங் டைம் புக் பண்றது இல்ல",
-     "உங்க டைம்ஷீட்ல, அந்த ஜாப்ல, போர்டு உங்க கிட்ட இருக்கும்போது",
-     "ரிப்பேர் பண்ண இன்ஜினியரோட டைம்ஷீட்ல"
-    ],
-    "a": 1,
-    "why": "போர்டு உங்க கிட்ட இருக்கும்போது அதுல ஹவர்ஸ் போடலாம். அது செக்கிங் டைமா பதிவாகும், காஸ்ட் அந்த ஜாபுக்கு போகும்."
-   },
-   {
-    "q": "Pass ஆன போர்டு அவங்க டிரைவ்ல நல்லா ஓடுதுன்னு கஸ்டமர் சொல்றாங்க. யார் பதிவு பண்ணணும், என்ன ஆகும்?",
-    "o": [
-     "செக் பண்ணவர் திரும்ப Pass அழுத்துவாரு",
-     "Liaison “It works — close it” பதிவு பண்ணுவாங்க, ஜாப் Ready for Invoice ஆகும்",
-     "Front Office இன்வாய்ஸ் போடுவாங்க"
-    ],
-    "a": 1,
-    "why": "கஸ்டமர் டெஸ்டிங்கை கஸ்டமர் சார்பா Liaison பதிவு பண்ணுவாங்க. Pass-னா ஜாப் Ready for Invoice-ஆ க்ளோஸ் ஆகும். ஃபால்ட்-னா பெஞ்சுக்கு திரும்பும்."
-   }
-  ]
- },
- "notes": [
-  "UC-013 E-001 says self-verification is blocked. The app deliberately allows it and records it instead (decision of 2026-09-02; verification_marks_self()); the help text on 'Waiting to be given out' now says so too (finding 13). The clip follows the app.",
-  "App UX: the customer-testing form sits in the narrow Result column, so the 'What they said' field is small and its help text wraps a word per line.",
-  "The success banner on the Verification screen shows only the job number (e.g. 'WO/26-27/00078'), with no sentence. The clip reloads and points at the list or the job card instead.",
-  "bothroles@ (Engineer + Service Head) is the checker, so the verifier is not the repairer (engineer@). The timesheet in the clip shows the checking hours booked for the current day.",
-  "A customer-testing fail needs no symptom (the note is optional). Only a peer-verification fail requires one. The clip shows the 'Still faulty — back to the bench' button but records a pass.",
-  "Recording note: after a server-action redirect the recording can stop showing caption changes, so the script does a full page load before the caption that follows. Pressing Pass took several seconds on the dev server, so 'It works? Pass.' stays on screen longer than planned.",
-  "Round 3 (2026-09-26, app develop/030-training): re-recorded in both languages with the Rack & Bin look; no behaviour change on this screen. The Tamil take shows the app's new header \"Training\" chip and help (?) icons, which appeared mid-session (feature 030 in progress); the English take predates them."
- ]
 }

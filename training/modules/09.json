@@ -15,14 +15,14 @@
     "ta": "media/09-poster-ta.jpg"
   },
   "seconds": {
-    "en": 110,
-    "ta": 119
+    "en": 95,
+    "ta": 96
   },
   "do": {
     "en": [
       "A job closes in one of three ways: <b>Ready for Invoice</b>, <b>Non-Repairable</b> or <b>Customer Rejected</b>.",
-      "Engineer, your own board can't be saved? On its job card press <b>Cannot repair…</b> and pick the reason <b>from the list</b>.",
-      "Service Head or Liaison: the same closure is <b>It cannot be saved…</b> on the job card, with the same reason list.",
+      "Engineer, your own board can't be repaired? On its job card press <b>Cannot repair…</b> and pick <b>Why it cannot be repaired</b> <b>from the list</b>.",
+      "Service Head or Liaison: the same <b>Cannot repair…</b> on any open job card, with the same reason list.",
       "No reason fits? Ask the <b>Operations Manager</b> to add one to the list. There is no free-text box.",
       "Liaison: record the customer's test under <b>Verification › With the customer</b>. Write <b>What they said</b>, then <b>It works — close it</b>. The job goes to <b>Ready for Invoice</b>.",
       "Customer still sees the fault? <b>Still faulty — back to the bench</b>. The job returns to In Progress.",
@@ -31,8 +31,8 @@
     ],
     "ta": [
       "ஒரு ஜாப் மூணுல ஒரு வழியில க்ளோஸ் ஆகும்: <b>Ready for Invoice</b>, <b>Non-Repairable</b>, இல்லன்னா <b>Customer Rejected</b>.",
-      "இன்ஜினியர்: உங்க போர்டை சரி பண்ண முடியலையா? அதோட ஜாப் கார்டுல <b>Cannot repair…</b> அழுத்தி, காரணத்தை <b>லிஸ்ட்ல இருந்து</b> செலக்ட் பண்ணுங்க.",
-      "சர்வீஸ் ஹெட் அல்லது Liaison: அதே க்ளோஸ், ஜாப் கார்டுல <b>It cannot be saved…</b>. அதே காரண லிஸ்ட்.",
+      "இன்ஜினியர்: உங்க போர்டை ரிப்பேர் பண்ண முடியலையா? அதோட ஜாப் கார்டுல <b>Cannot repair…</b> அழுத்தி, <b>Why it cannot be repaired</b>-ல காரணத்தை <b>லிஸ்ட்ல இருந்து</b> செலக்ட் பண்ணுங்க.",
+      "சர்வீஸ் ஹெட் அல்லது Liaison: எந்த ஓப்பன் ஜாப் கார்டுலயும் அதே <b>Cannot repair…</b>. அதே காரண லிஸ்ட்.",
       "எந்த காரணமும் பொருந்தலையா? லிஸ்ட்ல சேர்க்க <b>Operations Manager</b>-கிட்ட கேளுங்க. சொந்தமா எழுத இடம் இல்ல.",
       "Liaison: கஸ்டமர் டெஸ்டை <b>Verification › With the customer</b>-ல பதியுங்க. <b>What they said</b> எழுதி, <b>It works — close it</b> அழுத்துங்க. ஜாப் <b>Ready for Invoice</b>-க்குப் போகும்.",
       "கஸ்டமருக்கு இன்னும் பிரச்சனையா? <b>Still faulty — back to the bench</b>. ஜாப் மறுபடி In Progress ஆகும்.",
@@ -69,14 +69,14 @@
         "why": "The engineer closes their own board with Cannot repair…, and the reason must come from the list, so failures stay countable."
       },
       {
-        "q": "A board is In Progress and waiting on the customer's site to be ready. The Liaison sees Put on hold beside It cannot be saved…. Which one?",
+        "q": "A board is In Progress and waiting on the customer's site to be ready. The Liaison sees Put on hold and Cannot repair… on the job card. Which one?",
         "o": [
-          "It cannot be saved…, because work has stopped",
+          "Cannot repair…, because work has stopped",
           "Put on hold, with what it is waiting for; release it later",
           "Neither: send it back to the engineer"
         ],
         "a": 1,
-        "why": "Put on hold pauses an In Progress job with a reason and is released later. It cannot be saved… closes the job for good as Non-Repairable."
+        "why": "Put on hold pauses an In Progress job with a reason and is released later. Cannot repair… closes the job for good as Non-Repairable."
       },
       {
         "q": "A board is under assessment and the customer says they no longer want it repaired. What happens?",
@@ -111,14 +111,14 @@
         "why": "இன்ஜினியர் தன் போர்டை Cannot repair…-ல க்ளோஸ் பண்ணலாம். காரணம் லிஸ்ட்ல இருந்து தான் வரணும்; அப்போ தான் ஃபெயிலியர்களை எண்ண முடியும்."
       },
       {
-        "q": "ஒரு போர்டு In Progress-ல இருக்கு, கஸ்டமர் சைட் ரெடி ஆகுறதுக்கு வெயிட் பண்ணுது. Liaison-க்கு It cannot be saved… பக்கத்துல Put on hold தெரியுது. எதை அழுத்தணும்?",
+        "q": "ஒரு போர்டு In Progress-ல இருக்கு, கஸ்டமர் சைட் ரெடி ஆகுறதுக்கு வெயிட் பண்ணுது. Liaison-க்கு ஜாப் கார்டுல Put on hold, Cannot repair… ரெண்டும் தெரியுது. எதை அழுத்தணும்?",
         "o": [
-          "It cannot be saved…, வேலை நின்னுடுச்சே",
+          "Cannot repair…, வேலை நின்னுடுச்சே",
           "Put on hold, எதுக்கு வெயிட் பண்ணுதுன்னு எழுதி; அப்புறம் ரிலீஸ் பண்ணலாம்",
           "ரெண்டும் இல்ல: இன்ஜினியருக்குத் திருப்பி அனுப்புவேன்"
         ],
         "a": 1,
-        "why": "Put on hold காரணத்தோட In Progress ஜாப்பை நிறுத்தி வைக்கும், அப்புறம் ரிலீஸ் பண்ணலாம். It cannot be saved… ஜாப்பை நிரந்தரமா Non-Repairable-ஆ க்ளோஸ் பண்ணும்."
+        "why": "Put on hold காரணத்தோட In Progress ஜாப்பை நிறுத்தி வைக்கும், அப்புறம் ரிலீஸ் பண்ணலாம். Cannot repair… ஜாப்பை நிரந்தரமா Non-Repairable-ஆ க்ளோஸ் பண்ணும்."
       },
       {
         "q": "ஒரு போர்டு அசெஸ்மென்ட்ல இருக்கு; கஸ்டமருக்கு இனி ரிப்பேர் வேண்டாம். என்ன ஆகும்?",
@@ -143,14 +143,16 @@
     ]
   },
   "notes": [
-    "Round 2: the engineer's own “Cannot repair…” now works (finding 1 fixed) and is shown; the Liaison's “It cannot be saved…” is shown too (the Service Head has the same act, stated in a caption).",
-    "“Put on hold” is shown beside “It cannot be saved…” and captioned as not closing; holding and releasing themselves belong to module 05.",
+    "The engineer's own “Cannot repair…” and the Liaison's are shown; the Service Head has the same act (stated in a caption). Since feature 032 the Service Head / Liaison act is also labelled “Cannot repair…” (it read “It cannot be saved…”), and its form reads “Why it cannot be repaired”.",
+    "“Put on hold” is shown beside “Cannot repair…” and captioned as not closing; holding and releasing themselves belong to module 05.",
     "Premium with a reason (finding 15) is set on the quotation or phone-price form, not on any closing screen, so it is left to module 04 and the money/KPI module.",
     "“Terminal ≠ frozen: a lead can send a job back” is only half true. return_to_engineer() works from any OPEN sub-status (shown), but refuses every closed job, including Ready for Invoice. The job card says “This job is closed; nothing moves it on from here.” Taught as: closed → rework job.",
     "Customer Rejected from a rejected quotation is stated in a caption (Record rejection), not shown.",
-    "UX (unchanged): after “Customer withdrew” the row just disappears from the queue with no confirmation; the clip opens the job card to show the new status. After “It works — close it” the redirect lands on “Waiting to be given out”. “It cannot be saved…” is shown in red.",
+    "UX (unchanged): after “Customer withdrew” the row just disappears from the queue with no confirmation; the clip opens the job card to show the new status. After “It works — close it” the redirect lands on “Waiting to be given out”. “Cannot repair…” is shown in red.",
     "The shared set-up's agreePrice() now fills Normal price (#normalPrice-ph-<customer>) with the agreed price, so no premium arises; if a rate card makes it read-only and the price is above it, the first premium reason is chosen.",
     "Set-up (unrecorded): a fresh 5-unit delivery for Ayyan Industrial Systems per take, priced on the phone, allotted, two left In Progress, two verified. Takes leave closed test jobs in the shared database.",
-    "Round 3 (develop, Rack & Bin look): re-recorded both languages; screens, labels and behaviour for this module unchanged (the reason list is now the shared Choice control, still a <select>). The machine was heavily loaded (load ~20–30 on 4 cores), so takes ran long: English sped up 1.1× at encode (110 s), Tamil 1.21× (119 s) to keep the title card’s “Under 2 minutes” true."
+    "App wording (not fixed, report only): on a closed Non-Repairable job card the reason is still labelled “Why it could not be saved” (page.tsx), while the act now says “Cannot repair…” / “Why it cannot be repaired”.",
+    "Shared set-up: 09-setup.ts closeNonRepairable() (used by 10 and 11) now clicks “Cannot repair…” (falls back to the old “It cannot be saved…”).",
+    "Round 4 (features 031/032): re-recorded both languages for the “Cannot repair…” / “Why it cannot be repaired” wording; no speed-up needed (EN 95 s, TA 96 s, “Under 2 minutes”)."
   ]
 }

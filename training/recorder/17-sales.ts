@@ -108,8 +108,15 @@ await s.unring()
 // Velocity
 await s.quiet()
 await s.card(example(c.exVel), CARD)
-await s.point(p.locator('section[data-code="S-02"] .vel'))
+await s.point(p.locator('section[data-code="S-02"] .vel').first())
 await s.say(c.vel, 3200 * pace)
+await s.unring()
+
+// Quotations won · Agreed by negotiation (K11)
+await s.quiet()
+await s.card(example(c.exQuote), CARD)
+await s.point(p.locator('section[data-code="S-02"] .vel').nth(1))
+await s.say(c.quote, 3400 * pace)
 await s.unring()
 await s.quiet()
 

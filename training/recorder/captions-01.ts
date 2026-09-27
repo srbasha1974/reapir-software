@@ -8,7 +8,7 @@ export const CAPTIONS = {
   en: {
     kicker: 'Thulir training · Module 01 · Sales Engineer · Sales Head',
     title: 'Customers, contacts and follow-ups',
-    sub: 'A new prospect, its people, the timeline and the lifecycle. About 2 minutes.',
+    sub: 'A new prospect, its people, the timeline and the lifecycle. Under 2 minutes.',
     name: 'New prospect? Only the company name is required.<small>A name already on file is found, however it is typed.</small>',
     system: 'Code, lifecycle and owner are set by the system.<small>You never type a customer code.</small>',
     registered: 'Registered as Potential, with its own TTS code.<small>The code and the clock-in date never change.</small>',
@@ -23,7 +23,7 @@ export const CAPTIONS = {
     moved: 'Changed company? Don’t rename the contact.<small>Record employment change instead.</small>',
     movedDone: 'Move recorded.<small>What was said before stays with the old company.</small>',
     trialOwner: 'Now the Sales Head: only they convert Trial to Regular.<small>The account became Trial by itself when its first job was booked in.</small>',
-    refused: 'Refused: no job has reached Ready for Invoice yet.<small>Convert after a trial job is finished, not before.</small>',
+    refused: 'Refused: no job has reached Ready for Invoice yet.<small>Convert after a trial job is finished. Its open jobs are on the Jobs tab.</small>',
     oneWay: 'Lifecycle moves forward.<small>Only the Operations Manager can move it back, with a reason.</small>',
     remember: 'Remember',
     rules: [
@@ -36,7 +36,7 @@ export const CAPTIONS = {
   ta: {
     kicker: 'துளிர் ட்ரெயினிங் · மாட்யூல் 01 · Sales Engineer · Sales Head',
     title: 'கஸ்டமர், காண்டாக்ட், ஃபாலோ-அப்',
-    sub: 'புது ப்ராஸ்பெக்ட், அவங்க ஆட்கள், Timeline, Lifecycle. சுமார் 2½ நிமிடம்.',
+    sub: 'புது ப்ராஸ்பெக்ட், அவங்க ஆட்கள், Timeline, Lifecycle. 2 நிமிஷத்துக்குள்.',
     name: 'புது ப்ராஸ்பெக்ட்டா? Company name மட்டும் போதும்.<small>ஏற்கனவே இருக்கற பேரை எப்படி டைப் பண்ணாலும் சிஸ்டம் கண்டுபிடிக்கும்.</small>',
     system: 'கோடு, லைஃப்சைக்கிள், ஓனர் எல்லாம் சிஸ்டமே போடும்.<small>கஸ்டமர் கோடு நீங்க டைப் பண்ண வேண்டாம்.</small>',
     registered: 'Potential-ஆ சேர்ந்தாச்சு, தனி TTS கோடோட.<small>கோடும் clock-in தேதியும் எப்பவும் மாறாது.</small>',
@@ -51,7 +51,7 @@ export const CAPTIONS = {
     moved: 'வேற கம்பெனிக்கு மாறிட்டாங்களா? காண்டாக்ட்டை மாத்தி எழுதாதீங்க.<small>“Record employment change” பயன்படுத்துங்க.</small>',
     movedDone: 'மூவ் பதிவாச்சு.<small>முன்னாடி பேசினது எல்லாம் பழைய கம்பெனியோடவே இருக்கும்.</small>',
     trialOwner: 'இப்போ Sales Head. Trial-ஐ Regular ஆக்குறது அவங்க மட்டும் தான்.<small>முதல் ஜாப் Inward ஆனதும் தானா Trial ஆயிடுச்சு.</small>',
-    refused: 'முடியாது: இன்னும் எந்த ஜாபும் Ready for Invoice வரல.<small>Trial ஜாப் முடிஞ்சதுக்கு அப்புறம் தான் Convert பண்ணணும்.</small>',
+    refused: 'முடியாது: இன்னும் எந்த ஜாபும் Ready for Invoice வரல.<small>Trial ஜாப் முடிஞ்சதுக்கு அப்புறம் தான் Convert. ஓப்பன் ஜாப்ஸ் Jobs டேப்ல இருக்கு.</small>',
     oneWay: 'Lifecycle முன்னாடி மட்டும் போகும்.<small>பின்னாடி நகர்த்த Operations Manager-ஆல மட்டும் முடியும், காரணத்தோட.</small>',
     remember: 'ஞாபகம் வெச்சுக்கோங்க',
     rules: [

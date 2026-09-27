@@ -5,7 +5,7 @@
     "ta": "எண்கள் · மணி 2: மாசக் கணக்கு"
   },
   "role": "Operations Manager · Service Head · Executive",
-  "path": "Overview › MIS dashboard · Profitability · Service › Performance · Overview",
+  "path": "Overview › MIS dashboard · Profitability (Jobs at a loss, Rework carried, By engineer, Spares not charged) · Service › Performance · Overview",
   "video": {
     "en": "media/16-money-month.mp4",
     "ta": "media/16-money-month-ta.mp4"
@@ -15,40 +15,42 @@
     "ta": "media/16-poster-ta.jpg"
   },
   "seconds": {
-    "en": 175,
-    "ta": 184
+    "en": 161,
+    "ta": 188
   },
   "do": {
     "en": [
       "Press <b>Refresh now</b> on the MIS dashboard before you read a month. MIS screens read a copy refreshed nightly; the job card reads live.",
       "Read <b>Base margin</b> as delivery: Σ labour margin ÷ Σ labour charge over the jobs closed in the period.",
       "Read <b>Premium captured</b> and its share of revenue next to Base margin. A rising share is a warning.",
-      "Read <b>Total margin</b> as the trading result: labour, parts, premium and discount, on priced jobs.",
+      "Read <b>Total margin</b> as the trading result, every job counted once: <b>Revenue − Cost = Total margin</b>, and a write-off counts its hours with ₹0 revenue.",
       "Check <b>Uncosted hours</b> is 0h. If not, fix the labour rate first, then read the margins.",
-      "Use <b>Rework carried</b> and the Cost card's “rework” to see comebacks charged to the job that failed."
+      "Read a comeback's cost <b>once</b>: on the rework, in the month it closes, charged to the engineer whose repair came back (Cost “of which rework”, <b>Rework carried</b>, <b>Jobs at a loss</b> “rework of …”).",
+      "On <b>By engineer</b>, read <b>Checking</b> as the hours an engineer spent verifying others' boards. They are the checker's: credited to their Actual, not charged to the repairer."
     ],
     "ta": [
       "மாசத்தை படிக்கறதுக்கு முன்னாடி MIS டாஷ்போர்டுல <b>Refresh now</b> அழுத்துங்க. MIS ராத்திரி அப்டேட் ஆகுற காப்பியை படிக்குது; ஜாப் கார்டு லைவ்.",
       "<b>Base margin</b> = டெலிவரி: க்ளோஸ் ஆன ஜாப்புகளோட லேபர் மார்ஜின் மொத்தம் ÷ லேபர் சார்ஜ் மொத்தம்.",
       "<b>Premium captured</b>, அதோட ரெவென்யூ பங்கை Base margin கூட சேர்த்து படிங்க. பங்கு ஏறினா எச்சரிக்கை.",
-      "<b>Total margin</b> = டிரேடிங் ரிசல்ட்: லேபர், பார்ட்ஸ், ப்ரீமியம், டிஸ்கவுண்ட், ப்ரைஸ் போட்ட ஜாப்புக்கு மட்டும்.",
+      "<b>Total margin</b> = டிரேடிங் ரிசல்ட், ஒவ்வொரு ஜாப்பும் ஒரு தடவை: <b>Revenue − Cost = Total margin</b>, ரைட்-ஆஃப் ₹0 ரெவென்யூவோட அதோட ஹவர்ஸ் காஸ்ட்டும் சேரும்.",
       "<b>Uncosted hours</b> 0h-ஆ இருக்கான்னு பாருங்க. இல்லைன்னா முதல்ல லேபர் ரேட்டை சரி பண்ணுங்க, அப்புறம் மார்ஜின் படிங்க.",
-      "திரும்ப வந்த வேலை ஃபெயில் ஆன ஜாப் மேல எவ்வளவுன்னு <b>Rework carried</b>, Cost கார்டோட “rework”-ல பாருங்க."
+      "திரும்ப வந்ததோட காஸ்ட்டை <b>ஒரு தடவை</b> படிங்க: ரீவொர்க் மேல, அது க்ளோஸ் ஆகற மாசத்துல, ரிப்பேர் திரும்ப வந்த இன்ஜினியர் மேல (Cost “of which rework”, <b>Rework carried</b>, <b>Jobs at a loss</b> “rework of …”).",
+      "<b>By engineer</b>-ல <b>Checking</b> = மத்தவங்க போர்டை வெரிஃபை பண்ண ஹவர்ஸ். அது செக் பண்ணவரோடது: அவர் Actual-ல சேரும், ரிப்பேர் பண்ணவர் மேல இல்ல."
     ]
   },
   "dont": {
     "en": [
-      "Don't subtract Cost from Revenue and expect Total margin. Cost includes unpriced write-offs; Total margin skips them.",
+      "Don't treat a write-off as free. It has no price, but its hours are in Cost and in Total margin, and it is on Jobs at a loss.",
       "Don't read a premium as the engineer's achievement. It never enters Base margin or Actual.",
-      "Don't treat last month's figures as final. A comeback rewrites the month the original closed in.",
-      "Don't match Performance › Actual to Profitability › By engineer. Actual adds back other people's verification hours.",
+      "Don't add a job's “Rework rolled up” to a month's Cost. It is that job's whole-life figure; the month already counts the rework once, on the rework.",
+      "Don't expect a closed month's Actual or margins to fall when a board comes back later. The comeback counts in its own month.",
       "Don't read “Labour on open boards” as this month's cost. It is a stock of work still in the building."
     ],
     "ta": [
-      "Revenue − Cost = Total margin வரும்னு எதிர்பார்க்காதீங்க. Cost-ல ப்ரைஸ் இல்லாத ரைட்-ஆஃப் சேரும்; Total margin-ல சேராது.",
+      "ரைட்-ஆஃப் ஃப்ரீன்னு நினைக்காதீங்க. ப்ரைஸ் இல்ல, ஆனா அதோட ஹவர்ஸ் Cost-லயும் Total margin-லயும் இருக்கு, Jobs at a loss-லயும் வரும்.",
       "ப்ரீமியத்தை இன்ஜினியரோட சாதனையா படிக்காதீங்க. Base margin-லயும் Actual-லயும் அது சேராது.",
-      "போன மாச ஃபிகர்ஸ் ஃபைனல்னு நினைக்காதீங்க. ரீவொர்க் வந்தா ஒரிஜினல் க்ளோஸ் ஆன மாசம் மாறும்.",
-      "Performance › Actual-ஐ Profitability › By engineer கூட ஒப்பிடாதீங்க. Actual-ல வேற ஒருத்தரோட வெரிஃபிகேஷன் ஹவர்ஸ் திரும்ப சேர்க்கப்படுது.",
+      "ஒரு ஜாப்போட “Rework rolled up”-ஐ மாச Cost-ல கூட்டாதீங்க. அது அந்த ஜாப்போட முழு காஸ்ட்; மாசம் ஏற்கனவே அதை ரீவொர்க் மேல ஒரு தடவை எண்ணிடுச்சு.",
+      "அப்புறம் போர்டு திரும்ப வந்தா க்ளோஸ் ஆன மாசத்தோட Actual, மார்ஜின் இறங்கும்னு எதிர்பார்க்காதீங்க. அது அதோட மாசத்துல எண்ணும்.",
       "“Labour on open boards”-ஐ இந்த மாச காஸ்ட்னு படிக்காதீங்க. இன்னும் உள்ள இருக்கற வேலையோட கையிருப்பு அது."
     ]
   },
@@ -76,51 +78,56 @@
         "read": "Of every ₹100 the work was worth, ₹67 was left after paying for the hours."
       },
       {
-        "title": "Why Revenue − Cost ≠ Total margin",
+        "title": "Revenue − Cost = Total margin",
         "lines": [
           [
             "Revenue",
             "₹26,000",
-            "A + B + C"
+            "A + B + C; D adds ₹0"
           ],
           [
             "Cost",
             "− ₹12,600",
-            "includes D's ₹2,400 of hours"
+            "hours ₹9,600 (D's ₹2,400 included) + parts ₹3,000"
           ],
           [
-            "= Revenue − Cost",
+            "= Total margin",
             "₹13,400",
-            ""
+            "51.5% of revenue"
           ],
           [
-            "Total margin",
-            "₹15,800",
-            "priced jobs only: 60.8%"
+            "of which D, written off",
+            "− ₹2,400",
+            "on Jobs at a loss"
           ]
         ],
-        "read": "The ₹2,400 gap is the write-off D."
+        "read": "A write-off is not free: its hours are in Cost and in Total margin alike."
       },
       {
-        "title": "Comeback R rewrites September",
+        "title": "Comeback R, counted once",
         "lines": [
           [
-            "R's cost",
+            "R's cost (Baleswar fixes it, 31 Oct)",
             "₹1,100",
             "2 h + a ₹300 part given free"
           ],
           [
-            "A's labour margin",
-            "₹5,200 → ₹4,100",
-            ""
+            "October: Cost, of which rework",
+            "₹1,100",
+            "counted once, on R"
           ],
           [
-            "= September base margin",
-            "67.4% → 62.4%",
-            "13,800 ÷ 22,100"
+            "October: charged to Ramachandran",
+            "− ₹800",
+            "R's labour margin"
+          ],
+          [
+            "= September",
+            "unchanged",
+            "base margin stays 67.4%"
           ]
         ],
-        "read": "The cost lands on the job that failed, in the month it closed."
+        "read": "A's own record shows Rework rolled up ₹1,100 (labour margin ₹4,100); a month counts it once, on R."
       },
       {
         "title": "Achievement: ₹15,300 of ₹20,000",
@@ -143,10 +150,10 @@
           [
             "= Achievement",
             "76.5% · below",
-            "after R: ₹14,200 = 71.0%"
+            "R's − ₹800 counts in October, not here"
           ]
         ],
-        "read": "Labour margin only: the premium on A earned the engineer nothing."
+        "read": "Labour margin only: the premium on A earned the engineer nothing. Baleswar's Actual gets ₹400 for checking A; By engineer shows it as 1 h of Checking."
       }
     ],
     "ta": [
@@ -172,51 +179,56 @@
         "read": "வேலைக்கு உள்ள ஒவ்வொரு ₹100-லயும் ஹவர்ஸ் காஸ்ட் போக ₹67 மிச்சம்."
       },
       {
-        "title": "Revenue − Cost ஏன் Total margin இல்ல",
+        "title": "Revenue − Cost = Total margin",
         "lines": [
           [
             "Revenue",
             "₹26,000",
-            "A + B + C"
+            "A + B + C; D ₹0"
           ],
           [
             "Cost",
             "− ₹12,600",
-            "D-யோட ₹2,400 ஹவர்ஸ் சேர்த்து"
+            "ஹவர்ஸ் ₹9,600 (D-யோட ₹2,400 சேர்த்து) + பார்ட்ஸ் ₹3,000"
           ],
           [
-            "= Revenue − Cost",
+            "= Total margin",
             "₹13,400",
-            ""
+            "ரெவென்யூல 51.5%"
           ],
           [
-            "Total margin",
-            "₹15,800",
-            "ப்ரைஸ் போட்ட ஜாப் மட்டும்: 60.8%"
+            "அதுல D, ரைட்-ஆஃப்",
+            "− ₹2,400",
+            "Jobs at a loss-ல"
           ]
         ],
-        "read": "₹2,400 வித்தியாசம் = ரைட்-ஆஃப் D."
+        "read": "ரைட்-ஆஃப் ஃப்ரீ இல்ல: அதோட ஹவர்ஸ் Cost-லயும் Total margin-லயும் சேரும்."
       },
       {
-        "title": "ரீவொர்க் R செப்டம்பரை மாத்துது",
+        "title": "ரீவொர்க் R, ஒரு தடவை மட்டும்",
         "lines": [
           [
-            "R-ஓட காஸ்ட்",
+            "R-ஓட காஸ்ட் (31 Oct, பாலேஸ்வர் சரி பண்றார்)",
             "₹1,100",
             "2 h + ஃப்ரீயா போட்ட ₹300 பார்ட்"
           ],
           [
-            "A-வோட லேபர் மார்ஜின்",
-            "₹5,200 → ₹4,100",
-            ""
+            "அக்டோபர்: Cost, of which rework",
+            "₹1,100",
+            "R மேல ஒரு தடவை"
           ],
           [
-            "= செப்டம்பர் base margin",
-            "67.4% → 62.4%",
-            "13,800 ÷ 22,100"
+            "அக்டோபர்: ராமச்சந்திரன் மேல",
+            "− ₹800",
+            "R-ஓட லேபர் மார்ஜின்"
+          ],
+          [
+            "= செப்டம்பர்",
+            "மாறாது",
+            "base margin 67.4% தான்"
           ]
         ],
-        "read": "காஸ்ட் ஃபெயில் ஆன ஜாப் மேல, அது க்ளோஸ் ஆன மாசத்துல விழும்."
+        "read": "A-வோட ரெக்கார்டுல Rework rolled up ₹1,100 (லேபர் மார்ஜின் ₹4,100); மாசம் அதை R மேல ஒரு தடவை எண்ணும்."
       },
       {
         "title": "Achievement: ₹20,000-ல ₹15,300",
@@ -239,35 +251,35 @@
           [
             "= Achievement",
             "76.5% · below",
-            "R-க்கு அப்புறம்: ₹14,200 = 71.0%"
+            "R-ஓட − ₹800 அக்டோபர்ல, இங்க இல்ல"
           ]
         ],
-        "read": "லேபர் மார்ஜின் மட்டும்: A-வோட ப்ரீமியம் இன்ஜினியருக்கு எதுவும் சேர்க்கல."
+        "read": "லேபர் மார்ஜின் மட்டும்: A-வோட ப்ரீமியம் இன்ஜினியருக்கு எதுவும் சேர்க்கல. A-வை செக் பண்ணதுக்கு பாலேஸ்வர் Actual-ல ₹400; By engineer-ல 1 h Checking."
       }
     ]
   },
   "quiz": {
     "en": [
       {
-        "q": "Your September Achievement drops in November although you closed nothing new in September. Why?",
+        "q": "A board you closed in September comes back in October and a colleague fixes it for ₹1,100. What happens to the figures?",
         "o": [
-          "A target was edited",
-          "A board you closed in September came back as rework and its cost rolled onto the original job",
-          "Premiums were removed",
-          "The rate card changed"
+          "Your September Actual falls by ₹1,100",
+          "It counts once, in October, against you; September does not move",
+          "It counts against the colleague who fixed it",
+          "It is counted in both months"
         ],
         "a": 1,
-        "why": "Rework cost rolls up onto the original job and reduces its labour margin, in the month it closed."
+        "why": "A comeback is counted once, on the rework, in the month it closes, charged to the engineer whose repair came back."
       },
       {
-        "q": "Profitability shows Revenue ₹26,000, Cost ₹12,600 and Total margin ₹15,800. Why isn't it ₹13,400?",
+        "q": "September: Revenue ₹26,000, Cost ₹12,600, and a written-off board with ₹2,400 of hours. What is Total margin?",
         "o": [
-          "A bug: report it",
-          "Cost includes the hours on an unpriced write-off; Total margin covers priced jobs only",
-          "Premium is left out of Cost"
+          "₹15,800",
+          "₹13,400",
+          "₹11,000"
         ],
         "a": 1,
-        "why": "Unpriced jobs have no margin but their hours are still in Cost. The ₹2,400 gap is the write-off."
+        "why": "Revenue − Cost = Total margin; the write-off's hours are in both."
       },
       {
         "q": "This month the premium share of revenue rose from 4% to 12% while Base margin fell. How do you read it?",
@@ -287,30 +299,30 @@
           "57.3%"
         ],
         "a": 0,
-        "why": "14,900 ÷ 22,100. The unpriced write-off has no margin and drops out of Base margin."
+        "why": "14,900 ÷ 22,100. The unpriced write-off has no labour charge and drops out of Base margin; its cost is in Total margin."
       }
     ],
     "ta": [
       {
-        "q": "செப்டம்பர்ல புதுசா எதுவும் க்ளோஸ் பண்ணல, ஆனா நவம்பர்ல உங்க செப்டம்பர் Achievement குறைஞ்சிருக்கு. ஏன்?",
+        "q": "செப்டம்பர்ல நீங்க க்ளோஸ் பண்ண போர்டு அக்டோபர்ல திரும்ப வருது, வேற ஒருத்தர் ₹1,100-க்கு சரி பண்றார். ஃபிகர்ஸ் என்ன ஆகும்?",
         "o": [
-          "டார்கெட் மாத்திட்டாங்க",
-          "செப்டம்பர்ல க்ளோஸ் பண்ண போர்டு ரீவொர்க்கா திரும்ப வந்துச்சு, அதோட காஸ்ட் ஒரிஜினல் ஜாப் மேல ஏறிச்சு",
-          "ப்ரீமியம் எடுத்துட்டாங்க",
-          "ரேட் கார்டு மாறிச்சு"
+          "உங்க செப்டம்பர் Actual ₹1,100 இறங்கும்",
+          "அக்டோபர்ல ஒரு தடவை, உங்க மேல; செப்டம்பர் மாறாது",
+          "சரி பண்ணவர் மேல எண்ணும்",
+          "ரெண்டு மாசத்துலயும் எண்ணும்"
         ],
         "a": 1,
-        "why": "ரீவொர்க் காஸ்ட் ஒரிஜினல் ஜாப் மேல ஏறும், அது க்ளோஸ் ஆன மாசத்துல லேபர் மார்ஜினை குறைக்கும்."
+        "why": "திரும்ப வந்தது ஒரு தடவை மட்டும், ரீவொர்க் மேல, அது க்ளோஸ் ஆகற மாசத்துல, ரிப்பேர் திரும்ப வந்த இன்ஜினியர் மேல."
       },
       {
-        "q": "Profitability-ல Revenue ₹26,000, Cost ₹12,600, Total margin ₹15,800. ஏன் ₹13,400 இல்ல?",
+        "q": "செப்டம்பர்: Revenue ₹26,000, Cost ₹12,600, ₹2,400 ஹவர்ஸ் உள்ள ஒரு ரைட்-ஆஃப் போர்டு. Total margin என்ன?",
         "o": [
-          "பக்: ரிப்போர்ட் பண்ணுங்க",
-          "Cost-ல ப்ரைஸ் இல்லாத ரைட்-ஆஃப் ஹவர்ஸ் இருக்கு; Total margin ப்ரைஸ் போட்ட ஜாப்புக்கு மட்டும்",
-          "ப்ரீமியம் Cost-ல இல்ல"
+          "₹15,800",
+          "₹13,400",
+          "₹11,000"
         ],
         "a": 1,
-        "why": "ப்ரைஸ் இல்லாத ஜாப்புக்கு மார்ஜின் இல்ல, ஆனா அதோட ஹவர்ஸ் Cost-ல இருக்கு. ₹2,400 வித்தியாசம் = ரைட்-ஆஃப்."
+        "why": "Revenue − Cost = Total margin; ரைட்-ஆஃப் ஹவர்ஸ் ரெண்டுலயும் சேரும்."
       },
       {
         "q": "இந்த மாசம் ரெவென்யூல ப்ரீமியம் பங்கு 4%-ல இருந்து 12% ஆச்சு, Base margin குறைஞ்சுது. எப்படி படிப்பீங்க?",
@@ -330,21 +342,19 @@
           "57.3%"
         ],
         "a": 0,
-        "why": "14,900 ÷ 22,100. ப்ரைஸ் இல்லாத ரைட்-ஆஃப்புக்கு மார்ஜின் இல்ல, Base margin-ல சேராது."
+        "why": "14,900 ÷ 22,100. ப்ரைஸ் இல்லாத ரைட்-ஆஃப்க்கு லேபர் சார்ஜ் இல்ல, Base margin-ல சேராது; அதோட காஸ்ட் Total margin-ல இருக்கு."
       }
     ]
   },
   "notes": [
-    "Cards follow the catalogue's worked month. Every MIS screen shows the shared local demo's September (≈40 closures from the seed and other agents, many with ₹0 labour cost, which inflates Base margin to ~85%); captions say “demo data, your figures will differ” and never claim a screen total equals a card.",
-    "Revenue − Cost ≠ Total margin on Profitability (unpriced write-offs are in Cost, not in Total margin; profitability_without_the_ledger). Taught as computed, not as a sum that reconciles. At recording: Revenue ₹2.14 L, Cost ₹35,250, Total margin ₹1.83 L.",
-    "Comeback R (WO/26-27/00111) was built through the app: A dispatched on a challan (warranty to 26 Dec 2026), then a Rework inward naming A, priced ₹0 as WARRANTY_REWORK; 2 h (₹1,400 at ₹700/h) + a ₹300 part as Other spares = ₹1,700, rolled onto A at once. R is left In Progress and is a September comeback here (the catalogue's is 31 Oct).",
-    "Rework carried: the Cost card shows “rework ₹1,700” and the M-10 header “₹1,700 · 0 jobs”, while the list says nothing closed in September was a second attempt (it lists only closed reworks). The clip says R is still open. When R closes, its own cost (labour margin −₹1,400, total −₹1,700) also lands in that month, so company totals will count ₹1,700 twice (catalogue ⚠, not confirmed with the owner, not taught).",
-    "Spares not charged lists A's ₹150 fuse with Qty “0” (an Other spares line has no quantity; the job card shows “—”). R's ₹300 part is not listed while R is open.",
-    "Performance shows Test Engineer with ~35 closed jobs and the seeded ₹60,000 September target (catalogue: ₹20,000); the target was not changed because it is shared demo data. The Actual card (verification added back) is from the catalogue and is not reconciled on screen.",
-    "Labour on open boards card uses the catalogue's hypothetical boards E and F (not seeded). R appeared among the top five at recording (₹1,400).",
-    "Parts margin on Profitability read 23.1% · ₹3,900 charged · ₹3,000 cost at recording, the catalogue's exact figure (only A–C had billed parts), but the clip does not claim it because other agents may book parts.",
-    "Recording presses Refresh now (as the Operations Manager), which refreshes the shared MIS view.",
-    "Round 3 (develop): KPI figures on MIS screens now carry a “what does this mean” control (feature 030) beside their labels; the clip does not use it. The cut tabs can swallow a first click while the page fits its rows, so the script presses again.",
-    "Clip length: EN 175 s, Tamil 184 s; the title cards say about 3 minutes."
+    "Filmed as the Operations Manager, on the shared demo (boards A–D, R and many other agents' jobs in September), so no caption quotes a screen total as the card's. Cards follow KPI-CATALOGUE.md (rewritten for features 031/032).",
+    "Round 4 (2026-09-27, develop b053262): K1, K2, K5 fixed and taught as fixed — Revenue − Cost = Total margin with write-offs included (D is on Jobs at a loss); a rework counted once, on the rework, in its month, charged to the engineer whose repair came back (Jobs at a loss marks it “rework of …”, Rework carried lists it); verification hours are the verifier's, shown in By engineer › Checking and credited to their Actual. The old “Revenue − Cost ≠ Total margin” and “a comeback rewrites last month” lessons are gone.",
+    "In the demo, R (WO/26-27/00072, warranty rework of A) came back and closed in September (the catalogue's R is 31 Oct), fixed by Test Both Roles; so September on screen carries R's ₹1,200 once, on R, charged to Test Engineer. A caption says so.",
+    "APP BUG (see module 14 notes): an Engineer's own Performance row misses a comeback fixed by a colleague and the colleague's checking on their boards (security_invoker views + record scope), so the Engineer's own Actual differs from the Service Head's view of the same row. This clip shows Performance as the Operations Manager only.",
+    "The in-app explanation for target.achievement still ends “after R: ₹14,500 = 72.5%”, which contradicts K2 (R counts in its own month). Reported, not taught.",
+    "Spares not charged follows the job's close month (R's ₹300 part is in the month R closed); the in-app parts.unbilled explanation says “the month consumed” (reported).",
+    "Performance's foot note still says only “Actual is the labour margin on jobs closed this month”; it does not mention the checking credit or the charged comebacks (UX, reported).",
+    "Refresh now is pressed on camera. Nothing else was written for this clip.",
+    "Clip length: EN 161 s (title card “About 3 minutes”), Tamil 188 s (“சுமார் 3 நிமிடம்”)."
   ]
 }

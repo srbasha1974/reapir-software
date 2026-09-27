@@ -3,9 +3,9 @@
  *
  * Grounded in UC-014, UC-013 step 9 and the code:
  *  - app/(app)/service-centre/jobs/[...job]/acts.tsx + decision-forms.tsx: the engineer's own
- *    "Cannot repair…" (EngineerActs) and "It cannot be saved…" (DecisionActs, Service Head and
- *    Liaison: work_order.close_non_repairable, migration 20260926000100), a <select> of reasons and
- *    no text box; close_non_repairable() refuses a missing reason; non_repairable_is_final().
+ *    "Cannot repair…" (EngineerActs) and the same "Cannot repair…" in DecisionActs (Service Head and
+ *    Liaison: work_order.close_non_repairable, migration 20260926000100; renamed from "It cannot be
+ *    saved…" in feature 032), form "Why it cannot be repaired", a <select> of reasons and no text box; close_non_repairable() refuses a missing reason; non_repairable_is_final().
  *    "Put on hold" (US-068) sits beside it on an In Progress job; it pauses, it does not close.
  *  - verification/verify-forms.tsx CustomerTestForm: "It works — close it" → record_customer_test()
  *    → Closed / Ready for Invoice; "Still faulty — back to the bench" → In Progress.
@@ -86,7 +86,7 @@ await S.roleCard(s, c.now, 'Liaison', 1500 * pace)
 const hold = p.getByRole('button', { name: 'Put on hold' })
 await s.point(hold)
 await s.say(c.hold, 3400 * pace, 'dont')
-const leadCannot = p.getByRole('button', { name: 'It cannot be saved…' })
+const leadCannot = p.getByRole('button', { name: 'Cannot repair…' })
 await s.point(leadCannot)
 await s.say(c.leadCannot, 3200 * pace)
 await s.click(leadCannot)

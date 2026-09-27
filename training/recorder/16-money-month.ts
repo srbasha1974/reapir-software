@@ -1,7 +1,7 @@
 /**
  * Module 16 · Numbers · Money 2: the month in money — Operations Manager · Service Head.
  * KPI-CATALOGUE.md clip 2b: Base margin %, premium captured and its share, Total margin and why
- * Revenue − Cost differs (the write-off), cost of rework carried (comeback R rolled onto A), spares
+ * Revenue − Cost = Total margin (write-off included, K1), Jobs at a loss, a comeback counted once (K2), By engineer with Checking (K5), spares
  * not charged / uncosted hours, Actual / Target / Achievement, labour on open boards.
  *
  * Screens: MIS dashboard tiles (app/(app)/mis/page.tsx), Job profitability cards and cuts
@@ -36,7 +36,7 @@ async function openCut(name: RegExp, key: string) {
 const fig = (label: string | RegExp) => p.locator('.fig', { has: p.locator('.lbl', { hasText: label }) }).first()
 
 await s.card(`<div class="k">${c.kicker}</div><h1>${c.title}</h1><p>${c.sub}</p>`, 3800 * pace)
-await card(c.month, 9500)
+await card(c.month, 8500)
 
 // ── MIS dashboard: refresh, Base margin, Premium captured ──────────────────────────────────────
 const refresh = p.getByRole('button', { name: 'Refresh now' }).first()
@@ -59,22 +59,31 @@ await s.unring()
 await s.quiet()
 
 // ── Job profitability: Total margin and the write-off; rework; spares; uncosted ────────────────
-await card(c.totalCard, 10500)
+await card(c.totalCard, 9500)
 await s.goto('/mis/profitability')
 await s.wait(600)
-await pointAll(s, [fig(/^Revenue$/), fig(/^Cost$/)])
-await s.wait(400)
-await pointAll(s, [fig(/^Revenue$/), fig(/^Total margin/)])
+await pointAll(s, [fig(/^Revenue$/), fig(/^Cost$/), fig(/^Total margin/)])
 await s.say(c.totalShown, 3800 * pace)
+await openCut(/^Jobs at a loss/, 'loss')
+await s.wait(800)
+await s.point(p.locator('table').filter({ hasText: 'Price source' }).first())
+await s.say(c.lossTab, 4000 * pace)
 await s.unring()
 await s.quiet()
-await card(c.reworkCard, 10000)
+await card(c.reworkCard, 11000)
 await s.point(fig(/^Cost$/))
 await s.say(c.reworkCost, 3600 * pace)
 await openCut(/^Rework carried/, 'rework')
 await s.wait(800)
 await s.point(p.locator('table').filter({ hasText: 'Charged back to' }).first())
-await s.say(c.reworkTab, 3800 * pace)
+await s.say(c.reworkTab, 3600 * pace)
+await s.unring()
+await s.quiet()
+await card(c.engCard, 9500)
+await openCut(/^By engineer/, 'engineer')
+await s.wait(800)
+await s.point(p.locator('table').filter({ hasText: 'Checking' }).first())
+await s.say(c.engTab, 4200 * pace)
 await openCut(/^Spares not charged/, 'spares')
 await s.wait(800)
 await s.point(p.locator('tr', { hasText: 'Fuse, 10 A fast-blow' }).first())
@@ -85,7 +94,7 @@ await s.unring()
 await s.quiet()
 
 // ── Performance: Actual / Target / Achievement ─────────────────────────────────────────────────
-await card(c.achCard, 11000)
+await card(c.achCard, 10000)
 await s.goto('/service-centre/performance')
 await s.wait(600)
 const row = p.locator('tbody tr').filter({ hasText: 'Test Engineer' }).first()

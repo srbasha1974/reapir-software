@@ -15,8 +15,8 @@
     "ta": "media/11-poster-ta.jpg"
   },
   "seconds": {
-    "en": 81,
-    "ta": 83
+    "en": 74,
+    "ta": 79
   },
   "do": {
     "en": [
@@ -24,7 +24,7 @@
       "Tick the jobs of <b>one customer</b> that go on one invoice, then press <b>Prepare a batch for …</b>. Check the customer name and total on the button.",
       "A Non-Repairable job with an agreed charge can be billed too. It shows with the <b>Non-Repairable</b> tag.",
       "Read every line before sending: number <b>IB/YY-MM/XXXXXX</b>, one line per job (“Service Charges for … - S/N …”) in a box you can read in full. Fix the wording there and press <b>Save</b>; the amount comes from the job.",
-      "To take a job off a <b>Draft</b> batch, press <b>Remove</b> on its line. It goes back to the worklist for a later batch.",
+      "To take a job off a <b>Draft</b> batch, press <b>Remove</b> on its line. The batch then says it is back on the worklist for a later batch.",
       "If <b>Send to Zoho Books</b> is greyed, read the reason under it (no Zoho organisation, no SAC code, or no customer GSTIN) and get it fixed.",
       "When Send works, Zoho gets one <b>draft sales order</b> with the batch number as its reference. Nothing is emailed to the customer."
     ],
@@ -33,7 +33,7 @@
       "ஒரே இன்வாய்ஸ்ல போகிற <b>ஒரு கஸ்டமரோட</b> ஜாப்ஸை டிக் பண்ணி <b>Prepare a batch for …</b> அழுத்துங்க. பட்டன்ல கஸ்டமர் பேரும் டோட்டலும் செக் பண்ணுங்க.",
       "அக்ரீ பண்ண சார்ஜ் இருக்கிற Non-Repairable ஜாப்புக்கும் பில் போடலாம். அதுல <b>Non-Repairable</b> டேக் இருக்கும்.",
       "அனுப்புறதுக்கு முன்னாடி ஒவ்வொரு லைனையும் படிங்க: நம்பர் <b>IB/YY-MM/XXXXXX</b>, ஒரு ஜாப்புக்கு ஒரு லைன் (“Service Charges for … - S/N …”), முழுசா படிக்கிற மாதிரி பாக்ஸ்ல. வார்த்தையை அங்கேயே திருத்தி <b>Save</b> அழுத்துங்க; அமௌண்ட் ஜாப்ல இருந்து வருது.",
-      "<b>Draft</b> பேட்ச்ல இருந்து ஒரு ஜாப்பை எடுக்க, அதோட லைன்ல <b>Remove</b> அழுத்துங்க. அடுத்த பேட்ச்சுக்காக worklist-க்குத் திரும்பும்.",
+      "<b>Draft</b> பேட்ச்ல இருந்து ஒரு ஜாப்பை எடுக்க, அதோட லைன்ல <b>Remove</b> அழுத்துங்க. அது worklist-க்குத் திரும்பிடுச்சுன்னு பேட்ச்லயே சொல்லும்; அடுத்த பேட்ச்ல போடலாம்.",
       "<b>Send to Zoho Books</b> க்ரே ஆயிருந்தா, கீழே இருக்கிற காரணத்தைப் படிங்க (Zoho organisation, SAC code, இல்ல கஸ்டமர் GSTIN இல்ல), சரி பண்ணச் சொல்லுங்க.",
       "Send வேலை செஞ்சா, பேட்ச் நம்பரை reference-ஆ வெச்சு Zoho-ல ஒரு <b>draft sales order</b> வரும். கஸ்டமருக்கு email போகாது."
     ]
@@ -145,9 +145,9 @@
     "“A sent batch is frozen” is stated in a caption and on the card, not shown: no batch can reach Sent locally.",
     "Round 2: the line box (“What this line says to the customer”) is now a readable two-row textarea with Save (finding 6 fixed); the clip points at it and teaches reading/fixing the wording.",
     "Round 2: Front Office typing /front-office/invoicing now gets a refusal page (finding 4 fixed), so the access note is dropped; the Invoicing link is shown only to the Liaison and the Operations Manager.",
-    "UX (unchanged): in the worklist the customer name (group row) is crushed into the narrow tick column (“Ayy / Indu / Sys”); after Remove, the confirmation is never visible because the row unmounts.",
+    "UX (unchanged): in the worklist the customer name (group row) is crushed into the narrow tick column (“Ayy / Indu / Sys”).",
     "Set-up (unrecorded): a fresh 3-unit delivery for Ayyan Industrial Systems per take, priced by an agreed price, two taken to Ready for Invoice, one closed Non-Repairable by the Service Head. The cross-customer refusal ticks and unticks an existing job of another customer (WO/26-27/00010) without writing anything.",
-    "Round 3 (develop, Rack & Bin look): re-recorded both languages; labels and behaviour unchanged. Under load “Prepare a batch” took up to 30 s to land on the batch; that dead wait is cut at encode (English 29 s, Tamil 5 s), and the clips are sped up 1.08× (English, 81 s) and 1.2× (Tamil, 83 s) so “About 80 seconds” stays true.",
+    "Round 4 (feature 032): Remove now lands back on the batch with a note “<job> is back on the worklist and can be billed later.” (?removed=); re-recorded both languages to point at it. No cuts or speed-up needed: EN 74 s, TA 79 s (“About 80 seconds”).",
     "Leftover data: each take prepares a real Draft batch for Ayyan Industrial Systems (one line removed on screen). Nothing was sent."
   ]
 }

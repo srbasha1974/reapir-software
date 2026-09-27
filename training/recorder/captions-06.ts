@@ -25,7 +25,7 @@ export const CAPTIONS = {
     tick: 'Tick the boards this line releases.<small>One request can serve several boards.</small>',
     raised: 'The system numbers it: PR/YY-MM/NNNNNN.<small>It starts as Draft.</small>',
     send: 'Ready? Send to the front office.<small>Only the Liaison has this button.</small>',
-    sent: 'Now: With front office, with the date.',
+    sent: 'It lands on On order: With front office, with the date.',
 
     foK: 'Front Office · Spares',
     foH: 'Order it. Mark it. Receive it.',
@@ -34,7 +34,7 @@ export const CAPTIONS = {
     ordered: 'Now: Ordered, with its PO number.<small>The Liaison sees the same.</small>',
     receive: 'Goods arrive? Record a delivery against the request.<small>Front Office or Liaison.</small>',
     accepted: 'Only 1 of 2 came. Accepted = what you keep.<small>Rejected units are recorded, never stocked.</small>',
-    partial: 'One board is back on the bench.<small>The other still waits for its part.</small>',
+    partial: 'The receipt names the board back on the bench,<small>and the one still waiting. A board resumes only when all its parts are in.</small>',
     partialState: 'The request stays open: Part received.<small>Draft → With front office → Ordered → Part received → Received</small>',
 
     adjK: 'Liaison · Stock',
@@ -71,7 +71,7 @@ export const CAPTIONS = {
     tick: 'இந்த லைன் ரிலீஸ் பண்ற போர்டுகளை டிக் பண்ணுங்க.<small>ஒரே PR பல போர்டுக்கு யூஸ் ஆகலாம்.</small>',
     raised: 'நம்பர் சிஸ்டமே போடும்: PR/YY-MM/NNNNNN.<small>முதல்ல “Draft”-ஆ இருக்கும்.</small>',
     send: 'ரெடியா? “Send to the front office”.<small>இந்த பட்டன் Liaison-க்கு மட்டும் தான்.</small>',
-    sent: 'இப்போ: “With front office”, தேதியோட.',
+    sent: '“On order”-க்கு வரும்: “With front office”, தேதியோட.',
 
     foK: 'Front Office · Spares',
     foH: 'ஆர்டர் போடுங்க, மார்க் பண்ணுங்க, டெலிவரி எடுங்க',
@@ -80,7 +80,7 @@ export const CAPTIONS = {
     ordered: 'இப்போ: “Ordered”, PO நம்பரோட.<small>Liaison-க்கும் இதே தெரியும்.</small>',
     receive: 'பொருள் வந்துடுச்சா? PR-க்கு எதிரா டெலிவரியை ரெக்கார்ட் பண்ணுங்க.<small>Front Office அல்லது Liaison.</small>',
     accepted: '2-ல 1 தான் வந்தது. “Accepted” = நீங்க வெச்சுக்கறது.<small>“Rejected” பதிவாகும், ஸ்டாக்ல சேராது.</small>',
-    partial: 'ஒரு போர்டு திரும்ப பெஞ்சுக்கு வந்தது.<small>இன்னொண்ணு இன்னும் பார்ட்டுக்கு வெயிட் பண்ணுது.</small>',
+    partial: 'எந்த போர்டு பெஞ்சுக்கு திரும்புச்சு, எது இன்னும் வெயிட்டிங்னு receipt சொல்லும்.<small>எல்லா பார்ட்ஸும் வந்தா தான் போர்டு திரும்ப பெஞ்சுக்கு போகும்.</small>',
     partialState: 'PR ஓப்பனா இருக்கும்: “Part received”.<small>Draft → With front office → Ordered → Part received → Received</small>',
 
     adjK: 'Liaison · Stock',

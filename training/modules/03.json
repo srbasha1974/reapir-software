@@ -15,8 +15,8 @@
     "ta": "media/03-poster-ta.jpg"
   },
   "seconds": {
-    "en": 133,
-    "ta": 153
+    "en": 130,
+    "ta": 148
   },
   "do": {
     "en": [
@@ -27,6 +27,7 @@
       "When the answer comes, press <b>Input received</b> and write what came back. The job returns to Under Assessment.",
       "Clear what to do → tick it in <b>Waiting for an engineer</b> and allot it. This is the assessment’s call for any customer, whatever the billing segment.",
       "A price must be agreed first → with the queue narrowed to the customer, tick their boards under assessment and press <b>Raise quotation</b>. They arrive on Quotations already ticked.",
+      "A contract customer with a rate card? On the job card of a board <b>Under Assessment</b>, press <b>Price from the rate card…</b>, choose their rate and press <b>Price from the rate card</b>. The rate sets the price, and the reservoir then says <b>Assessed — rate card</b>. Liaison or Service Head.",
       "Customer withdrew before any price? <b>Customer withdrew</b>, with a note. The job closes as Customer Rejected and waits for a challan."
     ],
     "ta": [
@@ -37,6 +38,7 @@
       "பதில் வந்ததும் <b>Input received</b> அழுத்தி, என்ன வந்துச்சுன்னு எழுதுங்க. ஜாப் திரும்ப Under Assessmentக்கு வரும்.",
       "என்ன பண்ணணும்னு க்ளியரா இருந்தா → <b>Waiting for an engineer</b>ல டிக் பண்ணி அலாட் பண்ணுங்க. எந்த கஸ்டமரா இருந்தாலும், எந்த பில்லிங் செக்மென்ட்டா இருந்தாலும் இது அசெஸ்மென்ட்டோட முடிவு.",
       "முதல்ல ப்ரைஸ் ஒத்துக்கணும்னா → க்யூவை அந்த கஸ்டமருக்கு சுருக்கி, Under Assessment போர்டுகளை டிக் பண்ணி <b>Raise quotation</b> அழுத்துங்க. Quotationsல அவை டிக் ஆகியே வரும்.",
+      "ரேட் கார்டு இருக்கற கான்ட்ராக்ட் கஸ்டமரா? <b>Under Assessment</b>ல இருக்கற போர்டோட ஜாப் கார்டுல <b>Price from the rate card…</b> அழுத்தி, அவங்க ரேட்டை செலக்ட் பண்ணி <b>Price from the rate card</b> அழுத்துங்க. ப்ரைஸ் ரேட்ல இருந்து வரும், Reservoirல <b>Assessed — rate card</b>னு வரும். Liaison அல்லது Service Head.",
       "ப்ரைஸ் சொல்றதுக்கு முன்னாடியே கஸ்டமர் வேணாம்னுட்டாங்களா? நோட்டோட <b>Customer withdrew</b>. ஜாப் Customer Rejected ஆக க்ளோஸ் ஆகி, சலானுக்கு வெயிட் பண்ணும்."
     ]
   },
@@ -46,14 +48,16 @@
       "Don’t expect to allot a job at <b>Awaiting Customer Input</b>. The system refuses until you record Input received.",
       "Don’t leave the findings in your head. Once the board is alloted, <b>What the assessment found</b> is fixed and can’t be written any more.",
       "Don’t mix customers on one quotation. The ticks appear only when the queue is narrowed to one customer; a board already on a quotation can’t be ticked.",
-      "Don’t expect the system to message the customer. Nothing is sent; you phone or email them yourself."
+      "Don’t expect the system to message the customer. Nothing is sent; you phone or email them yourself.",
+      "Don’t choose the rate carelessly. Once a rate has priced the board, its rate basis is fixed and the system refuses a change."
     ],
     "ta": [
       "Inwardல இருக்கற போர்டை அலாட் பண்ண ட்ரை பண்ணாதீங்க. டிக் லாக் ஆகியிருக்கும்; Pick up மூலம் மட்டும் தான் வெளியே வரும்.",
       "<b>Awaiting Customer Input</b>ல இருக்கற ஜாப்பை அலாட் பண்ண முடியாது. Input received போடற வரைக்கும் சிஸ்டம் ஏத்துக்காது.",
       "கண்டுபிடிச்சதை மனசுலயே வெச்சுக்காதீங்க. போர்டு அலாட் ஆனதும் <b>What the assessment found</b> ஃபிக்ஸ் ஆகிடும், அப்புறம் எழுத முடியாது.",
       "ஒரு கொட்டேஷன்ல ரெண்டு கஸ்டமர் வேண்டாம். க்யூ ஒரு கஸ்டமருக்கு சுருக்கினா தான் டிக் வரும்; ஏற்கனவே கொட்டேஷன்ல இருக்கற போர்டை டிக் பண்ண முடியாது.",
-      "சிஸ்டம் கஸ்டமருக்கு மெசேஜ் அனுப்பும்னு நினைக்காதீங்க. எதுவும் போகாது; நீங்களே ஃபோன் அல்லது ஈமெயில் பண்ணணும்."
+      "சிஸ்டம் கஸ்டமருக்கு மெசேஜ் அனுப்பும்னு நினைக்காதீங்க. எதுவும் போகாது; நீங்களே ஃபோன் அல்லது ஈமெயில் பண்ணணும்.",
+      "ரேட்டை கவனமா செலக்ட் பண்ணுங்க. ஒரு ரேட் போர்டுக்கு ப்ரைஸ் போட்ட பிறகு அது ஃபிக்ஸ், மாத்த சிஸ்டம் ஏத்துக்காது."
     ]
   },
   "quiz": {
@@ -143,12 +147,13 @@
     ]
   },
   "notes": [
-    "Rate-card reference: the reservoir still shows the pill “Assessed — rate card” for every job Under Assessment (lib/domain/allotment.ts sets quote='rate-card' whenever the quotation gate is not required), even though the demo has no service_rate rows at all. Misleading UX; not taught.",
+    "Round 4 (2026-09-27, app develop b053262): the reservoir’s “Assessed — rate card” tag now appears only where a rate has priced the board (lib/domain/allotment.ts rate_applied); an unpriced board says “Assessed”. New and taught at the end of the clip: Price from the rate card… on the job card (RateBasisForm), offered to work_order.allot holders on a board Under Assessment of a customer with rates that apply automatically; only EXCLUSIVE_CONTRACT customers are priced (work_order_apply_service_rate). Once a rate has priced the board, work_order_rate_basis_guarded refuses a second basis.",
+    "Set-up per take (unrecorded, through the app): frontoffice@ registered a fresh 3-unit Siemens 6SE70-CU delivery for Rajapalayam Spinners (serials AS<stamp>01-03); units 2 and 3 were picked up off camera, unit 1 on camera. Raise quotation was pressed but no quotation was raised. For the rate card, a customer of our own was made once through the app (03-contract.ts, cached in out/03-contract.json): salesengineer@ registered “Hosur Precision Castings”, saleshead@ changed it to exclusive contract, opsmanager@ added rate HPC-DB-01 (Drive control board, Major, ₹9,500, from 1 Sep 2026, applies automatically); each take then registered and picked up one Yaskawa board for it (serial HC<stamp>01). The demo data had no contract customer and no rates.",
+    "Length: EN 130 s / TA 148 s (Tamil captions held ×1.2). Over the 110 s aim because the rate-card segment was added; title cards say about 2 (EN) and 2½ (TA) minutes. English recorded twice (the first take ran true but its card said 2½ minutes), Tamil once.",
+    "App UX: after Price from the rate card, the act and its “Priced from the rate card: …” confirmation vanish together on the re-render (the act is offered only on an unpriced board), so the clip reloads the job card and points at Charged (₹9,500) instead.",
     "UC-010/UC-007 name the Service Head for diagnosis; the screens give the Liaison and the Service Head the same moves and the findings box (work_order.allot). Recorded as liaison@.",
     "Pick up has no confirmation and no undo: nothing moves a job back to Inward.",
     "Input received and Customer withdrew are pointed at / taught in the card, not pressed, to keep the clip under 2 minutes.",
-    "Set-up per take: frontoffice@ registered a fresh 3-unit Siemens 6SE70-CU delivery for Rajapalayam Spinners (serials AS<stamp>01-03); units 2 and 3 were picked up off camera, unit 1 on camera. Raise quotation was pressed but no quotation was raised.",
-    "Length: 133 s EN / 153 s TA (Tamil captions held ×1.2), recorded on develop (030-training) with the Rack & Bin look. The shared database is large and page loads were slow under other agents’ load; the Tamil title card says 2½ minutes.",
     "Round 3 (develop): Before the bench is now a side column beside the allotment list; the allotment list gained its own Customer and Model filters (whose hidden option lists share names with the queue’s customer lookup), and the queue panel offers Customer withdrew beside Wait for the customer. Nothing taught changed."
   ]
 }

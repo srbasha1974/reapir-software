@@ -15,26 +15,26 @@
     "ta": "media/13-poster-ta.jpg"
   },
   "seconds": {
-    "en": 161,
-    "ta": 187
+    "en": 145,
+    "ta": 175
   },
   "do": {
     "en": [
       "Read <b>Yield</b> as: of the boards closed in the period, the share that reached Ready for Invoice. <b>Customer Rejected</b> counts as wastage, like Non-Repairable.",
       "Use <b>Segment</b> (engineer, device type, customer) before blaming anyone for a low yield. Board type drives it more than skill.",
       "Read <b>Wastage cost this period</b> as every hour ever logged on the boards written off in the period, including hours from earlier months.",
-      "In <b>Queue aging</b>, read the columns as days in the <b>current state</b>. Chase the <b>testing gates</b> (Ready for Verification, Awaiting Customer Confirmation) first: 6 days or more is called out.",
-      "Take every job on <b>Stuck tasks</b> to stand-up: nobody has logged hours, moved a part or changed its status for more than 5 business days.",
-      "Use <b>What has stalled › Stuck</b> to ask “why is it still in this state?”, and <b>Stuck tasks</b> to ask “is anyone touching it?”.",
+      "In <b>Queue aging</b>, read the columns as days in the <b>current state</b>. Chase the <b>testing gates</b> (Ready for Verification, Awaiting Customer Confirmation) first: more than 6 days is called out.",
+      "Take every <b>stuck</b> job to stand-up: on the bench (Alloted, In Progress) and nobody has logged hours, booked a part or changed its status for more than 5 working days. <b>What has stalled › Stuck</b> and MIS <b>Stuck tasks</b> use this one rule.",
+      "Use <b>Stuck</b> to ask “is anyone touching it?”, and <b>The whole queue</b> or <b>Queue aging</b> (days in the current state) to ask “why is it still here?”.",
       "Read <b>Unbilled hours</b> as hours logged in the period on write-offs, rejections and stuck jobs. Hours on open jobs being worked show as “still open”."
     ],
     "ta": [
       "<b>Yield</b>: பீரியட்ல க்ளோஸ் ஆன போர்டுல எத்தனை சதவீதம் Ready for Invoice போச்சு. Non-Repairable மாதிரியே <b>Customer Rejected</b>-உம் வேஸ்டேஜ் தான்.",
       "யீல்டு கம்மியா இருந்தா யாரையும் குத்தம் சொல்றதுக்கு முன்னாடி <b>Segment</b> (இன்ஜினியர், டிவைஸ் டைப், கஸ்டமர்) பாருங்க. ஸ்கில்லை விட போர்டு டைப் தான் அதிகம் காரணம்.",
       "<b>Wastage cost this period</b>: இந்த பீரியட்ல ரைட்-ஆஃப் ஆன போர்டுல எப்பவோ போட்ட எல்லா ஹவர்ஸும், முந்தைய மாசத்துதும் சேர்த்து.",
-      "<b>Queue aging</b>-ல காலம் = <b>இப்போ இருக்கற ஸ்டேட்டஸ்ல</b> எத்தனை நாள். <b>டெஸ்டிங் கேட்</b> (Ready for Verification, Awaiting Customer Confirmation) முதல்ல ஃபாலோ பண்ணுங்க: 6 நாளுக்கு மேல தனியா காட்டும்.",
-      "<b>Stuck tasks</b>-ல இருக்கற ஒவ்வொரு ஜாப்பையும் ஸ்டாண்ட்-அப்ல எடுங்க: 5 வேலை நாளுக்கு மேல யாரும் ஹவர்ஸ் போடல, பார்ட் நகர்த்தல, ஸ்டேட்டஸ் மாத்தல.",
-      "“ஏன் இன்னும் இதே ஸ்டேட்டஸ்ல?”ன்னு கேக்க <b>What has stalled › Stuck</b>. “யாராவது தொடறாங்களா?”ன்னு கேக்க <b>Stuck tasks</b>.",
+      "<b>Queue aging</b>-ல காலம் = <b>இப்போ இருக்கற ஸ்டேட்டஸ்ல</b> எத்தனை நாள். <b>டெஸ்டிங் கேட்</b> (Ready for Verification, Awaiting Customer Confirmation) முதல்ல ஃபாலோ பண்ணுங்க: 6 நாளுக்கு மேல இருந்தா தனியா காட்டும்.",
+      "ஒவ்வொரு <b>ஸ்டக்</b> ஜாப்பையும் ஸ்டாண்ட்-அப்ல எடுங்க: பெஞ்ச்ல (Alloted, In Progress) இருக்கு, 5 வேலை நாளுக்கு மேல யாரும் ஹவர்ஸ் போடல, பார்ட் புக் பண்ணல, ஸ்டேட்டஸ் மாத்தல. <b>What has stalled › Stuck</b>, MIS <b>Stuck tasks</b> ரெண்டுக்கும் இதே ஒரு ரூல்.",
+      "“யாராவது தொடறாங்களா?”ன்னு கேக்க <b>Stuck</b>. “ஏன் இன்னும் இங்கயே?”ன்னு கேக்க <b>The whole queue</b>, <b>Queue aging</b> (இப்போ இருக்கற ஸ்டேட்டஸ்ல நாள்).",
       "<b>Unbilled hours</b>: பீரியட்ல ரைட்-ஆஃப், ரிஜெக்ட், ஸ்டக் ஜாப்ல போட்ட ஹவர்ஸ். வேலை நடக்கற ஓப்பன் ஜாப் ஹவர்ஸ் “still open”-ஆ வரும்."
     ]
   },
@@ -43,7 +43,7 @@
       "Don't read wastage as “engineers failed”. A customer who refused the price is wastage too.",
       "Don't match Wastage cost this period against the month's timesheets. It is not a hours-in-this-month figure.",
       "Don't blame the floor for age in Under Assessment or Awaiting Customer Input. That is the Liaison's queue.",
-      "Don't expect the two stuck counts to match. A board worked on every day can sit on What has stalled and never be on Stuck tasks.",
+      "Don't read the days on <b>The whole queue</b> as stuck. They are calendar days in the state, and a board worked on every day is not stuck.",
       "Don't look for Pending Spare boards on either stuck list. Chase them in Spares; Queue aging still shows their age.",
       "Don't treat last month's Unbilled hours as final. Each hour follows its job's status today."
     ],
@@ -51,7 +51,7 @@
       "வேஸ்டேஜ்னா “இன்ஜினியர் ஃபெயில்”ன்னு எடுத்துக்காதீங்க. விலைக்கு “வேண்டாம்” சொன்ன கஸ்டமரும் வேஸ்டேஜ் தான்.",
       "Wastage cost this period-ஐ மாச டைம்ஷீட்டோட மேட்ச் பண்ணாதீங்க. இது இந்த மாச ஹவர்ஸ் இல்ல.",
       "Under Assessment, Awaiting Customer Input-ல இருக்கற வயசுக்கு ஃப்ளோரை குத்தம் சொல்லாதீங்க. அது லையசன் க்யூ.",
-      "ரெண்டு ஸ்டக் கவுண்ட்டும் ஒண்ணா இருக்கும்னு எதிர்பார்க்காதீங்க. தினமும் வேலை நடக்கற போர்டு What has stalled-ல வரும், Stuck tasks-ல வராது.",
+      "<b>The whole queue</b>-ல இருக்கற நாளை ஸ்டக்னு படிக்காதீங்க. அது ஸ்டேட்டஸ்ல இருக்கற காலண்டர் நாள்; தினமும் வேலை நடக்கற போர்டு ஸ்டக் இல்ல.",
       "Pending Spare போர்டுகளை எந்த ஸ்டக் லிஸ்ட்லயும் தேடாதீங்க. Spares-ல ஃபாலோ பண்ணுங்க; Queue aging-ல அதோட வயசு தெரியும்.",
       "போன மாச Unbilled hours ஃபைனல்னு நினைக்காதீங்க. ஒவ்வொரு ஹவரும் அதோட ஜாப்போட இன்னைய ஸ்டேட்டஸ்படி மாறும்."
     ]
@@ -95,13 +95,13 @@
           [
             "= Days in state",
             "8 d",
-            "6–10 d column, called out at the gates (6 d or more)"
+            "6–10 d column, called out at the gates (more than 6 d)"
           ]
         ],
         "read": "If B was registered on 1 Aug it is still an 8-day problem: only time in the current state counts."
       },
       {
-        "title": "Two stuck lists, one board",
+        "title": "One stuck rule, two screens",
         "lines": [
           [
             "Entered In Progress",
@@ -109,17 +109,17 @@
             "hours logged every day"
           ],
           [
-            "= What has stalled › Stuck, Tue 15 Sep",
-            "listed",
-            "5 calendar days in the same state"
+            "= Stuck (Service) and Stuck tasks (MIS)",
+            "not listed",
+            "touched every day: idle stays at 0"
           ],
           [
-            "= MIS Stuck tasks",
-            "not listed",
-            "touched every day; idle needs more than 5 business days"
+            "= The whole queue, Tue 15 Sep",
+            "5 d",
+            "calendar days in the state: a queue view"
           ]
         ],
-        "read": "One list asks why it is still here, the other whether anyone is touching it."
+        "read": "Both stuck lists ask whether anyone is touching it; The whole queue and Queue aging ask why it is still here."
       },
       {
         "title": "Unbilled hours: September",
@@ -197,7 +197,7 @@
         "read": "B 1 Aug-ல ரெஜிஸ்டர் ஆனாலும் இது 8 நாள் பிரச்சனை தான்: இப்போ இருக்கற ஸ்டேட்டஸ் நேரம் மட்டும்."
       },
       {
-        "title": "ரெண்டு ஸ்டக் லிஸ்ட், ஒரே போர்டு",
+        "title": "ஒரே ஸ்டக் ரூல், ரெண்டு ஸ்க்ரீன்",
         "lines": [
           [
             "In Progress-க்கு வந்தது",
@@ -205,17 +205,17 @@
             "தினமும் ஹவர்ஸ் போட்டாங்க"
           ],
           [
-            "= What has stalled › Stuck, Tue 15 Sep",
-            "வரும்",
-            "ஒரே ஸ்டேட்டஸ்ல 5 நாள்"
+            "= Stuck (Service), Stuck tasks (MIS)",
+            "வராது",
+            "தினமும் தொட்டாங்க: ஐடில் 0"
           ],
           [
-            "= MIS Stuck tasks",
-            "வராது",
-            "தினமும் தொட்டாங்க; 5 வேலை நாளுக்கு மேல ஐடில் வேணும்"
+            "= The whole queue, Tue 15 Sep",
+            "5 d",
+            "ஸ்டேட்டஸ்ல காலண்டர் நாள்: க்யூ பார்வை"
           ]
         ],
-        "read": "ஒண்ணு “ஏன் இன்னும் இங்க?” கேக்குது, இன்னொண்ணு “யாராவது தொடறாங்களா?” கேக்குது."
+        "read": "ரெண்டு ஸ்டக் லிஸ்ட்டும் “யாராவது தொடறாங்களா?” கேக்குது; The whole queue, Queue aging “ஏன் இன்னும் இங்க?” கேக்குது."
       },
       {
         "title": "Unbilled hours: செப்டம்பர்",
@@ -257,11 +257,11 @@
         "o": [
           "On both stuck lists",
           "Only on What has stalled › Stuck",
-          "Only on MIS Stuck tasks",
-          "On neither"
+          "On neither stuck list; The whole queue shows its 8 days in the state",
+          "Only on MIS Stuck tasks"
         ],
-        "a": 1,
-        "why": "What has stalled measures time in the same state; logging hours does not reset it. Stuck tasks resets on any activity."
+        "a": 2,
+        "why": "Both stuck lists use one rule: no hour, part or move for more than 5 working days. Days in the state show on The whole queue and Queue aging."
       },
       {
         "q": "In September, 18 boards went to Ready for Invoice, 4 were Non-Repairable and 2 were Customer Rejected. What does Yield show?",
@@ -283,7 +283,7 @@
           "Not shown: testing gates are left out"
         ],
         "a": 1,
-        "why": "Queue aging counts days in the current state: 8 days. At a testing gate, 6 days or more is called out."
+        "why": "Queue aging counts days in the current state: 8 days. At a testing gate, more than 6 days is called out."
       },
       {
         "q": "September unbilled hours read 9 h on 1 October and 19 h on 15 October. What is the most likely cause?",
@@ -303,11 +303,11 @@
         "o": [
           "ரெண்டு ஸ்டக் லிஸ்ட்லயும்",
           "What has stalled › Stuck-ல மட்டும்",
-          "MIS Stuck tasks-ல மட்டும்",
-          "எதுலயும் வராது"
+          "எந்த ஸ்டக் லிஸ்ட்லயும் இல்ல; The whole queue-ல ஸ்டேட்டஸ்ல 8 நாள்னு காட்டும்",
+          "MIS Stuck tasks-ல மட்டும்"
         ],
-        "a": 1,
-        "why": "What has stalled ஒரே ஸ்டேட்டஸ்ல இருக்கற நேரத்தை பார்க்கும்; ஹவர்ஸ் போட்டா ரீசெட் ஆகாது. Stuck tasks எந்த வேலை நடந்தாலும் ரீசெட் ஆகும்."
+        "a": 2,
+        "why": "ரெண்டு ஸ்டக் லிஸ்ட்டுக்கும் ஒரே ரூல்: 5 வேலை நாளுக்கு மேல ஹவர், பார்ட், மூவ் எதுவும் இல்லன்னா தான். ஸ்டேட்டஸ்ல இருக்கற நாள் The whole queue, Queue aging-ல தெரியும்."
       },
       {
         "q": "செப்டம்பர்ல 18 போர்டு Ready for Invoice, 4 Non-Repairable, 2 Customer Rejected. Yield என்ன காட்டும்?",
@@ -329,7 +329,7 @@
           "வராது: டெஸ்டிங் கேட் சேராது"
         ],
         "a": 1,
-        "why": "Queue aging இப்போ இருக்கற ஸ்டேட்டஸ்ல நாளை எண்ணும்: 8 நாள். டெஸ்டிங் கேட்ல 6 நாளுக்கு மேல தனியா காட்டும்."
+        "why": "Queue aging இப்போ இருக்கற ஸ்டேட்டஸ்ல நாளை எண்ணும்: 8 நாள். டெஸ்டிங் கேட்ல 6 நாளுக்கு மேல இருந்தா தனியா காட்டும்."
       },
       {
         "q": "செப்டம்பர் அன்பில்டு ஹவர்ஸ் 1 அக்டோபர்ல 9 h, 15 அக்டோபர்ல 19 h. என்ன காரணமா இருக்கும்?",
@@ -345,15 +345,13 @@
     ]
   },
   "notes": [
-    "Filmed as the Service Head (an MIS role who also has Service › What has stalled). Cards use the catalogue's September; the screens show the local demo, and a caption says the figures will differ.",
-    "Database reset to develop demo data before filming, so nearly every board entered its state today: both stuck lists were empty and Queue aging sat in 0–2 d except one Pending Spare board (WO/26-27/00005, since 5 Sep). The stuck examples are taught on cards only.",
-    "Figures moved during filming (other agents closing jobs): the dashboard's Yield, Unbilled hours and pipeline counts differ between the start and end of the clip. No caption quotes a screen number.",
-    "⚠ Two screens use “stuck” for two definitions: MIS Stuck tasks (Alloted/In Progress, no activity for more than 5 business days, no holiday calendar) and What has stalled › Stuck (calendar days in the current state, every open state except Pending Spare, including On Hold and the testing gates). Taught as different on purpose.",
-    "⚠ Wastage cost this period sums every hour ever logged on the period's write-offs, including earlier months; Unbilled hours dispositions follow today's status, so past months move. The docstring at lib/domain/reports/hours.ts:34 says “booked against work that closed”, but IDLE hours belong to open jobs.",
-    "⚠ Yield counts Customer Rejected as wastage (counts_as_wastage flag), even for a price refusal.",
-    "UX: on Queue aging at 1366×768 the testing-gate rows (Ready for Verification, Awaiting Customer Confirmation) render broken — the counts drop below the state name and the rest of the row is blank. Visible in the clip.",
-    "At one moment the dashboard said 24 open work orders and Queue aging 23 (Under Assessment 3 vs 2); most likely another agent moved a board between the two reads, not verified.",
-    "Nothing was written for this clip; MIS data refreshed with tools/reports/refresh.ts before filming.",
-    "Round 3 (2026-09-26): re-recorded in both languages on repair-service 030-training (= develop) with the Rack & Bin card look; no locator or behaviour change was needed. English now runs 161 s (the title card says “Under 3 minutes”)."
+    "Filmed as the Service Head (an MIS role who also has Service › What has stalled). Cards use the catalogue's September (KPI-CATALOGUE.md, rewritten for features 031/032); the screens show the local demo, and a caption says the figures will differ. No caption quotes a screen number.",
+    "Round 4 (2026-09-27, develop b053262): K6 fixed — What has stalled › Stuck now reads v_stuck_task, the same rule as MIS Stuck tasks (working days since the last hour, part or move, Alloted/In Progress only). The clip teaches one rule; The whole queue beside it is taught as the days-in-state queue view. K16 fixed — the testing-gate rows on Queue aging render as normal rows.",
+    "The gate call-out counts boards MORE than 6 days in the state (attention.ts .gt), and the Queue aging page says a board at exactly 6 is not past it; the cards and the do line say “more than 6 days”. The in-app explanation for queue.aging says “6 days or more” (reported).",
+    "The in-app explanation stuck.count still says What has stalled › Stuck is a different list that will not match (stale since K6); rework.rate_overall still says the scorecard Rework counts rework jobs handled (stale since K3). Reported, not changed.",
+    "⚠ No holiday calendar in the stuck rule (a public holiday counts as a working day). Wastage cost this period sums every hour ever logged on the period's write-offs; Unbilled hours follow today's status, so past months move.",
+    "In the demo both stuck lists were empty while filming (every board had activity within 5 working days), so the stuck examples are taught on cards only.",
+    "Nothing was written for this clip; MIS data was refreshed (Refresh now, as opsmanager@) by the set-up before filming.",
+    "Clip length: EN 145 s (title card “Under 3 minutes”), Tamil 175 s (“சுமார் 3 நிமிடம்”)."
   ]
 }
