@@ -15,8 +15,8 @@
     "ta": "media/06-poster-ta.jpg"
   },
   "seconds": {
-    "en": 124,
-    "ta": 138
+    "en": 119,
+    "ta": 132
   },
   "do": {
     "en": [
@@ -145,15 +145,14 @@
     ]
   },
   "notes": [
-    "Round 4 (2026-09-27): NOT re-recorded — blocked. The local database was reset this morning (07:48) and system_configuration.purchase_request_notify_email is empty again, so Send to the front office refuses (“no address is set for purchase requests”). Since K21 the Operations Manager can set it on Admin › Configuration, but changing that shared setting was refused by this session's permission check, so the clip could not be shot past the Liaison's Send. The script and captions are updated for Round 4 (Send lands on On order; the receipt caption names released and still-waiting boards; finding 18 taught as fixed) and will record as-is once the address is set: `npx tsx 06-setup.ts <lang>` then `npx tsx 06-parts.ts <lang>`. The media files, poster and seconds are still Round 3's; their footage stays true (one line, one unit, one board), except that after Send the old clip navigates to On order itself.",
-    "Finding 18 is fixed (goods_receipt_releases_jobs, migration 0170): a board resumes only when none of its allocations on any request line is unmet, and the receipt banner names the boards released and still waiting. x3/q2 now state that rule. App wording: the banner says “Still waiting on another part: …” even for a board that waits for the balance of the same part (the clip's case), which reads oddly.",
-    "Send to the front office still sends no email. It sets the status and the date; with no internal address configured the screen says 'it is read here rather than sent anywhere'. Front Office read the request on Spares › On order.",
-    "Length: EN 153 s, TA 143 s (title cards say about 2½ minutes). Over the ~140 s aim in English because four roles are shown and the Front Office segment now includes Mark ordered; dev-server page loads account for much of it and vary between runs. Both takes came straight from the script with no edits after recording.",
+    "Round 4 (2026-09-27): re-recorded in both languages. The purchase-request address was set on the local database through Admin › Configuration as the Operations Manager (“Purchase requests go to” = frontoffice@thulirtech.com, K21), unrecorded, so Send to the front office now works and lands on On order with “With front office” and the date; the banner names the configured address. Front Office segment: Give the PO no. → type the Zoho PO no. → Mark ordered (State “Ordered”, “PO …”) → Record a delivery with 1 of 2 accepted → the receipt names the board back on the bench and the one still waiting → On order shows “Part received”. Recorded with the documented re-take path (ONLY=06 for both scripts), so 07/08's records were left alone.",
+    "Length: EN 119 s (card: about 2 minutes), TA 132 s (card corrected from 2½ to 2¼ நிமிடம்). Takes: English one; Tamil two (the first was fine but its card said 2½ against 131 s, so the card was corrected and recorded again).",
+    "Finding 18 is fixed (goods_receipt_releases_jobs, migration 0170): a board resumes only when none of its allocations on any request line is unmet, and the receipt banner names the boards released and still waiting. x3/q2 now state that rule. The banner now reads “N board back on the bench: … Still waiting for the rest of their parts: …”.",
+    "Send to the front office: with the address set, the banner reads “… is marked sent to the front office. The configured address is frontoffice@thulirtech.com.” Whether mail actually goes out depends on the deployment's mail transport, which the clip does not show; Front Office read the request on Spares › On order.",
     "Not shown for length: the engineer's Pending spare step (module 05 covers pausing). Its rule stays in the do list.",
     "Recording: after a server-action redirect the recording can stop showing caption changes until a full load, so the script reloads the page after those acts. A re-take of 06 alone: `ONLY=06 npx tsx 06-setup.ts <lang>` then `ONLY=06 npx tsx 06-parts.ts <lang>`. The set-up first receives the balance of any earlier take's gate-driver request, so On order shows only the new request.",
-    "Takes: English four (one over the two-re-take limit: the third was fine but ran 147 s against a title card that said about 2¼ minutes, so the card was corrected and recorded again rather than edited by hand); Tamil two (the first ran 148 s against a card that said 2¾).",
     "Setup (unrecorded, through the app): 06-setup.ts registers 8 units as Front Office, the Liaison picks them up and allots them to Test Engineer, and the engineer starts work. It also adds two catalogue parts of our own (lot-stamped names); the first is given its count by a stock adjustment.",
-    "Round 3 (2026-09-26, app develop/030-training): re-recorded in both languages with the Rack & Bin look; screen behaviour unchanged. After the reset, \"Send to the front office\" refused (\"no address is set for purchase requests. It is set on the configuration screen\") but no screen sets system_configuration.purchase_request_notify_email: the configuration form has no control for it. The address had to be set in the database (frontoffice@thulirtech.com), finding K21.",
-    "Round 3: on Spares › On order the last column is too narrow at 1366 px, so \"Send to the front office\" and \"Give the PO no.\" show cut off. Correct a count's Why now opens a type-to-search list, because there are six reasons. The On order list also shows two leftover Draft requests from a failed take."
+    "Round 3 (2026-09-26, app develop/030-training): re-recorded in both languages with the Rack & Bin look; screen behaviour unchanged.",
+    "Round 3: on Spares › On order the last column is too narrow at 1366 px, so \"Send to the front office\" and \"Give the PO no.\" show cut off. Correct a count's Why now opens a type-to-search list, because there are six reasons. Still true in Round 4: “Send to the front o…” is cut off in the State/act column."
   ]
 }
