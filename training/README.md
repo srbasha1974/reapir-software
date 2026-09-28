@@ -1,6 +1,6 @@
 # Training material for the Thulir repair software
 
-- `training-map.html`: all 18 modules (13 workflow, 5 explaining the KPIs) by workflow stage and role, each with a video, Do / Don't card and quiz in English and Tamil. Built from `training-map.src.html` + `modules/NN.json` by `python3 build.py` (`--hosted` builds the published copy, whose videos live in the artifact's asset store; links in `media/hosted.json`).
+- `training-map.html`: all 19 modules (14 workflow, 5 explaining the KPIs) by workflow stage and role, each with a video, Do / Don't card and quiz in English and Tamil. Built from `training-map.src.html` + `modules/NN.json` by `python3 build.py` (`--hosted` builds the published copy, whose videos live in the artifact's asset store; links in `media/hosted.json`).
 - `APP-FINDINGS.md`: bugs and spec-vs-app differences found while recording, with what has been fixed.
 - `KPI-CATALOGUE.md`: every non-obvious operational, money and sales figure: meaning, formula (file:line), worked example, how to read it.
 - `CHANGE-IMPACT.md`: how the app changes of 26 Sep affected each module.
