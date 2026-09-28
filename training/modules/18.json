@@ -1,0 +1,155 @@
+{
+  "id": "18",
+  "title": {
+    "en": "Weekly planning and the meetings",
+    "ta": "வாராந்திர ப்ளானிங் & மீட்டிங்ஸ்"
+  },
+  "role": "Operations Manager · Service Head · Liaison · Engineer",
+  "path": "Service › Weekly planning (Stand-up, Weekly plan, Burn-up, Weekly review); Service › Reservoir (the bench-limit warning)",
+  "video": {
+    "en": "media/18-weekly-planning.mp4",
+    "ta": "media/18-weekly-planning-ta.mp4"
+  },
+  "poster": {
+    "en": "media/18-poster.jpg",
+    "ta": "media/18-poster-ta.jpg"
+  },
+  "seconds": {
+    "en": 211,
+    "ta": 246
+  },
+  "do": {
+    "en": [
+      "Run the <b>Stand-up</b> every working day, Monday to Saturday. Press <b>Update</b> before you start: the screen reads when opened and never refreshes by itself.",
+      "Talk about the <b>highlighted rows</b> first: hours not logged on the previous working day, a bench at or over the limit, or anything blocked, due or stuck. Greyed rows have nothing to raise.",
+      "To talk to one person, pick them in the <b>Engineer</b> filter at the head of the table; <b>Every engineer</b> brings the floor back. The tiles still count the whole team.",
+      "On Monday, build the <b>Weekly plan</b> from the carry-over and the demand, type the capacity (engineers × working days, less leave), and press <b>Commit the week</b> once.",
+      "To see one engineer's week, pick them in the plan's <b>Engineer</b> filter: each of their boards shows its <b>Stage</b>, and the foot counts boards (passed, at the check, waiting on a spare, on the bench). No ₹ total is shown for one person.",
+      "Add a board mid-week with <b>Add to the week</b>. After the commit it reads “Added”, with who and when.",
+      "Withdraw a board that cannot be finished with <b>Withdraw…</b> and a reason; <b>Other</b> needs a note. Close the board separately, with <b>Cannot repair…</b> or <b>Customer withdrew</b>.",
+      "Read the <b>Burn-up</b> as scope against done. <b>Done</b> means the board passed verification.",
+      "On Saturday, read the <b>Weekly review</b> as team figures, then <b>Record the change</b>: one change for next week, and what came of last week's.",
+      "When allotting, read the bench-limit warning. It suggests engineers under the limit; <b>Choose someone else</b> or <b>Allot anyway</b>."
+    ],
+    "ta": [
+      "<b>Stand-up</b>-ஐ ஒவ்வொரு வேலை நாளும் நடத்துங்க, திங்கள் முதல் சனி வரை. ஆரம்பிக்கும் முன்னாடி <b>Update</b> அழுத்துங்க: திறக்கும்போது படிச்சது தான், தானா ரெஃப்ரெஷ் ஆகாது.",
+      "<b>ஹைலைட் ஆன ரோ</b>-வை முதல்ல பேசுங்க: முந்தைய வேலை நாள்ல ஹவர்ஸ் போடல, பெஞ்ச் லிமிட்ல இல்ல தாண்டி, இல்ல ப்ளாக், டியூ, ஸ்டக். க்ரே ரோவுல பேச எதுவும் இல்ல.",
+      "ஒருத்தர்கிட்ட மட்டும் பேச, டேபிள் தலைப்புல இருக்கற <b>Engineer</b> ஃபில்டர்ல அவங்களை செலக்ட் பண்ணுங்க; <b>Every engineer</b> முழு ஃப்ளோரையும் திரும்ப காட்டும். டைல்ஸ் இன்னும் முழு டீமையும் எண்ணும்.",
+      "திங்கள் அன்னைக்கு கேரி-ஓவர், டிமாண்ட் வெச்சு <b>Weekly plan</b> போடுங்க, கெப்பாசிட்டி டைப் பண்ணுங்க (இன்ஜினியர்ஸ் × வேலை நாள், லீவ் கழிச்சு), ஒரு தடவை <b>Commit the week</b> அழுத்துங்க.",
+      "ஒரு இன்ஜினியரோட வாரத்தை பார்க்க, ப்ளான்ல <b>Engineer</b> ஃபில்டர்ல அவங்களை செலக்ட் பண்ணுங்க: ஒவ்வொரு போர்டோட <b>Stage</b> தெரியும், கீழ போர்டுகளை எண்ணும் (பாஸ், செக்ல, ஸ்பேருக்கு வெயிட்டிங், பெஞ்ச்ல). ஒருத்தருக்கு ₹ டோட்டல் காட்டாது.",
+      "வாரத்துக்கு நடுவுல <b>Add to the week</b>-ல போர்டு சேருங்க. கமிட் ஆன பிறகு “Added”-ன்னு வரும், யார், எப்போன்னு.",
+      "முடிக்க முடியாத போர்டை <b>Withdraw…</b>-ல காரணத்தோட எடுங்க; <b>Other</b>-க்கு நோட் வேணும். போர்டை க்ளோஸ் பண்றது தனி: <b>Cannot repair…</b> இல்ல <b>Customer withdrew</b>.",
+      "<b>Burn-up</b>-ஐ ஸ்கோப் vs டன்-ஆ படிங்க. <b>டன்</b>னா போர்டு வெரிஃபிகேஷன் பாஸ் ஆச்சு.",
+      "சனிக்கிழமை <b>Weekly review</b>-ஐ டீம் நம்பரா படிங்க, அப்புறம் <b>Record the change</b>: அடுத்த வாரத்துக்கு ஒரு மாற்றம், போன வார மாற்றம் என்ன ஆச்சுன்னு.",
+      "அலாட் பண்ணும்போது பெஞ்ச் லிமிட் வார்னிங்கை படிங்க. லிமிட்டுக்கு கீழ இருக்கறவங்களை காட்டும்; <b>Choose someone else</b> இல்ல <b>Allot anyway</b>."
+    ]
+  },
+  "dont": {
+    "en": [
+      "Don't look for money on the Stand-up. It shows work, never what a board or a person is worth.",
+      "Don't read a board at Ready for Verification on Saturday as done. It is not done; it carries over.",
+      "Don't use Withdraw… to close a board. It only takes the board off the week; the board keeps its state and its hours stay worked.",
+      "Don't compare engineers on the review. Every figure there is the team's.",
+      "Don't expect the bench limit to stop an allotment. It only warns."
+    ],
+    "ta": [
+      "Stand-up-ல பணத்தை தேடாதீங்க. வேலையை மட்டும் காட்டும், போர்டோ ஆளோ எவ்வளவு மதிப்புன்னு இல்ல.",
+      "சனிக்கிழமை Ready for Verification-ல இருக்கற போர்டை டன்-னு படிக்காதீங்க. டன் இல்ல; அடுத்த வாரத்துக்கு போகும்.",
+      "போர்டை க்ளோஸ் பண்ண Withdraw… யூஸ் பண்ணாதீங்க. வாரத்துல இருந்து மட்டும் எடுக்கும்; போர்டோட ஸ்டேட்டஸ் மாறாது, ஹவர்ஸ் வேலை செஞ்சதா தான் இருக்கும்.",
+      "ரிவ்யூல இன்ஜினியர்களை கம்பேர் பண்ணாதீங்க. அங்க எல்லா நம்பரும் டீமோடது.",
+      "பெஞ்ச் லிமிட் அலாட்மென்ட்டை நிறுத்தும்னு எதிர்பார்க்காதீங்க. வார்னிங் மட்டும் தான்."
+    ]
+  },
+  "quiz": {
+    "en": [
+      {
+        "q": "It is 10:00 and the Stand-up has been open since 9:30. A board moved to Pending Spare at 9:45. What do you do?",
+        "o": [
+          "Wait: the screen refreshes every 15 minutes",
+          "Press Update: the screen reads when opened and never refreshes by itself",
+          "Reopen the job card; the Stand-up cannot show Pending Spare"
+        ],
+        "a": 1,
+        "why": "Nothing runs in the background. The Stand-up shows “As of” the time it was read, and Update reads it again."
+      },
+      {
+        "q": "On Saturday evening a committed board is at Ready for Verification. Nobody has checked it yet. On the Burn-up it is…",
+        "o": [
+          "Not done: done means passed verification. It carries over to next week",
+          "Done: the repair is finished",
+          "Withdrawn automatically"
+        ],
+        "a": 0,
+        "why": "Done is the verification pass. An unchecked board carries over on its own when the next week is first opened."
+      },
+      {
+        "q": "The customer can no longer be reached about a committed board. The Liaison presses Withdraw… with “Customer not reachable”. What happens to the board?",
+        "o": [
+          "It is closed as Customer Rejected",
+          "Its logged hours are removed",
+          "Nothing: it only leaves this week's list, keeps its state, and its hours stay worked"
+        ],
+        "a": 2,
+        "why": "Withdrawing changes only the board's line on the week. Closing the board is its own act (Cannot repair… or Customer withdrew), by whoever may do it."
+      },
+      {
+        "q": "The bench limit is 5 and Karthik has 5 boards on his bench. The Service Head allots him one more. What happens?",
+        "o": [
+          "It is refused until one of his boards is finished",
+          "A warning shows his bench and who is under the limit; Allot anyway still allots",
+          "It is allotted silently"
+        ],
+        "a": 1,
+        "why": "The limit only warns (it never refuses). The warning lists his boards and suggests engineers with room."
+      }
+    ],
+    "ta": [
+      {
+        "q": "மணி 10:00. Stand-up 9:30-ல இருந்து திறந்திருக்கு. 9:45-க்கு ஒரு போர்டு Pending Spare-க்கு போச்சு. என்ன பண்ணணும்?",
+        "o": [
+          "காத்திருங்க: 15 நிமிஷத்துக்கு ஒரு தடவை ஸ்க்ரீன் ரெஃப்ரெஷ் ஆகும்",
+          "Update அழுத்துங்க: திறக்கும்போது படிச்சது தான், தானா ரெஃப்ரெஷ் ஆகாது",
+          "ஜாப் கார்டை திறங்க; Stand-up-ல Pending Spare வராது"
+        ],
+        "a": 1,
+        "why": "பின்னாடி எதுவும் ஓடாது. படிச்ச நேரத்தை Stand-up “As of”-ல காட்டும்; Update மறுபடி படிக்கும்."
+      },
+      {
+        "q": "சனிக்கிழமை சாயங்காலம், கமிட் ஆன ஒரு போர்டு Ready for Verification-ல இருக்கு. இன்னும் யாரும் செக் பண்ணல. Burn-up-ல அது…",
+        "o": [
+          "டன் இல்ல: டன்னா வெரிஃபிகேஷன் பாஸ். அடுத்த வாரத்துக்கு கேரி-ஓவர் ஆகும்",
+          "டன்: ரிப்பேர் முடிஞ்சது",
+          "தானா Withdraw ஆகும்"
+        ],
+        "a": 0,
+        "why": "டன்னா வெரிஃபிகேஷன் பாஸ். செக் ஆகாத போர்டு அடுத்த வாரம் முதல்ல திறக்கும்போது தானா கேரி-ஓவர் ஆகும்."
+      },
+      {
+        "q": "கமிட் ஆன போர்டோட கஸ்டமரை இனி காண்டாக்ட் பண்ண முடியல. லியாசன் “Customer not reachable”-ன்னு Withdraw… அழுத்தறாங்க. போர்டுக்கு என்ன ஆகும்?",
+        "o": [
+          "Customer Rejected-ஆ க்ளோஸ் ஆகும்",
+          "போட்ட ஹவர்ஸ் அழிஞ்சிடும்",
+          "ஒண்ணும் ஆகாது: இந்த வார லிஸ்ட்ல இருந்து மட்டும் போகும், ஸ்டேட்டஸ் அப்படியே, ஹவர்ஸ் வேலை செஞ்சதா தான்"
+        ],
+        "a": 2,
+        "why": "Withdraw வாரத்துல போர்டோட லைனை மட்டும் மாத்தும். போர்டை க்ளோஸ் பண்றது அதோட தனி ஆக்ட் (Cannot repair… இல்ல Customer withdrew), அதுக்கு உரிமை உள்ளவங்க பண்ணணும்."
+      },
+      {
+        "q": "பெஞ்ச் லிமிட் 5. கார்த்திக் பெஞ்ச்ல 5 போர்டு இருக்கு. சர்வீஸ் ஹெட் இன்னொன்னு அலாட் பண்றாங்க. என்ன ஆகும்?",
+        "o": [
+          "அவரோட ஒரு போர்டு முடியற வரை மறுக்கும்",
+          "அவரோட பெஞ்ச், லிமிட்டுக்கு கீழ யார்னு வார்னிங் வரும்; Allot anyway அழுத்தினா அலாட் ஆகும்",
+          "எதுவும் சொல்லாம அலாட் ஆகும்"
+        ],
+        "a": 1,
+        "why": "லிமிட் வார்னிங் மட்டும் தான் (மறுக்காது). அவரோட போர்டுகளையும், இடம் இருக்கற இன்ஜினியர்களையும் காட்டும்."
+      }
+    ]
+  },
+  "notes": [
+    "Recorded 2026-09-28 on repair-service branch 036-weekly-planning (feature 036, decision log Round 10.33), before it was merged or deployed, as the Service Head, who both changes the week (planning.manage) and allots. Demo and volume data, and a week committed through the app beforehand.",
+    "The clip adds one board to the week and withdraws one, and records the review's change, through the app. It backs out of the bench-limit warning (Choose someone else) without allotting.",
+    "Volume data makes benches unrealistically full (31 boards against a limit of 5), so most stand-up rows are highlighted and every bench is over the limit; the captions say the figures are demo data.",
+    "Takes: the first round ran 3 min before the filters existed; after the stand-up filter (FR-034) and the plan's one-engineer view (FR-035, option A) were built, both languages were re-recorded. Takes hung twice while other work ran against the same dev server, and once more until next dev was restarted; the final takes ran undisturbed: English 211 s, Tamil 246 s. Title cards say about 3½ and 4 minutes."
+  ]
+}
